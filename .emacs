@@ -1,3 +1,32 @@
+(require 'package)
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+		    (not (gnutls-available-p))))
+       (proto (if no-ssl "http" "https")))
+  (when no-ssl
+        (warn "\
+Your version of Emacs does not support SSL connections,
+which is unsafe because it allows man-in-the-middle attacks.
+There are two things you can do about this warning:
+1. Install an Emacs version that does support SSL and be safe.
+2. Remove this warning from your init file so you won't see it again."))
+  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+  (add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+  (when (< emacs-major-version 24)
+    ;; For important compatibility libraries like cl-lib
+    (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
+(package-initialize)
+;Telegram en emacs
+(use-package telega
+  :load-path "/snap/telega/current/share/emacs/site-lisp/telega/"
+  ;; telega requires visual-fill-column
+  :init (use-package visual-fill-column
+          :ensure t)
+  ;; usual configuration here...
+  )
+(add-to-list 'load-path "/snap/telega/current/share/emacs/site-lisp/telega/")
+(require 'telega)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -16,8 +45,9 @@
  '(next-screen-context-lines 4)
  '(package-selected-packages
    (quote
-    (elfeed magit smartparens use-package sudoku sudo-edit xkcd decide pdf-tools keyfreq)))
+    (visual-fill-column telega sokoban elfeed magit smartparens use-package sudoku sudo-edit xkcd decide pdf-tools keyfreq)))
  '(save-place t nil (saveplace))
+ '(save-place-mode t nil (saveplace))
  '(yahoo-weather-location "Mairena del Aljarafe")
  '(yahoo-weather-mode t))
 (custom-set-faces
