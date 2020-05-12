@@ -88,7 +88,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-
+export XILINXD_LICENSE_FILE=2100@freyja.us.es
 alias copy='| xsel -ib'
 alias ll='ls -l'
 alias la='ls -A'
@@ -113,13 +113,15 @@ alias miip='curl ipinfo.io/ip'
 alias etsi='cd ~/Documentos/ETSI2020'
 alias infor='etsi && cd Informática'
 alias em='emacsclient -nw'
-alias Monster='mpv /media/Vídeos/Monster'
+#alias Monster='mpv /media/Vídeos/Monster'
 alias unnethack='telnet guis.es'
 alias radio3='mpv https://hlsliveamdgl0-lh.akamaihd.net/i/rnerne3_1@793568/master.m3u8'
 alias enterthegungeon='wine Juegos/wine/Enter.the.Gungeon.v2.1.9/EtG.exe'
 alias sr='~/buscar.sh'
 synclient TapButton1=1 #Pongo el toque del touchpad como cli
 export PATH="$HOME/bin:$PATH" #Añado ~/bin para poder ejecutar mis programas facilmente
+alias e='emacsclient -t'
+alias E="SUDO_EDITOR=\"emacsclient -t\" sudo -e"
 alias qnx='qemu-system-x86_64 /home/carlos/Documentos/ETSI2020/Informática/qnx.6.3.2/qnx6.3.2.vmdk'
 alias dunnet='emacs -batch -l dunnet'
 alias ise='/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/ise'
