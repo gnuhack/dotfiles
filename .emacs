@@ -143,10 +143,8 @@ There are two things you can do about this warning:
 ;; Tell emacs where is your personal elisp lib dir
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-;; cargamos el diccionario con sus atajos de teclado
-;; (load "define-word")
-
-;; (global-set-key (kbd "C-c D") 'define-word-at-point)
+;; Diccionarios
+(global-set-key (kbd "C-c D") 'define-word-at-point)
 (global-set-key (kbd "C-c d") 'define-word)
 
 
