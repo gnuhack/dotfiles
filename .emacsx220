@@ -36,7 +36,7 @@ There are two things you can do about this warning:
  '(next-screen-context-lines 4)
  '(package-selected-packages
    (quote
-    (define-word 2048-game emms telega magit smartparens use-package sudoku sudo-edit xkcd decide pdf-tools keyfreq)))
+    (wordnut define-word 2048-game emms telega magit smartparens use-package sudoku sudo-edit xkcd decide pdf-tools keyfreq)))
  '(save-place t nil (saveplace))
  '(yahoo-weather-location "Mairena del Aljarafe")
  '(yahoo-weather-mode t))
@@ -48,6 +48,8 @@ There are two things you can do about this warning:
  '(font-lock-string-face ((t (:foreground "dark orange")))))
 (require 'org);;Config para org mode
 
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cb" 'org-iswitchb)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-capture-templates
   '(    ;; ... other templates
@@ -196,14 +198,14 @@ There are two things you can do about this warning:
 
 
 ;;Paréntesis inteligentes
-(use-package smartparens
-  :ensure t
-  :diminish smartparens-mode
-  :config
-  (progn
-    (require 'smartparens-config)
-    (smartparens-global-mode 1)
-    (show-paren-mode t)))
+;; (use-package smartparens
+;;   :ensure t
+;;   :diminish smartparens-mode
+;;   :config
+;;   (progn
+;;     (require 'smartparens-config)
+;;     (smartparens-global-mode 1)
+;;     (show-paren-mode t)))
 ;;Mostramos el núnmero de columna
 (column-number-mode)
 
