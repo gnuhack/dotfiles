@@ -48,11 +48,17 @@ There are two things you can do about this warning:
  '(font-lock-string-face ((t (:foreground "dark orange")))))
 (require 'org);;Config para org mode
 
+(setq org-default-notes-file (concat org-directory "/notes.org"))
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-capture-templates
-  '(    ;; ... other templates
+
+      '(    ;; ... other templates
+	    ("c" "Nota" entry
+      (file+datetree "~/Documentos/notas.org")
+      "* %?" :empty-lines 1)
+
 
     ("j" "Journal Entry"
          entry (file+datetree "~/journal.org")
@@ -61,7 +67,7 @@ There are two things you can do about this warning:
 
         ;; ... other templates
     ))
-(define-key global-map "\C-cl" 'org-capture)
+;;(define-key global-map "\C-cl" 'org-capture)
 
 
 
