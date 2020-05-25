@@ -303,4 +303,6 @@
 
   ;;bullets para org
   (require 'org-bullets) (add-hook 'org-mode-hook 'org-bullets-mode)
+  ;;quitar los archivos ~
+  (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 #+end_src
