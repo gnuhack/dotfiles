@@ -30,6 +30,23 @@
 #+end_src
 * Org mode
 #+begin_src emacs-lisp
+  ;;Dineros
+  (setq org-capture-templates
+        (append '(("l" "Ledger entries")
+                  ("lm" "MBNA" plain
+                   (file "~/org/dineros.org")
+                   "%(org-read-date) %^{Payee}
+    Liabilities:MBNA  
+    Expenses:%^{Account}  %^{Amount}
+  ")
+                  ("lc" "Cash" plain
+                  (file "~/org/dineros.org")
+                  "%(org-read-date) * %^{Payee}
+    Expenses:Cash 
+    Expenses:%^{Account}  %^{Amount}
+  "))
+                org-capture-templates))
+
   (require 'org);;Config para org mode
 
   (setq org-default-notes-file (concat org-directory "/notes.org"))
@@ -100,6 +117,14 @@
 #+end_src
 * Cajón de sastre
 #+begin_src emacs-lisp
+  ;;Tree mode
+  (use-package undo-tree
+    :diminish undo-tree-mode
+    :config
+    (progn
+      (global-undo-tree-mode)
+      (setq undo-tree-visualizer-timestamps t)
+      (setq undo-tree-visualizer-diff t)))
   ;; Saltar la confirmación del tema de la barra inteligentei
   (setq sml/no-confirm-load-theme t)
   ;; a ver si condigo darle definición a los pdfs
