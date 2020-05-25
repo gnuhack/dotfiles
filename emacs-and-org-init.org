@@ -30,22 +30,6 @@
 #+end_src
 * Org mode
 #+begin_src emacs-lisp
-  ;;Dineros
-  (setq org-capture-templates
-        (append '(("l" "Ledger entries")
-                  ("lm" "MBNA" plain
-                   (file "~/org/dineros.org")
-                   "%(org-read-date) %^{Payee}
-    Liabilities:MBNA  
-    Expenses:%^{Account}  %^{Amount}
-  ")
-                  ("lc" "Cash" plain
-                  (file "~/org/dineros.org")
-                  "%(org-read-date) * %^{Payee}
-    Expenses:Cash 
-    Expenses:%^{Account}  %^{Amount}
-  "))
-                org-capture-templates))
 
   (require 'org);;Config para org mode
 
@@ -66,7 +50,23 @@
            "* %?"
            :empty-lines 1)
 
-          ;; ... other templates
+          ;; Dineros
+
+        (append '(("l" "Ledger entries")
+                  ("lm" "MBNA" plain
+                   (file "~/org/dineros.org")
+                   "%(org-read-date) %^{Payee}
+    Liabilities:MBNA  
+    Expenses:%^{Account}  %^{Amount}
+  ")
+                  ("lc" "Cash" plain
+                  (file "~/org/dineros.org")
+                  "%(org-read-date) * %^{Payee}
+    Expenses:Cash 
+    Expenses:%^{Account}  %^{Amount}
+  ")))
+
+
       ))
   ;;(define-key global-map "\C-cl" 'org-capture)
 
