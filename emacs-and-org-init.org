@@ -39,9 +39,6 @@
   (define-key global-map "\C-ca" 'org-agenda)
 
   ;;Plantilla para efectivo
-  (defvar my/org-ledger-cash-template "%(org-read-date) * %^{Payee}
-    Expenses:%^{Account}  €%^{Amount}
-    Assets:Cash:Wallet" "Template for cash transaction with ledger.")
   (setq org-capture-templates
 
         '(    ;; ... other templates
