@@ -1,57 +1,57 @@
 #+name: Repos-y-customize
 #+begin_src emacs-lisp
-(require 'package)
-(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-		    (not (gnutls-available-p))))
-       (proto (if no-ssl "http" "https")))
-  (when no-ssl
-        (warn "\
-Your version of Emacs does not support SSL connections,
-which is unsafe because it allows man-in-the-middle attacks.
-There are two things you can do about this warning:
-1. Install an Emacs version that does support SSL and be safe.
-2. Remove this warning from your init file so you won't see it again."))
-  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
-  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
-  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
-  (when (< emacs-major-version 24)
-    ;; For important compatibility libraries like cl-lib
-    (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
-(package-initialize)
+  (require 'package)
+  (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                      (not (gnutls-available-p))))
+         (proto (if no-ssl "http" "https")))
+    (when no-ssl
+          (warn "\
+  Your version of Emacs does not support SSL connections,
+  which is unsafe because it allows man-in-the-middle attacks.
+  There are two things you can do about this warning:
+  1. Install an Emacs version that does support SSL and be safe.
+  2. Remove this warning from your init file so you won't see it again."))
+    ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+    (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+    ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+    (when (< emacs-major-version 24)
+      ;; For important compatibility libraries like cl-lib
+      (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
+  (package-initialize)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(browse-url-firefox-program "/usr/bin/firefox")
- '(browse-url-generic-program "/usr/bin/firefox")
- '(custom-enabled-themes (quote (misterioso)))
- '(desktop-save-mode t)
- '(display-time-24hr-format t)
- '(doc-view-continuous t)
- '(doc-view-resolution 200)
- '(global-visual-line-mode t)
- '(inhibit-startup-screen t)
- '(large-file-warning-threshold 1000000000)
- '(line-number-mode nil)
- '(next-screen-context-lines 4)
- '(package-selected-packages
-   (quote
-    (wordnut define-word 2048-game emms telega magit smartparens use-package sudoku sudo-edit xkcd decide pdf-tools keyfreq)))
- '(save-place t nil (saveplace))
- '(yahoo-weather-location "Mairena del Aljarafe")
- '(yahoo-weather-mode t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(font-lock-string-face ((t (:foreground "dark orange")))))
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(browse-url-firefox-program "/usr/bin/firefox")
+   '(browse-url-generic-program "/usr/bin/firefox")
+   '(custom-enabled-themes (quote (misterioso)))
+   '(desktop-save-mode t)
+   '(display-time-24hr-format t)
+   '(doc-view-continuous t)
+   '(doc-view-resolution 200)
+   '(global-visual-line-mode t)
+   '(inhibit-startup-screen t)
+   '(large-file-warning-threshold 1000000000)
+   '(line-number-mode nil)
+   '(next-screen-context-lines 4)
+   '(package-selected-packages
+     (quote
+      (wordnut define-word 2048-game emms telega magit smartparens use-package sudoku sudo-edit xkcd decide pdf-tools keyfreq)))
+   '(save-place t nil (saveplace))
+   '(yahoo-weather-location "Mairena del Aljarafe")
+   '(yahoo-weather-mode t))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(font-lock-string-face ((t (:foreground "dark orange")))))
 
 #+end_src
 #+name: Org-mode
-#+begin_src
+#+begin_src emacs-lisp
 (require 'org);;Config para org mode
 
 (setq org-default-notes-file (concat org-directory "/notes.org"))
@@ -119,185 +119,185 @@ There are two things you can do about this warning:
 ;; Fin de alarma para citas
 #+end_src
 #+name: Sastre
-#+begin_src
-;;(define-key c-mode-map  "\C-ñ" 'compile)
-(setq org-log-done t)
+#+begin_src emacs-lisp
+  ;;(define-key c-mode-map  "\C-ñ" 'compile)
+  (setq org-log-done t)
 
-(package-initialize)
+  (package-initialize)
 
-(setq org-agenda-files (list "~/org/uni.org"))
-;; a ver si condigo darle definición a los pdfs
+  (setq org-agenda-files (list "~/org/uni.org"))
+  ;; a ver si condigo darle definición a los pdfs
 
-(require 'doc-view)
-(setq doc-view-resolution 144)
-(require 'xscheme)
-(server-start)
-
-
-(setq package-archives
-'(("gnu" . "http://elpa.gnu.org/packages/")
-("melpa" . "http://melpa.milkbox.net/packages/")))
-
-(pdf-tools-install)
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-
-(ido-mode 1)
-(setq ido-everywhere t)
-(setq ido-enable-flex-matching t)
-
-;;Ponemos los mensajes que salen en otro búfer en el mismo
-(tooltip-mode -1)
-(setq tooltip-use-echo-area t)
+  (require 'doc-view)
+  (setq doc-view-resolution 144)
+  (require 'xscheme)
+  (server-start)
 
 
-;;Configuración para acceder fácil a archivos recientes con recentf
+  (setq package-archives
+  '(("gnu" . "http://elpa.gnu.org/packages/")
+  ("melpa" . "http://melpa.milkbox.net/packages/")))
 
- 
-(require 'recentf)
+  (pdf-tools-install)
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
 
-;; get rid of `find-file-read-only' and replace it with something
-;; more useful.
-(global-set-key (kbd "C-x C-r") 'ido-recentf-open)
-;;(global-set-key (kbd "C-ñ") 'eval-buffer)
+  (ido-mode 1)
+  (setq ido-everywhere t)
+  (setq ido-enable-flex-matching t)
 
-;; enable recent files mode.
-(recentf-mode t)
-
-; 50 files ought to be enough.
-(setq recentf-max-saved-items 50)
-
-(defun ido-recentf-open ()
-  "Use `ido-completing-read' to \\[find-file] a recent file"
-  (interactive)
-  (if (find-file (ido-completing-read "Find recent file: " recentf-list))
-      (message "Opening file...")
-    (message "Aborting")))
-
-;;Estadísticas de teclas pulsadas
-(require 'keyfreq)
-(keyfreq-mode 1)
-(keyfreq-autosave-mode 1)
-
-;;Ponemos M-o para cambiar de búfer cuando hay varios abiertos
-
-(global-set-key (kbd "C-ñ") 'other-window)
-(global-set-key (kbd"M-o") 'mode-line-other-buffer)
-(global-set-key (kbd "<f7>") 'bookmark-jump)
-(global-set-key (kbd "<f6>") 'bookmark-set)
-(global-set-key (kbd "<f12>") 'delete-other-windows)
-(global-set-key (kbd "<f2>") 'quick-calc)
-(global-set-key (kbd "M-p") 'next-buffer)
-(global-set-key (kbd "M-n") 'previous-buffer)
-
-(setq confirm-kill-emacs 'y-or-n-p) ;; Pedir confirmación para salir de emacs
-
-(setq desktop-save-mode t) ;; guardar la sessión al cerrar emacs y restaurarla
-
-(desktop-save-mode 1) ;; guardar sesión emacs
-
-;; Tell emacs where is your personal elisp lib dir
-(add-to-list 'load-path "~/.emacs.d/lisp/")
-
-;; cargamos el diccionario con sus atajos de teclado
-;; (load "define-word")
-
-;; (global-set-key (kbd "C-c D") 'define-word-at-point)
-;; (global-set-key (kbd "C-c d") 'define-word)
+  ;;Ponemos los mensajes que salen en otro búfer en el mismo
+  (tooltip-mode -1)
+  (setq tooltip-use-echo-area t)
 
 
-;;Mostramos el número de fila para programar mejor
+  ;;Configuración para acceder fácil a archivos recientes con recentf
 
-(add-hook 'prog-mode-hook 'linum-mode)
+   
+  (require 'recentf)
 
-;;Matar buffer con C-x-K
-(defun other-window-kill-buffer ()
-  "Kill the buffer in the other window"
-  (interactive)
-  ;; Window selection is used because point goes to a different window
-  ;; if more than 2 windows are present
-  (let ((win-curr (selected-window))
-        (win-other (next-window)))
-    (select-window win-other)
-    (kill-this-buffer)
-    (select-window win-curr)))
+  ;; get rid of `find-file-read-only' and replace it with something
+  ;; more useful.
+  (global-set-key (kbd "C-x C-r") 'ido-recentf-open)
+  ;;(global-set-key (kbd "C-ñ") 'eval-buffer)
 
-(global-set-key (kbd "C-x K") 'other-window-kill-buffer)
+  ;; enable recent files mode.
+  (recentf-mode t)
 
-;;Prueba de smooth scrolling
-;;(setq scroll-conservatively 10000)
-(setq redisplay-dont-pause t
-  scroll-margin 1
-  scroll-step 1
-  scroll-conservatively 10000
-  scroll-preserve-screen-position 1)
+  ; 50 files ought to be enough.
+  (setq recentf-max-saved-items 50)
 
-;;Ver el tiempo con wttrin
-(setq wttrin-default-accept-language '("Accept-Language" . "es-ES"))
-(setq wttrin-default-cities '("Mairena" "mairena" "Sevilla"))
-;;(yahoo-weather-mode)
+  (defun ido-recentf-open ()
+    "Use `ido-completing-read' to \\[find-file] a recent file"
+    (interactive)
+    (if (find-file (ido-completing-read "Find recent file: " recentf-list))
+        (message "Opening file...")
+      (message "Aborting")))
 
+  ;;Estadísticas de teclas pulsadas
+  (require 'keyfreq)
+  (keyfreq-mode 1)
+  (keyfreq-autosave-mode 1)
 
-;; Run C programs directly from within emacs
-(defun execute-c-program ()
-  (interactive)
-  (defvar foo)
-  (setq foo (concat "gcc " (buffer-name) " && ./a.out" ))
-  (shell-command foo))
- 
-(global-set-key [C-f1] 'execute-c-program)
+  ;;Ponemos M-o para cambiar de búfer cuando hay varios abiertos
 
-;;Prueba para ver si puedo abrir los .m en modo octave automáticamente
-(add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
+  (global-set-key (kbd "C-ñ") 'other-window)
+  (global-set-key (kbd"M-o") 'mode-line-other-buffer)
+  (global-set-key (kbd "<f7>") 'bookmark-jump)
+  (global-set-key (kbd "<f6>") 'bookmark-set)
+  (global-set-key (kbd "<f12>") 'delete-other-windows)
+  (global-set-key (kbd "<f2>") 'quick-calc)
+  (global-set-key (kbd "M-p") 'next-buffer)
+  (global-set-key (kbd "M-n") 'previous-buffer)
 
+  (setq confirm-kill-emacs 'y-or-n-p) ;; Pedir confirmación para salir de emacs
 
-;;Paréntesis inteligentes
-;; (use-package smartparens
-;;   :ensure t
-;;   :diminish smartparens-mode
-;;   :config
-;;   (progn
-;;     (require 'smartparens-config)
-;;     (smartparens-global-mode 1)
-;;     (show-paren-mode t)))
-;;Mostramos el núnmero de columna
-(column-number-mode)
+  (setq desktop-save-mode t) ;; guardar la sessión al cerrar emacs y restaurarla
 
-;;Modo noche para los pdfs con f1
+  (desktop-save-mode 1) ;; guardar sesión emacs
 
-(fset 'modonoche
-   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("m" 0 "%d")) arg)))
-(global-set-key (kbd "<f3>") 'modonoche)
-(global-set-key (kbd "<f8>") 'next-buffer)
-(global-set-key (kbd "<f9>") 'previous-buffer)
-(global-set-key (kbd "<f5>") 'compilacion)
-(global-set-key (kbd "C-c m c") 'mc/edit-lines)
+  ;; Tell emacs where is your personal elisp lib dir
+  (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-(defun kb-scroll-up-hold-cursor ()
-  "Scroll up one position in file."
-  (interactive)
-  (scroll-up-command 1))
+  ;; cargamos el diccionario con sus atajos de teclado
+  ;; (load "define-word")
 
-(defun kb-scroll-down-hold-cursor ()
-  "Scroll down one position in file."
-  (interactive)
-  (scroll-up-command -1))
-
-(bind-key "M-N"  'kb-scroll-up-hold-cursor)
-(bind-key "M-P"  'kb-scroll-down-hold-cursor)
+  ;; (global-set-key (kbd "C-c D") 'define-word-at-point)
+  ;; (global-set-key (kbd "C-c d") 'define-word)
 
 
-;;Cerrar bufer directamente con C-k
-(global-set-key (kbd "C-x k") 'kill-this-buffer)
-(global-set-key (kbd "C-c d") 'define-word)
+  ;;Mostramos el número de fila para programar mejor
 
-;;Asignacion de teclas para sokoban en el modo socoban, pero no me sale
-(eval-after-load 'sokoban-mode
-  '(local-set-key (kbd "k") 'sokoban-move-up))
-;;macro para asignar las teclas en socoban
-(fset 'teclasokoban
-   [menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?k ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?p backspace ?u ?p return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?j ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?d ?o ?w ?n return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?h ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?l ?e ?f ?t return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?l ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?r ?i ?g ?h ?t return])
-;;f1 para usar la macro
-(global-set-key (kbd "<f1>") 'teclasokoban)
+  (add-hook 'prog-mode-hook 'linum-mode)
+
+  ;;Matar buffer con C-x-K
+  (defun other-window-kill-buffer ()
+    "Kill the buffer in the other window"
+    (interactive)
+    ;; Window selection is used because point goes to a different window
+    ;; if more than 2 windows are present
+    (let ((win-curr (selected-window))
+          (win-other (next-window)))
+      (select-window win-other)
+      (kill-this-buffer)
+      (select-window win-curr)))
+
+  (global-set-key (kbd "C-x K") 'other-window-kill-buffer)
+
+  ;;Prueba de smooth scrolling
+  ;;(setq scroll-conservatively 10000)
+  (setq redisplay-dont-pause t
+    scroll-margin 1
+    scroll-step 1
+    scroll-conservatively 10000
+    scroll-preserve-screen-position 1)
+
+  ;;Ver el tiempo con wttrin
+  (setq wttrin-default-accept-language '("Accept-Language" . "es-ES"))
+  (setq wttrin-default-cities '("Mairena" "mairena" "Sevilla"))
+  ;;(yahoo-weather-mode)
+
+
+  ;; Run C programs directly from within emacs
+  (defun execute-c-program ()
+    (interactive)
+    (defvar foo)
+    (setq foo (concat "gcc " (buffer-name) " && ./a.out" ))
+    (shell-command foo))
+   
+  (global-set-key [C-f1] 'execute-c-program)
+
+  ;;Prueba para ver si puedo abrir los .m en modo octave automáticamente
+  (add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
+
+
+  ;;Paréntesis inteligentes
+  ;; (use-package smartparens
+  ;;   :ensure t
+  ;;   :diminish smartparens-mode
+  ;;   :config
+  ;;   (progn
+  ;;     (require 'smartparens-config)
+  ;;     (smartparens-global-mode 1)
+  ;;     (show-paren-mode t)))
+  ;;Mostramos el núnmero de columna
+  (column-number-mode)
+
+  ;;Modo noche para los pdfs con f1
+
+  (fset 'modonoche
+     (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("m" 0 "%d")) arg)))
+  (global-set-key (kbd "<f3>") 'modonoche)
+  (global-set-key (kbd "<f8>") 'next-buffer)
+  (global-set-key (kbd "<f9>") 'previous-buffer)
+  (global-set-key (kbd "<f5>") 'compilacion)
+  (global-set-key (kbd "C-c m c") 'mc/edit-lines)
+
+  (defun kb-scroll-up-hold-cursor ()
+    "Scroll up one position in file."
+    (interactive)
+    (scroll-up-command 1))
+
+  (defun kb-scroll-down-hold-cursor ()
+    "Scroll down one position in file."
+    (interactive)
+    (scroll-up-command -1))
+
+  (bind-key "M-N"  'kb-scroll-up-hold-cursor)
+  (bind-key "M-P"  'kb-scroll-down-hold-cursor)
+
+
+  ;;Cerrar bufer directamente con C-k
+  (global-set-key (kbd "C-x k") 'kill-this-buffer)
+  (global-set-key (kbd "C-c d") 'define-word)
+
+  ;;Asignacion de teclas para sokoban en el modo socoban, pero no me sale
+  (eval-after-load 'sokoban-mode
+    '(local-set-key (kbd "k") 'sokoban-move-up))
+  ;;macro para asignar las teclas en socoban
+  (fset 'teclasokoban
+     [menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?k ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?p backspace ?u ?p return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?j ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?d ?o ?w ?n return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?h ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?l ?e ?f ?t return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?l ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?r ?i ?g ?h ?t return])
+  ;;f1 para usar la macro
+  (global-set-key (kbd "<f1>") 'teclasokoban)
 #+end_src
