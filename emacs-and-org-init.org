@@ -37,6 +37,11 @@
   (global-set-key "\C-cc" 'org-capture)
   (global-set-key "\C-cb" 'org-iswitchb)
   (define-key global-map "\C-ca" 'org-agenda)
+
+  ;;Plantilla para efectivo
+  (defvar my/org-ledger-cash-template "%(org-read-date) * %^{Payee}
+    Expenses:%^{Account}  €%^{Amount}
+    Assets:Cash:Wallet" "Template for cash transaction with ledger.")
   (setq org-capture-templates
 
         '(    ;; ... other templates
@@ -49,25 +54,10 @@
            entry (file+datetree "~/journal.org")
            "* %?"
            :empty-lines 1)
-
-          ;; Dineros
-
-        (append '(("l" "Ledger entries")
-                  ("lm" "MBNA" plain
-                   (file "~/org/dineros.org")
-                   "%(org-read-date) %^{Payee}
-    Liabilities:MBNA  
-    Expenses:%^{Account}  %^{Amount}
-  ")
-                  ("lc" "Cash" plain
-                  (file "~/org/dineros.org")
-                  "%(org-read-date) * %^{Payee}
-    Expenses:Cash 
-    Expenses:%^{Account}  %^{Amount}
-  ")))
+       ))
 
 
-      ))
+
   ;;(define-key global-map "\C-cl" 'org-capture)
 
   ;; Alarma para citas de org-mode
