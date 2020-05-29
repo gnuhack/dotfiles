@@ -112,10 +112,7 @@
       (global-undo-tree-mode)
       (setq undo-tree-visualizer-timestamps t)
       (setq undo-tree-visualizer-diff t)))
-  ;; Saltar la confirmación del tema de la barra inteligentei
-  (setq sml/no-confirm-load-theme t)
   ;; a ver si condigo darle definición a los pdfs
-  (smart-mode-line-enable)
   (require 'doc-view)
   (setq doc-view-resolution 144)
   (require 'xscheme)
