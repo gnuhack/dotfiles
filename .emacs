@@ -70,8 +70,6 @@ There are two things you can do about this warning:
 (require 'doc-view)
 (setq doc-view-resolution 144)
 (require 'xscheme)
-
-;; Servidor para usar emacsclient
 (server-start)
 
 
@@ -80,13 +78,10 @@ There are two things you can do about this warning:
 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 (pdf-tools-install)
-
-;; Menú quitado para tener más limpia la pantalla
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; Modo ido para buscar archivos cómodamente
 (ido-mode 1)
 (setq ido-everywhere t)
 (setq ido-enable-flex-matching t)
@@ -128,8 +123,6 @@ There are two things you can do about this warning:
 
 (global-set-key (kbd "C-ñ") 'other-window)
 (global-set-key (kbd"M-o") 'mode-line-other-buffer)
-
-;; Accesos directos varios
 (global-set-key (kbd "<f7>") 'bookmark-jump)
 (global-set-key (kbd "<f6>") 'bookmark-set)
 (global-set-key (kbd "<f12>") 'delete-other-windows)
@@ -140,12 +133,18 @@ There are two things you can do about this warning:
 
 (setq confirm-kill-emacs 'y-or-n-p) ;; Pedir confirmación para salir de emacs
 
+(setq desktop-save-mode t) ;; guardar la sessión al cerrar emacs y restaurarla
+
+(desktop-save-mode 1) ;; guardar sesión emacs
+
 ;; Tell emacs where is your personal elisp lib dir
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-;; Diccionarios
-(global-set-key (kbd "C-c D") 'define-word-at-point)
-(global-set-key (kbd "C-c d") 'define-word)
+;; cargamos el diccionario con sus atajos de teclado
+;; (load "define-word")
+
+;; (global-set-key (kbd "C-c D") 'define-word-at-point)
+;; (global-set-key (kbd "C-c d") 'define-word)
 
 
 ;;Mostramos el número de fila para programar mejor
