@@ -45,8 +45,7 @@ There are two things you can do about this warning:
  '(next-screen-context-lines 4)
  '(package-selected-packages
    (quote
-    (visual-fill-column telega sokoban elfeed magit smartparens use-package sudoku sudo-edit xkcd decide pdf-tools keyfreq)))
- '(save-place t nil (saveplace))
+    (projectile flycheck virtualenv elpy undo-tree cdlatex define-word visual-fill-column telega sokoban elfeed magit smartparens use-package sudoku sudo-edit xkcd decide pdf-tools keyfreq)))
  '(save-place-mode t nil (saveplace))
  '(yahoo-weather-location "Mairena del Aljarafe")
  '(yahoo-weather-mode t))
@@ -70,8 +69,6 @@ There are two things you can do about this warning:
 (require 'doc-view)
 (setq doc-view-resolution 144)
 (require 'xscheme)
-
-;; Servidor para usar emacsclient
 (server-start)
 
 
@@ -80,13 +77,10 @@ There are two things you can do about this warning:
 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 (pdf-tools-install)
-
-;; Menú quitado para tener más limpia la pantalla
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; Modo ido para buscar archivos cómodamente
 (ido-mode 1)
 (setq ido-everywhere t)
 (setq ido-enable-flex-matching t)
@@ -128,8 +122,6 @@ There are two things you can do about this warning:
 
 (global-set-key (kbd "C-ñ") 'other-window)
 (global-set-key (kbd"M-o") 'mode-line-other-buffer)
-
-;; Accesos directos varios
 (global-set-key (kbd "<f7>") 'bookmark-jump)
 (global-set-key (kbd "<f6>") 'bookmark-set)
 (global-set-key (kbd "<f12>") 'delete-other-windows)
@@ -140,10 +132,16 @@ There are two things you can do about this warning:
 
 (setq confirm-kill-emacs 'y-or-n-p) ;; Pedir confirmación para salir de emacs
 
+(setq desktop-save-mode t) ;; guardar la sessión al cerrar emacs y restaurarla
+
+(desktop-save-mode 1) ;; guardar sesión emacs
+
 ;; Tell emacs where is your personal elisp lib dir
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-;; Diccionarios
+;; cargamos el diccionario con sus atajos de teclado
+;; (load "define-word")
+
 (global-set-key (kbd "C-c D") 'define-word-at-point)
 (global-set-key (kbd "C-c d") 'define-word)
 
@@ -205,3 +203,25 @@ There are two things you can do about this warning:
     (show-paren-mode t)))
 ;;Mostramos el núnmero de columna
 (column-number-mode)
+
+;;Python IDE
+(elpy-enable)
+
+(defvar myPackages
+
+  '(better-defaults                 ;; Set up some better Emacs defaults
+
+    elpy                            ;; Emacs Lisp Python Environment
+
+    flycheck                        ;; On the fly syntax checking
+
+    material-theme                  ;; Theme
+
+    )
+
+  )
+(when (require 'flycheck nil t)
+
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
