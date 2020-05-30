@@ -45,7 +45,8 @@ There are two things you can do about this warning:
  '(next-screen-context-lines 4)
  '(package-selected-packages
    (quote
-    (projectile flycheck virtualenv elpy undo-tree cdlatex define-word visual-fill-column telega sokoban elfeed magit smartparens use-package sudoku sudo-edit xkcd decide pdf-tools keyfreq)))
+    (visual-fill-column telega sokoban elfeed magit smartparens use-package sudoku sudo-edit xkcd decide pdf-tools keyfreq)))
+ '(save-place t nil (saveplace))
  '(save-place-mode t nil (saveplace))
  '(yahoo-weather-location "Mairena del Aljarafe")
  '(yahoo-weather-mode t))
@@ -142,8 +143,8 @@ There are two things you can do about this warning:
 ;; cargamos el diccionario con sus atajos de teclado
 ;; (load "define-word")
 
-(global-set-key (kbd "C-c D") 'define-word-at-point)
-(global-set-key (kbd "C-c d") 'define-word)
+;; (global-set-key (kbd "C-c D") 'define-word-at-point)
+;; (global-set-key (kbd "C-c d") 'define-word)
 
 
 ;;Mostramos el número de fila para programar mejor
@@ -203,25 +204,3 @@ There are two things you can do about this warning:
     (show-paren-mode t)))
 ;;Mostramos el núnmero de columna
 (column-number-mode)
-
-;;Python IDE
-(elpy-enable)
-
-(defvar myPackages
-
-  '(better-defaults                 ;; Set up some better Emacs defaults
-
-    elpy                            ;; Emacs Lisp Python Environment
-
-    flycheck                        ;; On the fly syntax checking
-
-    material-theme                  ;; Theme
-
-    )
-
-  )
-(when (require 'flycheck nil t)
-
-  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-
-  (add-hook 'elpy-mode-hook 'flycheck-mode))
