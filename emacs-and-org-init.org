@@ -156,6 +156,7 @@
 
   ;;Ponemos M-o para cambiar de búfer cuando hay varios abiertos
 
+  (define-key elfeed-show-mode-map (kbd "C-c o") 'elfeed-visit-or-play-with-mpv)
   (global-set-key (kbd "C-ñ") 'other-window)
   (global-set-key (kbd"M-o") 'mode-line-other-buffer)
   (global-set-key (kbd "<f7>") 'bookmark-jump)
