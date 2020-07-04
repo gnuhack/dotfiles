@@ -32,6 +32,9 @@
       "* %?" :empty-lines 1)
      ("p" "Películas" entry
       (file+headline "~/Documentos/notas.org" "Películas")
+      "* %?")
+     ("k" "Cita" entry
+      (file+datetree+prompt "~/org/uni.org")
       "* %?"))))
  '(package-selected-packages
    (quote
