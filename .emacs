@@ -17,6 +17,9 @@
  '(display-time-24hr-format t)
  '(doc-view-continuous t)
  '(doc-view-resolution 200)
+ '(elfeed-feeds
+   (quote
+    ("https://www.youtube.com/feeds/videos.xml?channel_id=UCaifrB5IrvGNPJmPeVOcqBA" "https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg" "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA" "https://www.youtube.com/channel/UCaifrB5IrvGNPJmPeVOcqBA" "https://www.youtube.com/user/SsethTzeentach" "http://planet.emacs-es.org/rss20.xml" "https://planet.emacslife.com/atom.xml")))
  '(global-visual-line-mode t)
  '(inhibit-startup-screen t)
  '(large-file-warning-threshold 1000000000)
@@ -35,7 +38,7 @@
       "* %?")
      ("k" "Cita" entry
       (file+datetree+prompt "~/org/uni.org")
-      "* %?"))))
+      "* %?"))) t)
  '(package-selected-packages
    (quote
     (elpy company-irony gdscript-mode wordnut define-word 2048-game emms telega magit smartparens use-package sudoku sudo-edit xkcd decide pdf-tools keyfreq)))
