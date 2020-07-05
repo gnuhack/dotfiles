@@ -41,16 +41,16 @@
   ;;Plantilla para efectivo
   (setq org-capture-templates
 
-        '(    ;; ... other templates
-              ("c" "Nota" entry
-        (file+datetree "~/Documentos/notas.org")
-        "* %?" :empty-lines 1)
+	'(    ;; ... other templates
+	      ("c" "Nota" entry
+	(file+datetree "~/Documentos/notas.org")
+	"* %?" :empty-lines 1)
 
 
       ("j" "Journal Entry"
-           entry (file+datetree "~/journal.org")
-           "* %?"
-           :empty-lines 1)
+	   entry (file+datetree "~/journal.org")
+	   "* %?"
+	   :empty-lines 1)
        ))
 
 
@@ -81,9 +81,9 @@
 
   ; (3) ... When TODO.txt is saved
   (add-hook 'after-save-hook
-            '(lambda ()
-               (if (string= (buffer-file-name) (concat (getenv "HOME") "/ideas/TODO.txt"))
-                   (my-org-agenda-to-appt))))
+	    '(lambda ()
+	       (if (string= (buffer-file-name) (concat (getenv "HOME") "/ideas/TODO.txt"))
+		   (my-org-agenda-to-appt))))
 
   ; Display appointments as a window manager notification
   (setq appt-disp-window-function 'my-appt-display)
@@ -100,43 +100,48 @@
 
   ;; Fin de alarma para citas
   ;;bullets para org
-  (require 'org-bullets) (add-hook 'org-mode-hook 'org-bullets-mode)
+  (use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
   (setq org-log-done t)
   (setq org-agenda-files (list "~/org/uni.org"))
 #+end_src
 * Cajón de sastre
 #+begin_src emacs-lisp
-  ;;Estadísticas de teclas pulsadas
-  (require 'keyfreq)
-  (keyfreq-mode 1)
-  (keyfreq-autosave-mode 1)
+    ;;Estadísticas de teclas pulsadas
+    (use-package keyfreq
+    :ensure t
+    :config
+    (keyfreq-mode 1)
+    (keyfreq-autosave-mode 1))
 
-  (setq confirm-kill-emacs 'y-or-n-p) ;; Pedir confirmación para salir de emacs
+    (setq confirm-kill-emacs 'y-or-n-p) ;; Pedir confirmación para salir de emacs
 
-  (setq desktop-save-mode t) ;; guardar la sessión al cerrar emacs y restaurarla
+    (setq desktop-save-mode t) ;; guardar la sessión al cerrar emacs y restaurarla
 
-  (desktop-save-mode 1) ;; guardar sesión emacs
+    (desktop-save-mode 1) ;; guardar sesión emacs
 
-  ;; Tell emacs where is your personal elisp lib dir
-  (add-to-list 'load-path "~/.emacs.d/lisp/")
-  
-  ;;Ver el tiempo con wttrin
-  (setq wttrin-default-accept-language '("Accept-Language" . "es-ES"))
-  (setq wttrin-default-cities '("Mairena" "mairena" "Sevilla"))
-  ;;(yahoo-weather-mode)
+    ;; Tell emacs where is your personal elisp lib dir
+    (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-  ;;Asignacion de teclas para sokoban en el modo socoban, pero no me sale
-  (eval-after-load 'sokoban-mode
-    '(local-set-key (kbd "k") 'sokoban-move-up))
-  ;;macro para asignar las teclas en socoban
-  (fset 'teclasokoban
-     [menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?k ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?p backspace ?u ?p return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?j ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?d ?o ?w ?n return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?h ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?l ?e ?f ?t return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?l ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?r ?i ?g ?h ?t return])
-  ;;f1 para usar la macro
-  (global-set-key (kbd "<f1>") 'teclasokoban)
+    ;;Ver el tiempo con wttrin
+    (setq wttrin-default-accept-language '("Accept-Language" . "es-ES"))
+    (setq wttrin-default-cities '("Mairena" "mairena" "Sevilla"))
+    ;;(yahoo-weather-mode)
 
-  ;;quitar los archivos ~
-  (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+    ;;Asignacion de teclas para sokoban en el modo socoban, pero no me sale
+    (eval-after-load 'sokoban-mode
+      '(local-set-key (kbd "k") 'sokoban-move-up))
+    ;;macro para asignar las teclas en socoban
+    (fset 'teclasokoban
+       [menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?k ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?p backspace ?u ?p return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?j ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?d ?o ?w ?n return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?h ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?l ?e ?f ?t return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?l ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?r ?i ?g ?h ?t return])
+    ;;f1 para usar la macro
+    (global-set-key (kbd "<f1>") 'teclasokoban)
+
+    ;;quitar los archivos ~
+    (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 #+end_src
 * Comentarios
 #+begin_src emacs-lisp
@@ -276,7 +281,8 @@
   (require 'doc-view)
   (setq doc-view-resolution 144)
   (require 'xscheme)
-  (pdf-tools-install)
+  (use-package pdf-tools
+	:ensure t)
   ;;Modo noche para los pdfs con f1
 
   (fset 'modonoche
@@ -295,37 +301,37 @@
 #+begin_src emacs-lisp
   (global-set-key (kbd "C-x w") 'elfeed)
 
-;;Ver vídeos con mpv
-(defun elfeed-play-with-mpv ()
-  "Play entry link with mpv."
-  (interactive)
-  (let ((entry (if (eq major-mode 'elfeed-show-mode) elfeed-show-entry (elfeed-search-selected :single)))
-        (quality-arg "")
-        (quality-val (completing-read "Max height resolution (0 for unlimited): " '("0" "480" "720") nil nil)))
-    (setq quality-val (string-to-number quality-val))
-    (message "Opening %s with height≤%s with mpv..." (elfeed-entry-link entry) quality-val)
-    (when (< 0 quality-val)
-      (setq quality-arg (format "--ytdl-format=[height<=?%s]" quality-val)))
-    (start-process "elfeed-mpv" nil "mpv" quality-arg (elfeed-entry-link entry))))
+  ;;Ver vídeos con mpv
+  (defun elfeed-play-with-mpv ()
+    "Play entry link with mpv."
+    (interactive)
+    (let ((entry (if (eq major-mode 'elfeed-show-mode) elfeed-show-entry (elfeed-search-selected :single)))
+	  (quality-arg "")
+	  (quality-val (completing-read "Max height resolution (0 for unlimited): " '("0" "480" "720") nil nil)))
+      (setq quality-val (string-to-number quality-val))
+      (message "Opening %s with height≤%s with mpv..." (elfeed-entry-link entry) quality-val)
+      (when (< 0 quality-val)
+	(setq quality-arg (format "--ytdl-format=[height<=?%s]" quality-val)))
+      (start-process "elfeed-mpv" nil "mpv" quality-arg (elfeed-entry-link entry))))
 
-(defvar elfeed-mpv-patterns
-  '("youtu\\.?be")
-  "List of regexp to match against elfeed entry link to know
-whether to use mpv to visit the link.")
+  (defvar elfeed-mpv-patterns
+    '("youtu\\.?be")
+    "List of regexp to match against elfeed entry link to know
+  whether to use mpv to visit the link.")
 
-(defun elfeed-visit-or-play-with-mpv ()
-  "Play in mpv if entry link matches `elfeed-mpv-patterns', visit otherwise.
-See `elfeed-play-with-mpv'."
-  (interactive)
-  (let ((entry (if (eq major-mode 'elfeed-show-mode) elfeed-show-entry (elfeed-search-selected :single)))
-        (patterns elfeed-mpv-patterns))
-    (while (and patterns (not (string-match (car elfeed-mpv-patterns) (elfeed-entry-link entry))))
-      (setq patterns (cdr patterns)))
-    (if patterns
-        (elfeed-play-with-mpv)
-      (if (eq major-mode 'elfeed-search-mode)
-          (elfeed-search-browse-url)
-        (elfeed-show-visit)))))
-;;Fin de ver vídeos con mpv
+  (defun elfeed-visit-or-play-with-mpv ()
+    "Play in mpv if entry link matches `elfeed-mpv-patterns', visit otherwise.
+  See `elfeed-play-with-mpv'."
+    (interactive)
+    (let ((entry (if (eq major-mode 'elfeed-show-mode) elfeed-show-entry (elfeed-search-selected :single)))
+	  (patterns elfeed-mpv-patterns))
+      (while (and patterns (not (string-match (car elfeed-mpv-patterns) (elfeed-entry-link entry))))
+	(setq patterns (cdr patterns)))
+      (if patterns
+	  (elfeed-play-with-mpv)
+	(if (eq major-mode 'elfeed-search-mode)
+	    (elfeed-search-browse-url)
+	  (elfeed-show-visit)))))
+  ;;Fin de ver vídeos con mpv
 
 #+end_src
