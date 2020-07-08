@@ -150,4 +150,7 @@ if ! shopt -oq posix; then
 fi
 #Desactivar ^S
 stty -ixon
-
+# append and reload the history after each command
+# Con esto conseguimos sincronizar los historiales de diferentes
+# terminales abiertas simultaneamente
+PROMPT_COMMAND="history -a; history -n"
