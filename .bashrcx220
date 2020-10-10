@@ -89,8 +89,8 @@ fi
 
 # some more ls aliases
 export XILINXD_LICENSE_FILE=2100@freyja.us.es
-alias yit='cd && cp .emacs git/dotfiles/.emacsx220 && cd ~/git/dotfiles/ && git add .emacsx220 && git commit'
-alias copy='| xsel -ib'
+alias yit='cd && cp emacs-and-org-init.org git/dotfiles/emacs-and-org-init.org && cd ~/git/dotfiles/ && git add emacs-and-org-init.org && git commit'
+alias c='xclip -selection clipboard'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
@@ -150,7 +150,4 @@ if ! shopt -oq posix; then
 fi
 #Desactivar ^S
 stty -ixon
-# append and reload the history after each command
-# Con esto conseguimos sincronizar los historiales de diferentes
-# terminales abiertas simultaneamente
-PROMPT_COMMAND="history -a; history -n"
+
