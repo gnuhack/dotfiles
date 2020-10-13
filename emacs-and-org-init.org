@@ -35,7 +35,7 @@
 
   (setq org-default-notes-file (concat org-directory "/notes.org"))
   (global-set-key "\C-cc" 'org-capture)
-  (global-set-key "\C-cb" 'org-iswitchb)
+  (global-set-key "\C-cb" 'org-switchb)
   (define-key global-map "\C-ca" 'org-agenda)
 
   ;;Plantilla para efectivo
@@ -160,8 +160,8 @@
 #+begin_src emacs-lisp
 
   ;;Ponemos M-o para cambiar de búfer cuando hay varios abiertos
-  ;; Me da error al poner el atajo de teclado C-c o no sé por qué
-  ;;(define-key elfeed-show-mode-map (kbd "C-c o") 'elfeed-visit-or-play-with-mpv)
+
+;;  (define-key elfeed-show-mode-map (kbd "C-c o") 'elfeed-visit-or-play-with-mpv)
   (global-set-key (kbd "C-ñ") 'other-window)
   (global-set-key (kbd"M-o") 'mode-line-other-buffer)
   (global-set-key (kbd "<f7>") 'bookmark-jump)
@@ -277,6 +277,8 @@
 #+end_src
 * Tratamiento de pdfs
 #+begin_src emacs-lisp
+  ;; Abrir pdfs por defecto con pdf-view-mode
+  (add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-view-mode))
   ;; a ver si condigo darle definición a los pdfs
   (require 'doc-view)
   (setq doc-view-resolution 144)
