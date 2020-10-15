@@ -104,14 +104,14 @@ alias disgaea='cd .wine/drive_c/Program\ Files/Disgaea\ 2\ PC/ && wine disgaea2.
 alias matlabm='matlab& && disown'
 alias starbound='bash /media/Starbound.Beta.Build.27.04.2015/linux64/starbound'
 alias Música='cd /home/carlos/Música/ && ./script.sh'
-alias ventilador='watch -tn1 "lscpu | grep MHz; printf '\n\n'; sensors"'
+alias ventilador='watch -tn1 "lscpu | grep MHz; sensors"'
 alias monitor='xrandr --output VGA-1 --auto --above LVDS-1'
 alias desconectar='xrandr --output VGA-1 --auto --right-of LVDS-1 --off'
 alias peli='killall xscreensaver'
 alias normal='xscreensaver&'
 alias untar='tar -zxvf '
 alias miip='curl ipinfo.io/ip'
-alias etsi='cd ~/Documentos/ETSI/ETSI\ 2019/'
+alias etsi='cd ~/ETSI2021/'
 alias em='emacsclient -nw'
 alias Monster='mpv /media/Vídeos/Monster'
 alias unnethack='telnet guis.es'
@@ -148,3 +148,4 @@ stty -ixon
 # Con esto conseguimos sincronizar los historiales de diferentes
 # terminales abiertas simultaneamente
 PROMPT_COMMAND="history -a; history -n"
+
