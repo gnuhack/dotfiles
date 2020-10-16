@@ -19,30 +19,46 @@
  '(doc-view-resolution 200)
  '(elfeed-feeds
    (quote
-    ("https://www.youtube.com/feeds/videos.xml?channel_id=UCaifrB5IrvGNPJmPeVOcqBA""https://www.bay12games.com/dwarves/dev_now.rss" "https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg" "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA" "https://www.youtube.com/channel/UCaifrB5IrvGNPJmPeVOcqBA" "https://www.youtube.com/user/SsethTzeentach" "http://planet.emacs-es.org/rss20.xml" "https://planet.emacslife.com/atom.xml")))
+    ("https://www.youtube.com/feeds/videos.xml?channel_id=UCaifrB5IrvGNPJmPeVOcqBA" "https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg" "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA" "https://www.youtube.com/channel/UCaifrB5IrvGNPJmPeVOcqBA" "https://www.youtube.com/user/SsethTzeentach" "http://planet.emacs-es.org/rss20.xml" "https://planet.emacslife.com/atom.xml")))
  '(global-visual-line-mode t)
  '(inhibit-startup-screen t)
  '(large-file-warning-threshold 1000000000)
  '(line-number-mode nil)
  '(next-screen-context-lines 4)
+ '(org-agenda-files (quote ("~/org/organizer.org" "~/org/uni.org")))
  '(org-capture-templates
    (quote
     (("c" "Nota" entry
       (file+datetree "~/Documentos/notas.org")
       "* %?" :empty-lines 1)
+     ("t" "Todo" entry (file+headline "~/org/gtd.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
      ("j" "Journal Entry" entry
       (file+datetree "~/journal.org")
       "* %?" :empty-lines 1)
      ("p" "Películas" entry
       (file+headline "~/Documentos/notas.org" "Películas")
       "* %?")
+     ("T" "Appointments" entry
+      (file+headline "~/org/organizer.org" "Appointement")
+      "* %^{Appointment}: %?
+
+SCHEDULED: %^T
+
+:PROPERTIES:
+ :CREATED: %U
+
+:END:
+
+%i")
      ("k" "Cita" entry
       (file+datetree+prompt "~/org/uni.org")
-      "* %?"))) t)
+      "* %?"))))
  '(package-selected-packages
    (quote
-    (elpy company-irony gdscript-mode wordnut define-word 2048-game emms telega magit smartparens use-package sudoku sudo-edit xkcd decide pdf-tools keyfreq)))
+    (undo-tree pdf-tools pdf-view-restore elpy company-irony gdscript-mode wordnut define-word 2048-game emms telega magit smartparens use-package sudoku sudo-edit xkcd decide keyfreq)))
  '(save-place t nil (saveplace))
+ '(save-place-mode t nil (saveplace))
  '(which-key-mode t)
  '(yahoo-weather-location "Mairena del Aljarafe")
  '(yahoo-weather-mode t))
@@ -52,3 +68,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(font-lock-string-face ((t (:foreground "dark orange")))))
+
