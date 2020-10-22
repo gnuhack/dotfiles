@@ -25,39 +25,34 @@
  '(large-file-warning-threshold 1000000000)
  '(line-number-mode nil)
  '(next-screen-context-lines 4)
- '(org-agenda-files (quote ("~/org/organizer.org" "~/org/uni.org")))
+ '(org-agenda-files
+   (quote
+    ("~/org/gtd.org" "~/org/organizer.org" "~/org/uni.org")))
  '(org-capture-templates
    (quote
     (("c" "Nota" entry
       (file+datetree "~/Documentos/notas.org")
       "* %?" :empty-lines 1)
-     ("t" "Todo" entry (file+headline "~/org/gtd.org" "Tasks")
-         "* TODO %?\n  %i\n  %a")
+     ("t" "Todo" entry
+      (file+headline "~/org/gtd.org" "Tasks")
+      "* TODO %?
+  %i
+  %a")
      ("j" "Journal Entry" entry
       (file+datetree "~/journal.org")
       "* %?" :empty-lines 1)
      ("p" "Películas" entry
       (file+headline "~/Documentos/notas.org" "Películas")
       "* %?")
-     ("T" "Appointments" entry
-      (file+headline "~/org/organizer.org" "Appointement")
-      "* %^{Appointment}: %?
-
-SCHEDULED: %^T
-
-:PROPERTIES:
- :CREATED: %U
-
-:END:
-
-%i")
-     ("k" "Cita" entry
-      (file+datetree+prompt "~/org/uni.org")
-      "* %?"))))
+     ("T" "Cita" entry
+      (file+headline "~/org/gtd.org" "Tasks")
+      "* %?
+  %i
+  %a")
+)))
  '(package-selected-packages
    (quote
     (undo-tree pdf-tools pdf-view-restore elpy company-irony gdscript-mode wordnut define-word 2048-game emms telega magit smartparens use-package sudoku sudo-edit xkcd decide keyfreq)))
- '(save-place t nil (saveplace))
  '(save-place-mode t nil (saveplace))
  '(which-key-mode t)
  '(yahoo-weather-location "Mairena del Aljarafe")
