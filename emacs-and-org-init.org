@@ -35,7 +35,7 @@
 
   (setq org-default-notes-file (concat org-directory "/notes.org"))
   (global-set-key "\C-cc" 'org-capture)
-  (global-set-key "\C-cb" 'org-switchb)
+  (global-set-key "\C-cb" 'org-iswitchb)
   (define-key global-map "\C-ca" 'org-agenda)
 
   ;;Plantilla para efectivo
@@ -43,12 +43,12 @@
 
 	'(    ;; ... other templates
 	      ("c" "Nota" entry
-	(file+datetree "~/Documentos/notas.org")
+	(file+datetree "~/Documentos/journal/notas.org")
 	"* %?" :empty-lines 1)
 
 
       ("j" "Journal Entry"
-	   entry (file+datetree "~/journal.org")
+	   entry (file+datetree "~/Documentos/journal/journal.org")
 	   "* %?"
 	   :empty-lines 1)
        ))
@@ -161,7 +161,7 @@
 
   ;;Ponemos M-o para cambiar de búfer cuando hay varios abiertos
 
-;;  (define-key elfeed-show-mode-map (kbd "C-c o") 'elfeed-visit-or-play-with-mpv)
+  (define-key elfeed-show-mode-map (kbd "C-c o") 'elfeed-visit-or-play-with-mpv)
   (global-set-key (kbd "C-ñ") 'other-window)
   (global-set-key (kbd"M-o") 'mode-line-other-buffer)
   (global-set-key (kbd "<f7>") 'bookmark-jump)
@@ -277,8 +277,6 @@
 #+end_src
 * Tratamiento de pdfs
 #+begin_src emacs-lisp
-  ;; Abrir pdfs por defecto con pdf-view-mode
-  (add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-view-mode))
   ;; a ver si condigo darle definición a los pdfs
   (require 'doc-view)
   (setq doc-view-resolution 144)
