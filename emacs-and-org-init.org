@@ -302,7 +302,7 @@
 #+end_src
 * Elfeed
 #+begin_src emacs-lisp
-  (global-set-key (kbd "C-x w") 'elfeed)
+  (global-set-key (kbd "C-x w") 'elfeed))
 
   ;;Ver vídeos con mpv
   (defun elfeed-play-with-mpv ()
