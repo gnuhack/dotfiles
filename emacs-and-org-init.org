@@ -35,24 +35,29 @@
 
   (setq org-default-notes-file (concat org-directory "/notes.org"))
   (global-set-key "\C-cc" 'org-capture)
-  (global-set-key "\C-cb" 'org-iswitchb)
+  (global-set-key "\C-cb" 'org-switchb)
   (define-key global-map "\C-ca" 'org-agenda)
 
   ;;Plantilla para efectivo
-  (setq org-capture-templates
+(setq org-capture-templates
 
-	'(    ;; ... other templates
-	      ("c" "Nota" entry
-	(file+datetree "~/Documentos/journal/notas.org")
-	"* %?" :empty-lines 1)
+      '(    ;; ... other templates
+	    ("c" "Nota" entry
+      (file+datetree "~/Nextcloud/Documents/horario.txt")
+      "* %?" :empty-lines 1)
+
+	    ("e" "Exámenes" entry (file+headline "~/org/gtd.org" "Exámenes")
+              "* %?\n  %i\n  %a")
 
 
-      ("j" "Journal Entry"
-	   entry (file+datetree "~/Documentos/journal/journal.org")
-	   "* %?"
-	   :empty-lines 1)
-       ))
-
+    ("j" "Journal Entry"
+	 entry (file+datetree "~/Nextcloud/journal/journal.org")
+	 "* %?"
+	 :empty-lines 1)
+    
+    ("t" "Todo" entry (file+headline "~/org/gtd.org" "Tasks")
+              "* TODO %?\n  %i\n  %a")
+     ))
 
 
   ;;(define-key global-map "\C-cl" 'org-capture)
@@ -110,41 +115,38 @@
 #+end_src
 * Cajón de sastre
 #+begin_src emacs-lisp
-  ;;Puesta de sol
-  (setq calendar-latitude 37.344444)
-  (setq calendar-longitude -6.065278)
-  ;;Estadísticas de teclas pulsadas
-  (use-package keyfreq
-  :ensure t
-  :config
-  (keyfreq-mode 1)
-  (keyfreq-autosave-mode 1))
+    ;;Estadísticas de teclas pulsadas
+    (use-package keyfreq
+    :ensure t
+    :config
+    (keyfreq-mode 1)
+    (keyfreq-autosave-mode 1))
 
-  (setq confirm-kill-emacs 'y-or-n-p) ;; Pedir confirmación para salir de emacs
+    (setq confirm-kill-emacs 'y-or-n-p) ;; Pedir confirmación para salir de emacs
 
-  (setq desktop-save-mode t) ;; guardar la sessión al cerrar emacs y restaurarla
+    (setq desktop-save-mode t) ;; guardar la sessión al cerrar emacs y restaurarla
 
-  (desktop-save-mode 1) ;; guardar sesión emacs
+    (desktop-save-mode 1) ;; guardar sesión emacs
 
-  ;; Tell emacs where is your personal elisp lib dir
-  (add-to-list 'load-path "~/.emacs.d/lisp/")
+    ;; Tell emacs where is your personal elisp lib dir
+    (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-  ;;Ver el tiempo con wttrin
-  (setq wttrin-default-accept-language '("Accept-Language" . "es-ES"))
-  (setq wttrin-default-cities '("Mairena" "mairena" "Sevilla"))
-  ;;(yahoo-weather-mode)
+    ;;Ver el tiempo con wttrin
+    (setq wttrin-default-accept-language '("Accept-Language" . "es-ES"))
+    (setq wttrin-default-cities '("Mairena" "mairena" "Sevilla"))
+    ;;(yahoo-weather-mode)
 
-  ;;Asignacion de teclas para sokoban en el modo socoban, pero no me sale
-  (eval-after-load 'sokoban-mode
-    '(local-set-key (kbd "k") 'sokoban-move-up))
-  ;;macro para asignar las teclas en socoban
-  (fset 'teclasokoban
-     [menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?k ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?p backspace ?u ?p return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?j ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?d ?o ?w ?n return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?h ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?l ?e ?f ?t return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?l ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?r ?i ?g ?h ?t return])
-  ;;f1 para usar la macro
-  (global-set-key (kbd "<f1>") 'teclasokoban)
+    ;;Asignacion de teclas para sokoban en el modo socoban, pero no me sale
+    (eval-after-load 'sokoban-mode
+      '(local-set-key (kbd "k") 'sokoban-move-up))
+    ;;macro para asignar las teclas en socoban
+    (fset 'teclasokoban
+       [menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?k ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?p backspace ?u ?p return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?j ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?d ?o ?w ?n return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?h ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?l ?e ?f ?t return menu ?l ?o ?c ?a ?l ?  ?s ?e ?t ?  ?k ?e ?y return ?l ?s ?o ?k ?o ?b ?a ?n ?  ?m ?o ?v ?e ?  ?r ?i ?g ?h ?t return])
+    ;;f1 para usar la macro
+    (global-set-key (kbd "<f1>") 'teclasokoban)
 
-  ;;quitar los archivos ~
-  (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+    ;;quitar los archivos ~
+    (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 #+end_src
 * Comentarios
 #+begin_src emacs-lisp
@@ -164,7 +166,7 @@
 
   ;;Ponemos M-o para cambiar de búfer cuando hay varios abiertos
 
-  (define-key elfeed-show-mode-map (kbd "C-c o") 'elfeed-visit-or-play-with-mpv)
+;;  (define-key elfeed-show-mode-map (kbd "C-c o") 'elfeed-visit-or-play-with-mpv)
   (global-set-key (kbd "C-ñ") 'other-window)
   (global-set-key (kbd"M-o") 'mode-line-other-buffer)
   (global-set-key (kbd "<f7>") 'bookmark-jump)
@@ -280,6 +282,8 @@
 #+end_src
 * Tratamiento de pdfs
 #+begin_src emacs-lisp
+  ;; Abrir pdfs por defecto con pdf-view-mode
+  (add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-view-mode))
   ;; a ver si condigo darle definición a los pdfs
   (require 'doc-view)
   (setq doc-view-resolution 144)
@@ -302,7 +306,7 @@
 #+end_src
 * Elfeed
 #+begin_src emacs-lisp
-  (global-set-key (kbd "C-x w") 'elfeed))
+  (global-set-key (kbd "C-x w") 'elfeed)
 
   ;;Ver vídeos con mpv
   (defun elfeed-play-with-mpv ()
