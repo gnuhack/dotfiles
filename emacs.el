@@ -24,7 +24,7 @@
 ;;---------------- ORG ----------------
 ;;TODO No se cargan las plantillas
 (global-set-key "\C-cc" 'org-capture)
-'(org-capture-templates
+(setq org-capture-templates
   (quote
    (("c" "Nota" entry
      (file+datetree "~/Documentos/notas.org")
