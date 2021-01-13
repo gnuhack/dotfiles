@@ -28,13 +28,13 @@
 (setq org-capture-templates
   (quote
    (("c" "Nota" entry
-     (file+datetree "~/Documentos/notas.org")
+     (file+datetree "/home/carlos/Nextcloud/Documents/horario.txt")
      "* %?" :empty-lines 1)
     ("j" "Journal Entry" entry
-     (file+datetree "~/journal.org")
+     (file+datetree "~/Documentos/journal/journal.org")
      "* %?" :empty-lines 1)
     ("p" "Películas" entry
-     (file+headline "~/Documentos/notas.org" "Películas")
+     (file+headline "~//home/carlos/Nextcloud/Documents/horario.txt" "Películas")
      "* %?")
     ("k" "Cita" entry
      (file+datetree+prompt "~/org/uni.org")
