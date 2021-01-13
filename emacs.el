@@ -1,5 +1,7 @@
+;; package -- Summary
+;;; Commentary:
 ;;---------------- APARIENCIA ----------------
-
+;;; Code:
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
 
@@ -8,6 +10,8 @@
 (key-chord-define-global "jj" 'ace-window)
 
 ;;---------------- ELFEED ----------------
-;;TODO Aprender a instalar automáticamente paquetes.
+;;DONE Aprender a instalar automáticamente paquetes.
 ;;TODO Quitar los warnings de la izquierda ">>"
-;;(require 'elfeed)
+
+(prelude-require-packages '(elfeed));;Añadir después de elfeed el resto de paquetes a autoinstalar.
+(provide 'emacs)\n;;; emacs.el ends here
