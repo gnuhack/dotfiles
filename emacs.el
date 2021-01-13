@@ -1,6 +1,7 @@
 ;; package -- Summary
 ;;; Commentary:
-;;TODO Quitar los warnings de la izquierda ">>"
+;;DONE Quitar los warnings de la izquierda ">>"
+;;DONE Pushear a la raspi
 ;;---------------- APARIENCIA ----------------
 ;;; Code:
 (menu-bar-mode 0)
