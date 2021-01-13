@@ -38,5 +38,11 @@
     ("k" "Cita" entry
      (file+datetree+prompt "~/org/uni.org")
      "* %?"))))
+
+;;---------------- MIACELÁNEA ----------------
+;;Puesta de sol
+  (setq calendar-latitude 37.344444)
+  (setq calendar-longitude -6.065278)
+
 (provide 'emacs)
 ;;; emacs.el ends here
