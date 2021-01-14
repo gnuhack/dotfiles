@@ -34,7 +34,7 @@
      (file+datetree "~/Documentos/journal/journal.org")
      "* %?" :empty-lines 1)
     ("p" "Películas" entry
-     (file+headline "~//home/carlos/Nextcloud/Documents/horario.txt" "Películas")
+     (file+headline "~/home/carlos/Nextcloud/Documents/horario.txt" "Películas")
      "* %?")
     ("k" "Cita" entry
      (file+datetree+prompt "~/org/uni.org")
