@@ -10,6 +10,7 @@
 ;;---------------- KEYBINDINGS ---------------
 
 (key-chord-define-global "jj" 'ace-window)
+(key-chord-define-global "jk" 'avy-goto-word-1)
 
 ;;---------------- ELFEED ----------------
 ;;DONE Aprender a instalar automáticamente paquetes.
