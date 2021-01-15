@@ -30,6 +30,9 @@
    (("c" "Nota" entry
      (file+datetree "/home/carlos/Nextcloud/Documents/horario.txt")
      "* %?" :empty-lines 1)
+    ("t" "Todo" entry
+     (file+headline "/home/carlos/org/gtd.org" "Tasks")
+     "* %?" :empty-lines 1)
     ("j" "Journal Entry" entry
      (file+datetree "~/Documentos/journal/journal.org")
      "* %?" :empty-lines 1)
