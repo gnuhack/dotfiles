@@ -11,6 +11,7 @@
 
 (key-chord-define-global "jj" 'ace-window)
 (key-chord-define-global "jk" 'avy-goto-word-1)
+(global-set-key (kbd "C-x k") 'kill-current-buffer)
 
 ;;---------------- ELFEED ----------------
 ;;DONE Aprender a instalar automáticamente paquetes.
