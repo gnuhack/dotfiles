@@ -12,14 +12,14 @@
 (key-chord-define-global "jj" 'ace-window)
 (key-chord-define-global "jk" 'avy-goto-word-1)
 (global-set-key (kbd "C-x k") 'kill-current-buffer)
-
+(add-to-list 'org-file-apps '("pdf" . "evince %s"))
 ;;---------------- ELFEED ----------------
 ;;DONE Aprender a instalar automáticamente paquetes.
 (declare-function prelude-require-packages"")
 (prelude-require-packages '(elfeed));;Añadir después de elfeed el resto de paquetes a autoinstalar.
 (global-set-key (kbd "C-x w") 'elfeed)
 (declare-function key-chord-define-global"")
-(eval-when-compile (defvar elfeed-feeds) (defvar calendar-latitude) (defvar calendar-longitude) (defvar org-capture-templates));;Eliminación de una queja del compilador
+(eval-when-compile (defvar elfeed-feeds) (defvar calendar-latitude) (defvar calendar-longitude) (defvar org-capture-templates) (defvar org-file-apps));;Eliminación de una queja del compilador
 (setq elfeed-feeds
  (quote
   ("https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&filter=local" ("https://www.youtube.com/feeds/videos.xml?channel_id=UCaifrB5IrvGNPJmPeVOcqBA" Kruggsmash) ("https://www.bay12games.com/dwarves/dev_now.rss" Dwarf Fortress) "https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg" "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA" "https://www.youtube.com/channel/UCaifrB5IrvGNPJmPeVOcqBA" "https://www.youtube.com/user/SsethTzeentach" "http://planet.emacs-es.org/rss20.xml" "https://planet.emacslife.com/atom.xml")))
