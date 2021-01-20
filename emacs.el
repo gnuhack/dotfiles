@@ -7,6 +7,12 @@
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
 
+;;---------------- PAQUETERÍA ----------------
+
+;;DONE Aprender a instalar automáticamente paquetes.
+(declare-function prelude-require-packages"")
+(prelude-require-packages '(elfeed pdf-tools wttrin));;Añadir después de elfeed el resto de paquetes a autoinstalar.
+
 ;;---------------- PDFs ----------------
 
 (fset 'modonoche
@@ -22,7 +28,9 @@
 ;;Puesta de sol
 (setq calendar-latitude 37.344444)
 (setq calendar-longitude -6.065278)
-
+;;El tiempo
+(setq wttrin-default-accept-language '("Accept-Language" . "es-ES"))
+(setq wttrin-default-cities '("Mairena" "mairena" "Sevilla"))
 
 ;;---------------- KEYBINDINGS ---------------
 
@@ -33,11 +41,6 @@
 (add-to-list 'org-file-apps '("pdf" . "evince %s"))
 (global-set-key (kbd "<f6>") 'quick-calc)
 
-;;---------------- PAQUETERÍA ----------------
-
-;;DONE Aprender a instalar automáticamente paquetes.
-(declare-function prelude-require-packages"")
-(prelude-require-packages '(elfeed pdf-tools));;Añadir después de elfeed el resto de paquetes a autoinstalar.
 
 ;;---------------- ELFEED ----------------
 
