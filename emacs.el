@@ -18,7 +18,7 @@
 
 (declare-function key-chord-define-global"")
 (eval-when-compile (defvar elfeed-feeds) (defvar calendar-latitude) (defvar calendar-longitude) (defvar org-capture-templates) (defvar org-file-apps));;Eliminación de una queja del compilador
-
+(setq confirm-kill-emacs 'y-or-n-p)
 ;;Puesta de sol
 (setq calendar-latitude 37.344444)
 (setq calendar-longitude -6.065278)
@@ -31,6 +31,7 @@
 (global-set-key (kbd "C-x k") 'kill-current-buffer)
 (global-set-key (kbd "<f5>") 'modonoche)
 (add-to-list 'org-file-apps '("pdf" . "evince %s"))
+(global-set-key (kbd "<f6>") 'quick-calc)
 
 ;;---------------- PAQUETERÍA ----------------
 
