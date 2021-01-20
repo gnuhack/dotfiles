@@ -7,6 +7,12 @@
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
 
+;;---------------- PDFs ----------------
+
+(fset 'modonoche
+      (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("m" 0 "%d")) arg))) ;; Macro para poner el modo noche en los pdfs.
+
+
 ;;---------------- MISCELÁNEA ----------------
 ;;Arreglamiento de warnings
 
@@ -23,6 +29,7 @@
 (key-chord-define-global "jj" 'ace-window)
 (key-chord-define-global "jk" 'avy-goto-word-1)
 (global-set-key (kbd "C-x k") 'kill-current-buffer)
+(global-set-key (kbd "<f5>") 'modonoche)
 (add-to-list 'org-file-apps '("pdf" . "evince %s"))
 
 ;;---------------- PAQUETERÍA ----------------
@@ -58,6 +65,7 @@
     ("k" "Cita" entry
      (file+datetree+prompt "~/org/uni.org")
      "* %?"))))
+
 
 (provide 'emacs)
 ;;; emacs.el ends here
