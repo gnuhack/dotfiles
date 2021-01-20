@@ -24,10 +24,15 @@
 (key-chord-define-global "jk" 'avy-goto-word-1)
 (global-set-key (kbd "C-x k") 'kill-current-buffer)
 (add-to-list 'org-file-apps '("pdf" . "evince %s"))
-;;---------------- ELFEED ----------------
+
+;;---------------- PAQUETERÍA ----------------
+
 ;;DONE Aprender a instalar automáticamente paquetes.
 (declare-function prelude-require-packages"")
-(prelude-require-packages '(elfeed));;Añadir después de elfeed el resto de paquetes a autoinstalar.
+(prelude-require-packages '(elfeed pdf-tools));;Añadir después de elfeed el resto de paquetes a autoinstalar.
+
+;;---------------- ELFEED ----------------
+
 (global-set-key (kbd "C-x w") 'elfeed)
 (setq elfeed-feeds
  (quote
