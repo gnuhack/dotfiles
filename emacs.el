@@ -17,8 +17,8 @@
 
 (fset 'modonoche
       (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("m" 0 "%d")) arg))) ;; Macro para poner el modo noche en los pdfs.
-(add-hook 'pdf-view-mode-hook (lambda() (linum-mode -1))) ;;Desactivar linum mode, que no va bien con pdf-view-mode
-
+(add-hook 'pdf-view-mode-hook (lambda() (nlinum-mode -1))) ;;Desactivar linum mode, que no va bien con pdf-view-mode
+(pdf-tools-install)
 
 ;;---------------- MISCELÁNEA ----------------
 ;;Arreglamiento de warnings
