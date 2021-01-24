@@ -53,6 +53,25 @@
 (setq elfeed-feeds
  (quote
   ("https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&filter=local" ("https://www.youtube.com/feeds/videos.xml?channel_id=UCaifrB5IrvGNPJmPeVOcqBA" Kruggsmash) ("https://www.bay12games.com/dwarves/dev_now.rss" Dwarf Fortress) "https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg" "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA" "https://www.youtube.com/channel/UCaifrB5IrvGNPJmPeVOcqBA" "https://www.youtube.com/user/SsethTzeentach" "http://planet.emacs-es.org/rss20.xml" "https://planet.emacslife.com/atom.xml")))
+;;Ver vídeos
+
+(defun std::elfeed::visit-entry-dwim (&optional arg)
+  (interactive "P")
+  (if arg
+      (elfeed-search-browse-url)
+    (-let [entry (if (eq major-mode 'elfeed-show-mode) elfeed-show-entry (elfeed-search-selected :single))]
+      (if (s-matches? (rx "https://www.youtube.com/watch" (1+ any))
+                      (elfeed-entry-link entry))
+          (let* ((quality (completing-read "Max height resolution (0 for unlimited): " '("0" "480" "720" "1080")))
+                 (format (if (= 0 (string-to-number quality)) "" (format "--ytdl-format=[height<=?%s]" quality))))
+            (message "Opening %s with height ≤ %s with mpv..."
+                     (elfeed-entry-link entry) quality)
+            (elfeed-untag entry 'unread)
+            (start-process "elfeed-mpv" nil "mpv" format (elfeed-entry-link entry))
+            (elfeed-search-update :force))
+        (if (eq major-mode 'elfeed-search-mode)
+            (elfeed-search-browse-url)
+          (elfeed-show-visit))))))
 
 ;;---------------- ORG ----------------
 ;;DONE No se cargan las plantillas
