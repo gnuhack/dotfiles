@@ -96,6 +96,12 @@
      (file+datetree+prompt "~/org/uni.org")
      "* %?"))))
 
-
+;;---------------- SSH ----------------
+;;Configuración por defecto para acceder a la raspi con "/-::"
+;;a través de TRAMP
+(custom-set-variables
+           '(tramp-default-method "ssh")
+           '(tramp-default-user "pi")
+           '(tramp-default-host "192.168.1.125"))
 (provide 'emacs)
 ;;; emacs.el ends here
