@@ -24,7 +24,7 @@
 ;;Arreglamiento de warnings
 
 (declare-function key-chord-define-global"")
-(eval-when-compile (defvar elfeed-feeds) (defvar calendar-latitude) (defvar calendar-longitude) (defvar org-capture-templates) (defvar org-file-apps) (defvar wttrin-default-accept-language) (defvar wttrin-default-cities) (defvar dired-isearch-filenames));;Eliminación de una queja del compilador
+(eval-when-compile (defvar elfeed-feeds) (defvar calendar-latitude) (defvar calendar-longitude) (defvar org-capture-templates) (defvar org-file-apps) (defvar wttrin-default-accept-language) (defvar wttrin-default-cities)  (defvar dired-isearch-filenames) (defvar calendar-week-start-day) );;Eliminación de una queja del compilador
 (setq confirm-kill-emacs 'y-or-n-p)
 (setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
 ;;Puesta de sol
