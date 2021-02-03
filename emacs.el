@@ -58,6 +58,7 @@
 ;;Ver vídeos
 
 (defun std::elfeed::visit-entry-dwim (&optional arg)
+  "Función para reproducir vídeos en elfeed de Youtube con mpv ARG."
   (interactive "P")
   (if arg
       (elfeed-search-browse-url)
