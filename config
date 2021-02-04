@@ -25,6 +25,7 @@ bindsym $mod+Shift+a move workspace to output left
 exec $mod+w
 exec emacs
 exec orage
+#exec sshfs pi@192.168.1.130:/export/users  ~/Public
 exec xscreensaver&
 exec --no-startup-id "amixer -q sset Master,0 toggle"
 bindsym XF86AudioRaiseVolume exec "amixer -q sset Master 1%+"
@@ -36,7 +37,7 @@ bindsym --release $mod+b exec ~/Descargas/blockkeeper-x86_64.AppImage
 bindsym --release $mod+g exec /usr/bin/google-chrome
 #bindsym --release $mod+f exec /home/carlos/Descargas/waterfox/waterfox #Windows+t inicia Firefox
 bindsym --release $mod+n exec --no-startup-id /usr/bin/thunar #Windows+n inicia thunar
-bindsym --release $mod+b exec --no-startup-id /home/carlos/Descargas/BK/BK/BK/BK #Windows+b inicia BlocKeeper
+#bindsym --release $mod+b exec --no-startup-id /home/carlos/Descargas/BK/BK/BK/BK #Windows+b inicia BlocKeeper
 bindsym --release $mod+t exec --no-startup-id ~/Descargas/Telegram/Telegram #Windows+t inicia Telegram
 bindsym --release Print exec --no-startup-id import /tmp/latest-screenshot.png #Windows+x captura la pantalla y la manda a /tmp/latest-screenshot.png
 hide_edge_borders vertical #quito bordes ventanas
