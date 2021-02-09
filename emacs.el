@@ -19,7 +19,18 @@
       (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("m" 0 "%d")) arg))) ;; Macro para poner el modo noche en los pdfs.
 (add-hook 'pdf-view-mode-hook (lambda() (nlinum-mode -1))) ;;Desactivar linum mode, que no va bien con pdf-view-mode
 (pdf-tools-install)
+;;Guardar la posición en un pdf: "marcapáginas"
+(define-key pdf-view-mode-map (kbd "<C-f1>")
+  (lambda ()
+    "Saves the current position on the pdf to jump to later with <C-f2>."
+    (interactive)
+    (setf my-bookmark (pdf-view-bookmark-make-record))))
 
+(define-key pdf-view-mode-map (kbd "<C-f2>")
+  (lambda ()
+    "Loads the position saved by <C-f1>."
+    (interactive)
+    (pdf-view-bookmark-jump my-bookmark)))
 ;;---------------- MISCELÁNEA ----------------
 ;;Arreglamiento de warnings
 
