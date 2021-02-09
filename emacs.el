@@ -20,6 +20,7 @@
 (add-hook 'pdf-view-mode-hook (lambda() (nlinum-mode -1))) ;;Desactivar linum mode, que no va bien con pdf-view-mode
 (pdf-tools-install)
 ;;Guardar la posición en un pdf: "marcapáginas"
+;;Sacado de https://sachachua.com/blog/2021/02/guest-post-bookmarking-pdfs-in-emacs-with-pdf-tools-and-registers/
 (define-key pdf-view-mode-map (kbd "<C-f1>")
   (lambda ()
     "Saves the current position on the pdf to jump to later with <C-f2>."
