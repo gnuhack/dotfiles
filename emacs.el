@@ -2,7 +2,9 @@
 ;;; Commentary:
 ;;DONE Quitar los warnings de la izquierda ">>"
 ;;DONE Pushear a la raspi
-;;Arreglamiento de warnings
+
+
+;;---------------- WARNINGS ARREGLADOS ----------------
 
 (declare-function key-chord-define-global"")
 (declare-function nlinum-mode "")
