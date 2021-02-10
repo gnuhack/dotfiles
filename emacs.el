@@ -3,7 +3,6 @@
 ;;DONE Quitar los warnings de la izquierda ">>"
 ;;DONE Pushear a la raspi
 
-
 ;;---------------- WARNINGS ARREGLADOS ----------------
 
 (declare-function key-chord-define-global"")
