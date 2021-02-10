@@ -2,6 +2,21 @@
 ;;; Commentary:
 ;;DONE Quitar los warnings de la izquierda ">>"
 ;;DONE Pushear a la raspi
+;;Arreglamiento de warnings
+
+(declare-function key-chord-define-global"")
+(declare-function nlinum-mode "")
+(declare-function pdf-tools-install "")
+(declare-function pdf-view-bookmark-jump "")
+(declare-function pdf-view-bookmark-make-record "")
+(declare-function elfeed-search-browse-url "")
+(declare-function -let "")
+(declare-function s-matches? "")
+(declare-function elfeed-entry-link "")
+(declare-function elfeed-untag "")
+(declare-function elfeed-search-update "")
+(declare-function elfeed-show-visit "")
+(eval-when-compile (defvar elfeed-feeds) (defvar calendar-latitude) (defvar calendar-longitude) (defvar org-capture-templates) (defvar org-file-apps) (defvar wttrin-default-accept-language) (defvar wttrin-default-cities)  (defvar dired-isearch-filenames) (defvar calendar-week-start-day) (defvar pdf-view-mode-map) (defvar my-bookmark) (defvar desktop-dirname) (defvar desktop-base-lock-name) (defvar desktop-base-file-name) (defvar desktop-path) (defvar desktop-save) (defvar desktop-files-not-to-save) (defvar desktop-load-locked-desktop) (defvar desktop-auto-save-timeout) );;Eliminación de una queja del compilador
 ;;---------------- APARIENCIA ----------------
 ;;; Code:
 (menu-bar-mode 0)
@@ -33,10 +48,7 @@
     (interactive)
     (pdf-view-bookmark-jump my-bookmark)))
 ;;---------------- MISCELÁNEA ----------------
-;;Arreglamiento de warnings
 
-(declare-function key-chord-define-global"")
-(eval-when-compile (defvar elfeed-feeds) (defvar calendar-latitude) (defvar calendar-longitude) (defvar org-capture-templates) (defvar org-file-apps) (defvar wttrin-default-accept-language) (defvar wttrin-default-cities)  (defvar dired-isearch-filenames) (defvar calendar-week-start-day) );;Eliminación de una queja del compilador
 (setq confirm-kill-emacs 'y-or-n-p)
 (setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
 ;;Puesta de sol
