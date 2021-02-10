@@ -27,7 +27,7 @@
 
 ;;DONE Aprender a instalar automáticamente paquetes.
 (declare-function prelude-require-packages"")
-(prelude-require-packages '(elfeed pdf-tools wttrin));;Añadir después de elfeed el resto de paquetes a autoinstalar.
+(prelude-require-packages '(elfeed pdf-tools wttrin decide));;Añadir después de elfeed el resto de paquetes a autoinstalar.
 
 ;;---------------- PDFs ----------------
 
