@@ -118,6 +118,8 @@
     ("p" "Películas" entry
      (file+headline "~/home/carlos/Nextcloud/Documents/horario.txt" "Películas")
      "* %?")
+    ("d" "Dudas" entry (file+headline "/home/carlos/Nextcloud/Documents/horario.txt" "Dudas")
+      "* %^{PROMPT} %?\n  %i\n  %a")
     ("k" "Cita" entry
      (file+datetree+prompt "~/org/uni.org")
      "* %?"))))
