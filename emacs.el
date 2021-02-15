@@ -105,25 +105,24 @@
 ;;DONE No se cargan las plantillas
 (global-set-key "\C-cc" 'org-capture)
 (setq org-capture-templates
-  (quote
-   (("c" "Nota" entry
-     (file+datetree "/home/carlos/Nextcloud/Documents/horario.txt")
-     "* %?" :empty-lines 1)
-    ("t" "Todo" entry
-     (file+headline "/home/carlos/org/gtd.org" "Tasks")
-     "* TODO %?" :empty-lines 1)
-    ("j" "Journal Entry" entry
-     (file+datetree "~/Documentos/journal/journal.org")
-     "* %?" :empty-lines 1)
-    ("p" "Películas" entry
-     (file+headline "~/home/carlos/Nextcloud/Documents/horario.txt" "Películas")
-     "* %?")
-    ("d" "Dudas" entry (file+headline "/home/carlos/Nextcloud/Documents/horario.txt" "Dudas")
-      "* %^{PROMPT} %?\n  %i\n  %a")
-    ("k" "Cita" entry
-     (file+datetree+prompt "~/org/uni.org")
-     "* %?"))))
-
+      (quote
+       (("c" "Nota" entry
+         (file+datetree "/home/carlos/Nextcloud/Documents/horario.txt")
+         "* %?" :empty-lines 1)
+        ("t" "Todo" entry
+         (file+headline "/home/carlos/org/gtd.org" "Tasks")
+         "* TODO %?" :empty-lines 1)
+        ("j" "Journal Entry" entry
+         (file+datetree "~/Documentos/journal/journal.org")
+         "* %?" :empty-lines 1)
+        ("p" "Películas" entry
+         (file+headline "~/home/carlos/Nextcloud/Documents/horario.txt" "Películas")
+         "* %?")
+        ("d" "Dudas" entry (file+headline "/home/carlos/Nextcloud/Documents/horario.txt" "Dudas")
+         "* %^{PROMPT} %?\n  %i\n  %a")
+        ("k" "Cita" entry
+         (file+headline "~/org/uni.org" "Citas")
+         "* %^t %?"))))
 ;;---------------- SSH ----------------
 ;;Configuración por defecto para acceder a la raspi con "/-::"
 ;;a través de TRAMP
