@@ -27,7 +27,7 @@
 
 ;;DONE Aprender a instalar automáticamente paquetes.
 (declare-function prelude-require-packages"")
-(prelude-require-packages '(elfeed pdf-tools wttrin decide));;Añadir después de elfeed el resto de paquetes a autoinstalar.
+(prelude-require-packages '(elfeed pdf-tools wttrin decide emms));;Añadir después de elfeed el resto de paquetes a autoinstalar.
 
 ;;---------------- PDFs ----------------
 
@@ -142,5 +142,17 @@
       desktop-auto-save-timeout   30)
 (desktop-save-mode 1)
 
+;;;;---------------EMMS------------------------
+(require 'emms-setup)
+(emms-all)
+(emms-default-players)
+(setq emms-source-file-default-directory "~/Música/")
+(global-set-key (kbd "<XF86AudioPrev>") 'emms-prev)
+(global-set-key (kbd "<XF86AudioNext>") 'emms-next)
+(global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
+(global-set-key (kbd "<XF86AudioStop>") 'emms-shuffle)
+;;La primer vez que se instale emms, hacer lo siguiente:
+;;Now we will add all our music to a playlist by invoking M-x emms-add-directory-tree RET ~/Music/ RET
+;;---------------------------------------
 (provide 'emacs)
 ;;; emacs.el ends here
