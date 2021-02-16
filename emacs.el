@@ -151,7 +151,7 @@
 (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
 (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
 (global-set-key (kbd "<XF86AudioStop>") 'emms-shuffle)
-;;La primer vez que se instale emms, hacer lo siguiente:
+;;Al iniciar emms, hacer lo siguiente:
 ;;Now we will add all our music to a playlist by invoking M-x emms-add-directory-tree RET ~/Music/ RET
 ;;---------------------------------------
 (provide 'emacs)
