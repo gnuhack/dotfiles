@@ -147,7 +147,7 @@
 (emms-all)
 (emms-default-players)
 (setq emms-source-file-default-directory "~/Música/")
-(global-set-key (kbd "<XF86AudioPrev>") 'emms-prev)
+(global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
 (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
 (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
 (global-set-key (kbd "<XF86AudioStop>") 'emms-shuffle)
