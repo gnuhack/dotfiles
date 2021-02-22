@@ -17,7 +17,26 @@
 (declare-function elfeed-untag "")
 (declare-function elfeed-search-update "")
 (declare-function elfeed-show-visit "")
-(eval-when-compile (defvar elfeed-feeds) (defvar calendar-latitude) (defvar calendar-longitude) (defvar org-capture-templates) (defvar org-file-apps) (defvar wttrin-default-accept-language) (defvar wttrin-default-cities)  (defvar dired-isearch-filenames) (defvar calendar-week-start-day) (defvar pdf-view-mode-map) (defvar my-bookmark) (defvar desktop-dirname) (defvar desktop-base-lock-name) (defvar desktop-base-file-name) (defvar desktop-path) (defvar desktop-save) (defvar desktop-files-not-to-save) (defvar desktop-load-locked-desktop) (defvar desktop-auto-save-timeout) );;Eliminación de una queja del compilador
+(eval-when-compile
+  (defvar elfeed-feeds)
+  (defvar calendar-latitude)
+  (defvar calendar-longitude)
+  (defvar org-capture-templates)
+  (defvar org-file-apps)
+  (defvar wttrin-default-accept-language)
+  (defvar wttrin-default-cities)
+  (defvar dired-isearch-filenames)
+  (defvar calendar-week-start-day)
+  (defvar pdf-view-mode-map)
+  (defvar my-bookmark)
+  (defvar desktop-dirname)
+  (defvar desktop-base-lock-name)
+  (defvar desktop-base-file-name)
+  (defvar desktop-path)
+  (defvar desktop-save)
+  (defvar desktop-files-not-to-save)
+  (defvar desktop-load-locked-desktop)
+  (defvar desktop-auto-save-timeout) );;Eliminación de una queja del compilador
 ;;---------------- APARIENCIA ----------------
 ;;; Code:
 (menu-bar-mode 0)
