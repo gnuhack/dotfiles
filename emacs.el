@@ -107,7 +107,8 @@
    "https://www.youtube.com/user/SsethTzeentach"
    "http://planet.emacs-es.org/rss20.xml"
    "https://planet.emacslife.com/atom.xml"
-   "https://blog.mobian-project.org/index.xml")))
+   "https://blog.mobian-project.org/index.xml"
+   "https://twobithistory.org/feed.xml")))
 ;;Ver vídeos
 
 (defun std::elfeed::visit-entry-dwim (&optional arg)
