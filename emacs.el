@@ -68,7 +68,7 @@
     (interactive)
     (pdf-view-bookmark-jump my-bookmark)))
 ;;---------------- MISCELÁNEA ----------------
-
+(server-start)
 (setq confirm-kill-emacs 'y-or-n-p)
 (setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
 ;;Puesta de sol
