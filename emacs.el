@@ -142,7 +142,7 @@
          (file+headline "/home/carlos/org/gtd.org" "Tasks")
          "* TODO %?" :empty-lines 1)
         ("j" "Journal Entry" entry
-         (file+datetree "~/Documentos/journal/journal.org")
+         (file+datetree "~/Nextcloud/journal/journal.org")
          "* %?" :empty-lines 1)
         ("p" "Películas" entry
          (file+headline "~/home/carlos/Nextcloud/Documents/horario.txt" "Películas")
