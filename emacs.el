@@ -182,6 +182,13 @@
 (global-set-key (kbd "<XF86AudioStop>") 'emms-shuffle)
 ;;Al iniciar emms, hacer lo siguiente:
 ;;Now we will add all our music to a playlist by invoking M-x emms-add-directory-tree RET ~/Music/ RET
+;;------------CORREO/GNUS---------------------------
+(setq send-mail-function 'smtpmail-send-it)
+(setq smtpmail-smtp-user   "nkolita1")
+(setq smtpmail-smtp-server "smtp.gmail.com")
+(setq smtpmail-smtp-service 587)
+(setq gnus-select-method '(nnnil "nowhere"))
+
 ;;---------------------------------------
 (provide 'emacs)
 ;;; emacs.el ends here
