@@ -36,7 +36,12 @@
   (defvar desktop-save)
   (defvar desktop-files-not-to-save)
   (defvar desktop-load-locked-desktop)
-  (defvar desktop-auto-save-timeout) );;Eliminación de una queja del compilador
+  (defvar desktop-auto-save-timeout)
+  (defvar emms-source-file-default-directory)
+  (defvar smtpmail-smtp-user)
+  (defvar smtpmail-smtp-server)
+  (defvar smtpmail-smtp-service)
+  (defvar gnus-select-method));;Eliminación de una queja del compilador
 ;;---------------- APARIENCIA ----------------
 ;;; Code:
 (menu-bar-mode 0)
