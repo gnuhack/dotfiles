@@ -1,7 +1,0 @@
-;;-*-coding: utf-8;-*-
-(define-abbrev-table 'global-abbrev-table
-  '(
-    ("counter" "cs" nil :count 4)
-    ("cs" "Counter" nil :count 12)
-   ))
-

@@ -1,8 +1,0 @@
-;;; .emms-cache -*- mode: emacs-lisp; coding: utf-8; -*-
-(puthash "/home/carlos/Music/Carly Rae Jepsen - I Really Like You.mp3" '(*track* (type . file) (name . "/home/carlos/Music/Carly Rae Jepsen - I Really Like You.mp3") (info-mtime 24047 27311 0 0) (last-played 24618 57790 836011 995000) (play-count . 3) (info-playing-time . 205) (info-playing-time-min . 3) (info-playing-time-sec . 25)) emms-cache-db)
-(puthash "/home/carlos/Music/Donna Lewis - I Love You Always Forever.mp3" '(*track* (type . file) (name . "/home/carlos/Music/Donna Lewis - I Love You Always Forever.mp3") (info-mtime 24047 27311 0 0) (last-played 24618 57783 54668 596000) (play-count . 2) (info-playing-time . 237) (info-playing-time-min . 3) (info-playing-time-sec . 57)) emms-cache-db)
-(puthash "/home/carlos/Music/Ellie Goulding - On My Mind.mp3" '(*track* (type . file) (name . "/home/carlos/Music/Ellie Goulding - On My Mind.mp3") (info-mtime 24047 27311 0 0)) emms-cache-db)
-(puthash "/home/carlos/Music/Georgina - Supermujer.mp3" '(*track* (type . file) (name . "/home/carlos/Music/Georgina - Supermujer.mp3") (info-mtime 24047 27312 0 0)) emms-cache-db)
-(puthash "/home/carlos/Music/Joan Osborne - What If God Was One Of Us.mp3" '(*track* (type . file) (name . "/home/carlos/Music/Joan Osborne - What If God Was One Of Us.mp3") (info-mtime 24047 27312 0 0)) emms-cache-db)
-(puthash "/home/carlos/Music/Kelly Clarkson - Heartbeat Song.mp3" '(*track* (type . file) (name . "/home/carlos/Music/Kelly Clarkson - Heartbeat Song.mp3") (info-mtime 24047 27312 0 0)) emms-cache-db)
-(puthash "/home/carlos/Music/Madonna - American Pie.mp3" '(*track* (type . file) (name . "/home/carlos/Music/Madonna - American Pie.mp3") (info-mtime 24047 27313 0 0)) emms-cache-db)
