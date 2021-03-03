@@ -1,0 +1,223 @@
+;; -*- mode: emacs-lisp; lexical-binding:t; coding: utf-8-emacs; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Wed Mar  3 22:49:40 2021
+;; Desktop file format version 208
+;; Emacs version 27.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (24640 1140 893657 522000) (desktop . "208") "carlos@aspire5315" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Monospace 11") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#DCDCCC") (background-color . "#3F3F3F") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tab-bar-lines . 0) (height . 42) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 16) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . icon) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#FFFFEF") (last-focus-update) (sticky) (frameset--id . "6600-C579-03EB-40C2") (frameset--mini t . t) (width . 111) (modeline . t) (unsplittable) (icon-name) (display . ":0") (explicit-name)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 6) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 72) (min-pixel-width . 90) (min-pixel-height-ignore . 36) (min-pixel-width-ignore . 54) (min-pixel-height-safe . 18) (min-pixel-width-safe . 18)) leaf (pixel-width . 1021) (pixel-height . 739) (total-width . 113) (total-height . 41) (normal-height . 1.0) (normal-width . 1.0) (buffer "dotfiles" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins 2) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 453) (start . 1)) (prev-buffers ("dotfiles/i3" 1 294) ("dotfiles" 1 453) ("git" 1 218) ("i3blocks/config" 1 225) ("*ansi-term*" 3319 4162) (".config" 1 1264) (".config/i3" 1 225) ("README.md" 1 1) ("dotfiles/config" 1 1))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '(#("config" 0 6 (isearch-regexp-function nil isearch-case-fold-search t)) #("volume" 0 6 (isearch-regexp-function nil isearch-case-fold-search t)) #("termin" 0 6 (isearch-regexp-function nil isearch-case-fold-search t)) #("confi" 0 5 (isearch-regexp-function nil isearch-case-fold-search t)) #("texaco" 0 6 (isearch-regexp-function nil isearch-case-fold-search t)) #("keybi" 0 5 (isearch-case-fold-search t isearch-regexp-function nil)) #("mode-line" 0 9 (isearch-regexp-function nil isearch-case-fold-search t)) #("emqq" 0 4 (isearch-case-fold-search t isearch-regexp-function nil)) #("emms" 0 4 (isearch-case-fold-search t isearch-regexp-function nil)) #("org-emm" 0 7 (isearch-case-fold-search t isearch-regexp-function nil)) #("pel" 0 3 (isearch-case-fold-search t isearch-regexp-function nil)) #("pws" 0 3 (isearch-case-fold-search t isearch-regexp-function nil)) #("koc" 0 3 (isearch-case-fold-search t isearch-regexp-function nil)) #("ly" 0 2 (isearch-case-fold-search t isearch-regexp-function nil)) #("ema" 0 3 (isearch-case-fold-search t isearch-regexp-function nil)) #("ff" 0 2 (isearch-case-fold-search t isearch-regexp-function nil))))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/.config/i3blocks/time/time" "~/.config/i3blocks/wifi/README.md" "~/.config/i3blocks/wifi/i3blocks.conf" "~/.config/i3blocks/config" "~/git/dotfiles/i3/config" "~/.config/i3/config" #("/ssh:pi@192.168.1.125:/home/pi/diario.org" 0 41 (helm-ff-file t)) #("~/git/dotfiles/emacs.el" 1 23 (match-part "/home/carlos/git/dotfiles/emacs.el")) #("/ssh:carlos@192.168.1.114:/home/carlos/.config/i3/config" 0 56 (helm-ff-file t)) #("/ssh:pi@192.168.1.125:/home/pi/diadio.org" 0 41 (helm-ff-file t)) "~/diario.org" "~/journal.org" "/usr/local/share/info/mairix-el.info.gz" #("/ssh:pi@192.168.1.125:/home/pi/notas.txt" 0 40 (helm-ff-file t)) "~/.aspell.es.pws" #("/ssh:pi@192.168.1.125:/home/pi/horario.txt" 0 42 (helm-ff-file t)) "/tmp/diario.org" #("~/Nextcloud/Documents/horario.txt" 1 33 (match-part "/home/carlos/Nextcloud/Documents/horario.txt")) "~/notas.txt" #("/ssh:192.168.1.132:/home/carlos/.ssh/known_hosts" 0 48 (helm-ff-file t)) "~/.ssh/id_rsa.pub" "~/Descargas/journal.org" #("/ssh:192.168.1.132:/home/carlos/Juegos/DwarfFortress/df4705/df_linux/data/init/init.txt" 0 87 (helm-ff-file t)) #("/ssh:192.168.1.132:/home/carlos/Juegos/DwarfFortress/df_linux/data/init/init.txt" 0 80 (helm-ff-file t)) #("~/.emacs.d/personal/emacs.el" 1 28 (match-part "/home/carlos/.emacs.d/personal/emacs.el")) "/tmp/hola.txt" "/tmp/hola.ics" "~/.emacs.d/README.md" "~/##scratch##" "~/Notes.org" "~/#scratch#" "~/.zsnes/zfont.txt" "~/.zsnes/rominfo.txt" "~/Descargas/interface.txt" "~/Descargas/horario.txt" "~/Documentos/trabajoquero.txt" "~/Documentos/rutadetelegram22julio.txt" "~/Documentos/rutadetelegram19julio.txt" "~/Documentos/manual.txt" "~/notasshfs.txt" "~/correo.txt" "~/emacs-and-org-init.org" #("/tmp/scrachhh" 0 13 (match-part "/tmp/scrachhh")) "~/.emacs.pre-prelude" "/tmp/.!home!carlos!.emacs.d!elpa!json-snatcher-20200916.1717!json-snatcher-autoloads.el.~undo-tree~" "~/emacs-and-org-init.el" "~/.emacs.d/doc/usage.md" #("~/.emacs.d/sample/prelude-modules.el" 1 36 (match-part "/home/carlos/.emacs.d/sample/prelude-modules.el")) "/var/tmp/XX3JznfT.Xauthority" "/home/carlos/hola" "~/.emacs.d/init.el" "~/git/dotfiles/.emacs" "~/git/dotfiles/init.el" #("/home/carlos/.emacs.d/personal/emacs.el" 0 39 (ivy-index 0)) #("/home/carlos/.emacs.d/" 0 22 (ivy-index 0)) #("/home/carlos/.emacs.d/personal/" 0 31 (ivy-index 0))))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  nil
+  "dotfiles"
+  'dired-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode diff-hl-dired-mode)
+  453
+  '(1 nil)
+  t
+  '("/home/carlos/git/dotfiles/")
+  '((buffer-display-time 24640 963 663761 499000))
+  '((mark-ring (1))))
+
+(desktop-create-buffer 208
+  nil
+  "i3"
+  'dired-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode diff-hl-dired-mode)
+  294
+  '(nil nil)
+  t
+  '("/home/carlos/git/dotfiles/i3/")
+  '((buffer-display-time 24640 895 427488 166000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "git"
+  'dired-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode diff-hl-dired-mode)
+  218
+  '(nil nil)
+  t
+  '("/home/carlos/git/")
+  '((buffer-display-time 24640 279 152245 718000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/carlos/git/dotfiles/i3/i3blocks/config"
+  "config"
+  'conf-unix-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode flycheck-mode)
+  225
+  '(631 nil)
+  nil
+  nil
+  '((buffer-display-time 24640 151 966275 895000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (631 2851 1596 1597 3043 2269 2270 2225 2161 2008 1701 1318))))
+
+(desktop-create-buffer 208
+  nil
+  ".config"
+  'dired-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode diff-hl-dired-mode)
+  1264
+  '(nil nil)
+  t
+  '("/home/carlos/.config/")
+  '((buffer-display-time 24638 41444 181151 676000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "i3"
+  'dired-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode diff-hl-dired-mode)
+  225
+  '(nil nil)
+  t
+  '("/home/carlos/.config/i3/")
+  '((buffer-display-time 24638 41334 84589 781000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/carlos/git/dotfiles/i3/i3blocks/wifi/README.md"
+  "README.md"
+  'gfm-mode
+  '(abbrev-mode eldoc-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 4) (buffer-display-time 24638 40934 614540 885000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/carlos/git/dotfiles/config"
+  "config"
+  'conf-unix-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode flycheck-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 24638 39732 640509 778000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "*elfeed-search*"
+  'elfeed-search-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode editorconfig-mode helm-mode company-mode flycheck-mode)
+  3363
+  '(3363 nil)
+  t
+  "@6-months-ago +unread"
+  '((buffer-display-time 24638 39499 348632 283000) (truncate-lines . t))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/carlos/org/gtd.org"
+  "gtd.org"
+  'org-mode
+  '(abbrev-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode flycheck-mode)
+  200
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time) (buffer-file-coding-system . undecided-unix) (truncate-lines . t))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/carlos/Documentos/journal/journal.org"
+  "journal.org"
+  'org-mode
+  '(abbrev-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode flycheck-mode)
+  25
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time) (buffer-file-coding-system . utf-8-unix) (truncate-lines . t))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "carlos"
+  'dired-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode diff-hl-dired-mode)
+  1106
+  '(427 nil)
+  t
+  '("/home/carlos/")
+  '((buffer-display-time 24638 39424 185032 299000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/carlos/git/dotfiles/i3/i3blocks/time/time.png"
+  "time.png"
+  'image-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode editorconfig-mode helm-mode company-mode)
+  3
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 24638 40615 935189 73000) (buffer-file-coding-system . no-conversion) (truncate-lines . t))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "time"
+  'dired-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode diff-hl-dired-mode)
+  367
+  '(nil nil)
+  t
+  '("/home/carlos/.config/i3blocks/time/")
+  '((buffer-display-time 24638 40629 950555 64000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "tmp"
+  'dired-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode diff-hl-dired-mode)
+  20110
+  '(nil nil)
+  t
+  '("/tmp/")
+  '((buffer-display-time 24639 64856 277701 307000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "i3blocks"
+  'dired-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode diff-hl-dired-mode)
+  243
+  '(nil nil)
+  t
+  '("/home/carlos/git/dotfiles/i3/i3blocks/")
+  '((buffer-display-time 24639 65061 429723 714000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "afs"
+  'dired-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode diff-hl-dired-mode)
+  246
+  '(nil nil)
+  t
+  '("/home/carlos/git/dotfiles/i3/i3blocks/afs/")
+  '((buffer-display-time 24639 65064 142223 847000))
+  '((mark-ring nil)))
+
