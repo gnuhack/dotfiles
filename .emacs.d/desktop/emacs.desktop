@@ -2,12 +2,12 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed Mar  3 23:13:26 2021
+;; Created Wed Mar  3 23:22:30 2021
 ;; Desktop file format version 208
 ;; Emacs version 27.1
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (24640 2566 774374 651000) (desktop . "208") "carlos@aspire5315" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Monospace 11") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#DCDCCC") (background-color . "#3F3F3F") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tab-bar-lines . 0) (height . 42) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 16) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . icon) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#FFFFEF") (last-focus-update) (sticky) (frameset--id . "6600-C579-03EB-40C2") (frameset--mini t . t) (width . 111) (modeline . t) (unsplittable) (icon-name) (display . ":0") (explicit-name)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 6) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 72) (min-pixel-width . 90) (min-pixel-height-ignore . 36) (min-pixel-width-ignore . 54) (min-pixel-height-safe . 18) (min-pixel-width-safe . 18)) leaf (pixel-width . 1021) (pixel-height . 739) (total-width . 113) (total-height . 41) (normal-height . 1.0) (normal-width . 1.0) (buffer ".emacs.d" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins 2) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 870) (start . 1)) (prev-buffers ("dotfiles" 1 283) ("magit-diff: dotfiles" 1 1) (".emacs.d" 1 870) (".git" 1 242) (".bashrc" 2794 2927) (".bashrcx220" 2591 4304))))])
+(setq desktop-saved-frameset [frameset 1 (24640 3110 419145 268000) (desktop . "208") "carlos@aspire5315" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Monospace 11") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#DCDCCC") (background-color . "#3F3F3F") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tab-bar-lines . 0) (height . 42) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 16) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . icon) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#FFFFEF") (last-focus-update) (sticky) (frameset--id . "6600-C579-03EB-40C2") (frameset--mini t . t) (width . 111) (modeline . t) (unsplittable) (icon-name) (display . ":0") (explicit-name)) ((min-height . 8) (min-width . 10) (min-height-ignore . 5) (min-width-ignore . 6) (min-height-safe . 2) (min-width-safe . 2) (min-pixel-height . 144) (min-pixel-width . 90) (min-pixel-height-ignore . 90) (min-pixel-width-ignore . 54) (min-pixel-height-safe . 36) (min-pixel-width-safe . 18)) vc (pixel-width . 1021) (pixel-height . 739) (total-width . 113) (total-height . 41) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 1021) (pixel-height . 369) (total-width . 113) (total-height . 20) (normal-height . 0.5) (normal-width . 1.0) (buffer "magit-diff: dotfiles" (selected) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1)) (prev-buffers ("dotfiles" 1 283) ("git" 1 218) (".emacs.d" 1 1098) ("personal" 1 425) ("emacs.el" 1070 1435) ("magit-diff: dotfiles" 1 1) (".git" 1 242) (".bashrc" 2794 2927) (".bashrcx220" 2591 4304))) (leaf (last . t) (pixel-width . 1021) (pixel-height . 370) (total-width . 113) (total-height . 21) (normal-height . 0.5) (normal-width . 1.0) (buffer "COMMIT_EDITMSG" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins 2) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1)) (prev-buffers ("magit: dotfiles" 1 142)))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
@@ -18,15 +18,15 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  nil
-  ".emacs.d"
-  'dired-mode
-  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode diff-hl-dired-mode)
-  870
+  "/home/carlos/git/dotfiles/.git/COMMIT_EDITMSG"
+  "COMMIT_EDITMSG"
+  'text-mode
+  '(auto-fill-mode abbrev-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode with-editor-mode git-commit-mode bug-reference-mode)
+  1
   '(nil nil)
-  t
-  '("/home/carlos/git/dotfiles/.emacs.d/")
-  '((buffer-display-time 24640 2531 178762 292000))
+  nil
+  nil
+  '((buffer-display-time 24640 3040 218872 141000) (buffer-file-coding-system . undecided-unix))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -38,8 +38,56 @@
   '(1 nil)
   t
   '("/home/carlos/git/dotfiles/")
-  '((buffer-display-time 24640 2454 850762 141000))
+  '((buffer-display-time 24640 3040 218867 252000))
   '((mark-ring (1))))
+
+(desktop-create-buffer 208
+  nil
+  "git"
+  'dired-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode diff-hl-dired-mode)
+  218
+  '(nil nil)
+  t
+  '("/home/carlos/git/")
+  '((buffer-display-time 24640 3001 733565 515000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  ".emacs.d"
+  'dired-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode diff-hl-dired-mode)
+  1098
+  '(nil nil)
+  t
+  '("/home/carlos/git/dotfiles/.emacs.d/")
+  '((buffer-display-time 24640 3000 855248 748000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "personal"
+  'dired-mode
+  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode diff-hl-dired-mode)
+  425
+  '(nil nil)
+  t
+  '("/home/carlos/git/dotfiles/.emacs.d/personal/")
+  '((buffer-display-time 24640 2998 78974 341000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/carlos/git/dotfiles/.emacs.d/personal/emacs.el"
+  "emacs.el"
+  'emacs-lisp-mode
+  '(eldoc-mode which-key-mode prelude-mode global-auto-revert-mode smartparens-mode super-save-mode volatile-highlights-mode flyspell-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode helm-mode company-mode hl-todo-mode flycheck-mode guru-mode elisp-slime-nav-mode rainbow-delimiters-mode rainbow-mode)
+  1435
+  '(1230 nil)
+  nil
+  nil
+  '((buffer-display-time 24640 2997 42367 910000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring nil)))
 
 (desktop-create-buffer 208
   nil
@@ -87,18 +135,6 @@
   t
   '("/home/carlos/git/dotfiles/i3/")
   '((buffer-display-time 24640 895 427488 166000))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "git"
-  'dired-mode
-  '(which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode helm-mode company-mode diff-hl-dired-mode)
-  218
-  '(nil nil)
-  t
-  '("/home/carlos/git/")
-  '((buffer-display-time 24640 279 152245 718000))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208

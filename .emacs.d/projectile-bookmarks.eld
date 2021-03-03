@@ -1,1 +1,1 @@
-("~/git/dotfiles/.emacs.d/" "~/git/dotfiles/" "~/git/dotfiles/i3/i3blocks/" "~/.config/i3blocks/" "~/.emacs.d/")
+("~/git/dotfiles/" "~/git/dotfiles/.emacs.d/" "~/git/dotfiles/i3/i3blocks/" "~/.config/i3blocks/" "~/.emacs.d/")
