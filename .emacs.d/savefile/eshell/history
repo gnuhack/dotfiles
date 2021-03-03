@@ -1,0 +1,128 @@
+cat id_rsa.pub > /dev/clip
+ls
+cd
+dired .emacs.d/ 
+ln emacs.el ~/.emacs.d/personal/emacs.el 
+rm ~/.emacs.d/personal/emacs.el 
+ln emacs.el ~/.emacs.d/personal/emacs.el 
+exit
+cd .emacs.d/personal/
+ln -s ../../git/dotfiles/emacs.el .
+rm emacs.el 
+ln -s ../../git/dotfiles/emacs.el .
+exit
+cd Plantillas/n
+cd Plantillas/
+l
+alias
+(abs (% (random t) 10))
+(abs (% (random t) 10))
+(abs (% (random t) 10))
+(abs (% (random t) 10))
+(abs (% (random t) 10))
+(version)
+version
+cd
+alias l ls
+l
+alias
+alias l
+l
+alias l ls
+alias la ls -a
+la
+alias ll ls -l
+ll
+find-file hola
+dired
+dired .
+find ~ | grep *.pdf
+l
+cd face2face\ Second\ edition\ Upper\ Intermediate/
+l
+cd courses/
+l
+cd a6a43d8c-30d9-4565-b184-dcfb38904e14/
+l
+cd ..
+cd ..
+l
+ls
+cd courses/
+ls 
+cd a6a43d8c-30d9-4565-b184-dcfb38904e14/
+ls
+firefox sitemap.xml 
+ls
+cd ..
+l
+cd ..
+ls
+cd ..
+ls
+l
+exit
+ssh pi@192.168.1.125
+(random)
+(random)%10
+(random % 10)
+(% (random) 10)
+(% (random) 10)
+(% (random) 10)
+(% (random) 10)
+abs((% (random) 10))
+(abs (% (random) 10)))
+(abs (% (random) 10))
+(abs (% (random) 10))
+(abs (% (random) 10))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 2))
+(abs (% (random) 4))
+(abs (% (random) 4))
+(abs (% (random) 4))
+(abs (% (random) 4))
+(abs (% (random) 4))
+(abs (% (random) 4))
+(abs (% (random) 4))
+(abs (% (random) 4))
+(abs (% (random) 4))
+(abs (% (random) 4))
+(abs (% (random) 4))
+(abs (% (random) 4))
+(abs (% (random) 4))
+(abs (% (random) 4))
+clear
+ls
+dired
+uptime
+uptime
+who
+exit
+ls
+vi gizub 
+vi index.html
+exit
+l
+vi interface.txt 
+exit
+exit

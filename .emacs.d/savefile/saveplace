@@ -1,0 +1,324 @@
+;;; -*- coding: utf-8 -*-
+(("/home/carlos/diario.org" . 190521)
+ ("/home/carlos/.emacs.d/savefile/recentf" . 5423)
+ ("/home/carlos/.emacs.d/emms/history" . 212)
+ ("/home/carlos/.emacs.d/elpa/crux-20210217.1058/crux-autoloads.el" . 8202)
+ ("/home/carlos/.emacs.d/elpa/dash-20210210.1449/dash-autoloads.el" . 2474)
+ ("/home/carlos/.emacs.d/elpa/dash-functional-20210210.1449/dash-functional-autoloads.el" . 275)
+ ("/home/carlos/.emacs.d/elpa/editorconfig-20210219.1656/editorconfig-autoloads.el" . 5442)
+ ("/home/carlos/.emacs.d/elpa/emms-20210217.1728/emms-autoloads.el" . 19392)
+ ("/home/carlos/.emacs.d/elpa/ivy-20210220.1301/ivy-autoloads.el" . 5416)
+ ("/home/carlos/.emacs.d/elpa/lsp-mode-20210220.1438/lsp-mode-autoloads.el" . 22288)
+ ("/home/carlos/.emacs.d/elpa/lsp-ui-20210220.703/lsp-ui-autoloads.el" . 2277)
+ ("/home/carlos/.emacs.d/elpa/magit-20210220.1153/magit-autoloads.el" . 87764)
+ ("/home/carlos/.emacs.d/elpa/markdown-mode-20210220.1301/markdown-mode-autoloads.el" . 1404)
+ ("/home/carlos/.emacs.d/elpa/transient-20210218.1421/transient-autoloads.el" . 2700)
+ ("/home/carlos/.emacs.d/elpa/key-chord-20201222.2030/key-chord-autoloads.el" . 2685)
+ ("/home/carlos/.emacs.d/elpa/helm-ag-20200915.1650/helm-ag-autoloads.el" . 1393)
+ ("/home/carlos/.emacs.d/elpa/helm-descbinds-20190501.935/helm-descbinds-autoloads.el" . 2220)
+ ("/home/carlos/.emacs.d/elpa/helm-projectile-20201217.908/helm-projectile-autoloads.el" . 2311)
+ ("/home/carlos/.emacs.d/elpa/helm-20210212.659/helm-autoloads.el" . 36082)
+ ("/home/carlos/.emacs.d/elpa/popup-20210108.1821/popup-autoloads.el" . 392)
+ ("/home/carlos/.emacs.d/elpa/helm-core-20210211.1417/helm-core-autoloads.el" . 6872)
+ ("/home/carlos/.emacs.d/elpa/async-20210117.718/async-autoloads.el" . 5806)
+ ("/home/carlos/journal.org" . 2)
+ ("/home/carlos/git/dotfiles/emacs.el" . 1572)
+ ("/usr/local/share/emacs/27.1/lisp/simple.el.gz" . 43018)
+ ("/ssh:pi@192.168.1.125:/home/pi/Descargas/"
+  (dired-filename . "/ssh:pi@192.168.1.125:/home/pi/Descargas/Music"))
+ (#("/ssh:pi@192.168.1.125:/home/pi/diario.org" 1 4
+    (helm-ff-file t)
+    5 7
+    (helm-ff-file t)
+    8 21
+    (helm-ff-file t))
+  . 258211)
+ ("/home/carlos/org/gtd.org" . 200)
+ ("/home/carlos/.emacs.d/elpa/decide-20190201.2137/decide-autoloads.el" . 755)
+ ("/home/carlos/.emacs.d/elpa/company-20210122.2314/company-autoloads.el" . 12625)
+ ("/home/carlos/.emacs.d/elpa/counsel-20210129.1143/counsel-autoloads.el" . 17136)
+ ("/home/carlos/.emacs.d/elpa/diff-hl-20210213.41/diff-hl-autoloads.el" . 7742)
+ ("/home/carlos/.emacs.d/elpa/elfeed-20210212.1601/elfeed-autoloads.el" . 4244)
+ ("/home/carlos/.emacs.d/elpa/git-commit-20210206.2245/git-commit-autoloads.el" . 447)
+ ("/home/carlos/.emacs.d/elpa/hl-todo-20210117.1140/hl-todo-autoloads.el" . 2637)
+ ("/home/carlos/.emacs.d/elpa/ht-20210119.741/ht-autoloads.el" . 370)
+ ("/home/carlos/.emacs.d/elpa/imenu-anywhere-20210201.1704/imenu-anywhere-autoloads.el" . 1790)
+ ("/home/carlos/.emacs.d/elpa/projectile-20210125.726/projectile-autoloads.el" . 21115)
+ ("/home/carlos/.emacs.d/elpa/smartparens-20210213.1851/smartparens-autoloads.el" . 12030)
+ ("/home/carlos/.emacs.d/elpa/swiper-20210202.2312/swiper-autoloads.el" . 1387)
+ ("/home/carlos/.emacs.d/elpa/telega-20210212.1021/telega-autoloads.el" . 14885)
+ ("/home/carlos/.emacs.d/elpa/web-mode-20210131.1758/web-mode-autoloads.el" . 498)
+ ("/home/carlos/.emacs.d/elpa/which-key-20210131.1837/which-key-autoloads.el" . 7292)
+ ("/home/carlos/.emacs.d/elpa/with-editor-20210117.2008/with-editor-autoloads.el" . 3656)
+ ("/tmp/quemestaisexigiendoquemestaiscansando.txt" . 29)
+ ("/home/carlos/"
+  (dired-filename . "/home/carlos/.aspell.es.pws"))
+ ("/home/carlos/.emacs.d/"
+  (dired-filename . "/home/carlos/.emacs.d/."))
+ (#("/ssh:pi@192.168.1.125:/home/pi/horario.txt" 1 4
+    (helm-ff-file t)
+    5 7
+    (helm-ff-file t)
+    8 21
+    (helm-ff-file t))
+  . 637)
+ ("/ssh:pi@192.168.1.125:/home/pi/"
+  (dired-filename . "/ssh:pi@192.168.1.125:/home/pi/.aspell.es.pws"))
+ ("/home/carlos/.aspell.es.pws" . 1952)
+ ("/ssh:pi@192.168.1.125:/home/pi/notas.txt" . 111)
+ ("/tmp/492-1024.jpg" . 677)
+ ("/tmp/diario.org" . 190708)
+ ("/home/carlos/Descargas/"
+  (dired-filename . "/home/carlos/Descargas/Nextcloud-3.1.0-x86_64.AppImage"))
+ ("/home/carlos/Documentos/"
+  (dired-filename . "/home/carlos/Documentos/Mastering Emacs by Mickey Petersen (z-lib.org).pdf"))
+ ("/home/carlos/.elfeed/index" . 228861)
+ ("/home/carlos/notas.txt" . 494)
+ ("/home/carlos/.ssh/"
+  (dired-filename . "/home/carlos/.ssh/id_rsa.pub"))
+ (#("/ssh:192.168.1.132:/home/carlos/.ssh/known_hosts" 1 4
+    (helm-ff-file t)
+    5 18
+    (helm-ff-file t))
+  . 2658)
+ ("/home/carlos/.ssh/id_rsa.pub" . 753)
+ ("/home/carlos/.emacs.d/elpa/emojify-20210108.1111/emojify-autoloads.el" . 3378)
+ ("/tmp/"
+  (dired-filename . "/tmp/api-ms-win-core-processenvironment-l1-1-0.dll"))
+ ("/ssh:192.168.1.132:/home/carlos/Nextcloud/df_47_05_linux/"
+  (dired-filename . "/ssh:192.168.1.132:/home/carlos/Nextcloud/df_47_05_linux/df_linux"))
+ ("/ssh:192.168.1.132:/home/carlos/Nextcloud/"
+  (dired-filename . "/ssh:192.168.1.132:/home/carlos/Nextcloud/df_47_05_linux"))
+ ("/ssh:192.168.1.132:/home/"
+  (dired-filename . "/ssh:192.168.1.132:/home/carlos"))
+ ("/ssh:192.168.1.132:/home/carlos/"
+  (dired-filename . "/ssh:192.168.1.132:/home/carlos/Juegos"))
+ ("/ssh:192.168.1.132:/home/carlos/Juegos/"
+  (dired-filename . "/ssh:192.168.1.132:/home/carlos/Juegos/DwarfFortress"))
+ ("/ssh:192.168.1.132:/home/carlos/Juegos/DwarfFortress/"
+  (dired-filename . "/ssh:192.168.1.132:/home/carlos/Juegos/DwarfFortress/df4705"))
+ ("/ssh:192.168.1.132:/home/carlos/Juegos/DwarfFortress/df4705/"
+  (dired-filename . "/ssh:192.168.1.132:/home/carlos/Juegos/DwarfFortress/df4705/df_linux"))
+ ("/home/carlos/Nextcloud/"
+  (dired-filename . "/home/carlos/Nextcloud/Documents"))
+ ("/home/carlos/Nextcloud/Documents/"
+  (dired-filename . "/home/carlos/Nextcloud/Documents/horario.txt"))
+ ("/home/carlos/Descargas/journal.org" . 244766)
+ (#("/ssh:192.168.1.132:/home/carlos/Juegos/DwarfFortress/df4705/df_linux/data/init/init.txt" 1 4
+    (helm-ff-file t)
+    5 18
+    (helm-ff-file t))
+  . 3291)
+ (#("/ssh:192.168.1.132:/home/carlos/Juegos/DwarfFortress/df_linux/data/init/init.txt" 1 4
+    (helm-ff-file t)
+    5 18
+    (helm-ff-file t))
+  . 3288)
+ ("/tmp/hola.odt" . 169)
+ ("/home/carlos/.emacs.d/personal/preload/precarga.el" . 63)
+ ("/home/carlos/.emacs.d/sample/"
+  (dired-filename . "/home/carlos/.emacs.d/sample/prelude-modules.el"))
+ ("/tmp/hola.org" . 866)
+ ("/home/carlos/.emacs.d/core/"
+  (dired-filename . "/home/carlos/.emacs.d/core/prelude-editor.el"))
+ ("/home/carlos/git/dotfiles/"
+  (dired-filename . "/home/carlos/git/dotfiles/.bashrc"))
+ ("/home/carlos/.emacs.d/personal/preload/"
+  (dired-filename . "/home/carlos/.emacs.d/personal/preload/.."))
+ ("/home/carlos/.emacs.d/personal/"
+  (dired-filename . "/home/carlos/.emacs.d/personal/preload"))
+ ("/tmp/hola.tex" . 9222)
+ ("/tmp/hola.txt" . 399)
+ ("/tmp/hola.ics" . 154)
+ ("/home/carlos/##scratch##" . 12)
+ ("/home/carlos/Imágenes/"
+  (dired-filename . "/home/carlos/Imágenes/2021-01-12-231655_1024x765_scrot.png"))
+ ("/home/carlos/Imágenes/2021-01-12-231655_1024x765_scrot.png" . 7)
+ ("/home/carlos/Imágenes/2021-01-12-231601_1280x800_scrot.png" . 5)
+ ("/home/carlos/Imágenes/2020-06-06-131451_1280x800_scrot.png" . 3)
+ ("/home/carlos/Imágenes/photo_2021-01-13_22-30-28.jpg" . 616)
+ ("/home/carlos/Imágenes/photo_2020-08-19_22-09-49.jpg" . 614)
+ ("/home/carlos/Imágenes/photo_2020-08-19_22-09-41.jpg" . 614)
+ ("/home/carlos/Imágenes/photo_2020-05-06_22-08-31.jpg" . 614)
+ ("/home/carlos/Notes.org" . 13)
+ ("/usr/local/share/info/"
+  (dired-filename . "/usr/local/share/info/auth.info.gz"))
+ ("/usr/local/share/"
+  (dired-filename . "/usr/local/share/emacs"))
+ ("/usr/local/"
+  (dired-filename . "/usr/local/share"))
+ ("/usr/"
+  (dired-filename . "/usr/local"))
+ ("/"
+  (dired-filename . "/home"))
+ ("/home/"
+  (dired-filename . "/home/carlos"))
+ ("/home/carlos/Público/" . 173)
+ ("/home/carlos/.emacs.d/README.md" . 5000)
+ ("/home/carlos/.emacs.d/core/prelude-editor.el" . 3062)
+ ("/home/carlos/.emacs.d/modules/prelude-company.el" . 1174)
+ ("/home/carlos/.emacs.d/doc/modules/company.md" . 28)
+ ("/home/carlos/.emacs.d/sample/prelude-modules.el" . 3391)
+ ("/home/carlos/.emacs.d/sample/prelude-pinned-packages.el" . 145)
+ ("/usr/local/share/emacs/27.1/etc/NEWS" . 53)
+ ("/home/carlos/Descargas/interface.txt" . 763)
+ ("/media/cdrom0/"
+  (dired-filename . "/media/cdrom0/config.aspx"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/jre/bin/client/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/jre/bin/client/Xusage.txt"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/jre/bin/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/jre/bin/client"))
+ ("/home/carlos/.wine/drive_c/users/carlos/Escritorio/"
+  (dired-filename . "/home/carlos/.wine/drive_c/users/carlos/Escritorio/Beyond Zork - The Coconut of Quendor.desktop"))
+ ("/home/carlos/.wine/drive_c/users/carlos/Favorites/" . 202)
+ ("/home/carlos/.wine/drive_c/users/carlos/InstallAnywhere/" . 208)
+ ("/home/carlos/.wine/drive_c/users/carlos/Links/" . 198)
+ ("/home/carlos/.wine/drive_c/users/carlos/AppData/LocalLow/" . 207)
+ ("/home/carlos/.wine/drive_c/users/carlos/AppData/"
+  (dired-filename . "/home/carlos/.wine/drive_c/users/carlos/AppData/LocalLow"))
+ ("/home/carlos/.wine/drive_c/users/carlos/Application Data/Adobe/Flash Player/"
+  (dired-filename . "/home/carlos/.wine/drive_c/users/carlos/Application Data/Adobe/Flash Player/AssetCache"))
+ ("/home/carlos/.wine/drive_c/users/carlos/Application Data/Adobe/AIR/"
+  (dired-filename . "/home/carlos/.wine/drive_c/users/carlos/Application Data/Adobe/AIR/Updater"))
+ ("/home/carlos/.wine/drive_c/users/carlos/Application Data/Adobe/"
+  (dired-filename . "/home/carlos/.wine/drive_c/users/carlos/Application Data/Adobe/AIR"))
+ ("/home/carlos/.wine/drive_c/users/carlos/Application Data/Microsoft/" . 217)
+ ("/home/carlos/.wine/drive_c/users/carlos/Application Data/"
+  (dired-filename . "/home/carlos/.wine/drive_c/users/carlos/Application Data/Microsoft"))
+ ("/home/carlos/.wine/drive_c/users/carlos/Templates/" . 202)
+ ("/home/carlos/.wine/drive_c/users/carlos/"
+  (dired-filename . "/home/carlos/.wine/drive_c/users/carlos/Contacts"))
+ ("/home/carlos/.wine/drive_c/users/"
+  (dired-filename . "/home/carlos/.wine/drive_c/users/carlos"))
+ ("/home/carlos/.wine/drive_c/windows/"
+  (dired-filename . "/home/carlos/.wine/drive_c/windows/.conf"))
+ ("/home/carlos/.wine/drive_c/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files"))
+ ("/home/carlos/.wine/drive_c/Program Files/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/jre/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/jre/README.txt"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/courses/a6a43d8c-30d9-4565-b184-dcfb38904e14/learning_objects/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/courses/a6a43d8c-30d9-4565-b184-dcfb38904e14/learning_objects/unit_01"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/courses/a6a43d8c-30d9-4565-b184-dcfb38904e14/learning_objects/unit_01/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/courses/a6a43d8c-30d9-4565-b184-dcfb38904e14/learning_objects/unit_01/u01sax01p01.xml"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/courses/a6a43d8c-30d9-4565-b184-dcfb38904e14/settings/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/courses/a6a43d8c-30d9-4565-b184-dcfb38904e14/settings/phoneme_chart.xml"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/courses/a6a43d8c-30d9-4565-b184-dcfb38904e14/resources/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/courses/a6a43d8c-30d9-4565-b184-dcfb38904e14/resources/Bank1"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/courses/a6a43d8c-30d9-4565-b184-dcfb38904e14/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/courses/a6a43d8c-30d9-4565-b184-dcfb38904e14/resources"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/courses/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/courses/a6a43d8c-30d9-4565-b184-dcfb38904e14"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/application/css/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/application/css/default_app.swf"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/application/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/application/css"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/common/send_to_portFolio/css/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/common/send_to_portFolio/css/default_send_to_portfolio.swf"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/common/send_to_portFolio/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/common/send_to_portFolio/css"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/common/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/common/send_to_portFolio"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/content_blocks/animation/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/content_blocks/animation/css"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/content_blocks/common/css/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/content_blocks/common/css/common_activity_styles.swf"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/content_blocks/common/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/content_blocks/common/css"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/content_blocks/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/content_blocks/common"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/exercise/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/exercise/css"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/features/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/features/contents_panel"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/print/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/print/css"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate/print"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes/f2f_upper_Intermediate"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/Uninstall_face2face Second edition Upper Intermediate content/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/Uninstall_face2face Second edition Upper Intermediate content/.com.zerog.registry.xml"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/"
+  (dired-filename . "/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/themes.xml"))
+ ("/media/"
+  (dired-filename . "/media/cdrom0"))
+ ("/home/carlos/.wine/"
+  (dired-filename . "/home/carlos/.wine/drive_c"))
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/face2face Second edition Upper Intermediate/courses/a6a43d8c-30d9-4565-b184-dcfb38904e14/learning_objects/unit_01/u01sax01p01.xml" . 4002)
+ ("/home/carlos/.wine/drive_c/Program Files/Cambridge/CambridgeContent/jre/README.txt" . 1625)
+ ("/home/carlos/.emacs.d/elpa/wttrin-20170614.1206/wttrin-autoloads.el" . 487)
+ ("/home/carlos/.emacs.d/elpa/xterm-color-20200605.2017/xterm-color-autoloads.el" . 2913)
+ ("/ssh:pi@192.168.1.125:/"
+  (dired-filename . "/ssh:pi@192.168.1.125:/home"))
+ ("/ssh:pi@192.168.1.125:/home/"
+  (dired-filename . "/ssh:pi@192.168.1.125:/home/pi"))
+ ("/home/carlos/.emacs.d/savefile/"
+  (dired-filename . "/home/carlos/.emacs.d/savefile/eshell"))
+ ("/home/carlos/.emacs.d/savefile/eshell/"
+  (dired-filename . "/home/carlos/.emacs.d/savefile/eshell/alias"))
+ ("/home/carlos/Plantillas/df_linux/"
+  (dired-filename . "/home/carlos/Plantillas/df_linux/df"))
+ ("/home/carlos/.emacs.d/vendor/"
+  (dired-filename . "/home/carlos/.emacs.d/vendor/README.md"))
+ ("/home/carlos/.emacs.d/auto-save-list/"
+  (dired-filename . "/home/carlos/.emacs.d/auto-save-list/.saves-14382-aspire5315~"))
+ ("/home/carlos/.emacs.d/doc/"
+  (dired-filename . "/home/carlos/.emacs.d/doc/usage.md"))
+ ("/home/carlos/.emacs.d/core/prelude-global-keybindings.el" . 81)
+ ("/home/carlos/.emacs.d/core/prelude-linux.el" . 1282)
+ ("/home/carlos/.emacs.d/core/prelude-packages.el" . 6524)
+ ("/home/carlos/.emacs.d/elpa/"
+  (dired-filename . "/home/carlos/.emacs.d/elpa/ace-window-20200606.1259"))
+ ("/home/carlos/.emacs.d/.git/"
+  (dired-filename . "/home/carlos/.emacs.d/.git/branches"))
+ ("/home/carlos/.emacs.d/.github/"
+  (dired-filename . "/home/carlos/.emacs.d/.github/FUNDING.yml"))
+ ("/home/carlos/.emacs.d/modules/"
+  (dired-filename . "/home/carlos/.emacs.d/modules/prelude-c.el"))
+ ("/home/carlos/.emacs.d/transient/"
+  (dired-filename . "/home/carlos/.emacs.d/transient/history.el"))
+ ("/home/carlos/.emacs.d/utils/installer.sh" . 8207)
+ ("/home/carlos/.emacs.d/utils/"
+  (dired-filename . "/home/carlos/.emacs.d/utils/installer.sh"))
+ ("/home/carlos/.emacs.d/core/prelude-core.el" . 5011)
+ ("/home/carlos/emacs-and-org-init.org" . 49)
+ ("/home/carlos/.emacs.d/elpa/pdf-tools-20200512.1524/pdf-tools-autoloads.el" . 16877)
+ ("/home/carlos/.emacs.d/elpa/tablist-20200427.2205/tablist-autoloads.el" . 1158)
+ ("/home/carlos/.emacs.d/core/prelude-custom.el" . 3728)
+ ("/home/carlos/.emacs.d/doc/index.md" . 4531)
+ ("/usr/local/share/emacs/27.1/etc/HELLO" . 3599)
+ ("/home/carlos/.emacs.d/elpa/visual-fill-column-20201229.2303/visual-fill-column-autoloads.el" . 2425)
+ ("/home/carlos/.emacs.d/elpa/rainbow-identifiers-20141102.1526/rainbow-identifiers-autoloads.el" . 871)
+ ("/home/carlos/.emacs.d/init.el" . 503)
+ ("/home/carlos/emacs-and-org-init.el" . 6056)
+ ("/home/carlos/.emacs.d/doc/usage.md" . 11348)
+ ("/home/carlos/.emacs.d/elpa/org-bullets-20200317.1740/org-bullets-autoloads.el" . 786)
+ ("/home/carlos/.emacs.d/doc/modules/"
+  (dired-filename . "/home/carlos/.emacs.d/doc/modules/clojure.md"))
+ ("/home/carlos/.emacs.d/doc/css/"
+  (dired-filename . "/home/carlos/.emacs.d/doc/css/extra.css"))
+ ("/home/carlos/.emacs.d/doc/troubleshooting.md" . 2606)
+ ("/home/carlos/.emacs.d/doc/installation.md" . 4892)
+ ("/home/carlos/.emacs.d/doc/faq.md" . 79)
+ ("/home/carlos/.emacs.d/doc/configuration.md" . 5713)
+ ("/home/carlos/git/dotfiles/.emacs" . 499)
+ ("/home/carlos/.emacs.d/doc/cheatsheet.png" . 3)
+ ("/home/carlos/.emacs.d/elpa/yaml-mode-20201109.1026/yaml-mode-autoloads.el" . 714)
+ ("/home/carlos/.emacs.d/elpa/company-lsp-20190612.1553/company-lsp-autoloads.el" . 619)
+ ("/home/carlos/.emacs.d/elpa/f-20191110.1357/f-autoloads.el" . 368)
+ ("/home/carlos/.emacs.d/elpa/spinner-1.7.3/spinner-autoloads.el" . 2547)
+ ("/home/carlos/.emacs.d/elpa/lv-20200507.1518/lv-autoloads.el" . 374)
+ ("/home/carlos/.emacs.d/elpa/json-mode-20190123.422/json-mode-autoloads.el" . 1984)
+ ("/home/carlos/.emacs.d/elpa/json-reformat-20160212.853/json-reformat-autoloads.el" . 702)
+ ("/home/carlos/.emacs.d/elpa/json-snatcher-20200916.1717/json-snatcher-autoloads.el" . 564)
+ ("/home/carlos/.emacs.d/elpa/js2-mode-20201220.1718/js2-mode-autoloads.el" . 2917)
+ ("/home/carlos/.emacs.d/elpa/rainbow-mode-1.0.5/rainbow-mode-autoloads.el" . 852)
+ ("/home/carlos/.emacs.d/elpa/elisp-slime-nav-20200304.2201/elisp-slime-nav-autoloads.el" . 1621)
+ ("/home/carlos/.emacs.d/elpa/rainbow-delimiters-20200827.321/rainbow-delimiters-autoloads.el" . 1119)
+ ("/home/carlos/.emacs.d/elpa/exec-path-from-shell-20201215.33/exec-path-from-shell-autoloads.el" . 1439))
