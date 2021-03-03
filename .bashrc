@@ -91,17 +91,12 @@ fi
 alias ghdl='/usr/local/bin/ghdl'
 export PATH="$HOME/bin:$PATH"
 export PATH=$PATH:~/.local/bin
-alias eth='curl eur.rate.sx/eth'
-alias criptos='curl eur.rate.sx'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias apagar='sudo shutdown now'
-alias matlab='bash /home/MATLAB/R2017a/bin/matlab'
 alias actualizar='sudo apt update && sudo apt upgrade'
-alias matlab='bash /home/MATLAB/R2017a/bin/matlab'
 alias disgaea='cd .wine/drive_c/Program\ Files/Disgaea\ 2\ PC/ && wine disgaea2.exe'
-alias matlabm='matlab& && disown'
 alias starbound='bash /media/Starbound.Beta.Build.27.04.2015/linux64/starbound'
 alias Música='cd /home/carlos/Música/ && ./script.sh'
 alias ventilador='watch -tn1 "lscpu | grep MHz; sensors"'
@@ -112,8 +107,8 @@ alias normal='xscreensaver&'
 alias untar='tar -zxvf '
 alias miip='curl ipinfo.io/ip'
 alias etsi='cd ~/ETSI2021/'
-alias em='emacsclient -nw'
-alias Monster='mpv /media/Vídeos/Monster'
+#alias em='emacsclient -nw'
+alias sr='~/buscar.sh'
 alias unnethack='telnet guis.es'
 alias e='emacsclient -t'
 alias E="SUDO_EDITOR=\"emacsclient -t\" sudo -e"
@@ -148,4 +143,3 @@ stty -ixon
 # Con esto conseguimos sincronizar los historiales de diferentes
 # terminales abiertas simultaneamente
 PROMPT_COMMAND="history -a; history -n"
-
