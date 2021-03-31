@@ -192,8 +192,16 @@
 (setq smtpmail-smtp-user   "nkolita1")
 (setq smtpmail-smtp-server "smtp.gmail.com")
 (setq smtpmail-smtp-service 587)
-(setq gnus-select-method '(nnnil "nowhere"))
+(setq gnus-select-method
+      '(nnmaildir "GMail"
+                  (directory "~/Test")
+                  (directory-files nnheader-directory-files-safe)
+                  (get-new-mail nil)))
 
+(defun offlineimap ()
+  "Función para ejecutar offlineimap y descargar el correo en gnus."
+  (interactive)
+  (shell-command "offlineimap&" "*offlineimap*" nil))
 ;;---------------------------------------
 (provide 'emacs)
 ;;; emacs.el ends here
