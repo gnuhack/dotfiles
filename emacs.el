@@ -194,6 +194,8 @@
 (setq smtpmail-smtp-service 587)
 (setq gnus-select-method '(nnnil "nowhere"))
 
+;;------------DIRED----------------------
+(setq dired-listing-switches "-alh")
 ;;---------------------------------------
 (provide 'emacs)
 ;;; emacs.el ends here
