@@ -96,7 +96,7 @@
 (global-set-key (kbd "<f5>") 'modonoche)
 (add-to-list 'org-file-apps '("pdf" . "evince %s"))
 (global-set-key (kbd "<f6>") 'quick-calc)
-
+(set-register ?o (cons 'file "/home/carlos/Documents/horario.txt"))
 
 ;;---------------- ELFEED ----------------
 
