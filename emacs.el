@@ -136,7 +136,9 @@
           (elfeed-show-visit))))))
 
 ;;---------------- ORG ----------------
-;;DONE No se cargan las plantillas
+;;Setup del refile patrocinado por:
+;;https://sachachua.com/blog/2015/02/learn-take-notes-efficiently-org-mode/
+(setq org-refile-targets '((org-agenda-files . (:maxlevel . 6))))
 (global-set-key "\C-cc" 'org-capture)
 (setq org-capture-templates
       (quote
