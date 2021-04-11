@@ -46,7 +46,7 @@
 (require 'appt)
 (appt-activate t)
 
-(setq appt-message-warning-time 5) ; Show notification 5 minutes before event
+(setq appt-message-warning-time 30) ; Show notification 30 minutes before event
 (setq appt-display-interval appt-message-warning-time) ; Disable multiple reminders
 (setq appt-display-mode-line nil)
 
@@ -197,6 +197,7 @@
         ("k" "Cita" entry
          (file+headline "~/org/uni.org" "Citas")
          "* %^t %?"))))
+(setq org-agenda-span 'day)
 ;;---------------- SSH ----------------
 ;;Configuración por defecto para acceder a la raspi con "/-::"
 ;;a través de TRAMP
