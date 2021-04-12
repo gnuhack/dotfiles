@@ -135,7 +135,7 @@
 (add-to-list 'org-file-apps '("pdf" . "evince %s"))
 (global-set-key (kbd "<f6>") 'quick-calc)
 (set-register ?o (cons 'file "/home/carlos/Nextcloud/Documents/horario.txt"))
-
+(set-register ?e (cons 'file "/home/carlos/git/dotfiles/emacs.el"))
 ;;---------------- ELFEED ----------------
 
 (global-set-key (kbd "C-x w") 'elfeed)
