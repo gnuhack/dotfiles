@@ -148,6 +148,7 @@
    "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA"
    "https://www.youtube.com/channel/UCaifrB5IrvGNPJmPeVOcqBA"
    "https://www.youtube.com/user/SsethTzeentach"
+   "https://www.youtube.com/user/vicesat"
    "http://planet.emacs-es.org/rss20.xml"
    "https://planet.emacslife.com/atom.xml"
    "https://blog.mobian-project.org/index.xml"
