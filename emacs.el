@@ -136,7 +136,7 @@
 (global-set-key (kbd "<f6>") 'quick-calc)
 (set-register ?o (cons 'file "/home/carlos/Nextcloud/Documents/horario.txt"))
 (set-register ?e (cons 'file "/home/carlos/git/dotfiles/emacs.el"))
-(set-register ?e (cons 'file "/home/carlos/Nextcloud/Talk/orgt430/tiempo.org"))
+(set-register ?t (cons 'file "/home/carlos/Nextcloud/Talk/orgt430/tiempo.org"))
 ;;---------------- ELFEED ----------------
 
 (global-set-key (kbd "C-x w") 'elfeed)
