@@ -25,24 +25,64 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 # Change $SCRIPT_DIR to the location of your scripts!
-command=~/.config/i3blocks/$BLOCK_NAME
-separator_block_width=15
-markup=none
+#$SCRIPT_DIR=~/.config/i3blocks
+command=/home/carlos/.config/i3blocks/$BLOCK_NAME
 
-# Volume indicator
+# [ytdl-mpv]
+# command=~/.config/i3blocks/ytdl-mpv/ytdl-mpv
+# markup=pango
+# interval=once
+# signal=4
+#CACHE_DEFAULT=1048576
+#PLAYING_COLOR=red
+#NOT_PLAYING_COLOR=white
+
+[show-disk-space]
+command=df -h | awk '/sda1/ { print $1 ": " $4 }'
+interval=30
+color=#A22222FFF55
+# Restart i3 on click
+[restart]
+full_text=Reinicio
+command=i3-msg -q restart
+color=#D0D020209090
+#interval=0
+
+# Battery indicator
 #
-# The first parameter sets the step (and units to display)
-# The second parameter overrides the mixer selection
-# See the script for details.
+# The battery instance defaults to 0.
+[battery]
+label=BAT
+label=⚡
+interval=30
+command=~/.config/i3blocks/battery/battery
 
-[volume]
-#label=♪
-label=Volumen
+[load_average]
+label=LOAD
 interval=10
-signal=10
-command=~/.config/i3blocks/volume/volume
-#STEP=5%
+command=$SCRIPT_DIR/load_average
 
+
+# Fetch the public IP address only on startup
+[public-ip]
+command=wget -qO - icanhazip.com
+interval=once
+color=#02E000B8B5757
+
+[private-ip]
+command=ip addr | awk '/global/ {print $2}'
+interval=once
+color=#CCCCCCCCCC
+
+[show-disk-space]
+command=df -h | awk '/sda6/ { print $6 ": " $4 }'
+interval=30
+color=##2E2E8B8B5757
+
+[weather]
+command=curl -Ss 'https://wttr.in/Aljarafe?0&T&Q?&lang=es' | cut -c 16- | head -2 | xargs echo
+interval=900
+color=#A4C2F4
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
@@ -66,7 +106,8 @@ interval=30
 label=HOME
 #DIR=/mnt/data
 interval=30
-command=~/.config/i3blocks/disk/disk
+
+
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
@@ -76,13 +117,13 @@ command=~/.config/i3blocks/disk/disk
 color=#00FF00
 interval=10
 separator=false
-command=~/.config/i3blocks/iface/iface
+
 [wifi]
 #INTERFACE=wlp3s0
 label=wifi:
 interval=10
 separator=false
-command=~/.config/i3blocks/wifi/wifi
+
 [bandwidth]
 #INTERFACE=eth0
 interval=5
@@ -96,25 +137,32 @@ label=CPU
 interval=10
 min_width=CPU 100.00%
 #separator=false
+command=$SCRIPT_DIR/cpu_usage
 
 [load_average]
-label=LOAD
-interval=10
 command=~/.config/i3blocks/load_average/load_average
-# Battery indicator
-#
-# The battery instance defaults to 0.
-[battery]
-label=BAT
-label=⚡
-interval=30
-command=~/.config/i3blocks/battery/battery
+interval=10
 # Date Time
 #
 [time]
-command=date '+%Y-%m-%d %H:%M:%S'
+command=~/.config/i3blocks/calendar/calendar
 interval=5
 
+# Volume indicator
+#
+# The first parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+# See the script for details.
+
+[volume]
+command=~/.config/i3blocks/volume/volume
+label=♪
+#fulltext=vol
+label=VOL
+interval=once
+signal=10
+#STEP=5%
+color=#20C5410302
 # Generic media player support
 #
 # This displays "ARTIST - SONG" if a music is playing.
@@ -146,9 +194,9 @@ interval=5
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 #[keyindicator]
-#KEY=CAPS
+#Key=CAPS
 #markup=pango
-#interval=once
+#Interval=once
 #signal=11
 
 #[keyindicator]
