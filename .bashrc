@@ -88,33 +88,45 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ghdl='/usr/local/bin/ghdl'
-export PATH="$HOME/bin:$PATH"
-export PATH=$PATH:~/.local/bin
+export XILINXD_LICENSE_FILE=2100@freyja.us.es
+alias yit='cd && cp emacs-and-org-init.org git/dotfiles/emacs-and-org-init.org && cd ~/git/dotfiles/ && git add emacs-and-org-init.org && git commit'
+alias c='xclip -selection clipboard'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
+alias al='alsamixer'
+alias gkh='~/.local/share/Steam/steamapps/common/Golden\ Krone\ Hotel/gkh'
 alias apagar='sudo shutdown now'
+#alias matlab='bash /home/MATLAB/R2017a/bin/matlab'
 alias actualizar='sudo apt update && sudo apt upgrade'
+#alias matlab='bash /home/MATLAB/R2017a/bin/matlab'
 alias disgaea='cd .wine/drive_c/Program\ Files/Disgaea\ 2\ PC/ && wine disgaea2.exe'
+#alias matlabm='matlab& && disown'
 alias starbound='bash /media/Starbound.Beta.Build.27.04.2015/linux64/starbound'
 alias Música='cd /home/carlos/Música/ && ./script.sh'
-alias ventilador='watch -tn1 "lscpu | grep MHz; sensors"'
-alias monitor='xrandr --output VGA-1 --auto --above LVDS-1'
-alias desconectar='xrandr --output VGA-1 --auto --right-of LVDS-1 --off'
+alias ventilador='watch -tn1 "lscpu | grep MHz; printf '\n\n'; sensors"'
+alias monitor='xrandr --output VGA1 --auto --right-of LVDS1'
+alias desconectar='xrandr --output VGA1 --auto --right-of LVDS1 --off'
 alias peli='killall xscreensaver'
 alias normal='xscreensaver&'
 alias untar='tar -zxvf '
 alias miip='curl ipinfo.io/ip'
-alias etsi='cd ~/ETSI2021/'
-#alias em='emacsclient -nw'
-alias sr='~/buscar.sh'
+alias etsi='cd ~/Documentos/ETSI2020'
+alias infor='etsi && cd Informática'
+alias em='emacsclient -nw'
+#alias Monster='mpv /media/Vídeos/Monster'
 alias unnethack='telnet guis.es'
-alias e='emacsclient -t'
-alias E="SUDO_EDITOR=\"emacsclient -t\" sudo -e"
 alias radio3='mpv https://hlsliveamdgl0-lh.akamaihd.net/i/rnerne3_1@793568/master.m3u8'
 alias enterthegungeon='wine Juegos/wine/Enter.the.Gungeon.v2.1.9/EtG.exe'
+alias sr='~/buscar.sh'
 synclient TapButton1=1 #Pongo el toque del touchpad como cli
+export PATH="$HOME/bin:$PATH" #Añado ~/bin para poder ejecutar mis programas facilmente
+alias e='emacsclient -t'
+alias E="SUDO_EDITOR=\"emacsclient -t\" sudo -e"
+alias qnx='qemu-system-x86_64 /home/carlos/Documentos/ETSI2020/Informática/qnx.6.3.2/qnx6.3.2.vmdk'
+alias dunnet='emacs -batch -l dunnet'
+alias ise='/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/ise'
+alias bk='~/Descargas/blockkeeper-x86_64.AppImage '
 
 #alias zed 'ssh root@192.168.0.200' no va no se por qué
 # Alias definitions.
@@ -138,8 +150,3 @@ if ! shopt -oq posix; then
 fi
 #Desactivar ^S
 stty -ixon
-
-# append and reload the history after each command
-# Con esto conseguimos sincronizar los historiales de diferentes
-# terminales abiertas simultaneamente
-PROMPT_COMMAND="history -a; history -n"
