@@ -20,17 +20,25 @@ font pango:monospace 10
 font pango:DejaVu Sans Mono 10
 
 #----------------MIS CONFIGURACIONES-------------------
+for_window [class="Yad"] floating enable
+ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 bindsym $mod+Shift+a move workspace to output left
 exec $mod+w
 exec emacs
+exec nextcloud
 exec orage
 #exec sshfs pi@192.168.1.130:/export/users  ~/Public
 exec xscreensaver&
 exec --no-startup-id "amixer -q sset Master,0 toggle"
-bindsym XF86AudioRaiseVolume exec "amixer -q sset Master 1%+"
-bindsym XF86AudioLowerVolume exec "amixer -q sset Master 1%-"
-bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
+#bindsym XF86AudioRaiseVolume exec "amixer -q sset Master 1%+"
+#bindsym XF86AudioLowerVolume exec "amixer -q sset Master 1%-"
+#bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
+
 bindsym --release $mod+f exec ~/bin/waterfox #Windows+t inicia Firefox
 bindsym --release $mod+b exec ~/Descargas/blockkeeper-x86_64.AppImage
 #bindsym --release $mod+c exec /usr/bin/chromium
@@ -38,8 +46,8 @@ bindsym --release $mod+g exec /usr/bin/google-chrome
 #bindsym --release $mod+f exec /home/carlos/Descargas/waterfox/waterfox #Windows+t inicia Firefox
 bindsym --release $mod+n exec --no-startup-id /usr/bin/thunar #Windows+n inicia thunar
 #bindsym --release $mod+b exec --no-startup-id /home/carlos/Descargas/BK/BK/BK/BK #Windows+b inicia BlocKeeper
-bindsym --release $mod+t exec --no-startup-id ~/Descargas/Telegram/Telegram #Windows+t inicia Telegram
-bindsym --release Print exec --no-startup-id import /tmp/latest-screenshot.png #Windows+x captura la pantalla y la manda a /tmp/latest-screenshot.png
+bindsym --release $mod+t exec --no-startup-id telegram-desktop #Windows+t inicia Telegram
+bindsym --release Print exec --no-startup-id import /tmp/pantallazo.png #Windows+x captura la pantalla y la manda a /tmp/latest-screenshot.png
 hide_edge_borders vertical #quito bordes ventanas
 exec --no-startup-id nm-applet #Network Manager
 exec --no-startup-id feh --bg-max ~/Imágenes/latest-screenshot.png #Fondo de pantalla
@@ -72,7 +80,7 @@ exec 	thunderbird
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -194,5 +202,5 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3staus
+        status_command i3blocks
 }
