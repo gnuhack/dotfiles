@@ -118,12 +118,6 @@
 ;;Puesta de sol
 (setq calendar-latitude 37.344444)
 (setq calendar-longitude -6.065278)
-;;El tiempo
-(setq wttrin-default-accept-language '("Accept-Language" . "es-ES"))
-(setq wttrin-default-cities '("Mairena" "mairena" "Sevilla"))
-;;macro anhqv
-(fset 'anhqv
-      [?\C-x ?1 ?\C-x ?2 ?\C-x ?m ?\C-x ?o ?\C-x ?m ?\C-x ?o ?s ?l ?e ?e ?p ?  ?2 ?h ?\; ?  ?k ?i ?l ?l ?a ?l ?l ?  ?m ?p ?v ?\; ?  ?s ?y ?s ?t ?e ?m ?c ?t ?l ?  ?s ?u ?s ?p ?e ?n ?d ?\M-x ?r ?e ?n ?a ?m ?e ?- ?u ?n ?i tab return ?\C-x ?b ?e ?s ?h ?e ?l ?l return ?\C-x ?m ?c ?d return ?m ?p ?v ?  ?V ?í ?d ?e ?o ?s ?/ ?A ?N ?H ?Q ?V ?/ ?T ?e ?m ?p ?o ?r ?a ?d ?a ?\C-x ?o ?\C-x ?m])
 ;;calendario
 (global-set-key (kbd "C-c m") 'calendar)
 (setq calendar-week-start-day 1)
@@ -209,18 +203,6 @@
            '(tramp-default-method "ssh")
            '(tramp-default-user "pi")
            '(tramp-default-host "192.168.1.125"))
-;;;;----------------SALVACIÓN ----------------
-;; Automatically save and restore sessions
-(setq desktop-dirname             "~/.emacs.d/desktop/"
-      desktop-base-file-name      "emacs.desktop"
-      desktop-base-lock-name      "lock"
-      desktop-path                (list desktop-dirname)
-      desktop-save                t
-      desktop-files-not-to-save   "^$" ;reload tramp paths
-      desktop-load-locked-desktop nil
-      desktop-auto-save-timeout   30)
-(desktop-save-mode 1)
-
 ;;;;---------------EMMS------------------------
 (require 'emms-setup)
 (emms-all)
