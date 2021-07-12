@@ -30,3 +30,5 @@ alias qnx='qemu-system-x86_64 /home/carlos/Documentos/ETSI2020/Informática/qnx.
 alias dunnet='emacs -batch -l dunnet'
 alias ise='/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/ise'
 alias bk='~/Descargas/blockkeeper-x86_64.AppImage '
+alias hablar='arecord -f cd -t raw | oggenc - -r | ssh mobian@192.168.1.202 mplayer -'
+alias escuchar="ssh mobian@192.168.1.202 'arecord -f cd -t raw | oggenc - -r' | mplayer -"
