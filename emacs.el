@@ -116,8 +116,17 @@
 (setq confirm-kill-emacs 'y-or-n-p)
 (setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
 ;;Puesta de sol
-(setq calendar-latitude 37.344444)
-(setq calendar-longitude -6.065278)
+(defun eval-file (file)
+  "Execute FILE and return the result of the last expression."
+  (eval
+   (ignore-errors
+     (read-from-whole-string
+      (with-temp-buffer
+        (insert-file-contents file)
+        (buffer-string))))))
+
+(setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
+(setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
 ;;calendario
 (global-set-key (kbd "C-c m") 'calendar)
 (setq calendar-week-start-day 1)
