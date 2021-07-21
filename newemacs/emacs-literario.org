@@ -1,5 +1,5 @@
 * Qué está pasando
-** TODO Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática
+** DONE Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática: Se hace con <s y luego TAB
 Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo que se usa "tangle" o algo así para cargar desde el archivo de inicio de emacs tradicional (el init.el) un archivo org (emacs-literario.org) que luego automágicamente se convierte en un emacs-literario.el. A partir de ahí ya se lee la configuración normal, solo que en vez de estar toda "del tirón" está en bloques (#+BEGIN_SRC emacs-lisp #+END_SRC) que son leídos y transformados adecuadamente para cargarse. Por tanto para replicar esta configuración se necesitan tener dos archivos (init.el y emacs-literario.org) y los dos en el mismo directorio (típicamente ~/.emacs.d).
 * Inicio de paquetería y autoinstalación
 #+BEGIN_SRC emacs-lisp
@@ -34,16 +34,6 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
 
 #+BEGIN_SRC emacs-lisp
   (setq dired-listing-switches "-alh")
-  ;;emms
-  (require 'emms-setup)
-  (emms-all)
-  (emms-default-players)
-  (setq emms-source-file-default-directory "~/Música/")
-  (global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
-  (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
-  (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
-  (global-set-key (kbd "<XF86AudioStop>") 'emms-shuffle)
-
   ;;ssh
   ;;Configuración por defecto para acceder a la raspi con "/-::"
   ;;a través de TRAMP
@@ -57,9 +47,6 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
 
     ;; Con C-c <flechas> se hace o deshace la config de ventanas
     (winner-mode)
-
-    ;; Asignaciones de teclas
-    (global-set-key (kbd "M-o") 'other-window)
 
     (global-visual-line-mode)
 
@@ -87,19 +74,8 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
     (setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
     (setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
     ;;calendario
-    (global-set-key (kbd "C-c m") 'calendar)
-    (setq calendar-week-start-day 1)
-    ;;desactivar el whitespace-mode
-    (setq prelude-whitespace nil)
 
-  ;;keybd
-  (global-set-key (kbd "C-x k") 'kill-current-buffer)
-  (global-set-key (kbd "<f5>") 'modonoche)
-  (add-to-list 'org-file-apps '("pdf" . "evince %s"))
-  (global-set-key (kbd "<f6>") 'quick-calc)
-  (set-register ?o (cons 'file "/home/carlos/Nextcloud/Documents/horario.txt"))
-  (set-register ?e (cons 'file "/home/carlos/git/dotfiles/emacs.el"))
-  (set-register ?t (cons 'file "/home/carlos/Nextcloud/Talk/orgt430/tiempo.org"))
+    (setq calendar-week-start-day 1)
   ;;misc
   (server-start)
   (setq confirm-kill-emacs 'y-or-n-p)
@@ -117,10 +93,7 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
   (setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
   (setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
   ;;calendario
-  (global-set-key (kbd "C-c m") 'calendar)
   (setq calendar-week-start-day 1)
-  ;;desactivar el whitespace-mode
-  (setq prelude-whitespace nil)
 #+END_SRC
 * Org
 #+BEGIN_SRC emacs-lisp
@@ -256,4 +229,30 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
         (if (eq major-mode 'elfeed-search-mode)
             (elfeed-search-browse-url)
           (elfeed-show-visit))))))
+#+END_SRC
+* EMMS
+#+BEGIN_SRC emacs-lisp
+  ;;emms
+  (require 'emms-setup)
+  (emms-all)
+  (emms-default-players)
+  (setq emms-source-file-default-directory "~/Música/")
+  (global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
+  (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
+  (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
+  (global-set-key (kbd "<XF86AudioStop>") 'emms-shuffle)
+
+#+END_SRC
+* Keybindings
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-c m") 'calendar)
+  (global-set-key (kbd "M-o") 'other-window)
+  (global-set-key (kbd "C-x k") 'kill-current-buffer)
+  (global-set-key (kbd "<f5>") 'modonoche)
+  (add-to-list 'org-file-apps '("pdf" . "evince %s"))
+  (global-set-key (kbd "<f6>") 'quick-calc)
+  (set-register ?o (cons 'file "/home/carlos/Nextcloud/Documents/horario.txt"))
+  (set-register ?e (cons 'file "/home/carlos/git/dotfiles/emacs.el"))
+  (set-register ?t (cons 'file "/home/carlos/Nextcloud/Talk/orgt430/tiempo.org"))
+
 #+END_SRC
