@@ -44,7 +44,7 @@ bindsym --release $mod+b exec ~/Descargas/blockkeeper-x86_64.AppImage
 #bindsym --release $mod+c exec /usr/bin/chromium
 bindsym --release $mod+g exec /usr/bin/google-chrome
 #bindsym --release $mod+f exec /home/carlos/Descargas/waterfox/waterfox #Windows+t inicia Firefox
-bindsym --release $mod+n exec --no-startup-id /usr/bin/thunar #Windows+n inicia thunar
+#bindsym --release $mod+n exec --no-startup-id /usr/bin/thunar #Windows+n inicia thunar
 #bindsym --release $mod+b exec --no-startup-id /home/carlos/Descargas/BK/BK/BK/BK #Windows+b inicia BlocKeeper
 bindsym --release $mod+t exec --no-startup-id telegram-desktop #Windows+t inicia Telegram
 bindsym --release Print exec --no-startup-id import /tmp/pantallazo.png #Windows+x captura la pantalla y la manda a /tmp/latest-screenshot.png

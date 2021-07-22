@@ -10,7 +10,7 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
     ;;   (require 'use-package))
 
   (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
-  (setq package-list '(ido magit 2048-game pdf-tools elfeed emms))
+  (setq package-list '(ido magit 2048-game pdf-tools elfeed emms htmlize))
 
   (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
 			   ("gnu" . "http://elpa.gnu.org/packages/")
@@ -254,5 +254,6 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
   (set-register ?o (cons 'file "/home/carlos/Nextcloud/Documents/horario.txt"))
   (set-register ?e (cons 'file "/home/carlos/git/dotfiles/emacs.el"))
   (set-register ?t (cons 'file "/home/carlos/Nextcloud/Talk/orgt430/tiempo.org"))
-
+    (global-set-key (kbd "s-n") 'next-buffer)
+    (global-set-key (kbd "s-p") 'previous-buffer)
 #+END_SRC
