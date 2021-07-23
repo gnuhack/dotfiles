@@ -1,9 +1,3 @@
-;; This is only needed once, near the top of the file
-  ;; (eval-when-compile
-  ;;   ;; Following line is not needed if use-package.el is in ~/.emacs.d
-  ;;   (add-to-list 'load-path "~/emacs.d/elpa")
-  ;;   (require 'use-package))
-
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (setq package-list '(ido magit 2048-game pdf-tools elfeed emms htmlize))
 
@@ -11,18 +5,6 @@
 			 ("gnu" . "http://elpa.gnu.org/packages/")
 			 ("melpa" . "https://melpa.org/packages/")
 			 ))
-
-					; activate all the packages (in particular autoloads)
-(package-initialize)
-
-					; fetch the list of packages available 
-(unless package-archive-contents
-  (package-refresh-contents))
-
-					; install the missing packages
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
 
 ;;(global-linum-mode '0)
 (column-number-mode 1)
@@ -103,34 +85,9 @@
   (setq calendar-week-start-day 1)
 
 (global-set-key "\C-cl" 'org-store-link)
-   (global-set-key "\C-ca" 'org-agenda)
-   (global-set-key "\C-cc" 'org-capture)
-   (global-set-key "\C-cb" 'org-switchb)
-
-;;Setup del refile patrocinado por:
-;;https://sachachua.com/blog/2015/02/learn-take-notes-efficiently-org-mode/
-(setq org-refile-targets '((org-agenda-files . (:maxlevel . 6))))
+(global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cc" 'org-capture)
-(setq org-capture-templates
-      (quote
-       (("c" "Nota" entry
-	 (file+datetree "/home/carlos/Nextcloud/Documents/horario.txt")
-	 "* %?" :empty-lines 1)
-	("t" "Todo" entry
-	 (file+headline "/home/carlos/org/gtd.org" "Tasks")
-	 "* TODO %?" :empty-lines 1)
-	("j" "Journal Entry" entry
-	 (file+datetree "~/Nextcloud/journal/journal.org")
-	 "* %?" :empty-lines 1)
-	("p" "Películas" entry
-	 (file+headline "~/home/carlos/Nextcloud/Documents/horario.txt" "Películas")
-	 "* %?")
-	("d" "Dudas" entry (file+headline "/home/carlos/Nextcloud/Documents/horario.txt" "Dudas")
-	 "* %^{PROMPT} %?\n  %i\n  %a")
-	("k" "Cita" entry
-	 (file+headline "~/org/uni.org" "Citas")
-	 "* %^t %?"))))
-(setq org-agenda-span 'day)
+(global-set-key "\C-cb" 'org-switchb)
 
 (require 'appt)
 (appt-activate t)
@@ -171,11 +128,10 @@
     (start-process "my-appt-notification-app" nil my-appt-notification-app (nth i min-to-app) (nth i msg)))))
 
 (fset 'modonoche
-      (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("m" 0 "%d")) arg))) ;; Macro para poner el modo noche en los pdfs.
+      (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("m" 0 "%d")) arg)))
 (add-hook 'pdf-view-mode-hook (lambda() (nlinum-mode -1))) ;;Desactivar linum mode, que no va bien con pdf-view-mode
 (pdf-tools-install)
-;;Guardar la posición en un pdf: "marcapáginas"
-;;Sacado de https://sachachua.com/blog/2021/02/guest-post-bookmarking-pdfs-in-emacs-with-pdf-tools-and-registers/
+
 (define-key pdf-view-mode-map (kbd "<C-f1>")
   (lambda ()
     "Saves the current position on the pdf to jump to later with <C-f2>."
@@ -203,7 +159,6 @@
    "https://planet.emacslife.com/atom.xml"
    "https://blog.mobian-project.org/index.xml"
    "https://twobithistory.org/feed.xml")))
-;;Ver vídeos
 
 (defun std::elfeed::visit-entry-dwim (&optional arg)
   "Función para reproducir vídeos en elfeed de Youtube con mpv ARG."

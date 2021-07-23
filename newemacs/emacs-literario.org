@@ -1,15 +1,10 @@
 * Qué está pasando
 ** DONE Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática: Se hace con <s y luego TAB
-** TODO Poner el número de línea a la izquierda
 ** TODO Poner las funciones de elisp en un fichero aparte
 Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo que se usa "tangle" o algo así para cargar desde el archivo de inicio de emacs tradicional (el init.el) un archivo org (emacs-literario.org) que luego automágicamente se convierte en un emacs-literario.el. A partir de ahí ya se lee la configuración normal, solo que en vez de estar toda "del tirón" está en bloques (#+BEGIN_SRC emacs-lisp #+END_SRC) que son leídos y transformados adecuadamente para cargarse. Por tanto para replicar esta configuración se necesitan tener dos archivos (init.el y emacs-literario.org) y los dos en el mismo directorio (típicamente ~/.emacs.d).
 * Inicio de paquetería y autoinstalación
+La primera línea arregla el bug que no permite conectarse a ELPA. Luego en package list meto los paquetes que quiero que se autoninstalen al lanzar un emacs de serie con este archivo de configuración. Pero creo que ya los añade Customize al init.el, tengo que mirarlo. Por último están los 3 repos que he decidido meter (elpa, melpa y gnu).
 #+BEGIN_SRC emacs-lisp
-    ;; This is only needed once, near the top of the file
-    ;; (eval-when-compile
-    ;;   ;; Following line is not needed if use-package.el is in ~/.emacs.d
-    ;;   (add-to-list 'load-path "~/emacs.d/elpa")
-    ;;   (require 'use-package))
 
   (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
   (setq package-list '(ido magit 2048-game pdf-tools elfeed emms htmlize))
@@ -18,15 +13,17 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
 			   ("gnu" . "http://elpa.gnu.org/packages/")
 			   ("melpa" . "https://melpa.org/packages/")
 			   ))
+#+END_SRC
 
-					  ; activate all the packages (in particular autoloads)
+Aquí realizo la instalación de paquetes seleccionados en package-list arriba.
+#+BEGIN_SRC 
+
+
   (package-initialize)
 
-					  ; fetch the list of packages available 
   (unless package-archive-contents
     (package-refresh-contents))
 
-					  ; install the missing packages
   (dolist (package package-list)
     (unless (package-installed-p package)
       (package-install package)))
@@ -114,15 +111,17 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
   (setq calendar-week-start-day 1)
 #+END_SRC
 * Org
+Asignaciones de teclas sugeridas por el manual de org de info.
 #+BEGIN_SRC emacs-lisp
 
      (global-set-key "\C-cl" 'org-store-link)
      (global-set-key "\C-ca" 'org-agenda)
      (global-set-key "\C-cc" 'org-capture)
      (global-set-key "\C-cb" 'org-switchb)
+#+END_SRC
+Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-notes-efficiently-org-mode/. Aquí defino las plantillas para org. Si tomo una nota que no cuadra con ninguna categoría uso el template de "Nota" y luego hago el refill (C-w).
+#+BEGIN_SRC 
 
-  ;;Setup del refile patrocinado por:
-  ;;https://sachachua.com/blog/2015/02/learn-take-notes-efficiently-org-mode/
   (setq org-refile-targets '((org-agenda-files . (:maxlevel . 6))))
   (global-set-key "\C-cc" 'org-capture)
   (setq org-capture-templates
@@ -149,6 +148,18 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
 
 #+END_SRC
 * Notificaciones
+Funciones para que las notificaciones de la agenda me lleguen al escritorio con espeak. Además del código de abajo hace falta meter en ~/bin un appt-notification con lo siguiente:
+#+BEGIN_SRC 
+#!/bin/sh
+
+TIME="$1"
+MSG="$2"
+
+notify-send -t 0 "Appointment in $TIME minutes:$MSG"
+espeak "Appointment in $TIME minutes: $MSG"
+
+#+END_SRC
+Aquí están las funciones para la notificación.
 #+BEGIN_SRC emacs-lisp
 (require 'appt)
 (appt-activate t)
@@ -189,14 +200,14 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
     (start-process "my-appt-notification-app" nil my-appt-notification-app (nth i min-to-app) (nth i msg)))))
 #+END_SRC
 * PDF
+Macro para poner el modo noche en los pdfs (modonoche) y funciones para conseguir un marcapáginas en un pdf. Sacado de https://sachachua.com/blog/2021/02/guest-post-bookmarking-pdfs-in-emacs-with-pdf-tools-and-registers/
 #+BEGIN_SRC emacs-lisp
 
   (fset 'modonoche
-	(lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("m" 0 "%d")) arg))) ;; Macro para poner el modo noche en los pdfs.
+	(lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("m" 0 "%d")) arg)))
   (add-hook 'pdf-view-mode-hook (lambda() (nlinum-mode -1))) ;;Desactivar linum mode, que no va bien con pdf-view-mode
   (pdf-tools-install)
-  ;;Guardar la posición en un pdf: "marcapáginas"
-  ;;Sacado de https://sachachua.com/blog/2021/02/guest-post-bookmarking-pdfs-in-emacs-with-pdf-tools-and-registers/
+
   (define-key pdf-view-mode-map (kbd "<C-f1>")
     (lambda ()
       "Saves the current position on the pdf to jump to later with <C-f2>."
@@ -211,6 +222,7 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
 
 #+END_SRC
 * Elfeed
+Con elfeed puedo tener mi propio feed personalizado. Sobre todo es útil para seguir blogs individuales que no tengan una alta frecuencia de posteo. También me sirve para "suscribirme" a canales de Youtube sin visitar la página, gracias as la función definida abajo.
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-x w") 'elfeed)
 (setq elfeed-feeds
@@ -227,7 +239,9 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
    "https://planet.emacslife.com/atom.xml"
    "https://blog.mobian-project.org/index.xml"
    "https://twobithistory.org/feed.xml")))
-;;Ver vídeos
+#+END_SRC
+Con la siguiente función puedo reproducir vídeos de Youtube en mpv descargándolos con youtube-dl. Solo hay que ponerse sobre el link de Youtube y hacer =M-x std::elfeed::visit-entry-dwim=
+#+BEGIN_SRC emacs-lisp
 
 (defun std::elfeed::visit-entry-dwim (&optional arg)
   "Función para reproducir vídeos en elfeed de Youtube con mpv ARG."
@@ -249,6 +263,7 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
           (elfeed-show-visit))))))
 #+END_SRC
 * EMMS
+Para reproducir música he elegido emms, que es bastante simple de configurar. Simplemente hay que añadir a la lista de reproducción la carpeta de música que quiera reproducir (con add-directory-tree) y luego ya iniciarlo con emms-start.
 #+BEGIN_SRC emacs-lisp
   ;;emms
   (require 'emms-setup)
@@ -262,6 +277,7 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
 
 #+END_SRC
 * Keybindings
+Atajos de teclas y registros.
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "C-x p") 'proced)
   (global-set-key (kbd "C-x e") 'eshell)
