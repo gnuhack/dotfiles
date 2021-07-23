@@ -261,6 +261,7 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
 #+END_SRC
 * Keybindings
 #+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-x e") 'eshell)
   (global-set-key (kbd "C-c m") 'calendar)
   (global-set-key (kbd "M-o") 'other-window)
   (global-set-key (kbd "C-x k") 'kill-current-buffer)

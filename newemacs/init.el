@@ -35,7 +35,7 @@
  '(org-agenda-files (quote ("~/Nextcloud/Talk/orgt430/gtd.org")))
  '(package-selected-packages
    (quote
-    (company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))))
+    (org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
