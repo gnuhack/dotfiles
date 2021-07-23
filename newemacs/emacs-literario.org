@@ -1,5 +1,7 @@
 * Qué está pasando
 ** DONE Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática: Se hace con <s y luego TAB
+** TODO Poner M-x proced como C-x p
+** TODO Poner las funciones de elisp en un fichero aparte
 Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo que se usa "tangle" o algo así para cargar desde el archivo de inicio de emacs tradicional (el init.el) un archivo org (emacs-literario.org) que luego automágicamente se convierte en un emacs-literario.el. A partir de ahí ya se lee la configuración normal, solo que en vez de estar toda "del tirón" está en bloques (#+BEGIN_SRC emacs-lisp #+END_SRC) que son leídos y transformados adecuadamente para cargarse. Por tanto para replicar esta configuración se necesitan tener dos archivos (init.el y emacs-literario.org) y los dos en el mismo directorio (típicamente ~/.emacs.d).
 * Inicio de paquetería y autoinstalación
 #+BEGIN_SRC emacs-lisp
@@ -33,6 +35,18 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
 * Tolodemás
 
 #+BEGIN_SRC emacs-lisp
+(global-linum-mode)
+(which-key-mode)
+(add-hook 'after-init-hook 'global-company-mode)
+
+(defun sudo ()
+"Use TRAMP to `sudo' the current buffer"
+(interactive)
+(when buffer-file-name
+(find-alternate-file
+(concat "/sudo:root@localhost:"
+	buffer-file-name))))
+
   (setq dired-listing-switches "-alh")
   ;;ssh
   ;;Configuración por defecto para acceder a la raspi con "/-::"
@@ -44,6 +58,8 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
 
     ;; https://www.masteringemacs.org/article/introduction-to-ido-mode
     (ido-mode)
+    (setq ido-everywhere t)
+    (setq ido-enable-flex-matching t)
 
     ;; Con C-c <flechas> se hace o deshace la config de ventanas
     (winner-mode)

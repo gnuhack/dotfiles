@@ -27,3 +27,18 @@
 (package-initialize)
 (require 'ob-tangle)
 (org-babel-load-file "~/git/dotfiles/newemacs/emacs-literario.org")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-files (quote ("~/Nextcloud/Talk/orgt430/gtd.org")))
+ '(package-selected-packages
+   (quote
+    (company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

@@ -5,7 +5,7 @@
   ;;   (require 'use-package))
 
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
-(setq package-list '(ido magit 2048-game pdf-tools elfeed emms))
+(setq package-list '(ido magit 2048-game pdf-tools elfeed emms htmlize))
 
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
@@ -24,44 +24,64 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-(setq dired-listing-switches "-alh")
-;;emms
-(require 'emms-setup)
-(emms-all)
-(emms-default-players)
-(setq emms-source-file-default-directory "~/Música/")
-(global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
-(global-set-key (kbd "<XF86AudioNext>") 'emms-next)
-(global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
-(global-set-key (kbd "<XF86AudioStop>") 'emms-shuffle)
+(global-linum-mode)
+(which-key-mode)
+(add-hook 'after-init-hook 'global-company-mode)
 
-;;ssh
-;;Configuración por defecto para acceder a la raspi con "/-::"
-;;a través de TRAMP
-;; (custom-set-variables
-;;            '(tramp-default-method "ssh")
-;;            '(tramp-default-user "pi")
-;;            '(tramp-default-host "192.168.1.125"))
+(defun sudo ()
+"Use TRAMP to `sudo' the current buffer"
+(interactive)
+(when buffer-file-name
+(find-alternate-file
+(concat "/sudo:root@localhost:"
+	buffer-file-name))))
 
-  ;; https://www.masteringemacs.org/article/introduction-to-ido-mode
-  (ido-mode)
+  (setq dired-listing-switches "-alh")
+  ;;ssh
+  ;;Configuración por defecto para acceder a la raspi con "/-::"
+  ;;a través de TRAMP
+  ;; (custom-set-variables
+  ;;            '(tramp-default-method "ssh")
+  ;;            '(tramp-default-user "pi")
+  ;;            '(tramp-default-host "192.168.1.125"))
 
-  ;; Con C-c <flechas> se hace o deshace la config de ventanas
-  (winner-mode)
+    ;; https://www.masteringemacs.org/article/introduction-to-ido-mode
+    (ido-mode)
+    (setq ido-everywhere t)
+    (setq ido-enable-flex-matching t)
 
-  ;; Asignaciones de teclas
-  (global-set-key (kbd "M-o") 'other-window)
+    ;; Con C-c <flechas> se hace o deshace la config de ventanas
+    (winner-mode)
 
-  (global-visual-line-mode)
+    (global-visual-line-mode)
 
 
-  (menu-bar-mode -1)
-  (tool-bar-mode -1)
-  (scroll-bar-mode -1)
-  (load-theme 'misterioso)
+    (menu-bar-mode -1)
+    (tool-bar-mode -1)
+    (scroll-bar-mode -1)
+    (load-theme 'misterioso)
 
-  (setq inhibit-splash-screen t)
+    (setq inhibit-splash-screen t)
 
+    (server-start)
+    (setq confirm-kill-emacs 'y-or-n-p)
+    (setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
+    ;;Puesta de sol
+    (defun eval-file (file)
+      "Execute FILE and return the result of the last expression."
+      (eval
+       (ignore-errors
+	 (read-from-whole-string
+	  (with-temp-buffer
+	    (insert-file-contents file)
+	    (buffer-string))))))
+
+    (setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
+    (setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
+    ;;calendario
+
+    (setq calendar-week-start-day 1)
+  ;;misc
   (server-start)
   (setq confirm-kill-emacs 'y-or-n-p)
   (setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
@@ -78,40 +98,7 @@
   (setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
   (setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
   ;;calendario
-  (global-set-key (kbd "C-c m") 'calendar)
   (setq calendar-week-start-day 1)
-  ;;desactivar el whitespace-mode
-  (setq prelude-whitespace nil)
-
-;;keybd
-(global-set-key (kbd "C-x k") 'kill-current-buffer)
-(global-set-key (kbd "<f5>") 'modonoche)
-(add-to-list 'org-file-apps '("pdf" . "evince %s"))
-(global-set-key (kbd "<f6>") 'quick-calc)
-(set-register ?o (cons 'file "/home/carlos/Nextcloud/Documents/horario.txt"))
-(set-register ?e (cons 'file "/home/carlos/git/dotfiles/emacs.el"))
-(set-register ?t (cons 'file "/home/carlos/Nextcloud/Talk/orgt430/tiempo.org"))
-;;misc
-(server-start)
-(setq confirm-kill-emacs 'y-or-n-p)
-(setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
-;;Puesta de sol
-(defun eval-file (file)
-  "Execute FILE and return the result of the last expression."
-  (eval
-   (ignore-errors
-     (read-from-whole-string
-      (with-temp-buffer
-	(insert-file-contents file)
-	(buffer-string))))))
-
-(setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
-(setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
-;;calendario
-(global-set-key (kbd "C-c m") 'calendar)
-(setq calendar-week-start-day 1)
-;;desactivar el whitespace-mode
-(setq prelude-whitespace nil)
 
 (global-set-key "\C-cl" 'org-store-link)
    (global-set-key "\C-ca" 'org-agenda)
@@ -234,3 +221,25 @@
         (if (eq major-mode 'elfeed-search-mode)
             (elfeed-search-browse-url)
           (elfeed-show-visit))))))
+
+;;emms
+(require 'emms-setup)
+(emms-all)
+(emms-default-players)
+(setq emms-source-file-default-directory "~/Música/")
+(global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
+(global-set-key (kbd "<XF86AudioNext>") 'emms-next)
+(global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
+(global-set-key (kbd "<XF86AudioStop>") 'emms-shuffle)
+
+(global-set-key (kbd "C-c m") 'calendar)
+(global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "C-x k") 'kill-current-buffer)
+(global-set-key (kbd "<f5>") 'modonoche)
+(add-to-list 'org-file-apps '("pdf" . "evince %s"))
+(global-set-key (kbd "<f6>") 'quick-calc)
+(set-register ?o (cons 'file "/home/carlos/Nextcloud/Documents/horario.txt"))
+(set-register ?e (cons 'file "/home/carlos/git/dotfiles/emacs.el"))
+(set-register ?t (cons 'file "/home/carlos/Nextcloud/Talk/orgt430/tiempo.org"))
+  (global-set-key (kbd "s-n") 'next-buffer)
+  (global-set-key (kbd "s-p") 'previous-buffer)
