@@ -24,7 +24,9 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-(global-linum-mode)
+;;(global-linum-mode '0)
+(column-number-mode 1)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (which-key-mode)
 (add-hook 'after-init-hook 'global-company-mode)
 
@@ -232,6 +234,8 @@
 (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
 (global-set-key (kbd "<XF86AudioStop>") 'emms-shuffle)
 
+(global-set-key (kbd "C-x p") 'proced)
+(global-set-key (kbd "C-x e") 'eshell)
 (global-set-key (kbd "C-c m") 'calendar)
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "C-x k") 'kill-current-buffer)
@@ -239,7 +243,7 @@
 (add-to-list 'org-file-apps '("pdf" . "evince %s"))
 (global-set-key (kbd "<f6>") 'quick-calc)
 (set-register ?o (cons 'file "/home/carlos/Nextcloud/Documents/horario.txt"))
-(set-register ?e (cons 'file "/home/carlos/git/dotfiles/emacs.el"))
+(set-register ?e (cons 'file "/home/carlos/git/dotfiles/newemacs/emacs-literario.org"))
 (set-register ?t (cons 'file "/home/carlos/Nextcloud/Talk/orgt430/tiempo.org"))
   (global-set-key (kbd "s-n") 'next-buffer)
   (global-set-key (kbd "s-p") 'previous-buffer)

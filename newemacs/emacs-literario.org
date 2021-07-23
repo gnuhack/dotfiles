@@ -1,6 +1,6 @@
 * Qué está pasando
 ** DONE Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática: Se hace con <s y luego TAB
-** TODO Poner M-x proced como C-x p
+** TODO Poner el número de línea a la izquierda
 ** TODO Poner las funciones de elisp en un fichero aparte
 Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo que se usa "tangle" o algo así para cargar desde el archivo de inicio de emacs tradicional (el init.el) un archivo org (emacs-literario.org) que luego automágicamente se convierte en un emacs-literario.el. A partir de ahí ya se lee la configuración normal, solo que en vez de estar toda "del tirón" está en bloques (#+BEGIN_SRC emacs-lisp #+END_SRC) que son leídos y transformados adecuadamente para cargarse. Por tanto para replicar esta configuración se necesitan tener dos archivos (init.el y emacs-literario.org) y los dos en el mismo directorio (típicamente ~/.emacs.d).
 * Inicio de paquetería y autoinstalación
@@ -35,7 +35,9 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
 * Tolodemás
 
 #+BEGIN_SRC emacs-lisp
-(global-linum-mode)
+;;(global-linum-mode '0)
+(column-number-mode 1)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (which-key-mode)
 (add-hook 'after-init-hook 'global-company-mode)
 
@@ -261,6 +263,7 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
 #+END_SRC
 * Keybindings
 #+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-x p") 'proced)
   (global-set-key (kbd "C-x e") 'eshell)
   (global-set-key (kbd "C-c m") 'calendar)
   (global-set-key (kbd "M-o") 'other-window)
@@ -269,7 +272,7 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
   (add-to-list 'org-file-apps '("pdf" . "evince %s"))
   (global-set-key (kbd "<f6>") 'quick-calc)
   (set-register ?o (cons 'file "/home/carlos/Nextcloud/Documents/horario.txt"))
-  (set-register ?e (cons 'file "/home/carlos/git/dotfiles/emacs.el"))
+  (set-register ?e (cons 'file "/home/carlos/git/dotfiles/newemacs/emacs-literario.org"))
   (set-register ?t (cons 'file "/home/carlos/Nextcloud/Talk/orgt430/tiempo.org"))
     (global-set-key (kbd "s-n") 'next-buffer)
     (global-set-key (kbd "s-p") 'previous-buffer)
