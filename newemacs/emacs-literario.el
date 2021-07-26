@@ -11,8 +11,13 @@
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (which-key-mode)
 (add-hook 'after-init-hook 'global-company-mode)
+(setq company-show-numbers t)
+(setq company-minimum-prefix-length 2)
+(setq company-tooltip-align-annotations t)
+;; Para usar sudo bien en eshell (alias actualizar)
+(require 'em-tramp) 
 
-(defun sudo ()
+(defun sudeame ()
 "Use TRAMP to `sudo' the current buffer"
 (interactive)
 (when buffer-file-name
@@ -79,15 +84,35 @@
 	  (insert-file-contents file)
 	  (buffer-string))))))
 
-  (setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
-  (setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
-  ;;calendario
   (setq calendar-week-start-day 1)
 
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-switchb)
+
+(setq org-refile-targets '((org-agenda-files . (:maxlevel . 6))))
+(global-set-key "\C-cc" 'org-capture)
+(setq org-capture-templates
+      (quote
+       (("c" "Nota" entry
+	 (file+datetree "/home/carlos/Nextcloud/Documents/horario.txt")
+	 "* %?" :empty-lines 1)
+	("t" "Todo" entry
+	 (file+headline "/home/carlos/org/gtd.org" "Tasks")
+	 "* TODO %?" :empty-lines 1)
+	("j" "Journal Entry" entry
+	 (file+datetree "~/Nextcloud/journal/journal.org")
+	 "* %?" :empty-lines 1)
+	("p" "Películas" entry
+	 (file+headline "~/home/carlos/Nextcloud/Documents/horario.txt" "Películas")
+	 "* %?")
+	("d" "Dudas" entry (file+headline "/home/carlos/Nextcloud/Documents/horario.txt" "Dudas")
+	 "* %^{PROMPT} %?\n  %i\n  %a")
+	("k" "Cita" entry
+	 (file+headline "~/org/uni.org" "Citas")
+	 "* %^t %?"))))
+(setq org-agenda-span 'day)
 
 (require 'appt)
 (appt-activate t)
@@ -184,6 +209,7 @@
 (emms-all)
 (emms-default-players)
 (setq emms-source-file-default-directory "~/Música/")
+(emms-add-directory-tree "~/Música")
 (global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
 (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
 (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)

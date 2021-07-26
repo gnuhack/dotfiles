@@ -37,8 +37,13 @@ Aquí realizo la instalación de paquetes seleccionados en package-list arriba.
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (which-key-mode)
 (add-hook 'after-init-hook 'global-company-mode)
+(setq company-show-numbers t)
+(setq company-minimum-prefix-length 2)
+(setq company-tooltip-align-annotations t)
+;; Para usar sudo bien en eshell (alias actualizar)
+(require 'em-tramp) 
 
-(defun sudo ()
+(defun sudeame ()
 "Use TRAMP to `sudo' the current buffer"
 (interactive)
 (when buffer-file-name
@@ -105,9 +110,6 @@ Aquí realizo la instalación de paquetes seleccionados en package-list arriba.
 	  (insert-file-contents file)
 	  (buffer-string))))))
 
-  (setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
-  (setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
-  ;;calendario
   (setq calendar-week-start-day 1)
 #+END_SRC
 * Org
@@ -120,7 +122,7 @@ Asignaciones de teclas sugeridas por el manual de org de info.
      (global-set-key "\C-cb" 'org-switchb)
 #+END_SRC
 Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-notes-efficiently-org-mode/. Aquí defino las plantillas para org. Si tomo una nota que no cuadra con ninguna categoría uso el template de "Nota" y luego hago el refill (C-w).
-#+BEGIN_SRC 
+#+BEGIN_SRC  emacs-lisp
 
   (setq org-refile-targets '((org-agenda-files . (:maxlevel . 6))))
   (global-set-key "\C-cc" 'org-capture)
@@ -270,6 +272,7 @@ Para reproducir música he elegido emms, que es bastante simple de configurar. S
   (emms-all)
   (emms-default-players)
   (setq emms-source-file-default-directory "~/Música/")
+  (emms-add-directory-tree "~/Música")
   (global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
   (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
   (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
