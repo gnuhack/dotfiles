@@ -236,7 +236,6 @@ Con elfeed puedo tener mi propio feed personalizado. Sobre todo es útil para se
    "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA"
    "https://www.youtube.com/channel/UCaifrB5IrvGNPJmPeVOcqBA"
    "https://www.youtube.com/user/SsethTzeentach"
-   "https://www.youtube.com/user/vicesat"
    "http://planet.emacs-es.org/rss20.xml"
    "https://planet.emacslife.com/atom.xml"
    "https://blog.mobian-project.org/index.xml"
@@ -273,6 +272,7 @@ Para reproducir música he elegido emms, que es bastante simple de configurar. S
   (emms-default-players)
   (setq emms-source-file-default-directory "~/Música/")
   (emms-add-directory-tree "~/Música")
+  (emms-mode-line-disable)
   (global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
   (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
   (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
@@ -286,6 +286,7 @@ Atajos de teclas y registros.
   (global-set-key (kbd "C-x e") 'eshell)
   (global-set-key (kbd "C-c m") 'calendar)
   (global-set-key (kbd "M-o") 'other-window)
+  (global-set-key (kbd "s-o") 'other-window)
   (global-set-key (kbd "C-x k") 'kill-current-buffer)
   (global-set-key (kbd "<f5>") 'modonoche)
   (add-to-list 'org-file-apps '("pdf" . "evince %s"))
