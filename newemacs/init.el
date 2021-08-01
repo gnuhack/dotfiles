@@ -40,7 +40,7 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg" "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA" "https://www.youtube.com/channel/UCaifrB5IrvGNPJmPeVOcqBA" "https://www.youtube.com/user/SsethTzeentach" "https://www.youtube.com/user/vicesat" "http://planet.emacs-es.org/rss20.xml" "https://planet.emacslife.com/atom.xml" "https://blog.mobian-project.org/index.xml" "https://twobithistory.org/feed.xml")))
  '(org-agenda-files
    (quote
-    ("~/Nextcloud/Documents/horario.txt" "~/Nextcloud/Talk/orgt430/gtd.org")))
+    ("~/org/uni.org" "~/Nextcloud/Documents/horario.txt" "~/Nextcloud/Talk/orgt430/gtd.org")))
  '(package-selected-packages
    (quote
     (org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))))
