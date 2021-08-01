@@ -20,3 +20,5 @@ Además no se instalan todos los paquetes de forma automática, me tengo que ir 
 
 (package-refresh-contents)
 (package-install-selected-packages)
+
+Y para que no de error la config de emms también tengo que tener una canción en ~/Música
