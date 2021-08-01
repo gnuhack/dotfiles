@@ -32,6 +32,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(elfeed-feeds
+   (quote
+    ("http://karl-voit.at/feeds/lazyblorg-all.atom_1.0.links-and-content.xml" "https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&filter=local"
+     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCaifrB5IrvGNPJmPeVOcqBA" Kruggsmash)
+     ("https://www.bay12games.com/dwarves/dev_now.rss" Dwarf Fortress)
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg" "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA" "https://www.youtube.com/channel/UCaifrB5IrvGNPJmPeVOcqBA" "https://www.youtube.com/user/SsethTzeentach" "https://www.youtube.com/user/vicesat" "http://planet.emacs-es.org/rss20.xml" "https://planet.emacslife.com/atom.xml" "https://blog.mobian-project.org/index.xml" "https://twobithistory.org/feed.xml")))
  '(org-agenda-files (quote ("~/Nextcloud/Talk/orgt430/gtd.org")))
  '(package-selected-packages
    (quote
