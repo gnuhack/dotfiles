@@ -6,14 +6,36 @@
 			 ("melpa" . "https://melpa.org/packages/")
 			 ))
 
-;;(global-linum-mode '0)
-(column-number-mode 1)
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (which-key-mode)
-(add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'after-init-hook 'global-company-mode)  
 (setq company-show-numbers t)
 (setq company-minimum-prefix-length 2)
 (setq company-tooltip-align-annotations t)
+
+;; https://www.masteringemacs.org/article/introduction-to-ido-mode
+(ido-mode)
+(setq ido-everywhere t)
+(setq ido-enable-flex-matching t)
+
+;; Con C-c <flechas> se hace o deshace la config de ventanas
+(winner-mode)
+
+;; Poner los backups en la carpeta backup 
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
+(column-number-mode 1)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(global-visual-line-mode)
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(load-theme 'misterioso)
+
+(setq inhibit-splash-screen t)
+
+(server-start)
+(setq confirm-kill-emacs 'y-or-n-p)
+
 ;; Para usar sudo bien en eshell (alias actualizar)
 (require 'em-tramp) 
 
@@ -25,36 +47,18 @@
 (concat "/sudo:root@localhost:"
 	buffer-file-name))))
 
-  (setq dired-listing-switches "-alh")
-  ;;ssh
-  ;;Configuración por defecto para acceder a la raspi con "/-::"
-  ;;a través de TRAMP
-  ;; (custom-set-variables
-  ;;            '(tramp-default-method "ssh")
-  ;;            '(tramp-default-user "pi")
-  ;;            '(tramp-default-host "192.168.1.125"))
+;;ssh
+;;Configuración por defecto para acceder a la raspi con "/-::"
+;;a través de TRAMP
+;; (custom-set-variables
+;;            '(tramp-default-method "ssh")
+;;            '(tramp-default-user "pi")
+;;            '(tramp-default-host "192.168.1.125"))
 
-    ;; https://www.masteringemacs.org/article/introduction-to-ido-mode
-    (ido-mode)
-    (setq ido-everywhere t)
-    (setq ido-enable-flex-matching t)
+(setq dired-listing-switches "-alh")
+(setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
 
-    ;; Con C-c <flechas> se hace o deshace la config de ventanas
-    (winner-mode)
-
-    (global-visual-line-mode)
-
-
-    (menu-bar-mode -1)
-    (tool-bar-mode -1)
-    (scroll-bar-mode -1)
-    (load-theme 'misterioso)
-
-    (setq inhibit-splash-screen t)
-
-    (server-start)
-    (setq confirm-kill-emacs 'y-or-n-p)
-    (setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
+;;(global-linum-mode '0)
     ;;Puesta de sol
     (defun eval-file (file)
       "Execute FILE and return the result of the last expression."
@@ -67,24 +71,6 @@
 
     (setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
     (setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
-    ;;calendario
-
-    (setq calendar-week-start-day 1)
-  ;;misc
-  (server-start)
-  (setq confirm-kill-emacs 'y-or-n-p)
-  (setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
-  ;;Puesta de sol
-  (defun eval-file (file)
-    "Execute FILE and return the result of the last expression."
-    (eval
-     (ignore-errors
-       (read-from-whole-string
-	(with-temp-buffer
-	  (insert-file-contents file)
-	  (buffer-string))))))
-
-  (setq calendar-week-start-day 1)
 
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
@@ -105,7 +91,7 @@
 	 (file+datetree "~/Nextcloud/journal/journal.org")
 	 "* %?" :empty-lines 1)
 	("p" "Películas" entry
-	 (file+headline "~/home/carlos/Nextcloud/Documents/horario.txt" "Películas")
+	 (file+headline "~/Nextcloud/Documents/horario.txt" "Películas")
 	 "* %?")
 	("d" "Dudas" entry (file+headline "/home/carlos/Nextcloud/Documents/horario.txt" "Dudas")
 	 "* %^{PROMPT} %?\n  %i\n  %a")
@@ -113,6 +99,9 @@
 	 (file+headline "~/org/uni.org" "Citas")
 	 "* %^t %?"))))
 (setq org-agenda-span 'day)
+  ;;calendario
+
+  (setq calendar-week-start-day 1)
 
 (require 'appt)
 (appt-activate t)
@@ -179,7 +168,6 @@
    "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA"
    "https://www.youtube.com/channel/UCaifrB5IrvGNPJmPeVOcqBA"
    "https://www.youtube.com/user/SsethTzeentach"
-   "https://www.youtube.com/user/vicesat"
    "http://planet.emacs-es.org/rss20.xml"
    "https://planet.emacslife.com/atom.xml"
    "https://blog.mobian-project.org/index.xml"
@@ -210,6 +198,7 @@
 (emms-default-players)
 (setq emms-source-file-default-directory "~/Música/")
 (emms-add-directory-tree "~/Música")
+(emms-mode-line-disable)
 (global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
 (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
 (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
@@ -219,6 +208,7 @@
 (global-set-key (kbd "C-x e") 'eshell)
 (global-set-key (kbd "C-c m") 'calendar)
 (global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "s-o") 'other-window)
 (global-set-key (kbd "C-x k") 'kill-current-buffer)
 (global-set-key (kbd "<f5>") 'modonoche)
 (add-to-list 'org-file-apps '("pdf" . "evince %s"))

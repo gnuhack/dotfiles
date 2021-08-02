@@ -1,9 +1,9 @@
 * Qué está pasando
-** DONE Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática: Se hace con <s y luego TAB
+** DONE Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática: Se hace con <s y luego TAB (En versiones recientes de Emacs es con C-c C-,)
 ** TODO Poner las funciones de elisp en un fichero aparte
 Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo que se usa "tangle" o algo así para cargar desde el archivo de inicio de emacs tradicional (el init.el) un archivo org (emacs-literario.org) que luego automágicamente se convierte en un emacs-literario.el. A partir de ahí ya se lee la configuración normal, solo que en vez de estar toda "del tirón" está en bloques (#+BEGIN_SRC emacs-lisp #+END_SRC) que son leídos y transformados adecuadamente para cargarse. Por tanto para replicar esta configuración se necesitan tener dos archivos (init.el y emacs-literario.org) y los dos en el mismo directorio (típicamente ~/.emacs.d).
 * Inicio de paquetería y autoinstalación
-La primera línea arregla el bug que no permite conectarse a ELPA. Luego en package list meto los paquetes que quiero que se autoninstalen al lanzar un emacs de serie con este archivo de configuración. Pero creo que ya los añade Customize al init.el, tengo que mirarlo. Por último están los 3 repos que he decidido meter (elpa, melpa y gnu).
+(Creo que esta sección entera tendría que moverla a init.el). La primera línea arregla el bug que no permite conectarse a ELPA. Luego en package list meto los paquetes que quiero que se autoninstalen al lanzar un emacs de serie con este archivo de configuración. Pero creo que ya los añade Customize al init.el, tengo que mirarlo. Por último están los 3 repos que he decidido meter (elpa, melpa y gnu).
 #+BEGIN_SRC emacs-lisp
 
   (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
@@ -15,7 +15,7 @@ La primera línea arregla el bug que no permite conectarse a ELPA. Luego en pack
 			   ))
 #+END_SRC
 
-Aquí realizo la instalación de paquetes seleccionados en package-list arriba.
+Aquí realizo la instalación de paquetes seleccionados en package-list arriba. En realidad esto lo tengo duplicado, ya que para que funcione lo he tenido que meter en el init.el.
 #+BEGIN_SRC 
 
 
@@ -29,17 +29,49 @@ Aquí realizo la instalación de paquetes seleccionados en package-list arriba.
       (package-install package)))
 
 #+END_SRC
-* Tolodemás
-
-#+BEGIN_SRC emacs-lisp
-;;(global-linum-mode '0)
-(column-number-mode 1)
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+* Entorno del editor
+El which-key te enseña las combinaciones de teclas posibles al pulsar alguna. Con company se autocompletan palabras.
+  #+begin_src emacs-lisp
 (which-key-mode)
-(add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'after-init-hook 'global-company-mode)  
 (setq company-show-numbers t)
 (setq company-minimum-prefix-length 2)
 (setq company-tooltip-align-annotations t)
+#+end_src
+Como motor de búsqueda he elegido ido, para buscar archivos fácilmente.
+#+begin_src emacs-lisp
+    ;; https://www.masteringemacs.org/article/introduction-to-ido-mode
+    (ido-mode)
+    (setq ido-everywhere t)
+    (setq ido-enable-flex-matching t)
+#+end_src
+El winner-mode sirve para poder hacer y deshacer la configuración de ventanas.
+#+begin_src emacs-lisp
+    ;; Con C-c <flechas> se hace o deshace la config de ventanas
+    (winner-mode)
+#+end_src
+Pequeños ajustes visuales, creación de carpeta backup para guardar los archivos de recuperación que crea emacs, e inicio del servidor para poder acceder a emacs de forma rápida con emacsclient.
+#+begin_src emacs-lisp
+;; Poner los backups en la carpeta backup 
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
+(column-number-mode 1)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(global-visual-line-mode)
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(load-theme 'misterioso)
+
+(setq inhibit-splash-screen t)
+
+(server-start)
+(setq confirm-kill-emacs 'y-or-n-p)
+
+#+end_src
+* Eshell
+La eshell es una shell escrita entera en lisp.
+#+begin_src emacs-lisp
 ;; Para usar sudo bien en eshell (alias actualizar)
 (require 'em-tramp) 
 
@@ -50,8 +82,10 @@ Aquí realizo la instalación de paquetes seleccionados en package-list arriba.
 (find-alternate-file
 (concat "/sudo:root@localhost:"
 	buffer-file-name))))
-
-  (setq dired-listing-switches "-alh")
+#+end_src
+* Tramp
+Tramp sirve para acceder de forma remota a archivos a través de emacs con ssh, sftp, etc.
+#+begin_src emacs-lisp
   ;;ssh
   ;;Configuración por defecto para acceder a la raspi con "/-::"
   ;;a través de TRAMP
@@ -60,27 +94,18 @@ Aquí realizo la instalación de paquetes seleccionados en package-list arriba.
   ;;            '(tramp-default-user "pi")
   ;;            '(tramp-default-host "192.168.1.125"))
 
-    ;; https://www.masteringemacs.org/article/introduction-to-ido-mode
-    (ido-mode)
-    (setq ido-everywhere t)
-    (setq ido-enable-flex-matching t)
+#+end_src
+* Dired
+El navegador de archivos de emacs.
+#+begin_src emacs-lisp
 
-    ;; Con C-c <flechas> se hace o deshace la config de ventanas
-    (winner-mode)
-
-    (global-visual-line-mode)
-
-
-    (menu-bar-mode -1)
-    (tool-bar-mode -1)
-    (scroll-bar-mode -1)
-    (load-theme 'misterioso)
-
-    (setq inhibit-splash-screen t)
-
-    (server-start)
-    (setq confirm-kill-emacs 'y-or-n-p)
-    (setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
+  (setq dired-listing-switches "-alh")
+(setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
+#+end_src
+* Puesta de sol
+Pongo aquí una función que me permite leer las coordenadas en las que me encuentro para poder ver la puesta de sol con (sunrise-sunset).
+#+BEGIN_SRC emacs-lisp
+;;(global-linum-mode '0)
     ;;Puesta de sol
     (defun eval-file (file)
       "Execute FILE and return the result of the last expression."
@@ -93,24 +118,6 @@ Aquí realizo la instalación de paquetes seleccionados en package-list arriba.
 
     (setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
     (setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
-    ;;calendario
-
-    (setq calendar-week-start-day 1)
-  ;;misc
-  (server-start)
-  (setq confirm-kill-emacs 'y-or-n-p)
-  (setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
-  ;;Puesta de sol
-  (defun eval-file (file)
-    "Execute FILE and return the result of the last expression."
-    (eval
-     (ignore-errors
-       (read-from-whole-string
-	(with-temp-buffer
-	  (insert-file-contents file)
-	  (buffer-string))))))
-
-  (setq calendar-week-start-day 1)
 #+END_SRC
 * Org
 Asignaciones de teclas sugeridas por el manual de org de info.
@@ -146,7 +153,9 @@ Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-
 	   (file+headline "~/org/uni.org" "Citas")
 	   "* %^t %?"))))
   (setq org-agenda-span 'day)
+    ;;calendario
 
+    (setq calendar-week-start-day 1)
 
 #+END_SRC
 * Notificaciones
