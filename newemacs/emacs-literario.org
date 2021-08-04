@@ -69,6 +69,12 @@ Pequeños ajustes visuales, creación de carpeta backup para guardar los archivo
 (setq confirm-kill-emacs 'y-or-n-p)
 
 #+end_src
+Para poder sincronizar sin problema mis archivos con el cliente de Nextcloud que tengo, habilito el revert mode de forma automática para que se actualicen los búferes solos.
+#+BEGIN_SRC emacs-lisp
+
+(auto-revert-mode)
+
+#+END_SRC
 * Eshell
 La eshell es una shell escrita entera en lisp.
 #+begin_src emacs-lisp
