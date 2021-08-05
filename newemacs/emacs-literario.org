@@ -291,7 +291,10 @@ Para reproducir música he elegido emms, que es bastante simple de configurar. S
   (global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
   (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
   (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
-  (global-set-key (kbd "<XF86AudioStop>") 'emms-shuffle)
+  (global-set-key (kbd "<XF86MonBrightnessUp>") 'emms-shuffle) 
+  (global-set-key (kbd "s-m") 'emms)
+  (add-hook 'emms-mode-hook 'hl-line-mode)
+  (add-hook 'emms-mode-hook 'visual-line-mode)
 
 #+END_SRC
 * Keybindings
