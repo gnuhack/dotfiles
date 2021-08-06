@@ -43,7 +43,7 @@
     ("~/org/uni.org" "~/Nextcloud/Documents/horario.txt" "~/Nextcloud/Talk/orgt430/gtd.org")))
  '(package-selected-packages
    (quote
-    (projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))))
+    (emojify telega projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

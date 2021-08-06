@@ -323,7 +323,6 @@ Atajos de teclas y registros.
 Para gestionar proyectos he elegido proyectile. Así puedo cambiar entre archivos de un proyecto de forma fácil y cómoda. Un proyecto es toda carpeta que contenga archivos clave (como los repos de git).
 #+BEGIN_SRC emacs-lisp
 (projectile-mode +1)
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 #+END_SRC
 * Guardado
