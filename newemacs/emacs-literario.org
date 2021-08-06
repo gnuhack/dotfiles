@@ -319,3 +319,8 @@ Atajos de teclas y registros.
     (global-set-key (kbd "s-n") 'next-buffer)
     (global-set-key (kbd "s-p") 'previous-buffer)
 #+END_SRC
+* Guardado
+Guarda el estado de un búfer cuando se cierra éste o Emacs.
+#+BEGIN_SRC emacs-lisp
+(save-place-mode 1)
+#+END_SRC
