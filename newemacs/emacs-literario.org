@@ -75,6 +75,10 @@ Para poder sincronizar sin problema mis archivos con el cliente de Nextcloud que
 (auto-revert-mode)
 
 #+END_SRC
+Insertar el cierre de paréntesis de forma automática
+#+begin_src emacs-lisp
+(electric-pair-mode)
+#+end_src
 * Eshell
 La eshell es una shell escrita entera en lisp.
 #+begin_src emacs-lisp
