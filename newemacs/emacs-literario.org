@@ -78,6 +78,7 @@ Para poder sincronizar sin problema mis archivos con el cliente de Nextcloud que
 Insertar el cierre de paréntesis de forma automática
 #+begin_src emacs-lisp
 (electric-pair-mode)
+(show-paren-mode)
 #+end_src
 * Eshell
 La eshell es una shell escrita entera en lisp.
@@ -318,6 +319,8 @@ Atajos de teclas y registros.
   (set-register ?t (cons 'file "/home/carlos/Nextcloud/Talk/orgt430/tiempo.org"))
     (global-set-key (kbd "s-n") 'next-buffer)
     (global-set-key (kbd "s-p") 'previous-buffer)
+    (global-set-key (kbd "s-T") 'telega)
+(define-key global-map (kbd "C-c t") telega-prefix-map)
 #+END_SRC
 * Projectile
 Para gestionar proyectos he elegido proyectile. Así puedo cambiar entre archivos de un proyecto de forma fácil y cómoda. Un proyecto es toda carpeta que contenga archivos clave (como los repos de git).
