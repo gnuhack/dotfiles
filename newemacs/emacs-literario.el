@@ -36,6 +36,11 @@
 (server-start)
 (setq confirm-kill-emacs 'y-or-n-p)
 
+(auto-revert-mode)
+
+(electric-pair-mode)
+(show-paren-mode)
+
 ;; Para usar sudo bien en eshell (alias actualizar)
 (require 'em-tramp) 
 
@@ -202,7 +207,10 @@
 (global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
 (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
 (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
-(global-set-key (kbd "<XF86AudioStop>") 'emms-shuffle)
+(global-set-key (kbd "<XF86MonBrightnessUp>") 'emms-shuffle) 
+(global-set-key (kbd "s-m") 'emms)
+(add-hook 'emms-mode-hook 'hl-line-mode)
+(add-hook 'emms-mode-hook 'visual-line-mode)
 
 (global-set-key (kbd "C-x p") 'proced)
 (global-set-key (kbd "C-x e") 'eshell)
@@ -216,5 +224,15 @@
 (set-register ?o (cons 'file "/home/carlos/Nextcloud/Documents/horario.txt"))
 (set-register ?e (cons 'file "/home/carlos/git/dotfiles/newemacs/emacs-literario.org"))
 (set-register ?t (cons 'file "/home/carlos/Nextcloud/Talk/orgt430/tiempo.org"))
-  (global-set-key (kbd "s-n") 'next-buffer)
-  (global-set-key (kbd "s-p") 'previous-buffer)
+(global-set-key (kbd "s-n") 'next-buffer)
+(global-set-key (kbd "s-p") 'previous-buffer)
+
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+(global-set-key (kbd "s-T") 'telega)
+(define-key global-map (kbd "C-c t") telega-prefix-map)
+(add-hook 'telega-load-hook 'telega-notifications-mode)
+;;(add-hook 'telega-load-hook 'emoji-mode)
+
+(save-place-mode 1)

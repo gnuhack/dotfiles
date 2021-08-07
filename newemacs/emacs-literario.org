@@ -317,16 +317,23 @@ Atajos de teclas y registros.
   (set-register ?o (cons 'file "/home/carlos/Nextcloud/Documents/horario.txt"))
   (set-register ?e (cons 'file "/home/carlos/git/dotfiles/newemacs/emacs-literario.org"))
   (set-register ?t (cons 'file "/home/carlos/Nextcloud/Talk/orgt430/tiempo.org"))
-    (global-set-key (kbd "s-n") 'next-buffer)
-    (global-set-key (kbd "s-p") 'previous-buffer)
-    (global-set-key (kbd "s-T") 'telega)
-(define-key global-map (kbd "C-c t") telega-prefix-map)
+  (global-set-key (kbd "s-n") 'next-buffer)
+  (global-set-key (kbd "s-p") 'previous-buffer)
+
 #+END_SRC
 * Projectile
 Para gestionar proyectos he elegido proyectile. Así puedo cambiar entre archivos de un proyecto de forma fácil y cómoda. Un proyecto es toda carpeta que contenga archivos clave (como los repos de git).
 #+BEGIN_SRC emacs-lisp
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+#+END_SRC
+* Telega
+Cliente de Telegram para Emacs.
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "s-T") 'telega)
+(define-key global-map (kbd "C-c t") telega-prefix-map)
+(add-hook 'telega-load-hook 'telega-notifications-mode)
+;;(add-hook 'telega-load-hook 'emoji-mode)
 #+END_SRC
 * Guardado
 Guarda el estado de un búfer cuando se cierra éste o Emacs.
