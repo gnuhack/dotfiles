@@ -37,13 +37,26 @@
     ("http://karl-voit.at/feeds/lazyblorg-all.atom_1.0.links-and-content.xml" "https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&filter=local"
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UCaifrB5IrvGNPJmPeVOcqBA" Kruggsmash)
      ("https://www.bay12games.com/dwarves/dev_now.rss" Dwarf Fortress)
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg" "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA" "https://www.youtube.com/channel/UCaifrB5IrvGNPJmPeVOcqBA" "https://www.youtube.com/user/SsethTzeentach" "https://www.youtube.com/user/vicesat" "http://planet.emacs-es.org/rss20.xml" "https://planet.emacslife.com/atom.xml" "https://blog.mobian-project.org/index.xml" "https://twobithistory.org/feed.xml")))
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg" "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA" "https://www.youtube.com/channel/UCaifrB5IrvGNPJmPeVOcqBA" "https://www.youtube.com/user/SsethTzeentach" "https://www.youtube.com/user/vicesat" "http://planet.emacs-es.org/rss20.xml" "https://planet.emacslife.com/atom.xml" "https://blog.mobian-project.org/index.xml" "https://twobithistory.org/feed.xml")) t)
  '(org-agenda-files
    (quote
     ("~/org/uni.org" "~/Nextcloud/Documents/horario.txt" "~/Nextcloud/Talk/orgt430/gtd.org")))
  '(package-selected-packages
    (quote
-    (emojify telega projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))))
+    (emojify telega projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game)))
+ '(telega-mode-line-string-format
+   (quote
+    ("   "
+     (:eval
+      (telega-mode-line-online-status))
+     (:eval
+      (when telega-use-tracking-for
+	(telega-mode-line-tracking)))
+     (:eval
+      (telega-mode-line-unread-unmuted))
+     (:eval
+      (telega-mode-line-mentions
+       (quote messages)))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
