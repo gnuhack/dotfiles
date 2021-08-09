@@ -26,5 +26,3 @@ Además no se instalan todos los paquetes de forma automática, me tengo que ir 
 (package-install-selected-packages)
 
 Y para que no de error la config de emms también tengo que tener una canción en ~/Música.
-
-También debería borrar de emacs-literario.org la parte de configuración de paquetes y autoinstalación y moverla al init.el
