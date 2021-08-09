@@ -28,7 +28,7 @@
 ;;https://stackoverflow.com/questions/19336489/initializing-emacs-with-org-babel-debugger-entered-lisp-error-void-function
 (package-initialize)
 (require 'ob-tangle)
-(org-babel-load-file "~/git/dotfiles/newemacs/emacs-literario.org")
+(org-babel-load-file "~/git/dotfiles/emacs-literario.org")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
