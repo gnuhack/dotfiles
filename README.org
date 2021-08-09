@@ -14,6 +14,9 @@ Va en ~/.config/mpv/input.conf
 
      Para replicar la configuración de Emacs hay que crear un simlink (por ejemplo desde dired pulsando S) del init.el, desde ~/git/dotfiles a ~/.emacs.d
 
+**** El .bashrc y el .bashrc_aliases son las configuraciones de bash.
+     El .bashrc va en ~/.bashrc
+
 **** Estado de la autoinstalación de Emacs:
 
 Ahora mismo se instala de forma semiautomática mi configuración. Me queda por resolver lo de que me pide que exista el archivo ~/Nextcloud/Documents/horario.txt, que además tiene que contener lo siguiente:
