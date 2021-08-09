@@ -3,21 +3,21 @@
 ** Cómo replicar mi configuración
 En cada subapartado siguiente se explica dónde colocar los correspondientes ficheros.
 
-**** En la carpeta i3 están las configuraciones de i3 e i3blocks.
+*** En la carpeta i3 están las configuraciones de i3 e i3blocks.
    La configuración de i3 va en ~/.config/i3 y la de i3blocks en .config/i3blocks. Para instalar i3blocks en un nuevo ordenador, hacer un git clone de "https://github.com/vivien/i3blocks-contrib" y renombrar el repo a i3blocks y ponerlo en ~/.config/i3blocks
 
-**** El input.conf es el fichero de configuración de mpv. 
+*** El input.conf es el fichero de configuración de mpv. 
 Va en ~/.config/mpv/input.conf
 
-**** Los ficheros init.el, emacs-literario.org y emacs-literario.el son los archivos de configuración de Emacs.
+*** Los ficheros init.el, emacs-literario.org y emacs-literario.el son los archivos de configuración de Emacs.
      El init.el es el primer archivo que lee Emacs al empezar (donde empieza la magia). Ahí tengo puesto que cargue el archivo emacs-literario.org que se encarga de generar el emacs-literario.el que es donde tengo mi configuración. Para mas información el principio del archivo emacs-literario.org.
 
      Para replicar la configuración de Emacs hay que crear un simlink (por ejemplo desde dired pulsando S) del init.el, desde ~/git/dotfiles a ~/.emacs.d
 
-**** El .bashrc y el .bashrc_aliases son las configuraciones de bash.
+*** El .bashrc y el .bashrc_aliases son las configuraciones de bash.
      El .bashrc va en ~/.bashrc
 
-**** Estado de la autoinstalación de Emacs:
+*** Estado de la autoinstalación de Emacs:
 
 Ahora mismo se instala de forma semiautomática mi configuración. Me queda por resolver lo de que me pide que exista el archivo ~/Nextcloud/Documents/horario.txt, que además tiene que contener lo siguiente:
 
