@@ -1,7 +1,7 @@
 * Qué está pasando
-** DONE Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática: Se hace con <s y luego TAB (En versiones recientes de Emacs es con C-c C-,)
-** TODO Poner las funciones de elisp en un fichero aparte
 Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo que se usa "tangle" o algo así para cargar desde el archivo de inicio de emacs tradicional (el init.el) un archivo org (emacs-literario.org) que luego automágicamente se convierte en un emacs-literario.el. A partir de ahí ya se lee la configuración normal, solo que en vez de estar toda "del tirón" está en bloques (#+BEGIN_SRC emacs-lisp #+END_SRC) que son leídos y transformados adecuadamente para cargarse. Por tanto para replicar esta configuración se necesitan tener dos archivos (init.el y emacs-literario.org) y los dos en el mismo directorio (típicamente ~/.emacs.d).
+***** DONE Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática: Se hace con <s y luego TAB (En versiones recientes de Emacs es con C-c C-,)
+***** TODO Poner las funciones de elisp en un fichero aparte
 * Inicio de paquetería y autoinstalación
 (Creo que esta sección entera tendría que moverla a init.el). La primera línea arregla el bug que no permite conectarse a ELPA. Luego en package list meto los paquetes que quiero que se autoninstalen al lanzar un emacs de serie con este archivo de configuración. Pero creo que ya los añade Customize al init.el, tengo que mirarlo. Por último están los 3 repos que he decidido meter (elpa, melpa y gnu).
 #+BEGIN_SRC emacs-lisp
@@ -340,3 +340,21 @@ Guarda el estado de un búfer cuando se cierra éste o Emacs.
 #+BEGIN_SRC emacs-lisp
 (save-place-mode 1)
 #+END_SRC
+* Correo
+Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS.
+#+begin_src emacs-lisp
+(setq send-mail-function 'smtpmail-send-it)
+(setq smtpmail-smtp-user   "nkolita1")
+(setq smtpmail-smtp-server "smtp.gmail.com")
+(setq smtpmail-smtp-service 587)
+(setq gnus-select-method
+      '(nnmaildir "GMail"
+                  (directory "~/Test")
+                  (directory-files nnheader-directory-files-safe)
+                  (get-new-mail nil)))
+
+(defun offlineimap ()
+  "Función para ejecutar offlineimap y descargar el correo en gnus."
+  (interactive)
+  (shell-command "offlineimap&" "*offlineimap*" nil))
+#+end_src

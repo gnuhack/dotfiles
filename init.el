@@ -2,7 +2,7 @@
 ;; ;;
 ;; ;; This file loads Org-mode and then loads the rest of our Emacs initialization from Emacs lisp
 ;; ;; embedded in literate Org-mode files.
-
+;; --- ANTIGUO init.el
 ;; ;; Load up Org Mode and (now included) Org Babel for elisp embedded in Org Mode files
 
 
@@ -23,6 +23,8 @@
 
 
 ;; ;;; init.el ends here
+;; --- FIN DEL ANTIGUO init.el
+
 ;;https://stackoverflow.com/questions/19336489/initializing-emacs-with-org-babel-debugger-entered-lisp-error-void-function
 (package-initialize)
 (require 'ob-tangle)
