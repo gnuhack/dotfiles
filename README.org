@@ -7,7 +7,7 @@ En cada subapartado siguiente se explica dónde colocar los correspondientes fic
    La configuración de i3 va en ~/.config/i3 y la de i3blocks en .config/i3blocks. Para instalar i3blocks en un nuevo ordenador, hacer un git clone de "https://github.com/vivien/i3blocks-contrib" y renombrar el repo a i3blocks y ponerlo en ~/.config/i3blocks
 
 **** El input.conf es el fichero de configuración de mpv. 
-Creo que va en ~/.config/input.conf (o si no en ~/.config)
+Va en ~/.config/mpv/input.conf
 
 **** Los ficheros init.el, emacs-literario.org y emacs-literario.el son los archivos de configuración de Emacs.
      El init.el es el primer archivo que lee Emacs al empezar (donde empieza la magia). Ahí tengo puesto que cargue el archivo emacs-literario.org que se encarga de generar el emacs-literario.el que es donde tengo mi configuración. Para mas información el principio del archivo emacs-literario.org.
