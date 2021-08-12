@@ -20,6 +20,7 @@ font pango:monospace 10
 font pango:DejaVu Sans Mono 10
 
 #----------------MIS CONFIGURACIONES-------------------
+workspace_auto_back_and_forth yes #Para poder pulsar un workspace y alternar entre 2
 exec xmodmap ~/.Xmodmap # Para poder cambiar en el Acer Aspire la tecla del shift izquierdo por la del <, y ya de paso poner la del < en la de la barra invertida, lo que he hecho es generar un archivo con la configuración actual del teclado con =xmodmap -pke > .Xmodmap= y luego editar ese archivo con las keycodes adecuadas (que son la 94 para el < y la 49 para la barra invertida), intercambiando su valor. Luego cargo ese archivo con la orden xmodmap ~/.Xmodmap. Lo he sacado de "http://linux-commands-examples.com/setxkbmap"
 for_window [class="Yad"] floating enable
  bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks

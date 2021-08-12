@@ -29,3 +29,7 @@ Además no se instalan todos los paquetes de forma automática, me tengo que ir 
 (package-install-selected-packages)
 
 Y para que no de error la config de emms también tengo que tener una canción en ~/Música.
+*** Fichero alias
+    Este fichero contiene los alias que uso para eshell. Debe ir en ~/.emacs.d/eshell/alias
+*** Fichero misfunciones.el
+    Fichero que contiene las funciones de elisp que he creado.
