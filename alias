@@ -1,0 +1,7 @@
+alias ventilador lscpu | grep MHz; sensors $*
+alias sudo eshell/sudo $*
+alias ll ls -l $*
+alias la ls -A $*
+alias l ls $*
+alias actualizar sudo apt update $* && sudo apt upgrade $*
+alias Música cd /home/carlos/Música $* && sh /script.sh $*
