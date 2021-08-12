@@ -222,7 +222,7 @@
 (add-to-list 'org-file-apps '("pdf" . "evince %s"))
 (global-set-key (kbd "<f6>") 'quick-calc)
 (set-register ?o (cons 'file "/home/carlos/Nextcloud/Documents/horario.txt"))
-(set-register ?e (cons 'file "/home/carlos/git/dotfiles/newemacs/emacs-literario.org"))
+(set-register ?e (cons 'file "/home/carlos/git/dotfiles/emacs-literario.org"))
 (set-register ?t (cons 'file "/home/carlos/Nextcloud/Talk/orgt430/tiempo.org"))
 (global-set-key (kbd "s-n") 'next-buffer)
 (global-set-key (kbd "s-p") 'previous-buffer)
@@ -251,3 +251,6 @@
   "Función para ejecutar offlineimap y descargar el correo en gnus."
   (interactive)
   (shell-command "offlineimap&" "*offlineimap*" nil))
+
+(global-set-key (kbd "C-c d") #'dictionary-search)
+(setq dictionary-server "dict.org")
