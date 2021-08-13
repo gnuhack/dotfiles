@@ -2,3 +2,19 @@
     "Leer una página aleatoria del diario."
     (interactive)
     (goto-line (random (count-lines (point-min) (point-max)))))   
+
+(defun rat/anttel ()
+  (interactive)
+  "Ir al anterior chat de telegram."
+  (switch-to-buffer "*Telega Root*")
+  (previous-line)
+  (push-button)
+  )
+
+(defun rat/sigtel ()
+  (interactive)
+  "Ir al siguiente chat de telegram."
+  (switch-to-buffer "*Telega Root*")
+  (next-line)
+  (push-button)
+)
