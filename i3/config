@@ -30,7 +30,8 @@ bindsym $mod+Shift+a move workspace to output left
 exec $mod+w
 exec emacs
 exec nextcloud
-exec orage
+exec ~/Descargas/Telegram/Telegram
+#exec orage
 #exec sshfs pi@192.168.1.130:/export/users  ~/Public
 exec xscreensaver&
 exec --no-startup-id "amixer -q sset Master,0 toggle"
