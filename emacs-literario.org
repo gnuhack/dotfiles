@@ -305,6 +305,8 @@ Para reproducir música he elegido emms, que es bastante simple de configurar. S
 * Keybindings
 Atajos de teclas y registros.
 #+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-<tab>") 'rat/sigtel)
+  (global-set-key (kbd "C-<iso-lefttab>") 'rat/anttel)
   (global-set-key (kbd "C-x p") 'proced)
   (global-set-key (kbd "C-x e") 'eshell)
   (global-set-key (kbd "C-c m") 'calendar)
@@ -352,6 +354,11 @@ Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS.
                   (directory "~/Test")
                   (directory-files nnheader-directory-files-safe)
                   (get-new-mail nil)))
+
+(setq message-send-mail-function   'smtpmail-send-it
+      smtpmail-default-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-server         "smtp.gmail.com"
+      smtpmail-local-domain        "mail.google.com")
 
 (defun offlineimap ()
   "Función para ejecutar offlineimap y descargar el correo en gnus."
