@@ -111,7 +111,9 @@ El navegador de archivos de emacs.
 #+begin_src emacs-lisp
 
   (setq dired-listing-switches "-alh")
-(setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
+  (setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
+  (add-hook 'dired-mode-hook 'hl-line-mode)
+
 #+end_src
 * Puesta de sol
 Pongo aquí una función que me permite leer las coordenadas en las que me encuentro para poder ver la puesta de sol con (sunrise-sunset).
@@ -154,7 +156,7 @@ Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-
 	   "* TODO %?" :empty-lines 1)
 	  ("j" "Journal Entry" entry
 	   (file+datetree "~/Nextcloud/journal/journal.org")
-	   "* %?" :empty-lines 1)
+	   "* %?" :empty-lines 1 :time-prompt t)
 	  ("p" "Películas" entry
 	   (file+headline "~/Nextcloud/Documents/horario.txt" "Películas")
 	   "* %?")

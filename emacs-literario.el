@@ -62,6 +62,7 @@
 
 (setq dired-listing-switches "-alh")
 (setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
+(add-hook 'dired-mode-hook 'hl-line-mode)
 
 ;;(global-linum-mode '0)
     ;;Puesta de sol
@@ -94,7 +95,7 @@
 	 "* TODO %?" :empty-lines 1)
 	("j" "Journal Entry" entry
 	 (file+datetree "~/Nextcloud/journal/journal.org")
-	 "* %?" :empty-lines 1)
+	 "* %?" :empty-lines 1 :prompt-time t)
 	("p" "Películas" entry
 	 (file+headline "~/Nextcloud/Documents/horario.txt" "Películas")
 	 "* %?")
@@ -212,6 +213,8 @@
 (add-hook 'emms-mode-hook 'hl-line-mode)
 (add-hook 'emms-mode-hook 'visual-line-mode)
 
+(global-set-key (kbd "C-<tab>") 'rat/sigtel)
+(global-set-key (kbd "C-<iso-lefttab>") 'rat/anttel)
 (global-set-key (kbd "C-x p") 'proced)
 (global-set-key (kbd "C-x e") 'eshell)
 (global-set-key (kbd "C-c m") 'calendar)
@@ -246,6 +249,11 @@
                   (directory "~/Test")
                   (directory-files nnheader-directory-files-safe)
                   (get-new-mail nil)))
+
+(setq message-send-mail-function   'smtpmail-send-it
+      smtpmail-default-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-server         "smtp.gmail.com"
+      smtpmail-local-domain        "mail.google.com")
 
 (defun offlineimap ()
   "Función para ejecutar offlineimap y descargar el correo en gnus."
