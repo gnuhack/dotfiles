@@ -1,0 +1,36 @@
+# Sample minimal config file.  Copy this to ~/.offlineimaprc and edit to
+# get started fast.
+
+[general]
+accounts = Test, yosen
+
+[Account yosen]
+localrepository = correol
+remoterepository = correor
+
+[Repository correol]
+type = Maildir
+localfolders = ~/Mail
+
+[Repository correor]
+type = IMAP
+remotehost = mail.pajuelo.com
+remoteuser = carlos@pajuelo.com
+ssl = no
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+[Account Test]
+localrepository = Local
+remoterepository = Remote
+
+[Repository Local]
+type = Maildir
+localfolders = ~/Test
+
+[Repository Remote]
+type = Gmail
+#remotehost = mail.google.com
+remoteuser = nkolita1@gmail.com
+ssl = yes
+#cert_fingerprint=e9f1eee895153b66ed1993d88961019c0d45817c
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
