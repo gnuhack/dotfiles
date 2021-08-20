@@ -347,8 +347,9 @@ Guarda el estado de un búfer cuando se cierra éste o Emacs.
 (save-place-mode 1)
 #+END_SRC
 * Correo
-Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS.
+Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. Para los contactos uso EBDB.
 #+begin_src emacs-lisp
+(require 'ebdb-message) ;;Cargar la ebdb con los contactos
 (setq send-mail-function 'smtpmail-send-it)
 (setq smtpmail-smtp-user   "nkolita1")
 (setq smtpmail-smtp-server "smtp.gmail.com")
