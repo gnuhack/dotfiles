@@ -22,7 +22,7 @@ Va en ~/.config/mpv/input.conf
 *** Fichero misfunciones.el
     Fichero que contiene las funciones de elisp que he creado.
 *** Fichero .offlineimaprc, configuración del correo.
-Aquí configuro el programa offlineimap para poder descargarme los correos del servidor correspondiente. Actualmente lo combino con notmuch y el cliente para emacs de notmuch, y así puedo leer el correo en Emacs. La configuración necesaria es tener el .offlineimaprc en ~/.offlineimaprc. Luego ejecutar notmuch y configurarlo con el asistente, y por último hay que ejecutar "notmuch new" cada vez que offlineimap descargue correo. Para ello se puede por ejemplo crear un script en ~/bin/mail-notiffication, poner dentro "notmuch new" y luego hacerle "chmod +x". La línea de .offlineimaprc de postcript apunta al script.
+Aquí configuro el programa offlineimap para poder descargarme los correos del servidor correspondiente. Actualmente lo combino con notmuch y el cliente para emacs de notmuch, y así puedo leer el correo en Emacs. La configuración necesaria es tener el .offlineimaprc en ~/.offlineimaprc. Luego ejecutar notmuch y configurarlo con el asistente, y por último hay que ejecutar "notmuch new" cada vez que offlineimap descargue correo. Para ello se puede por ejemplo crear un script en ~/bin/offlineimap-postsync, poner dentro "notmuch new" y luego hacerle "chmod +x". La línea de .offlineimaprc de postcript apunta al script.
 *** Estado de la autoinstalación de Emacs:
 
 Ahora mismo se instala de forma semiautomática mi configuración. Me queda por resolver lo de que me pide que exista el archivo ~/Nextcloud/Documents/horario.txt, que además tiene que contener lo siguiente:
