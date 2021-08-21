@@ -2,11 +2,13 @@
 # get started fast.
 
 [general]
-accounts = Test, yosen
+accounts = Carlosatpajuelo
 
-[Account yosen]
+[Account Carlosatpajuelo]
 localrepository = correol
 remoterepository = correor
+autorefresh = 1
+postsynchook = /home/carlos/bin/offlineimap-postsync
 
 [Repository correol]
 type = Maildir
@@ -19,18 +21,18 @@ remoteuser = carlos@pajuelo.com
 ssl = no
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
-[Account Test]
-localrepository = Local
-remoterepository = Remote
+# [Account Test]
+# localrepository = Local
+# remoterepository = Remote
 
-[Repository Local]
-type = Maildir
-localfolders = ~/Test
+# [Repository Local]
+# type = Maildir
+# localfolders = ~/Test
 
-[Repository Remote]
-type = Gmail
-#remotehost = mail.google.com
-remoteuser = nkolita1@gmail.com
-ssl = yes
-#cert_fingerprint=e9f1eee895153b66ed1993d88961019c0d45817c
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+# [Repository Remote]
+# type = Gmail
+# #remotehost = mail.google.com
+# remoteuser = nkolita1@gmail.com
+# ssl = yes
+# #cert_fingerprint=e9f1eee895153b66ed1993d88961019c0d45817c
+# sslcacertfile = /etc/ssl/certs/ca-certificates.crt
