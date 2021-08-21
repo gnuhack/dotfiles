@@ -347,52 +347,53 @@ Guarda el estado de un búfer cuando se cierra éste o Emacs.
 (save-place-mode 1)
 #+END_SRC
 * Correo
-Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. Para los contactos uso EBDB.
+Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. Para los contactos uso EBDB. (https://chrisdone.com/posts/emacs-mail/)
 #+begin_src emacs-lisp
-      (require 'ebdb-message) ;;Cargar la ebdb con los contactos
-   ;;   (setq send-mail-function 'smtpmail-send-it)
-   ;;   (setq smtpmail-smtp-user   "nkolita1")
-   ;;   (setq smtpmail-smtp-server "smtp.gmail.com")
-   ;;   (setq smtpmail-smtp-service 587)
-      (setq gnus-select-method
-	    '(nnmaildir "GMail"
-			(directory "~/Test")
-			(directory-files nnheader-directory-files-safe)
-			(get-new-mail nil)))
+	(require 'ebdb-message) ;;Cargar la ebdb con los contactos
+     ;;   (setq send-mail-function 'smtpmail-send-it)
+     ;;   (setq smtpmail-smtp-user   "nkolita1")
+     ;;   (setq smtpmail-smtp-server "smtp.gmail.com")
+     ;;   (setq smtpmail-smtp-service 587)
+	(setq gnus-select-method
+	      '(nnmaildir "GMail"
+			  (directory "~/Test")
+			  (directory-files nnheader-directory-files-safe)
+			  (get-new-mail nil)))
 
-   ;;   (setq message-send-mail-function   'smtpmail-send-it
-   ;;	 smtpmail-default-smtp-server "smtp.gmail.com"
-   ;;	 smtpmail-smtp-server         "smtp.gmail.com"
-   ;;	 smtpmail-local-domain        "mail.google.com")
+     ;;   (setq message-send-mail-function   'smtpmail-send-it
+     ;;	 smtpmail-default-smtp-server "smtp.gmail.com"
+     ;;	 smtpmail-smtp-server         "smtp.gmail.com"
+     ;;	 smtpmail-local-domain        "mail.google.com")
 
-      ;; Por fin he conseguido enviar correos con hotmail
+	;; Por fin he conseguido enviar correos con hotmail
 
-   ;; (setq message-send-mail-function 'smtpmail-send-it
-   ;; 	   smtpmail-stream-type 'starttls
-   ;; 	   smtpmail-default-smtp-server "smtp.office365.com"
-   ;; 	   smtpmail-smtp-server "smtp.office365.com"
-   ;; 	   smtpmail-smtp-service 587
-   ;; 	   smtpmail-smtp-user "carlospajuelo_@hotmail.com"
-   ;; 	   ;; account info
-   ;; 	   user-mail-address "carlospajuelo_@hotmail.com"
-   ;; 	   user-full-name  "Carlos Pajuelo")
+     ;; (setq message-send-mail-function 'smtpmail-send-it
+     ;; 	   smtpmail-stream-type 'starttls
+     ;; 	   smtpmail-default-smtp-server "smtp.office365.com"
+     ;; 	   smtpmail-smtp-server "smtp.office365.com"
+     ;; 	   smtpmail-smtp-service 587
+     ;; 	   smtpmail-smtp-user "carlospajuelo_@hotmail.com"
+     ;; 	   ;; account info
+     ;; 	   user-mail-address "carlospajuelo_@hotmail.com"
+     ;; 	   user-full-name  "Carlos Pajuelo")
 
-;; Y con mi cuenta personal también!!
+  ;; Y con mi cuenta personal también!!
 
-  (setq message-send-mail-function 'smtpmail-send-it
-	  smtpmail-stream-type 'starttls
-	  smtpmail-default-smtp-server "smtp.pajuelo.com"
-	  smtpmail-smtp-server "smtp.pajuelo.com"
-	  smtpmail-smtp-service 587
-	  smtpmail-smtp-user "carlos@pajuelo.com"
-	  ;; account info
-	  user-mail-address "carlos@pajuelo.com"
-	  user-full-name  "Carlos")
+    (setq message-send-mail-function 'smtpmail-send-it
+	    smtpmail-stream-type 'starttls
+	    smtpmail-default-smtp-server "smtp.pajuelo.com"
+	    smtpmail-smtp-server "smtp.pajuelo.com"
+	    smtpmail-smtp-service 587
+	    smtpmail-smtp-user "carlos@pajuelo.com"
+	    ;; account info
+	    user-mail-address "carlos@pajuelo.com"
+	    user-full-name  "Carlos")
 
-      (defun offlineimap ()
-	"Función para ejecutar offlineimap y descargar el correo en gnus."
-	(interactive)
-	(shell-command "offlineimap&" "*offlineimap*" nil))
+	(defun offlineimap ()
+	  "Función para ejecutar offlineimap y descargar el correo en gnus."
+	  (interactive)
+	  (shell-command "offlineimap&" "*offlineimap*" nil)
+	  )
 #+end_src
 * Diccionario
 #+BEGIN_SRC emacs-lisp

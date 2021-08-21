@@ -38,11 +38,11 @@
    '("http://karl-voit.at/feeds/lazyblorg-all.atom_1.0.links-and-content.xml" "https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&filter=local"
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UCaifrB5IrvGNPJmPeVOcqBA" Kruggsmash)
      ("https://www.bay12games.com/dwarves/dev_now.rss" Dwarf Fortress)
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg" "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA" "https://www.youtube.com/channel/UCaifrB5IrvGNPJmPeVOcqBA" "https://www.youtube.com/user/SsethTzeentach" "https://www.youtube.com/user/vicesat" "http://planet.emacs-es.org/rss20.xml" "https://planet.emacslife.com/atom.xml" "https://blog.mobian-project.org/index.xml" "https://twobithistory.org/feed.xml") t)
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg" "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA" "https://www.youtube.com/channel/UCaifrB5IrvGNPJmPeVOcqBA" "https://www.youtube.com/user/SsethTzeentach" "https://www.youtube.com/user/vicesat" "http://planet.emacs-es.org/rss20.xml" "https://planet.emacslife.com/atom.xml" "https://blog.mobian-project.org/index.xml" "https://twobithistory.org/feed.xml"))
  '(org-agenda-files
    '("~/org/uni.org" "~/Nextcloud/Documents/horario.txt" "~/Nextcloud/Talk/orgt430/gtd.org"))
  '(package-selected-packages
-   '(ebdb dictionary emojify telega projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))
+   '(notmuch ebdb dictionary emojify telega projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))
  '(telega-mode-line-string-format
    '("   "
      (:eval
