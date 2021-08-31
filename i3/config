@@ -53,7 +53,7 @@ bindsym --release $mod+t exec --no-startup-id telegram-desktop #Windows+t inicia
 bindsym --release Print exec --no-startup-id import /tmp/pantallazo.png #Windows+x captura la pantalla y la manda a /tmp/latest-screenshot.png
 hide_edge_borders vertical #quito bordes ventanas
 exec --no-startup-id nm-applet #Network Manager
-exec --no-startup-id feh --bg-max ~/Imágenes/latest-screenshot.png #Fondo de pantalla
+exec --no-startup-id feh --bg-max ~/Imágenes/stallmanlinus.png #Fondo de pantalla
 exec synclient TapButton1=1 #Pongo el toque del touchpad como click
 exec synclient VertScrollDelta=-113 #Habilito el scroll natural
 exec xset b off #Quito el pitido de la terminal
