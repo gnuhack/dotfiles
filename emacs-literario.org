@@ -340,6 +340,7 @@ Cliente de Telegram para Emacs.
 (define-key global-map (kbd "C-c t") telega-prefix-map)
 (add-hook 'telega-load-hook 'telega-notifications-mode)
 ;;(add-hook 'telega-load-hook 'emoji-mode)
+(add-hook 'after-init-hook #'global-emojify-mode)
 #+END_SRC
 * Guardado
 Guarda el estado de un búfer cuando se cierra éste o Emacs.
