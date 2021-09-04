@@ -80,6 +80,11 @@ Insertar el cierre de paréntesis de forma automática
 (electric-pair-mode)
 (show-paren-mode)
 #+end_src
+Modo scratch para abrir búferes borradores en diferentes modos
+#+begin_src emacs-lisp
+(define-key (current-global-map) "\C-cs" #'scratch)
+#+end_src
+Con el prefijo C-u se puede elegir el modo del búfer en scratch.
 * Eshell
 La eshell es una shell escrita entera en lisp.
 #+begin_src emacs-lisp
