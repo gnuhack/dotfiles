@@ -41,6 +41,28 @@
 (electric-pair-mode)
 (show-paren-mode)
 
+(defun prot/scratch-buffer-setup ()
+    "Add contents to `scratch' buffer and name it accordingly.
+If region is active, add its contents to the new buffer."
+    (let* ((mode major-mode)
+           (string (format "Scratch buffer for: %s\n\n" mode))
+           (region (with-current-buffer (current-buffer)
+                     (if (region-active-p)
+                         (buffer-substring-no-properties
+                          (region-beginning)
+                          (region-end)))
+                     ""))
+           (text (concat string region)))
+      (when scratch-buffer
+	    (save-excursion
+          (insert text)
+          (goto-char (point-min))
+          (comment-region (point-at-bol) (point-at-eol)))
+	    (forward-line 2))
+      (rename-buffer (format "*Scratch for %s*" mode) t)))
+  (add-hook 'scratch-create-buffer-hook #'prot/scratch-buffer-setup)
+  (define-key global-map (kbd "C-c s") #'scratch)
+
 ;; Para usar sudo bien en eshell (alias actualizar)
 (require 'em-tramp) 
 
@@ -62,6 +84,7 @@
 
 (setq dired-listing-switches "-alh")
 (setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
+(setq dired-auto-revert-buffer #'dired-directory-changed-p) ; also see `dired-do-revert-buffer'
 (add-hook 'dired-mode-hook 'hl-line-mode)
 
 ;;(global-linum-mode '0)
@@ -95,7 +118,7 @@
 	 "* TODO %?" :empty-lines 1)
 	("j" "Journal Entry" entry
 	 (file+datetree "~/Nextcloud/journal/journal.org")
-	 "* %?" :empty-lines 1 :prompt-time t)
+	 "* %?" :empty-lines 1 :time-prompt t)
 	("p" "Películas" entry
 	 (file+headline "~/Nextcloud/Documents/horario.txt" "Películas")
 	 "* %?")
@@ -209,7 +232,7 @@
 (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
 (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
 (global-set-key (kbd "<XF86MonBrightnessUp>") 'emms-shuffle) 
-(global-set-key (kbd "s-m") 'emms)
+(global-set-key (kbd "s-m") 'notmuch)
 (add-hook 'emms-mode-hook 'hl-line-mode)
 (add-hook 'emms-mode-hook 'visual-line-mode)
 
@@ -217,6 +240,8 @@
 (global-set-key (kbd "C-<iso-lefttab>") 'rat/anttel)
 (global-set-key (kbd "C-x p") 'proced)
 (global-set-key (kbd "C-x e") 'eshell)
+(global-set-key (kbd "C-c y") 'clipboard-yank)
+(global-set-key (kbd "C-x t") 'term)
 (global-set-key (kbd "C-c m") 'calendar)
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "s-o") 'other-window)
@@ -237,28 +262,55 @@
 (define-key global-map (kbd "C-c t") telega-prefix-map)
 (add-hook 'telega-load-hook 'telega-notifications-mode)
 ;;(add-hook 'telega-load-hook 'emoji-mode)
+(add-hook 'after-init-hook #'global-emojify-mode)
 
 (save-place-mode 1)
 
-(setq send-mail-function 'smtpmail-send-it)
-(setq smtpmail-smtp-user   "nkolita1")
-(setq smtpmail-smtp-server "smtp.gmail.com")
-(setq smtpmail-smtp-service 587)
-(setq gnus-select-method
-      '(nnmaildir "GMail"
-                  (directory "~/Test")
-                  (directory-files nnheader-directory-files-safe)
-                  (get-new-mail nil)))
+(require 'ebdb-message) ;;Cargar la ebdb con los contactos
+   ;;   (setq send-mail-function 'smtpmail-send-it)
+   ;;   (setq smtpmail-smtp-user   "nkolita1")
+   ;;   (setq smtpmail-smtp-server "smtp.gmail.com")
+   ;;   (setq smtpmail-smtp-service 587)
+      (setq gnus-select-method
+	    '(nnmaildir "GMail"
+			(directory "~/Test")
+			(directory-files nnheader-directory-files-safe)
+			(get-new-mail nil)))
 
-(setq message-send-mail-function   'smtpmail-send-it
-      smtpmail-default-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-server         "smtp.gmail.com"
-      smtpmail-local-domain        "mail.google.com")
+   ;;   (setq message-send-mail-function   'smtpmail-send-it
+   ;;	 smtpmail-default-smtp-server "smtp.gmail.com"
+   ;;	 smtpmail-smtp-server         "smtp.gmail.com"
+   ;;	 smtpmail-local-domain        "mail.google.com")
 
-(defun offlineimap ()
-  "Función para ejecutar offlineimap y descargar el correo en gnus."
-  (interactive)
-  (shell-command "offlineimap&" "*offlineimap*" nil))
+      ;; Por fin he conseguido enviar correos con hotmail
+
+   ;; (setq message-send-mail-function 'smtpmail-send-it
+   ;; 	   smtpmail-stream-type 'starttls
+   ;; 	   smtpmail-default-smtp-server "smtp.office365.com"
+   ;; 	   smtpmail-smtp-server "smtp.office365.com"
+   ;; 	   smtpmail-smtp-service 587
+   ;; 	   smtpmail-smtp-user "carlospajuelo_@hotmail.com"
+   ;; 	   ;; account info
+   ;; 	   user-mail-address "carlospajuelo_@hotmail.com"
+   ;; 	   user-full-name  "Carlos Pajuelo")
+
+;; Y con mi cuenta personal también!!
+
+  (setq message-send-mail-function 'smtpmail-send-it
+	  smtpmail-stream-type 'starttls
+	  smtpmail-default-smtp-server "smtp.pajuelo.com"
+	  smtpmail-smtp-server "smtp.pajuelo.com"
+	  smtpmail-smtp-service 587
+	  smtpmail-smtp-user "carlos@pajuelo.com"
+	  ;; account info
+	  user-mail-address "carlos@pajuelo.com"
+	  user-full-name  "Carlos")
+
+      (defun offlineimap ()
+	"Función para ejecutar offlineimap y descargar el correo en gnus."
+	(interactive)
+	(shell-command "offlineimap&" "*offlineimap*" nil)
+	)
 
 (global-set-key (kbd "C-c d") #'dictionary-search)
 (setq dictionary-server "dict.org")
