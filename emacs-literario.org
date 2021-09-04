@@ -80,9 +80,33 @@ Insertar el cierre de paréntesis de forma automática
 (electric-pair-mode)
 (show-paren-mode)
 #+end_src
-Modo scratch para abrir búferes borradores en diferentes modos
+Modo scratch para abrir búferes borradores en diferentes modos. Función mejorada por Protesilaos:
+https://protesilaos.com/codelog/2021-07-24-emacs-misc-custom-commands/
+La vi usarla en el vídeo del link, pero la saqué de su config de Emacs; [[file:~/Documentos/Configs de emacs/prot-emacs.org::#h:2695bfa4-89b4-4d7f-aa6e-8ef42f9177aa][Scratch buffers per major-mode]]
 #+begin_src emacs-lisp
-(define-key (current-global-map) "\C-cs" #'scratch)
+(prot-emacs-elpa-package 'scratch
+  ;; TODO 2021-01-19: refine `prot/scratch-buffer-setup'
+  (defun prot/scratch-buffer-setup ()
+    "Add contents to `scratch' buffer and name it accordingly.
+If region is active, add its contents to the new buffer."
+    (let* ((mode major-mode)
+           (string (format "Scratch buffer for: %s\n\n" mode))
+           (region (with-current-buffer (current-buffer)
+                     (if (region-active-p)
+                         (buffer-substring-no-properties
+                          (region-beginning)
+                          (region-end)))
+                     ""))
+           (text (concat string region)))
+      (when scratch-buffer
+	    (save-excursion
+          (insert text)
+          (goto-char (point-min))
+          (comment-region (point-at-bol) (point-at-eol)))
+	    (forward-line 2))
+      (rename-buffer (format "*Scratch for %s*" mode) t)))
+  (add-hook 'scratch-create-buffer-hook #'prot/scratch-buffer-setup)
+  (define-key global-map (kbd "C-c s") #'scratch))
 #+end_src
 Con el prefijo C-u se puede elegir el modo del búfer en scratch.
 * Eshell
