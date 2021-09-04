@@ -367,6 +367,7 @@ Cliente de Telegram para Emacs.
 (global-set-key (kbd "s-T") 'telega)
 (define-key global-map (kbd "C-c t") telega-prefix-map)
 (add-hook 'telega-load-hook 'telega-notifications-mode)
+(setq telega-chat-fill-column 16)
 ;;(add-hook 'telega-load-hook 'emoji-mode)
 (add-hook 'after-init-hook #'global-emojify-mode)
 #+END_SRC
