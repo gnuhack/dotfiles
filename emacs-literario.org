@@ -435,18 +435,21 @@ Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. P
 * Ledger
   Ledger es una herramienta para llevar la contabilidad. Hledger es el port a Haskell de Ledger. Setup básico de la página oficial https://github.com/narendraj9/hledger-mode:
   #+begin_src emacs-lisp
-;;; Basic configuration
-(require 'hledger-mode)
+    ;;; Basic configuration
+    (require 'hledger-mode)
 
-;; To open files with .dat extension in hledger-mode
-(add-to-list 'auto-mode-alist '("\\.dat\\'" . hledger-mode))
+    ;; To open files with .dat extension in hledger-mode
+    (add-to-list 'auto-mode-alist '("\\.dat\\'" . hledger-mode))
 
-;; Provide the path to you journal file.
-;; The default location is too opinionated.
-(setq hledger-jfile "~/Documentos/cuentas.dat")
+    ;; Provide the path to you journal file.
+    ;; The default location is too opinionated.
+    (setq hledger-jfile "~/Documentos/cuentas.dat")
 
 
-;;; Auto-completion for account names
-;; For company-mode users,
-(add-to-list 'company-backends 'hledger-company)
+    ;;; Auto-completion for account names
+    ;; For company-mode users,
+    (add-to-list 'company-backends 'hledger-company)
+   ;; Keybindings
+    (global-set-key (kbd "C-c e") 'hledger-jentry)
+    (global-set-key (kbd "C-c j") 'hledger-run-command)
   #+end_src
