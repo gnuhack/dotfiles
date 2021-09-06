@@ -61,7 +61,7 @@ Pequeños ajustes visuales, creación de carpeta backup para guardar los archivo
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(load-theme 'misterioso)
+(load-theme 'zenburn)
 
 (setq inhibit-splash-screen t)
 

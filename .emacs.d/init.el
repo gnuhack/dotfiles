@@ -28,12 +28,14 @@
 ;;https://stackoverflow.com/questions/19336489/initializing-emacs-with-org-babel-debugger-entered-lisp-error-void-function
 (package-initialize)
 (require 'ob-tangle)
-(org-babel-load-file "~/git/dotfiles/emacs-literario.org")
+(org-babel-load-file "~/git/dotfiles/.emacs.d/emacs-literario.org")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" default))
  '(elfeed-feeds
    '("http://karl-voit.at/feeds/lazyblorg-all.atom_1.0.links-and-content.xml" "https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&filter=local"
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UCaifrB5IrvGNPJmPeVOcqBA" Kruggsmash)
@@ -42,7 +44,7 @@
  '(org-agenda-files
    '("~/org/uni.org" "~/Nextcloud/Documents/horario.txt" "~/Nextcloud/Talk/orgt430/gtd.org"))
  '(package-selected-packages
-   '(hledger-mode scratch sudoku notmuch ebdb dictionary emojify telega projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))
+   '(zenburn-theme hledger-mode scratch sudoku notmuch ebdb dictionary emojify telega projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))
  '(telega-mode-line-string-format
    '("   "
      (:eval
