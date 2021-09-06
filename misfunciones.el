@@ -18,3 +18,11 @@
   (next-line)
   (push-button)
 )
+
+(defun rat/terminal ()
+    (interactive)
+    "Abrir terminal en una nueva ventana"
+    (term "/bin/bash")
+    (switch-to-prev-buffer)
+    (switch-to-buffer-other-frame "*terminal*")
+    )
