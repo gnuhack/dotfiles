@@ -40,10 +40,11 @@ El which-key te enseña las combinaciones de teclas posibles al pulsar alguna. C
 #+end_src
 Como motor de búsqueda he elegido ido, para buscar archivos fácilmente.
 #+begin_src emacs-lisp
-    ;; https://www.masteringemacs.org/article/introduction-to-ido-mode
-    (ido-mode)
-    (setq ido-everywhere t)
-    (setq ido-enable-flex-matching t)
+  ;; https://www.masteringemacs.org/article/introduction-to-ido-mode
+  (ido-mode)
+  (setq ido-everywhere t)
+  (setq ido-enable-flex-matching t)
+  (setq ido-use-virtual-buffers t)
 #+end_src
 El winner-mode sirve para poder hacer y deshacer la configuración de ventanas.
 #+begin_src emacs-lisp
@@ -206,7 +207,11 @@ Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-
       (setq calendar-week-start-day 1)
 
 #+END_SRC
-* 
+* Recentf
+  Con recentf-mode se puede acceder fácilmente a los ficheros usados más recientemente, y también a los [[*Entorno del editor][búferes]]
+  #+begin_src emacs-lisp
+    (recentf-mode)
+  #+end_src
 * Notificaciones
 Funciones para que las notificaciones de la agenda me lleguen al escritorio con espeak. Además del código de abajo hace falta meter en ~/bin un appt-notification con lo siguiente:
 #+BEGIN_SRC 
