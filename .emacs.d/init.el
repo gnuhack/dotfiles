@@ -44,7 +44,7 @@
  '(org-agenda-files
    '("~/org/uni.org" "~/Nextcloud/Documents/horario.txt" "~/Nextcloud/Talk/orgt430/gtd.org"))
  '(package-selected-packages
-   '(zenburn-theme hledger-mode scratch sudoku notmuch ebdb dictionary emojify telega projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))
+   '(dashboard org-roam zenburn-theme hledger-mode scratch sudoku notmuch ebdb dictionary emojify telega projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))
  '(telega-mode-line-string-format
    '("   "
      (:eval

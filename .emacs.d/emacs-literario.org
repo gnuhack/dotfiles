@@ -30,6 +30,10 @@ Aquí realizo la instalación de paquetes seleccionados en package-list arriba. 
 
 #+END_SRC
 * Entorno del editor
+Para mejorar la pantalla de inicio, con dashboard se muestran archivos recientes y más cosas:
+#+begin_src emacs-lisp
+(dashboard-setup-startup-hook)
+#+end_src
 El which-key te enseña las combinaciones de teclas posibles al pulsar alguna. Con company se autocompletan palabras.
   #+begin_src emacs-lisp
 (which-key-mode)
@@ -207,6 +211,20 @@ Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-
       (setq calendar-week-start-day 1)
 
 #+END_SRC
+** Org-roam
+   #+begin_src emacs-lisp
+     (setq org-roam-v2-ack t)
+     (setq org-roam-directory "~/org-roam")
+     (global-set-key "\C-cnl" 'org-roam-buffer-toggle)
+     (global-set-key "\C-cnf" 'org-roam-node-find)
+     (global-set-key "\C-cng" 'org-roam-graph)
+     (global-set-key "\C-cni" 'org-roam-node-insert)
+     (global-set-key "\C-cnc" 'org-roam-capture)
+     ;; Dailies
+     (global-set-key "\C-cnj" 'org-roam-dailies-capture-today)
+     (org-roam-db-autosync-mode)
+     (org-roam-setup)
+   #+end_src
 * Recentf
   Con recentf-mode se puede acceder fácilmente a los ficheros usados más recientemente, y también a los [[*Entorno del editor][búferes]]
   #+begin_src emacs-lisp
@@ -378,12 +396,13 @@ Para gestionar proyectos he elegido proyectile. Así puedo cambiar entre archivo
 * Telega
 Cliente de Telegram para Emacs.
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "s-T") 'telega)
-(define-key global-map (kbd "C-c t") telega-prefix-map)
-(add-hook 'telega-load-hook 'telega-notifications-mode)
-(setq telega-chat-fill-column 16)
-;;(add-hook 'telega-load-hook 'emoji-mode)
-(add-hook 'after-init-hook #'global-emojify-mode)
+  (global-set-key (kbd "s-T") 'telega)
+  (define-key global-map (kbd "C-c t") telega-prefix-map)
+  (add-hook 'telega-load-hook 'telega-notifications-mode)
+  (setq telega-chat-fill-column 16)
+  ;;(add-hook 'telega-load-hook 'emoji-mode)
+  (add-hook 'after-init-hook #'global-emojify-mode)
+  (add-hook 'after-init-hook #'hl-line-mode)
 #+END_SRC
 * Guardado
 Guarda el estado de un búfer cuando se cierra éste o Emacs.
