@@ -33,6 +33,13 @@ Aquí realizo la instalación de paquetes seleccionados en package-list arriba. 
 Para mejorar la pantalla de inicio, con dashboard se muestran archivos recientes y más cosas:
 #+begin_src emacs-lisp
 (dashboard-setup-startup-hook)
+(setq dashboard-center-content t)
+(setq dashboard-banner-logo-title "¡Bienvenido a GNU/Emacs!")
+(setq dashboard-items '((recents  . 2)
+                        (bookmarks . 2)
+                        (projects . 2)
+;;                        (agenda . 5)
+                        (registers . 5)))
 #+end_src
 El which-key te enseña las combinaciones de teclas posibles al pulsar alguna. Con company se autocompletan palabras.
   #+begin_src emacs-lisp
@@ -66,7 +73,7 @@ Pequeños ajustes visuales, creación de carpeta backup para guardar los archivo
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(load-theme 'zenburn)
+(load-theme 'zenburn t)
 
 (setq inhibit-splash-screen t)
 
@@ -482,7 +489,7 @@ Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. P
 
      ;;; Auto-completion for account names
      ;; For company-mode users,
-     (add-to-list 'company-backends 'hledger-company)
+    ;;(add-to-list 'company-backends 'hledger-company)
     ;; Keybindings
      (global-set-key (kbd "C-c e") 'hledger-jentry)
      (global-set-key (kbd "C-c j") 'hledger-run-command)
