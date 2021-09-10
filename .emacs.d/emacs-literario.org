@@ -41,10 +41,14 @@ Para mejorar la pantalla de inicio, con dashboard se muestran archivos recientes
 ;;                        (agenda . 5)
                         (registers . 5)))
 #+end_src
-El which-key te enseña las combinaciones de teclas posibles al pulsar alguna. Con company se autocompletan palabras.
-  #+begin_src emacs-lisp
+El which-key te enseña las combinaciones de teclas posibles al pulsar alguna.
+#+begin_src emacs-lisp
 (which-key-mode)
-(add-hook 'after-init-hook 'global-company-mode)  
+#+end_src
+Con company se autocompletan palabras.
+  #+begin_src emacs-lisp
+(add-hook 'after-init-hook 'global-company-mode)
+(setq company-idle-delay 0.8)
 (setq company-show-numbers t)
 (setq company-minimum-prefix-length 2)
 (setq company-tooltip-align-annotations t)
@@ -218,6 +222,12 @@ Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-
       (setq calendar-week-start-day 1)
 
 #+END_SRC
+Plantillas para introducir código con expansión de cosas como <el con TAB.
+#+begin_src emacs-lisp
+(require 'org-tempo)
+(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+#+end_src
+
 ** Org-roam
    #+begin_src emacs-lisp
      (setq org-roam-v2-ack t)
