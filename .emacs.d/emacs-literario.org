@@ -505,3 +505,10 @@ Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. P
      (global-set-key (kbd "C-c e") 'hledger-jentry)
      (global-set-key (kbd "C-c j") 'hledger-run-command)
   #+end_src
+
+* Helm
+  Dado que ido parece que no funciona en todas partes (por ejemplo al cambiar de nodo en org-roam), voy a probar con helm a ver cómo me va. Para empezar sólo voy a poner la configuración mínima, mi idea es coger el código de http://tuhdo.github.io/helm-intro.html ya que es la configuración que usaba cuando tenía Prelude instalado.
+  #+begin_src emacs-lisp
+(require 'helm-config)
+(helm-mode 1)
+  #+end_src
