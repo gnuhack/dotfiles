@@ -58,7 +58,7 @@ Como motor de búsqueda he elegido ido, para buscar archivos fácilmente.
 #+begin_src emacs-lisp
   ;; https://www.masteringemacs.org/article/introduction-to-ido-mode
   (ido-mode)
-  (setq ido-everywhere t)
+;;  (setq ido-everywhere t) ; De momento voy a probar Helm, que es incompatible con ésto.
   (setq ido-enable-flex-matching t)
   (setq ido-use-virtual-buffers t)
 #+end_src
