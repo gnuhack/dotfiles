@@ -5,7 +5,8 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
 * Inicio de paquetería y autoinstalación
 (Creo que esta sección entera tendría que moverla a init.el). La primera línea arregla el bug que no permite conectarse a ELPA. Luego en package list meto los paquetes que quiero que se autoninstalen al lanzar un emacs de serie con este archivo de configuración. Pero creo que ya los añade Customize al init.el, tengo que mirarlo. Por último están los 3 repos que he decidido meter (elpa, melpa y gnu).
 #+BEGIN_SRC emacs-lisp
-
+  (setq comp-deferred-compilation t) ;;Compilación nativa
+  ;;https://www.masteringemacs.org/article/speed-up-emacs-libjansson-native-elisp-compilation
   (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
   (setq package-list '(ido magit 2048-game pdf-tools elfeed emms htmlize))
 
