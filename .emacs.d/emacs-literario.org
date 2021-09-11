@@ -30,6 +30,10 @@ Aquí realizo la instalación de paquetes seleccionados en package-list arriba. 
       (package-install package)))
 
 #+END_SRC
+Paquetes y funciones propias
+#+begin_src emacs-lisp
+     (add-to-list 'load-path "~/git/dotfiles/misfunciones.el")
+#+end_src
 * Entorno del editor
 Para mejorar la pantalla de inicio, con dashboard se muestran archivos recientes y más cosas:
 #+begin_src emacs-lisp
