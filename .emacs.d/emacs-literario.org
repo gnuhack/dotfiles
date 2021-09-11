@@ -414,13 +414,15 @@ Para gestionar proyectos he elegido proyectile. Así puedo cambiar entre archivo
 * Telega
 Cliente de Telegram para Emacs.
 #+BEGIN_SRC emacs-lisp
+  (setq emojify-emoji-styles '(unicode))
   (global-set-key (kbd "s-T") 'telega)
+  (global-set-key (kbd "s-i") 'emojify-insert-emoji)
   (define-key global-map (kbd "C-c t") telega-prefix-map)
   (add-hook 'telega-load-hook 'telega-notifications-mode)
   (setq telega-chat-fill-column 16)
   ;;(add-hook 'telega-load-hook 'emoji-mode)
   (add-hook 'after-init-hook #'global-emojify-mode)
-  (add-hook 'after-init-hook #'hl-line-mode)
+  (add-hook 'telega-load-hook 'hl-line-mode)
 #+END_SRC
 * Guardado
 Guarda el estado de un búfer cuando se cierra éste o Emacs.
