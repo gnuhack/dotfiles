@@ -327,8 +327,8 @@ Macro para poner el modo noche en los pdfs (modonoche) y funciones para consegui
 
 #+END_SRC
 * Elfeed
-Con elfeed puedo tener mi propio feed personalizado. Sobre todo es útil para seguir blogs individuales que no tengan una alta frecuencia de posteo. También me sirve para "suscribirme" a canales de Youtube sin visitar la página, gracias as la función definida abajo.
-#+BEGIN_SRC emacs-lisp
+Con elfeed puedo tener mi propio feed personalizado. Sobre todo es útil para seguir blogs individuales que no tengan una alta frecuencia de posteo. También me sirve para "suscribirme" a canales de Youtube sin visitar la página, gracias as la función definida abajo. He quitado la parte de =emacs-lisp= al lado de #+BEGIN_SRC para que no se evalúe este código, ya que ahora se encarga de elfeed el fichero init.el.
+#+BEGIN_SRC
 (global-set-key (kbd "C-x w") 'elfeed)
 (setq elfeed-feeds
  (quote
@@ -387,6 +387,7 @@ Para reproducir música he elegido emms, que es bastante simple de configurar. S
 * Keybindings
 Atajos de teclas y registros.
 #+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-x w") 'elfeed)
   (global-set-key (kbd "C-<tab>") 'rat/sigtel)
   (global-set-key (kbd "C-<iso-lefttab>") 'rat/anttel)
   (global-set-key (kbd "C-x p") 'proced)
