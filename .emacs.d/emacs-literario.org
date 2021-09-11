@@ -339,7 +339,6 @@ Con elfeed puedo tener mi propio feed personalizado. Sobre todo es útil para se
    ("https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA" Video)
    ("http://planet.emacs-es.org/rss20.xml" Emacs)
    ("http://karl-voit.at/feeds/lazyblorg-all.atom_1.0.links-and-content.xml" Blog)
-   ("https://twobithistory.org/feed.xml" Blog)
    ("https://planet.emacslife.com/atom.xml" Emacs)
    ("https://blog.mobian-project.org/index.xml" Blog)
    ("https://twobithistory.org/feed.xml" Blog))))
