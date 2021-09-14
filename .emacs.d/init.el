@@ -12,8 +12,9 @@
  '(custom-safe-themes
    '("3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" default))
  '(elfeed-feeds
-   '(("http://feeds.feedburner.com/uGeekBlog" Emacs)
-     ("https://daemons.it/posts/index.xml" Emacs)
+   '(("http://feeds.feedburner.com/uGeekBlog" Emacs Blog)
+     ("https://daemons.it/posts/index.xml" Emacs Blog)
+     ("https://lukesmith.xyz/rss.xml" Luke Blog)
      ("https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&filter=local" Video)
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UCaifrB5IrvGNPJmPeVOcqBA" Kruggsmash Video)
      ("https://www.bay12games.com/dwarves/dev_now.rss" Dwarf Fortress Video)
@@ -22,6 +23,7 @@
      ("http://planet.emacs-es.org/rss20.xml" Emacs)
      ("http://karl-voit.at/feeds/lazyblorg-all.atom_1.0.links-and-content.xml" Blog)
      ("https://planet.emacslife.com/atom.xml" Emacs)
+     ("https://protesilaos.com/master.xml" Prot Blog)
      ("https://blog.mobian-project.org/index.xml" Blog)
      ("https://twobithistory.org/feed.xml" Blog)))
  '(org-agenda-files
