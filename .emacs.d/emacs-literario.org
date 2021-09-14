@@ -160,6 +160,10 @@ Asignaciones de teclas sugeridas por el manual de org de info.
      (global-set-key "\C-cc" 'org-capture)
      (global-set-key "\C-cb" 'org-switchb)
 #+END_SRC
+Con esta asignación se crea un menú parecido a imenu al pulsar C-c C-j en un org búfer para moverse bien por él.
+#+begin_src emacs-lisp
+(setq org-goto-interface 'outline-path-completion)
+#+end_src
 Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-notes-efficiently-org-mode/. Aquí defino las plantillas para org. Si tomo una nota que no cuadra con ninguna categoría uso el template de "Nota" y luego hago el refill (C-w).
 #+BEGIN_SRC  emacs-lisp
 
