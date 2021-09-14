@@ -508,8 +508,9 @@ Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. P
      ;; For company-mode users,
     ;;(add-to-list 'company-backends 'hledger-company)
     ;; Keybindings
-     (global-set-key (kbd "C-c e") 'hledger-jentry)
-     (global-set-key (kbd "C-c j") 'hledger-run-command)
+    (global-set-key (kbd "C-c e") 'hledger-jentry)
+    (global-set-key (kbd "C-c j") 'hledger-run-command)
+    (global-set-key (kbd "C-c .") 'hledger-time)
   #+end_src
 
 * Helm

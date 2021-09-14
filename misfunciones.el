@@ -26,3 +26,8 @@
     (switch-to-prev-buffer)
     (switch-to-buffer-other-frame "*terminal*")
     )
+(defun hledger-time ()
+  "tiempo plano"
+  (interactive)
+(insert (format-time-string "%Y-%m-%d"))
+ )
