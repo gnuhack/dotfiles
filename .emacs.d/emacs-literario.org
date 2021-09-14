@@ -408,7 +408,8 @@ Cliente de Telegram para Emacs.
   (setq telega-chat-fill-column 16)
   ;;(add-hook 'telega-load-hook 'emoji-mode)
   (add-hook 'after-init-hook #'global-emojify-mode)
-  (add-hook 'telega-load-hook 'hl-line-mode) ;;No funciona
+  (add-hook 'telega-chat-mode-hook 'variable-pitch-mode)
+  (add-hook 'telega-root-mode-hook 'hl-line-mode)
 #+END_SRC
 * Guardado
 Guarda el estado de un búfer cuando se cierra éste o Emacs.
