@@ -2,38 +2,6 @@
 Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo que se usa "tangle" o algo así para cargar desde el archivo de inicio de emacs tradicional (el init.el) un archivo org (emacs-literario.org) que luego automágicamente se convierte en un emacs-literario.el. A partir de ahí ya se lee la configuración normal, solo que en vez de estar toda "del tirón" está en bloques (#+BEGIN_SRC emacs-lisp #+END_SRC) que son leídos y transformados adecuadamente para cargarse. Por tanto para replicar esta configuración se necesitan tener dos archivos (init.el y emacs-literario.org) y los dos en el mismo directorio (típicamente ~/.emacs.d).
 ***** DONE Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática: Se hace con <s y luego TAB (En versiones recientes de Emacs es con C-c C-,)
 ***** TODO Poner las funciones de elisp en un fichero aparte
-* Inicio de paquetería y autoinstalación
-(Creo que esta sección entera tendría que moverla a init.el). La primera línea arregla el bug que no permite conectarse a ELPA. Luego en package list meto los paquetes que quiero que se autoninstalen al lanzar un emacs de serie con este archivo de configuración. Pero creo que ya los añade Customize al init.el, tengo que mirarlo. Por último están los 3 repos que he decidido meter (elpa, melpa y gnu).
-#+BEGIN_SRC emacs-lisp
-  (setq comp-deferred-compilation t) ;;Compilación nativa
-  ;;https://www.masteringemacs.org/article/speed-up-emacs-libjansson-native-elisp-compilation
-  (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
-  (setq package-list '(ido magit 2048-game pdf-tools elfeed emms htmlize))
-
-  (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
-			   ("gnu" . "http://elpa.gnu.org/packages/")
-			   ("melpa" . "https://melpa.org/packages/")
-			   ))
-#+END_SRC
-
-Aquí realizo la instalación de paquetes seleccionados en package-list arriba. En realidad esto lo tengo duplicado, ya que para que funcione lo he tenido que meter en el init.el.
-#+BEGIN_SRC 
-
-
-  (package-initialize)
-
-  (unless package-archive-contents
-    (package-refresh-contents))
-
-  (dolist (package package-list)
-    (unless (package-installed-p package)
-      (package-install package)))
-
-#+END_SRC
-Paquetes y funciones propias
-#+begin_src emacs-lisp
-     (add-to-list 'load-path "~/git/dotfiles/misfunciones.el")
-#+end_src
 * Entorno del editor
 Para mejorar la pantalla de inicio, con dashboard se muestran archivos recientes y más cosas:
 #+begin_src emacs-lisp
@@ -426,7 +394,7 @@ Cliente de Telegram para Emacs.
   (setq telega-chat-fill-column 16)
   ;;(add-hook 'telega-load-hook 'emoji-mode)
   (add-hook 'after-init-hook #'global-emojify-mode)
-  (add-hook 'telega-load-hook 'hl-line-mode)
+  (add-hook 'telega-load-hook 'hl-line-mode) ;;No funciona
 #+END_SRC
 * Guardado
 Guarda el estado de un búfer cuando se cierra éste o Emacs.

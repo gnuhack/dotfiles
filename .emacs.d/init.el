@@ -1,33 +1,9 @@
-;; ;;; init.el --- Where all the magic begins
-;; ;;
-;; ;; This file loads Org-mode and then loads the rest of our Emacs initialization from Emacs lisp
-;; ;; embedded in literate Org-mode files.
-;; --- ANTIGUO init.el
-;; ;; Load up Org Mode and (now included) Org Babel for elisp embedded in Org Mode files
-
-
-;; (let* ((org-dir (expand-file-name
-;;                  "lisp" (expand-file-name
-;;                          "org")))
-;;        (org-contrib-dir (expand-file-name
-;;                          "lisp" (expand-file-name
-;;                                  "contrib" (expand-file-name
-;;                                             ".." org-dir))))
-;;        (load-path (append (list org-dir org-contrib-dir)
-;;                           (or load-path nil))))
-;;   ;; load up Org-mode and Org-babel
-;;   (require 'org-install)
-;;   (require 'ob-tangle))
-
-;; ;; load up all literate org-mode files in this directory
-
-
-;; ;;; init.el ends here
-;; --- FIN DEL ANTIGUO init.el
-
-;;https://stackoverflow.com/questions/19336489/initializing-emacs-with-org-babel-debugger-entered-lisp-error-void-function
+;;Configuración mínima para debuggear: https://stackoverflow.com/questions/19336489/initializing-emacs-with-org-babel-debugger-entered-lisp-error-void-function 
 (package-initialize)
 (require 'ob-tangle)
+
+;; CUSTOMIZE
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -71,9 +47,32 @@
  ;; If there is more than one, they won't work right.
  )
 
-(unless package-archive-contents
-  (package-refresh-contents))
-(package-install-selected-packages)
+;;REPOSITORIOS
+
+  (setq comp-deferred-compilation t) ;;Compilación nativa
+  (setq native-comp-async-report-warnings-errors 'silent) ; emacs28 with native compilation
+  ;;https://www.masteringemacs.org/article/speed-up-emacs-libjansson-native-elisp-compilation
+  (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3") ; Solución a un bug de Emacs 27 o por ahí.
+
+
+  (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
+			   ("gnu" . "http://elpa.gnu.org/packages/")
+			   ("melpa" . "https://melpa.org/packages/")
+			   ))
+
+;; PAQUETES
+
+  (unless package-archive-contents
+    (package-refresh-contents))
+
+;;  (setq package-list '(ido magit 2048-game pdf-tools elfeed emms htmlize))
+;;  (dolist (package package-list)
+;;    (unless (package-installed-p package)
+;;      (package-install package)))
+
+(package-install-selected-packages) ;;¿Es necesaria esta línea?
+
+;; MIS ARCHIVOS
 
 (load-file  "~/git/dotfiles/misfunciones.el")
 (setq org-agenda-files `( "~/org"))
