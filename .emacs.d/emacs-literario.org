@@ -41,21 +41,23 @@ El winner-mode sirve para poder hacer y deshacer la configuración de ventanas.
 #+end_src
 Pequeños ajustes visuales, creación de carpeta backup para guardar los archivos de recuperación que crea emacs, e inicio del servidor para poder acceder a emacs de forma rápida con emacsclient.
 #+begin_src emacs-lisp
-;; Poner los backups en la carpeta backup 
-(setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
-(column-number-mode 1)
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
-(global-visual-line-mode)
+  ;; Poner los backups en la carpeta backup 
+  (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
+  (column-number-mode 1)
+  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+  (global-visual-line-mode)
 
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-(load-theme 'modus-vivendi t)
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+  (if (file-exists-p "~/org")
+      (load-theme 'modus-vivendi t)
+    (load-theme 'misterioso))
 
-(setq inhibit-splash-screen t)
+  (setq inhibit-splash-screen t)
 
-(server-start)
-(setq confirm-kill-emacs 'y-or-n-p)
+  (server-start)
+  (setq confirm-kill-emacs 'y-or-n-p)
 
 #+end_src
 Para poder sincronizar sin problema mis archivos con el cliente de Nextcloud que tengo, habilito el revert mode de forma automática para que se actualicen los búferes solos.
@@ -161,38 +163,39 @@ Asignaciones de teclas sugeridas por el manual de org de info.
 Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-notes-efficiently-org-mode/. Aquí defino las plantillas para org. Si tomo una nota que no cuadra con ninguna categoría uso el template de "Nota" y luego hago el refill (C-w).
 #+BEGIN_SRC  emacs-lisp
 
-    (setq org-refile-targets '((org-agenda-files . (:maxlevel . 6))))
-    (global-set-key "\C-cc" 'org-capture)
+      (setq org-refile-targets '((org-agenda-files . (:maxlevel . 6))))
+      (global-set-key "\C-cc" 'org-capture)
+  (when (file-exists-p "~/org")
     (setq org-capture-templates
-	  (quote
-	   (("c" "Nota" entry
-	     (file+datetree "/home/carlos/Nextcloud/Documents/horario.txt")
-	     "* %?" :empty-lines 1)
-	    ("t" "Todo" entry
-	     (file+headline "/home/carlos/org/gtd.org" "Tasks")
-	     "* TODO %?" :empty-lines 1)
-	    ("j" "Journal Entry" entry
-	     (file+datetree "~/Nextcloud/journal/journal.org")
-	     "* %?" :empty-lines 1 :time-prompt t)
-	    ("p" "Películas" entry
-	     (file+headline "~/Nextcloud/Documents/horario.txt" "Películas")
-	     "* %?")
-	    ("d" "Dudas" entry (file+headline "/home/carlos/Nextcloud/Documents/horario.txt" "Dudas")
-	     "* %^{PROMPT} %?\n  %i\n  %a")
-	    ("k" "Cita" entry
-	     (file+headline "~/org/uni.org" "Citas")
-	     "* %^t %?")
-	    ("l" "Ledger" plain
-	     (file "~/Documentos/cuentas.dat")
-		   "%(org-read-date) %^{Concepto}
-    expenses:%^{Cuenta de gasto}  %^{Cantidad}
-    assets:%^{Método de pago}  %^{Cantidad}
-  ")		  
-	    )))
-    (setq org-agenda-span 'day)
-      ;;calendario
+	    (quote
+	     (("c" "Nota" entry
+	       (file+datetree "/home/carlos/Nextcloud/Documents/horario.txt")
+	       "* %?" :empty-lines 1)
+	      ("t" "Todo" entry
+	       (file+headline "/home/carlos/org/gtd.org" "Tasks")
+	       "* TODO %?" :empty-lines 1)
+	      ("j" "Journal Entry" entry
+	       (file+datetree "~/Nextcloud/journal/journal.org")
+	       "* %?" :empty-lines 1 :time-prompt t)
+	      ("p" "Películas" entry
+	       (file+headline "~/Nextcloud/Documents/horario.txt" "Películas")
+	       "* %?")
+	      ("d" "Dudas" entry (file+headline "/home/carlos/Nextcloud/Documents/horario.txt" "Dudas")
+	       "* %^{PROMPT} %?\n  %i\n  %a")
+	      ("k" "Cita" entry
+	       (file+headline "~/org/uni.org" "Citas")
+	       "* %^t %?")
+	      ("l" "Ledger" plain
+	       (file "~/Documentos/cuentas.dat")
+		     "%(org-read-date) %^{Concepto}
+      expenses:%^{Cuenta de gasto}  %^{Cantidad}
+      assets:%^{Método de pago}  %^{Cantidad}
+    ")		  
+	      ))))
+      (setq org-agenda-span 'day)
+	;;calendario
 
-      (setq calendar-week-start-day 1)
+	(setq calendar-week-start-day 1)
 
 #+END_SRC
 Plantillas para introducir código con expansión de cosas como <el con TAB.
@@ -203,17 +206,20 @@ Plantillas para introducir código con expansión de cosas como <el con TAB.
 
 ** Org-roam
    #+begin_src emacs-lisp
-     (setq org-roam-v2-ack t)
-     (setq org-roam-directory "~/org-roam")
-     (global-set-key "\C-cnl" 'org-roam-buffer-toggle)
-     (global-set-key "\C-cnf" 'org-roam-node-find)
-     (global-set-key "\C-cng" 'org-roam-graph)
-     (global-set-key "\C-cni" 'org-roam-node-insert)
-     (global-set-key "\C-cnc" 'org-roam-capture)
-     ;; Dailies
-     (global-set-key "\C-cnj" 'org-roam-dailies-capture-today)
-     (org-roam-db-autosync-mode)
-     (org-roam-setup)
+		 (setq org-roam-v2-ack t)
+	    (when (file-exists-p "~/org-roam")
+		 (setq org-roam-directory "~/org-roam"))
+		 (global-set-key "\C-cnl" 'org-roam-buffer-toggle)
+		 (global-set-key "\C-cnf" 'org-roam-node-find)
+		 (global-set-key "\C-cng" 'org-roam-graph)
+		 (global-set-key "\C-cni" 'org-roam-node-insert)
+		 (global-set-key "\C-cnc" 'org-roam-capture)
+		 ;; Dailies
+		 (global-set-key "\C-cnj" 'org-roam-dailies-capture-today)
+	    (when (file-exists-p "~/org-roam")
+	      (org-roam-db-autosync-mode)
+	      	    (org-roam-setup))
+
    #+end_src
 * Recentf
   Con recentf-mode se puede acceder fácilmente a los ficheros usados más recientemente, y también a los [[*Entorno del editor][búferes]]
@@ -234,43 +240,46 @@ espeak "Appointment in $TIME minutes: $MSG"
 #+END_SRC
 Aquí están las funciones para la notificación.
 #+BEGIN_SRC emacs-lisp
-(require 'appt)
-(appt-activate t)
+  (require 'appt)
+  (appt-activate t)
 
-(setq appt-message-warning-time 30) ; Show notification 30 minutes before event
-(setq appt-display-interval appt-message-warning-time) ; Disable multiple reminders
-(setq appt-display-mode-line nil)
+  (setq appt-message-warning-time 30) ; Show notification 30 minutes before event
+  (setq appt-display-interval appt-message-warning-time) ; Disable multiple reminders
+  (setq appt-display-mode-line nil)
 
-; Use appointment data from org-mode
-(defun my-org-agenda-to-appt ()
-  (interactive)
-  (setq appt-time-msg-list nil)
-  (org-agenda-to-appt))
+  ; Use appointment data from org-mode
+  (defun my-org-agenda-to-appt ()
+    (interactive)
+    (setq appt-time-msg-list nil)
+    (org-agenda-to-appt))
 
-; Update alarms when...
-; (1) ... Starting Emacs
-(my-org-agenda-to-appt)
+  ; Update alarms when...
+  ; (1) ... Starting Emacs
+  (when (file-exists-p "~/org")
+    (my-org-agenda-to-appt))
 
-; (2) ... Everyday at 12:05am (useful in case you keep Emacs always on)
-(run-at-time "12:05am" (* 24 3600) 'my-org-agenda-to-appt)
+  ; (2) ... Everyday at 12:05am (useful in case you keep Emacs always on)
+  (when (file-exists-p "~/org")
+    (run-at-time "12:05am" (* 24 3600) 'my-org-agenda-to-appt))
 
-; (3) ... When TODO.txt is saved
-(add-hook 'after-save-hook
-          '(lambda ()
-             (if (string= (buffer-file-name) (concat (getenv "HOME") "/ideas/TODO.txt"))
-                 (my-org-agenda-to-appt))))
+  ; (3) ... When TODO.txt is saved
+  (when (file-exists-p "~/org")
+    (add-hook 'after-save-hook
+	    '(lambda ()
+	       (if (string= (buffer-file-name) (concat (getenv "HOME") "/ideas/TODO.txt"))
+		   (my-org-agenda-to-appt)))))
 
-; Display appointments as a window manager notification
-(setq appt-disp-window-function 'my-appt-display)
-(setq appt-delete-window-function (lambda () t))
+  ; Display appointments as a window manager notification
+  (setq appt-disp-window-function 'my-appt-display)
+  (setq appt-delete-window-function (lambda () t))
 
-(setq my-appt-notification-app (concat (getenv "HOME") "/bin/appt-notification"))
+  (setq my-appt-notification-app (concat (getenv "HOME") "/bin/appt-notification"))
 
-(defun my-appt-display (min-to-app new-time msg)
-  (if (atom min-to-app)
-    (start-process "my-appt-notification-app" nil my-appt-notification-app min-to-app msg)
-  (dolist (i (number-sequence 0 (1- (length min-to-app))))
-    (start-process "my-appt-notification-app" nil my-appt-notification-app (nth i min-to-app) (nth i msg)))))
+  (defun my-appt-display (min-to-app new-time msg)
+    (if (atom min-to-app)
+      (start-process "my-appt-notification-app" nil my-appt-notification-app min-to-app msg)
+    (dolist (i (number-sequence 0 (1- (length min-to-app))))
+      (start-process "my-appt-notification-app" nil my-appt-notification-app (nth i min-to-app) (nth i msg)))))
 #+END_SRC
 * PDF
 Macro para poner el modo noche en los pdfs (modonoche) y funciones para conseguir un marcapáginas en un pdf. Sacado de https://sachachua.com/blog/2021/02/guest-post-bookmarking-pdfs-in-emacs-with-pdf-tools-and-registers/
@@ -341,7 +350,8 @@ Para reproducir música he elegido emms, que es bastante simple de configurar. S
   (emms-all)
   (emms-default-players)
   (setq emms-source-file-default-directory "~/Música/")
-  (emms-add-directory-tree "~/Música")
+  (when (file-exists-p "~/org")
+    (emms-add-directory-tree "~/Música"))
   (emms-mode-line-disable)
   (global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
   (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
