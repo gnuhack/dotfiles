@@ -225,6 +225,50 @@ Plantillas para introducir código con expansión de cosas como <el con TAB.
 	      	    (org-roam-setup))
 
    #+end_src
+** Org-static-blog
+   Publicación de entradas en un blog
+   #+begin_src emacs-lisp
+(setq org-static-blog-publish-title "Libre como en libertad")
+(setq org-static-blog-publish-url "http://192.168.1.125/publish/")
+(setq org-static-blog-publish-directory "~/blog/")
+(setq org-static-blog-posts-directory "~/blog/posts")
+(setq org-static-blog-drafts-directory "~/blog/drafts")
+(setq org-static-blog-enable-tags t)
+(setq org-export-with-toc nil)
+(setq org-export-with-section-numbers nil)
+
+
+(setq org-static-blog-page-header
+"<meta name=\"author\" content=\"Carlos Pajuelo\">
+<meta name=\"referrer\" content=\"no-referrer\">
+<link href= \"static/style.css\" rel=\"stylesheet\" type=\"text/css\" />
+<link rel=\"icon\" href=\"static/favicon.ico\">
+<link rel=\"apple-touch-icon-precomposed\" href=\"static/favicon-152.png\">
+<link rel=\"msapplication-TitleImage\" href=\"static/favicon-144.png\">
+<link rel=\"msapplication-TitleColor\" href=\"#0141ff\">
+<script src=\"static/katex.min.js\"></script>
+<script src=\"static/auto-render.min.js\"></script>
+<link rel=\"stylesheet\" href=\"static/katex.min.css\">
+<script>document.addEventListener(\"DOMContentLoaded\", function() { renderMathInElement(document.body); });</script>
+<meta http-equiv=\"content-type\" content=\"application/xhtml+xml; charset=UTF-8\">
+<meta name=\"viewport\" content=\"initial-scale=1,width=device-width,minimum-scale=1\">")
+
+(setq org-static-blog-page-preamble
+"<div class=\"header\">
+  <a href=\"https://192.168.1.125\">Blog sobre software libre</a>
+  <div class=\"sitelinks\">
+    <a href=\"https://gitlab.com/gnuhack\">Gitlab</a> | <a href=\"https://github.com/gnuhack\">Github</a>
+  </div>
+</div>")
+
+(setq org-static-blog-page-postamble
+"<div id=\"archive\">
+  <a href=\"https://192.168.1.125/archive.html\">Other posts</a>
+</div>
+
+<center><a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/3.0/88x31.png\" /></a><br /><span xmlns:dct=\"https://purl.org/dc/terms/\" href=\"https://purl.org/dc/dcmitype/Text\" property=\"dct:title\" rel=\"dct:type\">192.168.1.125</span> by <a xmlns:cc=\"https://creativecommons.org/ns#\" href=\"https://192.168.1.125\" property=\"cc:attributionName\" rel=\"cc:attributionURL\">Carlos Pajuelo</a> is licensed under a <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</center>")
+
+   #+end_src>
 * Recentf
   Con recentf-mode se puede acceder fácilmente a los ficheros usados más recientemente, y también a los [[*Entorno del editor][búferes]]
   #+begin_src emacs-lisp
@@ -502,3 +546,4 @@ Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. P
 (require 'helm-config)
 (helm-mode 1)
   #+end_src
+
