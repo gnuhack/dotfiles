@@ -26,6 +26,23 @@
     (switch-to-prev-buffer)
     (switch-to-buffer-other-frame "*terminal*")
     )
+;; (defun rat/terminal ()
+;;     (interactive)
+;;     "Abrir terminal en una nueva ventana. Intento fallido de abrir varias terminales."
+;;     (if (get-buffer "*terminal*")
+;; 	(progn
+;; 	  (switch-to-buffer-other-frame "*terminal*")
+;; 	  (rename-buffer (format "*%s*"(random 10000000)))
+;; 	  )
+;;       (term "/bin/bash")
+;;       (switch-to-prev-buffer)
+;;       (switch-to-buffer-other-frame "*terminal*")
+;;       ))
+(defun rat/killydelete ()
+  "Elimina un búfer y luego el frame."
+  (interactive)
+  (kill-buffer)
+  (delete-frame))
 (defun hledger-time ()
   "tiempo plano"
   (interactive)
