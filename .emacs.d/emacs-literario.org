@@ -3,6 +3,10 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
 ***** DONE Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática: Se hace con <s y luego TAB (En versiones recientes de Emacs es con C-c C-,)
 ***** TODO Poner las funciones de elisp en un fichero aparte
 * Entorno del editor
+  Para que funcione bien mi función rat/killydelete suprimo la confirmación al eliminar un búfer con un proceso.
+#+begin_src emacs-lisp
+    (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
+#+end_src
 Para mejorar la pantalla de inicio, con dashboard se muestran archivos recientes y más cosas:
 #+begin_src emacs-lisp
 (dashboard-setup-startup-hook)
@@ -342,13 +346,17 @@ Macro para poner el modo noche en los pdfs (modonoche) y funciones para consegui
     (lambda ()
       "Saves the current position on the pdf to jump to later with <C-f2>."
       (interactive)
-      (setf my-bookmark (pdf-view-bookmark-make-record))))
+      (setf my-bookmark (pdf-view-bookmark-make-record))
+      (message "Posición guardada")
+  ))
 
   (define-key pdf-view-mode-map (kbd "<C-f2>")
     (lambda ()
       "Loads the position saved by <C-f1>."
       (interactive)
-      (pdf-view-bookmark-jump my-bookmark)))
+      (pdf-view-bookmark-jump my-bookmark)
+      (message "Posición cargada")
+  ))
 
 #+END_SRC
 * Elfeed
@@ -433,7 +441,7 @@ Atajos de teclas y registros.
   (global-set-key (kbd "s-n") 'next-buffer)
   (global-set-key (kbd "s-p") 'previous-buffer)
   (global-set-key (kbd "s-<backspace>") 'rat/terminal)
-  (global-set-key (kbd "s-<delete>") 'delete-frame)
+  (global-set-key (kbd "s-<delete>") 'rat/killydelete)
 #+END_SRC
 * Projectile
 Para gestionar proyectos he elegido proyectile. Así puedo cambiar entre archivos de un proyecto de forma fácil y cómoda. Un proyecto es toda carpeta que contenga archivos clave (como los repos de git).
@@ -543,7 +551,8 @@ Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. P
 * Helm
   Dado que ido parece que no funciona en todas partes (por ejemplo al cambiar de nodo en org-roam), voy a probar con helm a ver cómo me va. Para empezar sólo voy a poner la configuración mínima, mi idea es coger el código de http://tuhdo.github.io/helm-intro.html ya que es la configuración que usaba cuando tenía Prelude instalado.
   #+begin_src emacs-lisp
-(require 'helm-config)
-(helm-mode 1)
+    (require 'helm-config)
+    (helm-mode 1)
+    (global-set-key (kbd "M-x") 'helm-M-x)
   #+end_src
 
