@@ -105,16 +105,19 @@ Con el prefijo C-u se puede elegir el modo del búfer en scratch.
 * Eshell
 La eshell es una shell escrita entera en lisp.
 #+begin_src emacs-lisp
-;; Para usar sudo bien en eshell (alias actualizar)
-(require 'em-tramp) 
+  ;; Para usar sudo bien en eshell (alias actualizar)
+  (require 'em-tramp) 
+  ;; Para poder usar el path de BASH en la eshell
+  (when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize))
 
-(defun sudeame ()
-"Use TRAMP to `sudo' the current buffer"
-(interactive)
-(when buffer-file-name
-(find-alternate-file
-(concat "/sudo:root@localhost:"
-	buffer-file-name))))
+  (defun sudeame ()
+  "Use TRAMP to `sudo' the current buffer"
+  (interactive)
+  (when buffer-file-name
+  (find-alternate-file
+  (concat "/sudo:root@localhost:"
+	  buffer-file-name))))
 #+end_src
 * Tramp
 Tramp sirve para acceder de forma remota a archivos a través de emacs con ssh, sftp, etc.
