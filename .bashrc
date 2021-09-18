@@ -88,7 +88,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 export XILINXD_LICENSE_FILE=2100@freyja.us.es
-synclient TapButton1=1 #Pongo el toque del touchpad como cli
+#synclient TapButton1=1 #Pongo el toque del touchpad como cli
 export PATH="$HOME/bin:$PATH" #Añado ~/bin para poder ejecutar mis programas facilmente
 #alias zed 'ssh root@192.168.0.200' no va no se por qué
 # Alias definitions.
