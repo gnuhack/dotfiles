@@ -83,7 +83,7 @@ exec 	thunderbird
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+#bindsym $mod+T exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
