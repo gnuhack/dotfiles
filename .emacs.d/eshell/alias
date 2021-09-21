@@ -1,9 +1,10 @@
-alias d dired $1
-alias ff find-file $1
-alias Música cd /home/carlos/Música $* && sh /script.sh $*
-alias actualizar sudo apt update $* && sudo apt upgrade $*
-alias l ls $*
-alias la ls -A $*
-alias ll ls -l $*
-alias sudo eshell/sudo $*
+alias youtubemp3 youtube-dl --extract-audio --audio-format mp3  $*
 alias ventilador lscpu | grep MHz; sensors $*
+alias sudo eshell/sudo $*
+alias ll ls -l $*
+alias la ls -A $*
+alias l ls $*
+alias actualizar sudo apt update $* && sudo apt upgrade $*
+alias Música cd /home/carlos/Música $* && sh /script.sh $*
+alias ff find-file $1
+alias d dired $1
