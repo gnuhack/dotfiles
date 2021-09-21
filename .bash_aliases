@@ -33,3 +33,4 @@ alias bk='~/Descargas/blockkeeper-x86_64.AppImage '
 alias hablar='arecord -f cd -t raw | oggenc - -r | ssh mobian@192.168.1.202 mplayer -'
 alias escuchar="ssh mobian@192.168.1.202 'arecord -f cd -t raw | oggenc - -r' | mplayer -"
 # Para hablar y escuchar, instalar abcde
+alias evince=zathura
