@@ -410,15 +410,15 @@ Con la siguiente función puedo reproducir vídeos de Youtube en mpv descargánd
           (elfeed-show-visit))))))
 #+END_SRC
 * EMMS
-Para reproducir música he elegido emms, que es bastante simple de configurar. Simplemente hay que añadir a la lista de reproducción la carpeta de música que quiera reproducir (con add-directory-tree) y luego ya iniciarlo con emms-start.
+Para reproducir música he elegido emms, que es bastante simple de configurar. Para que se carguen los datos en caché la primera vez que use emms hay que añadir a la lista de reproducción la carpeta de música que quiera reproducir (con add-directory-tree) y luego ya iniciarlo con emms-start.
 #+BEGIN_SRC emacs-lisp
   ;;emms
   (require 'emms-setup)
   (emms-all)
   (emms-default-players)
   (setq emms-source-file-default-directory "~/Música/")
-  (when (file-exists-p "~/org")
-    (emms-add-directory-tree "~/Música"))
+  (require 'emms-history)
+  (emms-history-load)
   (emms-mode-line-disable)
   (global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
   (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
@@ -427,7 +427,7 @@ Para reproducir música he elegido emms, que es bastante simple de configurar. S
   (global-set-key (kbd "s-m") 'notmuch)
   (add-hook 'emms-mode-hook 'hl-line-mode)
   (add-hook 'emms-mode-hook 'visual-line-mode)
-
+  
 #+END_SRC
 * Keybindings
 Atajos de teclas y registros.
