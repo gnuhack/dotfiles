@@ -277,6 +277,13 @@ Plantillas para introducir código con expansión de cosas como <el con TAB.
 <center><a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/3.0/88x31.png\" /></a><br /><span xmlns:dct=\"https://purl.org/dc/terms/\" href=\"https://purl.org/dc/dcmitype/Text\" property=\"dct:title\" rel=\"dct:type\">192.168.1.125</span> by <a xmlns:cc=\"https://creativecommons.org/ns#\" href=\"https://192.168.1.125\" property=\"cc:attributionName\" rel=\"cc:attributionURL\">Carlos Pajuelo</a> is licensed under a <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</center>")
 
    #+end_src>
+** Org-pomodoro
+   Ténica de trabajo con descansos cortos.
+   #+begin_src emacs-lisp
+     ;; Sonido de https://freesound.org/people/.Andre_Onate/sounds/484665/
+     (setq org-clock-sound "~/Descargas/ding.wav")
+     ;; Para iniciar el crono, pulsar C-c C-x ;
+   #+end_src
 * Recentf
   Con recentf-mode se puede acceder fácilmente a los ficheros usados más recientemente, y también a los [[*Entorno del editor][búferes]]
   #+begin_src emacs-lisp
@@ -441,11 +448,11 @@ Atajos de teclas y registros.
   (global-set-key (kbd "<f6>") 'quick-calc)
   (set-register ?o (cons 'file "/home/carlos/Nextcloud/Documents/horario.txt"))
   (set-register ?e (cons 'file "/home/carlos/git/dotfiles/.emacs.d/emacs-literario.org"))
-  (set-register ?t (cons 'file "/home/carlos/Nextcloud/Talk/orgt430/tiempo.org"))
+  (set-register ?t (cons 'file "/home/carlos/org/2021t/tiempo.org"))
   (global-set-key (kbd "s-n") 'next-buffer)
   (global-set-key (kbd "s-p") 'previous-buffer)
-  (global-set-key (kbd "s-<backspace>") 'rat/terminal)
-  (global-set-key (kbd "s-<delete>") 'rat/killydelete)
+  (global-set-key (kbd "s-<backspace>") 'rat/killydelete)
+  (global-set-key (kbd "s-<return>") 'rat/terminal)
 #+END_SRC
 * Projectile
 Para gestionar proyectos he elegido proyectile. Así puedo cambiar entre archivos de un proyecto de forma fácil y cómoda. Un proyecto es toda carpeta que contenga archivos clave (como los repos de git).
