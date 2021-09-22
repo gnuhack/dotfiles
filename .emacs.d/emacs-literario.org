@@ -283,6 +283,7 @@ Plantillas para introducir código con expansión de cosas como <el con TAB.
      ;; Sonido de https://freesound.org/people/.Andre_Onate/sounds/484665/
      (setq org-clock-sound "~/Descargas/ding.wav")
      ;; Para iniciar el crono, pulsar C-c C-x ;
+     (setq org-timer-default-timer "00:25:00")
    #+end_src
 * Recentf
   Con recentf-mode se puede acceder fácilmente a los ficheros usados más recientemente, y también a los [[*Entorno del editor][búferes]]
