@@ -29,7 +29,7 @@
  '(org-agenda-files
    '("~/org/uni.org" "~/Nextcloud/Documents/horario.txt" "~/Nextcloud/Talk/orgt430/gtd.org"))
  '(package-selected-packages
-   '(telega modus-themes exec-path-from-shell org-static-blog dashboard org-roam zenburn-theme hledger-mode scratch sudoku notmuch ebdb dictionary emojify projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))
+   '(engine-mode org-pomodoro telega modus-themes exec-path-from-shell org-static-blog dashboard org-roam zenburn-theme hledger-mode scratch sudoku notmuch ebdb dictionary emojify projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))
  '(telega-mode-line-string-format
    '("   "
      (:eval
