@@ -278,7 +278,7 @@ Plantillas para introducir código con expansión de cosas como <el con TAB.
 
    #+end_src>
 ** Org-pomodoro
-   Ténica de trabajo con descansos cortos.
+   Ténica de trabajo con descansos cortos. https://github.com/marcinkoziej/org-pomodoro
    #+begin_src emacs-lisp
      ;; Sonido de https://freesound.org/people/.Andre_Onate/sounds/484665/
      (setq org-clock-sound "~/Descargas/ding.wav")
@@ -566,5 +566,22 @@ Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. P
     (require 'helm-config)
     (helm-mode 1)
     (global-set-key (kbd "M-x") 'helm-M-x)
+  #+end_src
+
+* Engine mode
+  Con el engine-mode se puede usar Emacs como interfaz de motores de búsqueda.
+  #+begin_src emacs-lisp
+(engine-mode 1)
+(setq engine/browser-function 'eww-browse-url)
+(engine/set-keymap-prefix (kbd "C-c w"))
+
+(defengine duckduckgo
+  "https://duckduckgo.com/?q=%s"
+  :keybinding "d")
+(defengine wikipedia
+  "http://www.wikipedia.org/search-redirect.php?language=en&go=Go&search=%s"
+  :keybinding "w"
+  :docstring "Searchin' the wikis.")
+
   #+end_src
 
