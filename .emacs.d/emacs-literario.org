@@ -160,6 +160,10 @@ Pongo aquí una función que me permite leer las coordenadas en las que me encue
     (setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
 #+END_SRC
 * Org
+El modo org sirve para organizarte la vida. En principio sólo es un lenguaje de marcado tipo Markdown, usando asteriscos como niveles jerárquicos de organización para poder contraerlos y así tener los archivos ordenados.
+
+Para navegar por los enlaces de un archivo de org se puede usar =C-c C-o=, en vez de pulsar intro. Alternativamente se puede pinchar con el ratón en el enlace.
+
 Asignaciones de teclas sugeridas por el manual de org de info.
 #+BEGIN_SRC emacs-lisp
 
