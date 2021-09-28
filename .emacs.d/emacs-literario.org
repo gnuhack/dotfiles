@@ -177,9 +177,9 @@ Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-
   
   (setq org-refile-targets  '((org-agenda-files :maxlevel . 6)
 			      ("~/org-roam/20210909170753-proyectos_futuros.org" :maxlevel . 6)
-			      ("~/org-roam/20210920115613-lista_de_libros.org")
-			      ("~/org-roam/20210920111342-lista_de_juegos.org")
-			      ("~/org-roam/20210920115726-lista_de_peliculas.org")))
+			      ("~/org-roam/20210920115613-lista_de_libros.org" :maxlevel . 6)
+			      ("~/org-roam/20210920111342-lista_de_juegos.org" :maxlevel . 6)
+			      ("~/org-roam/20210920115726-lista_de_peliculas.org" :maxlevel . 6)))
   
       (global-set-key "\C-cc" 'org-capture)
   (when (file-exists-p "~/org")
@@ -441,6 +441,8 @@ Con la siguiente función puedo reproducir vídeos de Youtube en mpv descargánd
 #+END_SRC
 * EMMS
 Para reproducir música he elegido emms, que es bastante simple de configurar. Para que se carguen los datos en caché la primera vez que use emms hay que añadir a la lista de reproducción la carpeta de música que quiera reproducir (con add-directory-tree) y luego ya iniciarlo con emms-start.
+
+También he descubierto cómo guardar y cargar playlist. Simplemente cuando tengo una playlist (por ejemplo me puedo construir una desde cero gracias a =emms-smart-browse=) la puedo guardar con =C-x C-s= como si fuera un búfer normal, y luego si la quiero cargar (por ejemplo al abrir Emacs) puedo usar =emms-add-playlist=.
 #+BEGIN_SRC emacs-lisp
   ;;emms
   (require 'emms-setup)
