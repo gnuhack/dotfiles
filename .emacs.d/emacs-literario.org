@@ -26,7 +26,7 @@ El which-key te enseña las combinaciones de teclas posibles al pulsar alguna.
 Con company se autocompletan palabras.
   #+begin_src emacs-lisp
 (add-hook 'after-init-hook 'global-company-mode)
-(setq company-idle-delay 0.8)
+(setq company-idle-delay 0.3)
 (setq company-show-numbers t)
 (setq company-minimum-prefix-length 2)
 (setq company-tooltip-align-annotations t)
@@ -284,6 +284,30 @@ Plantillas para introducir código con expansión de cosas como <el con TAB.
      (setq org-clock-sound "~/Descargas/ding.wav")
      ;; Para iniciar el crono, pulsar C-c C-x ;
      (setq org-timer-default-timer "00:25:00")
+   #+end_src
+** Org-agenda
+   Vacaciones del curso 2021-2022
+   #+begin_src emacs-lisp
+	  (setq holiday-other-holidays '((holiday-fixed 10 12 "Día de mi Españita")
+					 (holiday-fixed 12 23 "Navidad")
+					 (holiday-fixed 12 24 "Navidad")
+					 (holiday-fixed 11 01 "Día de todos los santos")
+					 (holiday-fixed 12 06 "Día de la Constitución")
+					 (holiday-fixed 12 08 "Festividad de la Imnaculada")
+					 (holiday-fixed 01 28 "Santo Tomás de Aquino (Aquí no, aquí no...)")
+					 (holiday-fixed 02 28 "Día del Glorious Anthem of Andalusia")
+					 (holiday-fixed 05 02 "Día del trabajo")
+					 (holiday-fixed 05 04 "Fiesta local")
+					 (holiday-fixed 06 16 "Corpus Christi")))
+
+     (setq holiday-general-holidays nil)
+     (setq holiday-local-holidays nil)
+     (setq holiday-solar-holidays nil)
+     (setq holiday-bahai-holidays nil)
+     (setq holiday-christian-holidays nil)
+     (setq holiday-hebrew-holidays nil)
+     (setq holiday-islamic-holidays nil)
+     (setq holiday-oriental-holidays nil)
    #+end_src
 * Recentf
   Con recentf-mode se puede acceder fácilmente a los ficheros usados más recientemente, y también a los [[*Entorno del editor][búferes]]
