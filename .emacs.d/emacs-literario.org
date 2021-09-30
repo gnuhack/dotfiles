@@ -178,46 +178,49 @@ Con esta asignación se crea un menú parecido a imenu al pulsar C-c C-j en un o
 #+end_src
 Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-notes-efficiently-org-mode/. Aquí defino las plantillas para org. Si tomo una nota que no cuadra con ninguna categoría uso el template de "Nota" y luego hago el refill (C-w).
 #+BEGIN_SRC  emacs-lisp
-  
-  (setq org-refile-targets  '((org-agenda-files :maxlevel . 6)
-			      ("~/org-roam/20210909170753-proyectos_futuros.org" :maxlevel . 6)
-			      ("~/org-roam/20210920115613-lista_de_libros.org" :maxlevel . 6)
-			      ("~/org-roam/20210920111342-lista_de_juegos.org" :maxlevel . 6)
-			      ("~/org-roam/20210920115726-lista_de_peliculas.org" :maxlevel . 6)))
-  
-      (global-set-key "\C-cc" 'org-capture)
-  (when (file-exists-p "~/org")
-    (setq org-capture-templates
-	    (quote
-	     (("c" "Nota" entry
-	       (file+datetree "/home/carlos/Nextcloud/Documents/horario.txt")
-	       "* %?" :empty-lines 1)
-	      ("t" "Todo" entry
-	       (file+headline "/home/carlos/org/gtd.org" "Tasks")
-	       "* TODO %?" :empty-lines 1)
-	      ("j" "Journal Entry" entry
-	       (file+datetree "~/Nextcloud/journal/journal.org")
-	       "* %?" :empty-lines 1 :time-prompt t)
-	      ("p" "Películas" entry
-	       (file+headline "~/Nextcloud/Documents/horario.txt" "Películas")
-	       "* %?")
-	      ("d" "Dudas" entry (file+headline "/home/carlos/Nextcloud/Documents/horario.txt" "Dudas")
-	       "* %^{PROMPT} %?\n  %i\n  %a")
-	      ("k" "Cita" entry
-	       (file+headline "~/org/uni.org" "Citas")
-	       "* %^t %?")
-	      ("l" "Ledger" plain
-	       (file "~/Documentos/cuentas.dat")
-		     "%(org-read-date) %^{Concepto}
-      expenses:%^{Cuenta de gasto}  %^{Cantidad}
-      assets:%^{Método de pago}  %^{Cantidad}
-    ")		  
-	      ))))
-      (setq org-agenda-span 'day)
-	;;calendario
-  
-	(setq calendar-week-start-day 1)
-  
+	
+	(setq org-refile-targets  '((org-agenda-files :maxlevel . 6)
+				    ("~/org-roam/20210909170753-proyectos_futuros.org" :maxlevel . 6)
+				    ("~/org-roam/20210920115613-lista_de_libros.org" :maxlevel . 6)
+				    ("~/org-roam/20210920111342-lista_de_juegos.org" :maxlevel . 6)
+				    ("~/org-roam/20210920115726-lista_de_peliculas.org" :maxlevel . 6)
+				    ("~/org-roam/20210910223458-shell.org" :maxlevel . 6)
+				    ("~/org-roam/20210930132055-lista_de_series.org" :maxlevel . 6)
+				    ("~/org-roam/20210930135146-inbox.org" :maxlevel . 6)))
+	
+	    (global-set-key "\C-cc" 'org-capture)
+	(when (file-exists-p "~/org")
+	  (setq org-capture-templates
+		  (quote
+		   (("c" "Nota" entry
+		     (file+datetree "/home/carlos/Nextcloud/Documents/horario.txt")
+		     "* %?" :empty-lines 1)
+		    ("t" "Todo" entry
+		     (file+headline "/home/carlos/org/gtd.org" "Tasks")
+		     "* TODO %?" :empty-lines 1)
+		    ("j" "Journal Entry" entry
+		     (file+datetree "~/Nextcloud/journal/journal.org")
+		     "* %<%H:%M> %?" :empty-lines 1 :time-prompt t)
+		    ("p" "Películas" entry
+		     (file+headline "~/Nextcloud/Documents/horario.txt" "Películas")
+		     "* %?")
+		    ("d" "Dudas" entry (file+headline "/home/carlos/Nextcloud/Documents/horario.txt" "Dudas")
+		     "* %^{PROMPT} %?\n  %i\n  %a")
+		    ("k" "Cita" entry
+		     (file+headline "~/org/uni.org" "Citas")
+		     "* %^t %?")
+		    ("l" "Ledger" plain
+		     (file "~/Documentos/cuentas.dat")
+			   "%(org-read-date) %^{Concepto}
+	    expenses:%^{Cuenta de gasto}  %^{Cantidad}
+	    assets:%^{Método de pago}  %^{Cantidad}
+	  ")		  
+		    ))))
+	    (setq org-agenda-span 'day)
+	      ;;calendario
+	
+	      (setq calendar-week-start-day 1)
+	
 #+END_SRC
 Plantillas para introducir código con expansión de cosas como <el con TAB.
 #+begin_src emacs-lisp
