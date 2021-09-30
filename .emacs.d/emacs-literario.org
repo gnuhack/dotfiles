@@ -186,6 +186,7 @@ Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-
 				    ("~/org-roam/20210920115726-lista_de_peliculas.org" :maxlevel . 6)
 				    ("~/org-roam/20210910223458-shell.org" :maxlevel . 6)
 				    ("~/org-roam/20210930132055-lista_de_series.org" :maxlevel . 6)
+				    ("~/org-roam/20210930211941-notas_generales.org" :maxlevel . 6)
 				    ("~/org-roam/20210930135146-inbox.org" :maxlevel . 6)))
 	
 	    (global-set-key "\C-cc" 'org-capture)
