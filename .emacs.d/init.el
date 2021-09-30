@@ -12,7 +12,8 @@
  '(custom-safe-themes
    '("0568a5426239e65aab5e7c48fa1abde81130a87ddf7f942613bf5e13bf79686b" "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" default))
  '(elfeed-feeds
-   '(("http://feeds.feedburner.com/uGeekBlog" Emacs Blog)
+   '(("https://helpdeskheadesk.net/index.xml" Emacs Blog)
+     ("http://feeds.feedburner.com/uGeekBlog" Emacs Blog)
      ("https://daemons.it/posts/index.xml" Emacs Blog)
      ("https://lukesmith.xyz/rss.xml" Luke Blog)
      ("https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&filter=local" Video)
