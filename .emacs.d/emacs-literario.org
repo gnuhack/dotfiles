@@ -333,7 +333,7 @@ Plantillas para introducir código con expansión de cosas como <el con TAB.
     (recentf-mode)
   #+end_src
 * Notificaciones
-Funciones para que las notificaciones de la agenda me lleguen al escritorio con espeak. Además del código de abajo hace falta meter en ~/bin un appt-notification con lo siguiente:
+Funciones para que las notificaciones de la agenda me lleguen al escritorio con espeak. Además del código de abajo hace falta meter en ~/bin un appt-notification con lo siguiente (además de instalar espeak):
 #+BEGIN_SRC 
 #!/bin/sh
 
@@ -372,7 +372,7 @@ Aquí están las funciones para la notificación.
   (when (file-exists-p "~/org")
     (add-hook 'after-save-hook
 	    '(lambda ()
-	       (if (string= (buffer-file-name) (concat (getenv "HOME") "/ideas/TODO.txt"))
+	       (if (string= (buffer-file-name) (concat (getenv "HOME") "/org/uni.org"))
 		   (my-org-agenda-to-appt)))))
 
   ; Display appointments as a window manager notification
@@ -581,7 +581,7 @@ Notificaciones para la modeline con notmuch. (https://www.reddit.com/r/emacs/com
 (defconst my-mode-line-map (make-sparse-keymap))
 (defun notmuch-unread-count ()
   (setq notmuch-unread-email-count (string-to-number(replace-regexp-in-string "\n" "" (notmuch-command-to-string "count" "tag:unread"))))
-  (if (eq notmuch-unread-email-count 0) (setq notmuch-unread-mode-line-string (format " 📧 %d" (string-to-number(replace-regexp-in-string "\n" "" (notmuch-command-to-string "count"))))) (setq notmuch-unread-mode-line-string (format "  %d" notmuch-unread-email-count)))
+  (if (eq notmuch-unread-email-count 0) (setq notmuch-unread-mode-line-string (format " ❌ %d" (string-to-number(replace-regexp-in-string "\n" "" (notmuch-command-to-string "count"))))) (setq notmuch-unread-mode-line-string (format "  %d" notmuch-unread-email-count)))
   (force-mode-line-update))
 (run-at-time nil 10 'notmuch-unread-count)
 (defun notmuch-open-emails ()
