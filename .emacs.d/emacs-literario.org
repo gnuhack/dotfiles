@@ -325,7 +325,7 @@ Plantillas para introducir código con expansión de cosas como <el con TAB.
 ** Org-habit
    Para hábitos a los que les quiera hacer un seguimiento se puede usar [[info:org#Tracking your habits][org-habit]]
    #+begin_src emacs-lisp
-   ﻿(require 'org-habit)
+;;   ﻿(require 'org-habit)
    #+end_src
 * Recentf
   Con recentf-mode se puede acceder fácilmente a los ficheros usados más recientemente, y también a los [[*Entorno del editor][búferes]]
