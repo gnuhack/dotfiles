@@ -38,15 +38,14 @@ command=/home/carlos/.config/i3blocks/$BLOCK_NAME
 #NOT_PLAYING_COLOR=white
 
 [show-disk-space]
+command=df -h | awk '/sda6/ { print $6 ": " $4 }'
+interval=30
+color=##2E2E8B8B5757
+
+[show-disk-space]
 command=df -h | awk '/sda1/ { print $1 ": " $4 }'
 interval=30
-color=#A22222FFF55
-# Restart i3 on click
-[restart]
-full_text=Reinicio
-command=i3-msg -q restart
-color=#D0D020209090
-#interval=0
+color=#1fffaaa
 
 # Battery indicator
 #
@@ -74,15 +73,19 @@ command=ip addr | awk '/global/ {print $2}'
 interval=once
 color=#CCCCCCCCCC
 
-[show-disk-space]
-command=df -h | awk '/sda6/ { print $6 ": " $4 }'
-interval=30
-color=##2E2E8B8B5757
-
 [weather]
 command=curl -Ss 'https://wttr.in/Aljarafe?0&T&Q?&lang=es' | cut -c 16- | head -2 | xargs echo
 interval=900
 color=#A4C2F4
+# Restart i3 on click
+[restart]
+command=~/bin/wtr.sh
+interval=900
+#command=i3-msg -q restart
+color=#A4C2F4
+#interval=0
+
+
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
