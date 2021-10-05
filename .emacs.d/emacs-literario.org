@@ -510,7 +510,7 @@ Cliente de Telegram para Emacs.
 #+BEGIN_SRC emacs-lisp
   (setq emojify-emoji-styles '(unicode))
   (global-set-key (kbd "s-T") 'telega)
-  (global-set-key (kbd "s-i") 'emojify-insert-emoji)
+  (global-set-key (kbd "s-i") 'emms)
   (define-key global-map (kbd "C-c t") telega-prefix-map)
   (add-hook 'telega-load-hook 'telega-notifications-mode)
   (setq telega-chat-fill-column 16)
