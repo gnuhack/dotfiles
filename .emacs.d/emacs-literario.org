@@ -107,7 +107,8 @@ Con el prefijo C-u se puede elegir el modo del búfer en scratch.
 La eshell es una shell escrita entera en lisp.
 #+begin_src emacs-lisp
   ;; Para usar sudo bien en eshell (alias actualizar)
-  (require 'em-tramp) 
+  (require 'em-tramp)
+  (require 'em-hist)
   ;; Para poder usar el path de BASH en la eshell
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize))
@@ -120,7 +121,7 @@ La eshell es una shell escrita entera en lisp.
   (concat "/sudo:root@localhost:"
 	  buffer-file-name))))
 
-  ;; Función de Protesilaos para buscar en el historial
+  ;;Función de Protesilaos para buscar en el historial
   (defun prot-eshell-complete-history ()
     "Insert element from Eshell history using completion."
     (interactive)
