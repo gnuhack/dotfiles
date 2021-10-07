@@ -119,6 +119,16 @@ La eshell es una shell escrita entera en lisp.
   (find-alternate-file
   (concat "/sudo:root@localhost:"
 	  buffer-file-name))))
+
+  ;; Función de Protesilaos para buscar en el historial
+  (defun prot-eshell-complete-history ()
+    "Insert element from Eshell history using completion."
+    (interactive)
+    (let ((hist (ring-elements eshell-history-ring)))
+      (insert
+       (completing-read "Input from history: " hist nil t))))
+
+  (define-key eshell-hist-mode-map (kbd "M-r") #'prot-eshell-complete-history)
 #+end_src
 * Tramp
 Tramp sirve para acceder de forma remota a archivos a través de emacs con ssh, sftp, etc.
