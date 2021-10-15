@@ -29,7 +29,7 @@ for_window [class="Yad"] floating enable
 bindsym $mod+Shift+a move workspace to output left
 exec $mod+w
 exec emacs
-exec nextcloud
+exec ~/bin/Nextcloud-3.3.3-x86_64.AppImage
 exec ~/Descargas/Telegram/Telegram
 #exec orage
 #exec sshfs pi@192.168.1.130:/export/users  ~/Public
@@ -87,6 +87,9 @@ floating_modifier $mod
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# Iniciar Emacs desde fuera de él
+#bindsym $mod+x exec "emacsclient -e "(eshell)" -c"
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
