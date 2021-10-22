@@ -655,6 +655,9 @@ Notificaciones para la modeline con notmuch. (https://www.reddit.com/r/emacs/com
 (defengine duckduckgo
   "https://duckduckgo.com/?q=%s"
   :keybinding "d")
+(defengine rae
+  "https://dle.rae.es/%s"
+  :keybinding "D")
 (defengine wikipedia
   "http://www.wikipedia.org/search-redirect.php?language=en&go=Go&search=%s"
   :keybinding "w"
@@ -665,6 +668,7 @@ Notificaciones para la modeline con notmuch. (https://www.reddit.com/r/emacs/com
 * Eww
 Navegador web de Emacs.
 #+begin_src emacs-lisp
-(setq browse-url-browser-function 'eww) ;Para abrir los feeds de elfeed con eww en vez de firefox.
+  (setq browse-url-browser-function 'eww) ;Para abrir los feeds de elfeed con eww en vez de firefox.
+  (setq eww-auto-rename-buffer 'title) ;Para renombrar los búferes de eww automáticamente
 #+end_src
 
