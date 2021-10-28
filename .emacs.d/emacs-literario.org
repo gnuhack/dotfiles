@@ -467,6 +467,21 @@ Con la siguiente función puedo reproducir vídeos de Youtube en mpv descargánd
             (elfeed-search-browse-url)
           (elfeed-show-visit))))))
 #+END_SRC
+Para ver los enlaces de Elfeed con Firefox (por defecto los veo con eww):
+#+begin_src emacs-lisp
+  (defun elfeed-firefox-open (&optional use-generic-p)
+    "open with firefox"
+    (interactive "P")
+    (let ((entries (elfeed-search-selected)))
+      (cl-loop for entry in entries
+	       do (elfeed-untag entry 'unread)
+	       when (elfeed-entry-link entry)
+	       do (browse-url-firefox it))
+      (mapc #'elfeed-search-update-entry entries)
+      (unless (use-region-p) (forward-line))))
+
+;;  (define-key elfeed-search-mode-map (kbd "f") 'elfeed-firefox-open)
+#+end_src
 * EMMS
 Para reproducir música he elegido emms, que es bastante simple de configurar. Para que se carguen los datos en caché la primera vez que use emms hay que añadir a la lista de reproducción la carpeta de música que quiera reproducir (con add-directory-tree) y luego ya iniciarlo con emms-start.
 
@@ -484,7 +499,7 @@ También he descubierto cómo guardar y cargar playlist. Simplemente cuando teng
   (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
   (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
   (global-set-key (kbd "<XF86MonBrightnessUp>") 'emms-shuffle) 
-  (global-set-key (kbd "s-m") 'notmuch)
+  (global-set-key (kbd "s-m") 'notmuch-open-emails)
   (add-hook 'emms-mode-hook 'hl-line-mode)
   (add-hook 'emms-mode-hook 'visual-line-mode)
   
