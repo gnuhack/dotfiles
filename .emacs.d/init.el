@@ -12,20 +12,20 @@
  '(custom-safe-themes
    '("0568a5426239e65aab5e7c48fa1abde81130a87ddf7f942613bf5e13bf79686b" "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" default))
  '(elfeed-feeds
-   '(("https://helpdeskheadesk.net/index.xml" Emacs Blog)
-     ("http://feeds.feedburner.com/uGeekBlog" Emacs Blog)
-     ("https://daemons.it/posts/index.xml" Emacs Blog)
-     ("https://lukesmith.xyz/rss.xml" Luke Blog)
+   '(("https://helpdeskheadesk.net/index.xml" Emacs TAONAW)
+     ("http://feeds.feedburner.com/uGeekBlog" Emacs uGeek)
+     ("https://daemons.it/posts/index.xml" Emacs daemon)
+     ("https://lukesmith.xyz/rss.xml" Luke)
      ("https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&filter=local" Video)
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UCaifrB5IrvGNPJmPeVOcqBA" Kruggsmash Video)
      ("https://www.bay12games.com/dwarves/dev_now.rss" Dwarf Fortress Video)
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg" Video)
-     ("http://planet.emacs-es.org/rss20.xml" Emacs)
-     ("http://karl-voit.at/feeds/lazyblorg-all.atom_1.0.links-and-content.xml" Blog)
+     ("http://planet.emacs-es.org/rss20.xml" Emacs Planet)
+     ("http://karl-voit.at/feeds/lazyblorg-all.atom_1.0.links-and-content.xml" Blog Voit)
      ("https://planet.emacslife.com/atom.xml" Emacs)
      ("https://protesilaos.com/master.xml" Prot Blog)
-     ("https://blog.mobian-project.org/index.xml" Blog)
-     ("https://twobithistory.org/feed.xml" Blog)))
+     ("https://blog.mobian-project.org/index.xml" Mobian Blog)
+     ("https://twobithistory.org/feed.xml" 2bit Blog)))
  '(org-agenda-files
    '("~/org/uni.org" "~/Nextcloud/Documents/horario.txt" "~/Nextcloud/Talk/orgt430/gtd.org"))
  '(package-selected-packages
