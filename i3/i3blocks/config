@@ -78,7 +78,7 @@ command=curl -Ss 'https://wttr.in/Aljarafe?0&T&Q?&lang=es' | cut -c 16- | head -
 interval=900
 color=#A4C2F4
 # Restart i3 on click
-[restart]
+[tiempo]
 command=~/bin/wtr.sh
 interval=900
 #command=i3-msg -q restart

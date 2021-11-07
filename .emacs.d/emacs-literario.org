@@ -35,10 +35,10 @@ Con company se autocompletan palabras.
 (setq company-minimum-prefix-length 2)
 (setq company-tooltip-align-annotations t)
 #+end_src
-Como motor de búsqueda he elegido ido, para buscar archivos fácilmente.
+Ahora mismo uso Helm, así que desactivo ido.
 #+begin_src emacs-lisp
   ;; https://www.masteringemacs.org/article/introduction-to-ido-mode
-  (ido-mode)
+;  (ido-mode)
 ;;  (setq ido-everywhere t) ; De momento voy a probar Helm, que es incompatible con ésto.
   (setq ido-enable-flex-matching t)
   (setq ido-use-virtual-buffers t)
@@ -662,6 +662,7 @@ Notificaciones para la modeline con notmuch. (https://www.reddit.com/r/emacs/com
     (require 'helm-config)
     (helm-mode 1)
     (global-set-key (kbd "M-x") 'helm-M-x)
+    (global-set-key (kbd "C-x C-f") 'helm-find-files)
   #+end_src
 
 * Engine mode
