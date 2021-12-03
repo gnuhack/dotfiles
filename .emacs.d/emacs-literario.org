@@ -308,7 +308,7 @@ Plantillas para introducir código con expansión de cosas como <el con TAB.
 
 <center><a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/3.0/88x31.png\" /></a><br /><span xmlns:dct=\"https://purl.org/dc/terms/\" href=\"https://purl.org/dc/dcmitype/Text\" property=\"dct:title\" rel=\"dct:type\">192.168.1.125</span> by <a xmlns:cc=\"https://creativecommons.org/ns#\" href=\"https://192.168.1.125\" property=\"cc:attributionName\" rel=\"cc:attributionURL\">Carlos Pajuelo</a> is licensed under a <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</center>")
 
-   #+end_src>
+   #+end_src
 ** Org-pomodoro
    Ténica de trabajo con descansos cortos. https://github.com/marcinkoziej/org-pomodoro
    #+begin_src emacs-lisp
