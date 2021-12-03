@@ -282,9 +282,9 @@ Plantillas para introducir código con expansión de cosas como <el con TAB.
 "<meta name=\"author\" content=\"Carlos Pajuelo\">
 <meta name=\"referrer\" content=\"no-referrer\">
 <link href= \"static/style.css\" rel=\"stylesheet\" type=\"text/css\" />
-<link rel=\"icon\" href=\"static/favicon.ico\">
-<link rel=\"apple-touch-icon-precomposed\" href=\"static/favicon-152.png\">
-<link rel=\"msapplication-TitleImage\" href=\"static/favicon-144.png\">
+<link rel=\"icon\" href=\"static/arroba.ico\">
+<link rel=\"apple-touch-icon-precomposed\" href=\"static/arroba.png\">
+<link rel=\"msapplication-TitleImage\" href=\"static/arroba.png\">
 <link rel=\"msapplication-TitleColor\" href=\"#0141ff\">
 <script src=\"static/katex.min.js\"></script>
 <script src=\"static/auto-render.min.js\"></script>
