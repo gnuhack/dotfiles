@@ -12,7 +12,8 @@
  '(custom-safe-themes
    '("0568a5426239e65aab5e7c48fa1abde81130a87ddf7f942613bf5e13bf79686b" "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" default))
  '(elfeed-feeds
-   '(("https://helpdeskheadesk.net/index.xml" Emacs TAONAW)
+   '("http://unavidalibre.xyz/publish/blog/rss.xml"
+     ("https://helpdeskheadesk.net/index.xml" Emacs TAONAW)
      ("http://feeds.feedburner.com/uGeekBlog" Emacs uGeek)
      ("https://daemons.it/posts/index.xml" Emacs daemon)
      ("https://lukesmith.xyz/rss.xml" Luke)

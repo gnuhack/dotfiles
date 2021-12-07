@@ -683,9 +683,13 @@ Notificaciones para la modeline con notmuch. (https://www.reddit.com/r/emacs/com
 (defengine rae
   "https://dle.rae.es/%s"
   :keybinding "D")
-(defengine wikipedia
+(defengine wikipedia-en
   "http://www.wikipedia.org/search-redirect.php?language=en&go=Go&search=%s"
   :keybinding "w"
+  :docstring "Searchin' the wikis.")
+(defengine wikipedia-es
+  "http://www.wikipedia.org/search-redirect.php?language=es&go=Go&search=%s"
+  :keybinding "W"
   :docstring "Searchin' the wikis.")
 
   #+end_src
