@@ -183,6 +183,22 @@ El modo org sirve para organizarte la vida. En principio sólo es un lenguaje de
 
 Para navegar por los enlaces de un archivo de org se puede usar =C-c C-o=, en vez de pulsar intro. Alternativamente se puede pinchar con el ratón en el enlace.
 
+Para evaluar un bloque de código mientras estás en un archivo org, se puede usar la estructura siguiente, por ejemplo para Bash:
+
+#+begin_src sh
+ls
+#+end_src
+
+Y ejecutar C-c C-c dentro del bloque. Pero antes de hacerlo hay que cargar el módulo de org-babel para Bash:
+#+begin_src emacs-lisp
+(org-babel-do-load-languages 'org-babel-load-languages
+    '(
+        (shell . t)
+    )
+)
+#+end_src
+Fuente: https://stackoverflow.com/questions/29163164/how-can-i-load-bash-as-opposed-to-sh-in-org-babel-to-enable-begin-src-bash
+
 Asignaciones de teclas sugeridas por el manual de org de info.
 #+BEGIN_SRC emacs-lisp
 
@@ -512,8 +528,8 @@ También he descubierto cómo guardar y cargar playlist. Simplemente cuando teng
 Atajos de teclas y registros.
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "C-x w") 'elfeed)
-  (global-set-key (kbd "C-<tab>") 'rat/sigtel)
-  (global-set-key (kbd "C-<iso-lefttab>") 'rat/anttel)
+  (global-set-key (kbd "C-<tab>") 'next-buffer)
+  (global-set-key (kbd "C-<iso-lefttab>") 'previous-buffer)
   (global-set-key (kbd "C-x p") 'proced)
   (global-set-key (kbd "C-x e") 'eshell)
   (global-set-key (kbd "C-c y") 'clipboard-yank)
