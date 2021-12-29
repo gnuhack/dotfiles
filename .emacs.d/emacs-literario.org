@@ -1,3 +1,12 @@
+* Por hacer:
+** DONE Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática: Se hace con <s y luego TAB (En versiones recientes de Emacs es con C-c C-,)
+** TODO Poner las funciones de elisp en un fichero aparte
+** TODO Autoiniciar offlineimap y autoponer la contraseña
+** TODO Poner como tangle las cosas de ~/bin, por ejemplo
+#+begin_src shell :tangle ~/bin/offlineimap-postsync
+notmuch new
+#+end_src
+
 * Qué está pasando
 Mi configuración de Emacs está escrita con el estilo de programación literaria. De esta forma es mucho más fácil ir documentando el código a medida que se va escribiendo.
 
@@ -11,14 +20,6 @@ Por tanto para replicar esta configuración se necesitan tener dos archivos (ini
 Para que la configuración se pueda crear correctamente hay que instalar una serie de paquetes aparte de Emacs:
 *** Notmuch
 Programa de indexado y búsqueda de correo.
-***** DONE Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática: Se hace con <s y luego TAB (En versiones recientes de Emacs es con C-c C-,)
-***** TODO Poner las funciones de elisp en un fichero aparte
-***** TODO Autoiniciar offlineimap y autoponer la contraseña
-***** TODO Poner como tangle las cosas de ~/bin, por ejemplo
-#+begin_src shell :tangle ~/bin/offlineimap-postsync
-notmuch new
-#+end_src
-
 
 * Entorno del editor
   Para que funcione bien mi función rat/killydelete suprimo la confirmación al eliminar un búfer con un proceso.
