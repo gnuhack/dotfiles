@@ -1,5 +1,16 @@
 * Qué está pasando
-Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo que se usa "tangle" o algo así para cargar desde el archivo de inicio de emacs tradicional (el init.el) un archivo org (emacs-literario.org) que luego automágicamente se convierte en un emacs-literario.el. A partir de ahí ya se lee la configuración normal, solo que en vez de estar toda "del tirón" está en bloques (#+BEGIN_SRC emacs-lisp #+END_SRC) que son leídos y transformados adecuadamente para cargarse. Por tanto para replicar esta configuración se necesitan tener dos archivos (init.el y emacs-literario.org) y los dos en el mismo directorio (típicamente ~/.emacs.d).
+Mi configuración de Emacs está escrita con el estilo de programación literaria. De esta forma es mucho más fácil ir documentando el código a medida que se va escribiendo.
+
+Para ello se usa el programa "tangle"  para cargar desde el archivo de inicio de emacs tradicional (el init.el) un archivo org (emacs-literario.org) que luego automágicamente se convierte en un emacs-literario.el.
+
+A partir de ahí ya se lee la configuración normal, solo que en vez de estar toda "del tirón" está en bloques (#+BEGIN_SRC emacs-lisp #+END_SRC) que son leídos y transformados adecuadamente para cargarse.
+
+Por tanto para replicar esta configuración se necesitan tener dos archivos (init.el y emacs-literario.org) y los dos en el mismo directorio (típicamente ~/.emacs.d).
+
+** Dependencias
+Para que la configuración se pueda crear correctamente hay que instalar una serie de paquetes aparte de Emacs:
+*** Notmuch
+Programa de indexado y búsqueda de correo.
 ***** DONE Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática: Se hace con <s y luego TAB (En versiones recientes de Emacs es con C-c C-,)
 ***** TODO Poner las funciones de elisp en un fichero aparte
 ***** TODO Autoiniciar offlineimap y autoponer la contraseña
@@ -7,6 +18,8 @@ Lo que estoy haciendo aquí es usar la programación literaria. Para ello creo q
 #+begin_src shell :tangle ~/bin/offlineimap-postsync
 notmuch new
 #+end_src
+
+
 * Entorno del editor
   Para que funcione bien mi función rat/killydelete suprimo la confirmación al eliminar un búfer con un proceso.
 #+begin_src emacs-lisp
@@ -75,7 +88,7 @@ Para poder sincronizar sin problema mis archivos con el cliente de Nextcloud que
 (auto-revert-mode)
 
 #+END_SRC
-Insertar el cierre de paréntesis de forma automática
+Insertar el cierre de paréntesis de forma automática y resaltar los paréntesis.
 #+begin_src emacs-lisp
 (electric-pair-mode)
 (show-paren-mode)
