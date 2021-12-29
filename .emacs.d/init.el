@@ -25,7 +25,7 @@
      ("http://karl-voit.at/feeds/lazyblorg-all.atom_1.0.links-and-content.xml" Blog Voit)
      ("https://planet.emacslife.com/atom.xml" Emacs)
      ("https://protesilaos.com/master.xml" Prot Blog)
-     ("https://blog.mobian-project.org/index.xml" Mobian Blog)
+     ("https://edwardsnowden.substack.com/feed.xml" Snowden Blog)
      ("https://twobithistory.org/feed.xml" 2bit Blog)))
  '(org-agenda-files
    '("~/org/uni.org" "~/Nextcloud/Documents/horario.txt" "~/Nextcloud/Talk/orgt430/gtd.org"))
