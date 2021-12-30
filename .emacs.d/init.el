@@ -25,6 +25,7 @@
      ("http://karl-voit.at/feeds/lazyblorg-all.atom_1.0.links-and-content.xml" Blog Voit)
      ("https://planet.emacslife.com/atom.xml" Emacs)
      ("https://protesilaos.com/master.xml" Prot Blog)
+     ("https://greenwald.substack.com/feed" Glenn Blog)
      ("https://edwardsnowden.substack.com/feed.xml" Snowden Blog)
      ("https://twobithistory.org/feed.xml" 2bit Blog)))
  '(org-agenda-files
