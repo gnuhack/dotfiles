@@ -563,6 +563,7 @@ Atajos de teclas y registros.
   (set-register ?e (cons 'file "/home/carlos/git/dotfiles/.emacs.d/emacs-literario.org"))
   (set-register ?t (cons 'file "/home/carlos/org/2021t/tiempo.org"))
   (set-register ?c (cons 'file "/home/carlos/.config/i3/config"))
+  (set-register ?a (cons 'file "/home/carlos/Documentos/Aulaabierta"))
   (global-set-key (kbd "s-n") 'next-buffer)
   (global-set-key (kbd "s-p") 'previous-buffer)
   ;;(global-set-key (kbd "s-<backspace>") 'rat/killydelete)
