@@ -43,6 +43,8 @@ El which-key te enseña las combinaciones de teclas posibles al pulsar alguna.
 #+end_src
 Con company se autocompletan palabras.
   #+begin_src emacs-lisp
+(with-eval-after-load 'company
+  (add-to-list 'company-backends 'hledger-company))
 (add-hook 'after-init-hook 'global-company-mode)
 (setq company-idle-delay 0.3)
 (setq company-show-numbers t)
