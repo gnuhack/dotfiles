@@ -208,8 +208,8 @@ mode "caps" {
         bindsym Caps_Lock mode "default"
 }
 bindsym Caps_Lock mode "caps"
-
-
+#bindsym $mod+y exec "ledmic.sh"
+#bindsym --release Caps_Lock exec "ledmic.sh"
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
