@@ -285,6 +285,7 @@ Sustitución de los asteriscos por marcas más visuales.
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 #+end_src
 ** Org-roam
+Org-roam es una herramienta para crear un sistema de gestión personal basado en Zettelkasten. Trata de reproducir Roam Research’s, una web que sirve para implementar Zettelkasten.
    #+begin_src emacs-lisp
 		 (setq org-roam-v2-ack t)
 	    (when (file-exists-p "~/org-roam")
@@ -675,7 +676,7 @@ Notificaciones para la modeline con notmuch. (https://www.reddit.com/r/emacs/com
 #+END_SRC
 
 * Ledger
-  Ledger es una herramienta para llevar la contabilidad. Hledger es el port a Haskell de Ledger. Setup básico de la página oficial https://github.com/narendraj9/hledger-mode:
+  [[file:~/org-roam/20220204152645-ledger.org::+title: Ledger][Ledger]] es una herramienta para llevar la contabilidad. Hledger es el port a Haskell de Ledger. Setup básico de la página oficial https://github.com/narendraj9/hledger-mode:p
   #+begin_src emacs-lisp
      ;;; Basic configuration
      (require 'hledger-mode)
