@@ -562,6 +562,7 @@ Atajos de teclas y registros.
   (global-set-key (kbd "<f5>") 'modonoche)
   (add-to-list 'org-file-apps '("pdf" . "evince %s"))
   (global-set-key (kbd "<f6>") 'quick-calc)
+  (set-register ?E (cons 'file "/home/carlos/ETSI2022/"))
   (set-register ?o (cons 'file "/home/carlos/Nextcloud/Documents/horario.txt"))
   (set-register ?e (cons 'file "/home/carlos/git/dotfiles/.emacs.d/emacs-literario.org"))
   (set-register ?t (cons 'file "/home/carlos/org/2021t/tiempo.org"))
