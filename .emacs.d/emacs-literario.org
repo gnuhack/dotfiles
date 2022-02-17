@@ -195,6 +195,7 @@ Pongo aquí una función que me permite leer las coordenadas en las que me encue
     (setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
 #+END_SRC
 * Org
+** Introducción
 El modo org sirve para organizarte la vida. En principio sólo es un lenguaje de marcado tipo Markdown, usando asteriscos como niveles jerárquicos de organización para poder contraerlos y así tener los archivos ordenados.
 
 Para navegar por los enlaces de un archivo de org se puede usar =C-c C-o=, en vez de pulsar intro. Alternativamente se puede pinchar con el ratón en el enlace.
@@ -384,6 +385,14 @@ Org-roam es una herramienta para crear un sistema de gestión personal basado en
    #+begin_src emacs-lisp
 ;;   ﻿(require 'org-habit)
    #+end_src
+** Org-books
+Para gestionar los libros que me he leído voy a probar a usar org-books.
+#+begin_src emacs-lisp
+(setq org-books-file "~/org-roam/20210920115613-lista_de_libros.org")
+#+end_src
+Como mi archivo de libros he puesto el mismo que tengo en org-roam, porque creo que se pueden complementar bien org-roam con org-books.
+
+Para añadir un libro que me he leído solo tengo que usar =org-books-add-book= y poner el título y el heading en el que lo quiero meter.
 * Recentf
   Con recentf-mode se puede acceder fácilmente a los ficheros usados más recientemente, y también a los [[*Entorno del editor][búferes]]
   #+begin_src emacs-lisp
