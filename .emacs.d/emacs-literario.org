@@ -388,7 +388,8 @@ Org-roam es una herramienta para crear un sistema de gestión personal basado en
 ** Org-books
 Para gestionar los libros que me he leído voy a probar a usar org-books.
 #+begin_src emacs-lisp
-(setq org-books-file "~/org-roam/20210920115613-lista_de_libros.org")
+  (setq org-books-file "~/org-roam/20210920115613-lista_de_libros.org")
+  (setq org-books-add-to-top nil)
 #+end_src
 Como mi archivo de libros he puesto el mismo que tengo en org-roam, porque creo que se pueden complementar bien org-roam con org-books.
 
@@ -748,5 +749,13 @@ Navegador web de Emacs.
 #+begin_src emacs-lisp
   (setq browse-url-browser-function 'eww) ;Para abrir los feeds de elfeed con eww en vez de firefox.
   (setq eww-auto-rename-buffer 'title) ;Para renombrar los búferes de eww automáticamente
+#+end_src
+
+* Popper
+Para poder sacar una terminal de octave en cualquier momento, uso popper.
+** Uso básico
+Se activa con =popper-mode=. Después, cuando esté en el búfer que quiera convertir en una ventana emergente (pop-up), uso =M-x popper-toggle-type=. Y cada vez que quiera hacer aparecer o desaparecer esa ventana =popper-toggle-latest=.
+#+begin_src emacs-lisp
+  (global-set-key (kbd "<f9>") 'popper-toggle-latest)
 #+end_src
 
