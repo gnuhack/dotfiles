@@ -10,7 +10,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("0568a5426239e65aab5e7c48fa1abde81130a87ddf7f942613bf5e13bf79686b" "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" default))
+   '("7397cc72938446348521d8061d3f2e288165f65a2dbb6366bb666224de2629bb" "0568a5426239e65aab5e7c48fa1abde81130a87ddf7f942613bf5e13bf79686b" "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" default))
  '(elfeed-feeds
    '("http://unavidalibre.xyz/publish/blog/rss.xml"
      ("https://helpdeskheadesk.net/index.xml" Emacs TAONAW)

@@ -81,7 +81,7 @@ Pequeños ajustes visuales, creación de carpeta backup para guardar los archivo
   (tool-bar-mode -1)
   (scroll-bar-mode -1)
 
-  (load-theme 'misterioso)
+  (load-theme 'modus-vivendi)
 
   (setq inhibit-splash-screen t)
 
