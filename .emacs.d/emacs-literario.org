@@ -22,6 +22,11 @@ Para que la configuración se pueda crear correctamente hay que instalar una ser
 Programa de indexado y búsqueda de correo.
 
 * Entorno del editor
+Aumento el tamaño de letra en el HP de Jorge para ver mejor, porque tiene mucha resolución.
+#+begin_src emacs-lisp
+    (if (equal system-name "hpdejorge")
+	(set-face-attribute 'default nil :height 200))
+#+end_src
   Para que funcione bien mi función rat/killydelete suprimo la confirmación al eliminar un búfer con un proceso.
 #+begin_src emacs-lisp
     (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
@@ -75,9 +80,8 @@ Pequeños ajustes visuales, creación de carpeta backup para guardar los archivo
   (menu-bar-mode -1)
   (tool-bar-mode -1)
   (scroll-bar-mode -1)
-  (if (file-exists-p "~/org")
-      (load-theme 'modus-vivendi t)
-    (load-theme 'misterioso))
+
+  (load-theme 'modus-vivendi)
 
   (setq inhibit-splash-screen t)
 
@@ -150,8 +154,10 @@ La eshell es una shell escrita entera en lisp.
     (let ((hist (ring-elements eshell-history-ring)))
       (insert
        (completing-read "Input from history: " hist nil t))))
-
-  (define-key eshell-hist-mode-map (kbd "M-r") #'prot-eshell-complete-history)
+  (if (equal system-name "hpdejorge")
+      (message "No protcompletes")
+    (define-key eshell-hist-mode-map (kbd "M-r") #'prot-eshell-complete-history)
+    )
   ;;Para no guardar cosas con espacio al principio en el historial
   (setq eshell-input-filter 'eshell-input-filter-initial-space)
 #+end_src
