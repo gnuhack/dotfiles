@@ -759,3 +759,10 @@ Se activa con =popper-mode=. Después, cuando esté en el búfer que quiera conv
   (global-set-key (kbd "<f9>") 'popper-toggle-latest)
 #+end_src
 
+
+* Octave
+#+begin_src emacs-lisp
+(autoload 'octave-mode "octave-mod" nil t)
+(setq auto-mode-alist
+      (cons '("\\.m$" . octave-mode) auto-mode-alist))
+#+end_src
