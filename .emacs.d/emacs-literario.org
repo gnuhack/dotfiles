@@ -477,14 +477,14 @@ Macro para poner el modo noche en los pdfs (modonoche) y funciones para consegui
       (message "Posición guardada")
   ))
 
-  (define-key pdf-view-mode-map (kbd "<C-f2>")
+  (define-key pdf-view-mode-map (kbd "<C-f1>")
     (lambda ()
-      "Loads the position saved by <C-f1>."
+      "Saves the current position on the pdf to jump to later with <C-f2>."
       (interactive)
-      (pdf-view-bookmark-jump my-bookmark)
-      (message "Posición cargada")
+      (if (yes-or-no-p "¿Seguro que quieres guardar la posición?")
+	  (setf my-bookmark (pdf-view-bookmark-make-record))
+	(message "Posición no guardada"))
   ))
-
 #+END_SRC
 * Elfeed
 Con elfeed puedo tener mi propio feed personalizado. Sobre todo es útil para seguir blogs individuales que no tengan una alta frecuencia de posteo. También me sirve para "suscribirme" a canales de Youtube sin visitar la página, gracias as la función definida abajo. He quitado la parte de =emacs-lisp= al lado de #+BEGIN_SRC para que no se evalúe este código, ya que ahora se encarga de elfeed el fichero init.el.
