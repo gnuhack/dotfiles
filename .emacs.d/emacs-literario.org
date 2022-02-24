@@ -764,7 +764,14 @@ Se activa con =popper-mode=. Después, cuando esté en el búfer que quiera conv
 #+begin_src emacs-lisp
   (global-set-key (kbd "<f9>") 'popper-toggle-latest)
 #+end_src
-
+Para poner un hook que encoja la ventana he hecho una solución provisional hasta que tenga tiempo de mirarlo.
+#+begin_src emacs-lisp
+(defun esrinca ()
+  "Achica un frame."
+  (interactive)
+  (shrink-window 5))
+(add-hook 'popper-open-popup-hook 'esrinca)
+#+end_src
 
 * Octave
 #+begin_src emacs-lisp
