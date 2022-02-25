@@ -22,15 +22,18 @@ Para que la configuración se pueda crear correctamente hay que instalar una ser
 Programa de indexado y búsqueda de correo.
 
 * Entorno del editor
+** Fuentes
 Aumento el tamaño de letra en el HP de Jorge para ver mejor, porque tiene mucha resolución.
 #+begin_src emacs-lisp
     (if (equal system-name "hpdejorge")
 	(set-face-attribute 'default nil :height 200))
 #+end_src
+** Arreglos para mis funciones
   Para que funcione bien mi función rat/killydelete suprimo la confirmación al eliminar un búfer con un proceso.
 #+begin_src emacs-lisp
     (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
 #+end_src
+** Dashboard
 Para mejorar la pantalla de inicio, con dashboard se muestran archivos recientes y más cosas:
 #+begin_src emacs-lisp
 (dashboard-setup-startup-hook)
@@ -42,10 +45,12 @@ Para mejorar la pantalla de inicio, con dashboard se muestran archivos recientes
 ;;                        (agenda . 5)
                         (registers . 5)))
 #+end_src
+** Which-key
 El which-key te enseña las combinaciones de teclas posibles al pulsar alguna.
 #+begin_src emacs-lisp
 (which-key-mode)
 #+end_src
+** Company
 Con company se autocompletan palabras.
   #+begin_src emacs-lisp
 (with-eval-after-load 'company
@@ -56,6 +61,7 @@ Con company se autocompletan palabras.
 (setq company-minimum-prefix-length 2)
 (setq company-tooltip-align-annotations t)
 #+end_src
+** Ido
 Ahora mismo uso Helm, así que desactivo ido.
 #+begin_src emacs-lisp
   ;; https://www.masteringemacs.org/article/introduction-to-ido-mode
@@ -64,11 +70,13 @@ Ahora mismo uso Helm, así que desactivo ido.
   (setq ido-enable-flex-matching t)
   (setq ido-use-virtual-buffers t)
 #+end_src
+** Winner-mode
 El winner-mode sirve para poder hacer y deshacer la configuración de ventanas.
 #+begin_src emacs-lisp
     ;; Con C-c <flechas> se hace o deshace la config de ventanas
     (winner-mode)
 #+end_src
+** Ajustes visuales y miscelánea
 Pequeños ajustes visuales, creación de carpeta backup para guardar los archivos de recuperación que crea emacs, e inicio del servidor para poder acceder a emacs de forma rápida con emacsclient.
 #+begin_src emacs-lisp
   ;; Poner los backups en la carpeta backup 
@@ -89,17 +97,20 @@ Pequeños ajustes visuales, creación de carpeta backup para guardar los archivo
   (setq confirm-kill-emacs 'y-or-n-p)
 
 #+end_src
+** Revert-mode
 Para poder sincronizar sin problema mis archivos con el cliente de Nextcloud que tengo, habilito el revert mode de forma automática para que se actualicen los búferes solos.
 #+BEGIN_SRC emacs-lisp
 
 (auto-revert-mode)
 
 #+END_SRC
+** Paréntesis
 Insertar el cierre de paréntesis de forma automática y resaltar los paréntesis.
 #+begin_src emacs-lisp
 (electric-pair-mode)
 (show-paren-mode)
 #+end_src
+** Scratch
 Modo scratch para abrir búferes borradores en diferentes modos. Función mejorada por Protesilaos:
 https://protesilaos.com/codelog/2021-07-24-emacs-misc-custom-commands/
 La vi usarla en el vídeo del link, pero la saqué de su config de Emacs; [[file:~/Documentos/Configs de emacs/prot-emacs.org::#h:2695bfa4-89b4-4d7f-aa6e-8ef42f9177aa][Scratch buffers per major-mode]]
