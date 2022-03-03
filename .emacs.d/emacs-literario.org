@@ -683,7 +683,7 @@ Notificaciones para la modeline con notmuch. (https://www.reddit.com/r/emacs/com
   (defconst my-mode-line-map (make-sparse-keymap))
   (defun notmuch-unread-count ()
     (setq notmuch-unread-email-count (string-to-number(replace-regexp-in-string "\n" "" (notmuch-command-to-string "count" "tag:unread"))))
-    (if (eq notmuch-unread-email-count 0) (setq notmuch-unread-mode-line-string (format " ❌ %d" (string-to-number(replace-regexp-in-string "\n" "" (notmuch-command-to-string "count"))))) (setq notmuch-unread-mode-line-string (format "  %d" notmuch-unread-email-count)))
+    (if (eq notmuch-unread-email-count 0) (setq notmuch-unread-mode-line-string (format " ❌ %d " (string-to-number(replace-regexp-in-string "\n" "" (notmuch-command-to-string "count"))))) (setq notmuch-unread-mode-line-string (format "  %d" notmuch-unread-email-count)))
     (force-mode-line-update))
   (run-at-time nil 10 'notmuch-unread-count)
   (defun notmuch-open-emails ()
