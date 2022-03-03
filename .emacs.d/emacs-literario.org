@@ -139,8 +139,10 @@ If region is active, add its contents to the new buffer."
 #+end_src
 Con el prefijo C-u se puede elegir el modo del búfer en scratch.
 ** Hora
+#+begin_src emacs-lisp
 (display-time-mode 1)
 (setq display-time-24hr-format t)
+#+end_src
 * Eshell
 La eshell es una shell escrita entera en lisp.
 #+begin_src emacs-lisp
