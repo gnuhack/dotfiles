@@ -143,6 +143,11 @@ Con el prefijo C-u se puede elegir el modo del búfer en scratch.
 (display-time-mode 1)
 (setq display-time-24hr-format t)
 #+end_src
+** Smart mode line
+Con smart mode line se trunca la mode line de forma automática, lo que me permite tener una mode line mejor para cuando uso Telega en un frame de tamaño reducido.
+#+begin_src emacs-lisp
+(sml/setup)
+#+end_src
 * Eshell
 La eshell es una shell escrita entera en lisp.
 #+begin_src emacs-lisp
