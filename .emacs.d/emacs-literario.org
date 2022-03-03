@@ -492,7 +492,7 @@ Macro para poner el modo noche en los pdfs (modonoche) y funciones para consegui
     (lambda ()
       "Saves the current position on the pdf to jump to later with <C-f2>."
       (interactive)
-      (if (yes-or-no-p "¿Seguro que quieres guardar la posición?")
+      (if (y-or-n-p "¿Seguro que quieres guardar la posición?")
 	  (setf my-bookmark (pdf-view-bookmark-make-record))
 	(message "Posición no guardada"))
   ))
