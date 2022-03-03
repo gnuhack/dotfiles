@@ -138,6 +138,9 @@ If region is active, add its contents to the new buffer."
   (define-key global-map (kbd "C-c s") #'scratch)
 #+end_src
 Con el prefijo C-u se puede elegir el modo del búfer en scratch.
+** Hora
+(display-time-mode 1)
+(setq display-time-24hr-format t)
 * Eshell
 La eshell es una shell escrita entera en lisp.
 #+begin_src emacs-lisp
