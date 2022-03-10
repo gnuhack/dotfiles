@@ -490,14 +490,14 @@ Macro para poner el modo noche en los pdfs (modonoche) y funciones para consegui
   (add-hook 'pdf-view-mode-hook (lambda() (nlinum-mode -1))) ;;Desactivar linum mode, que no va bien con pdf-view-mode
   (pdf-tools-install)
 
-  (define-key pdf-view-mode-map (kbd "<C-f1>")
+  (define-key pdf-view-mode-map (kbd "<C-f2>")
     (lambda ()
-      "Saves the current position on the pdf to jump to later with <C-f2>."
+      "Loads the position saved by <C-f1>."
       (interactive)
-      (setf my-bookmark (pdf-view-bookmark-make-record))
-      (message "Posición guardada")
+      (pdf-view-bookmark-jump my-bookmark)
+      (message "Posición cargada")
   ))
-
+  
   (define-key pdf-view-mode-map (kbd "<C-f1>")
     (lambda ()
       "Saves the current position on the pdf to jump to later with <C-f2>."
