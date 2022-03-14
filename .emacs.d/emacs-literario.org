@@ -574,6 +574,7 @@ También he descubierto cómo guardar y cargar playlist. Simplemente cuando teng
   (require 'emms-history)
   (emms-history-load)
   (emms-mode-line-disable)
+  (emms-playing-time-mode)
   (global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
   (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
   (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
@@ -581,7 +582,7 @@ También he descubierto cómo guardar y cargar playlist. Simplemente cuando teng
   (global-set-key (kbd "s-m") 'notmuch-open-emails)
   (add-hook 'emms-mode-hook 'hl-line-mode)
   (add-hook 'emms-mode-hook 'visual-line-mode)
-  
+
 #+END_SRC
 * Keybindings
 Atajos de teclas y registros.
