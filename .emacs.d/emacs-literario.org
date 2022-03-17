@@ -631,7 +631,7 @@ Cliente de Telegram para Emacs.
   (add-hook 'after-init-hook #'global-emojify-mode)
   (add-hook 'telega-chat-mode-hook 'variable-pitch-mode)
   (add-hook 'telega-root-mode-hook 'hl-line-mode)
-  (add-hook 'telega-chat-mode-hook 'company-mode)
+  (add-hook 'telega-chat-mode-hook 'company-mode) ;; No consigo desactivar company al entrar a chats por defecto
   (add-hook 'telega-chat-mode-hook 'abbrev-mode)
 #+END_SRC
 * Guardado
