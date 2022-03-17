@@ -28,7 +28,7 @@
      ("https://greenwald.substack.com/feed" Glenn Blog)
      ("https://edwardsnowden.substack.com/feed.xml" Snowden Blog)
      ("https://twobithistory.org/feed.xml" 2bit Blog)
-     ("https://hnrss.org/frontpage" HackerNews)))
+     ("https://hnrss.org/frontpage" HN)))
  '(org-agenda-files
    '("~/org/uni.org" "~/Nextcloud/Documents/horario.txt" "~/Nextcloud/Talk/orgt430/gtd.org"))
  '(package-selected-packages

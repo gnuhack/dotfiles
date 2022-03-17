@@ -574,7 +574,7 @@ También he descubierto cómo guardar y cargar playlist. Simplemente cuando teng
   (require 'emms-history)
   (emms-history-load)
   (emms-mode-line-disable)
-  (emms-playing-time-mode)
+  (emms-playing-time-mode-line)
   (global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
   (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
   (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
