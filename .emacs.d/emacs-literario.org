@@ -363,7 +363,7 @@ Org-roam es una herramienta para crear un sistema de gestión personal basado en
 "<div class=\"header\">
   <a href=\"https://192.168.1.125\">Blog sobre software libre</a>
   <div class=\"sitelinks\">
-    <a href=\"https://gitlab.com/gnuhack\">Gitlab</a> | <a href=\"https://github.com/gnuhack\">Github</a>
+    <a href=\"https://gitlab.com/gnuhack\">Gitlab</a> | <a href=\"https://github.com/gnuhack\">Github</a> | <a href=\"http://unavidalibre.xyz/publish/blog/rss.xml\">RSS</a>
   </div>
 </div>")
 
