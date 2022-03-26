@@ -12,7 +12,7 @@ Va en ~/.config/mpv/input.conf
 *** Los ficheros init.el, emacs-literario.org y emacs-literario.el son los archivos de configuración de Emacs.
      El init.el es el primer archivo que lee Emacs al empezar (donde empieza la magia). Ahí tengo puesto que cargue el archivo emacs-literario.org que se encarga de generar el emacs-literario.el que es donde tengo mi configuración. Para mas información véase el principio del archivo emacs-literario.org.
 
-     Para replicar la configuración de Emacs hay que crear un simlink (por ejemplo desde dired pulsando S) del init.el, desde ~/git/dotfiles/.emacs.d/init.el a ~/.emacs.d/init.el
+     Para replicar la configuración de Emacs hay que crear un simlink (por ejemplo desde dired pulsando S, o, estando en ~/.emacs.d/, con =ln -s ~/git/dotfiles/.emacs.d/init.el=) del init.el y del custom.el, desde ~/git/dotfiles/.emacs.d/init.el a ~/.emacs.d/init.el
 
 *** El .bashrc y el .bashrc_aliases son las configuraciones de bash.
      El .bashrc va en ~/.bashrc
