@@ -604,7 +604,7 @@ También he descubierto cómo guardar y cargar playlist. Simplemente cuando teng
 
 #+END_SRC
 * Keybindings
-Atajos de teclas y registros.
+Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-key-bindings-emacs
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "C-x w") 'elfeed)
   (global-set-key (kbd "C-<tab>") 'next-buffer)
