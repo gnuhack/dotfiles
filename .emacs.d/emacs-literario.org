@@ -706,6 +706,7 @@ Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. P
 	  (interactive)
 	  (shell-command "offlineimap&" "*offlineimap*" nil)
 	  )
+  (async-shell-command "offlineimap")
 #+end_src
 Notificaciones para la modeline con notmuch. (https://www.reddit.com/r/emacs/comments/esxjh5/my_notmuch_email_count_display_in_modeline/)
 #+begin_src emacs-lisp
