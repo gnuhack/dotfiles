@@ -6,7 +6,8 @@
  '(custom-safe-themes
    '("dad622637530638a2140b83812e159a06b4791eb2f67ffd4abb4ff671b062d0b" "7397cc72938446348521d8061d3f2e288165f65a2dbb6366bb666224de2629bb" "0568a5426239e65aab5e7c48fa1abde81130a87ddf7f942613bf5e13bf79686b" "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" default))
  '(elfeed-feeds
-   '("http://unavidalibre.xyz/publish/blog/rss.xml"
+   '( "http://unavidalibre.xyz/publish/blog/rss.xml"
+     ("https://notxor.nueva-actitud.org/rss.xml" Noxtor Blog)
      ("https://helpdeskheadesk.net/index.xml" Emacs TAONAW)
      ("http://feeds.feedburner.com/uGeekBlog" Emacs uGeek)
      ("https://daemons.it/posts/index.xml" Emacs daemon)
