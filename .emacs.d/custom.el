@@ -8,9 +8,9 @@
  '(elfeed-feeds
    '( "http://unavidalibre.xyz/publish/blog/rss.xml"
      ("https://notxor.nueva-actitud.org/rss.xml" Noxtor Blog)
-     ("https://helpdeskheadesk.net/index.xml" Emacs TAONAW)
-     ("http://feeds.feedburner.com/uGeekBlog" Emacs uGeek)
-     ("https://daemons.it/posts/index.xml" Emacs daemon)
+     ("https://helpdeskheadesk.net/index.xml" TAONAW)
+     ("http://feeds.feedburner.com/uGeekBlog" uGeek)
+     ("https://daemons.it/posts/index.xml" daemon)
      ("https://lukesmith.xyz/rss.xml" Luke)
      ("https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&filter=local" Video)
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UCaifrB5IrvGNPJmPeVOcqBA" Kruggsmash Video)
