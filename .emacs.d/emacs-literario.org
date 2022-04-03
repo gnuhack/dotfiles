@@ -163,7 +163,8 @@ La eshell es una shell escrita entera en lisp.
   ;; Para poder usar el path de BASH en la eshell
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize))
-
+  ;; Guardar sesión de las shells
+  (savehist-mode 1)
   (defun sudeame ()
   "Use TRAMP to `sudo' the current buffer"
   (interactive)
