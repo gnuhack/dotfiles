@@ -434,6 +434,7 @@ Para gestionar los libros que me he leído voy a probar a usar org-books.
 #+begin_src emacs-lisp
   (setq org-books-file "~/org-roam/20210920115613-lista_de_libros.org")
   (setq org-books-add-to-top nil)
+  (setq org-books-file-depth 3) ;; Reconocer los subheadings hasta de tercer nivel como categorías.
 #+end_src
 Como mi archivo de libros he puesto el mismo que tengo en org-roam, porque creo que se pueden complementar bien org-roam con org-books.
 
