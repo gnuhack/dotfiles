@@ -305,7 +305,7 @@ Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-
 	       (file+headline "~/org/uni.org" "Citas")
 	       "* %^t %?")
 	      ("L" "Libro" item (file+headline "/tmp/plant.org" "Leído en 2022")
-	   "- [X] %?")
+	   "- [X] %? \n :PROPERTIES: \n :autor:  %^{Autor} \n :END:")
 	      ("l" "Ledger" plain
 	       (file "~/Documentos/cuentas.dat")
 		     "%(org-read-date) %^{Concepto}
