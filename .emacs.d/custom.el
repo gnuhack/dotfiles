@@ -24,6 +24,7 @@
      ("https://edwardsnowden.substack.com/feed.xml" Snowden Blog)
      ("https://twobithistory.org/feed.xml" 2bit Blog)
      ("https://hnrss.org/frontpage" HN)))
+ '(eww-search-prefix "http://www.searx.be/?q=")
  '(org-agenda-files
    '("~/org/uni.org" "~/Nextcloud/Documents/horario.txt" "~/Nextcloud/Talk/orgt430/gtd.org"))
  '(package-selected-packages

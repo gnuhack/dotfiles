@@ -794,6 +794,10 @@ Notificaciones para la modeline con notmuch. (https://www.reddit.com/r/emacs/com
   "http://www.wikipedia.org/search-redirect.php?language=es&go=Go&search=%s"
   :keybinding "W"
   :docstring "Searchin' the wikis.")
+(defengine searx
+  "http://www.searx.be/?q=%s"
+  :keybinding "s"
+  :docstring "Searchin' the searx.")
 
   #+end_src
 
