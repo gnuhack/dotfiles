@@ -243,11 +243,12 @@ ls
 Y ejecutar C-c C-c dentro del bloque. Pero antes de hacerlo hay que cargar el módulo de org-babel para Bash.
 ** Org-babel
 #+begin_src emacs-lisp
-(org-babel-do-load-languages 'org-babel-load-languages
-    '(
-        (shell . t)
-    )
-)
+  (org-babel-do-load-languages 'org-babel-load-languages
+      '(
+	  (shell . t)
+	  (octave . t)
+      )
+  )
 #+end_src
 Fuente: https://stackoverflow.com/questions/29163164/how-can-i-load-bash-as-opposed-to-sh-in-org-babel-to-enable-begin-src-bash
 ** Asignaciones de teclas
