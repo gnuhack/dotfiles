@@ -53,13 +53,14 @@ El which-key te enseña las combinaciones de teclas posibles al pulsar alguna.
 ** Company
 Con company se autocompletan palabras.
   #+begin_src emacs-lisp
-(with-eval-after-load 'company
-  (add-to-list 'company-backends 'hledger-company))
-(add-hook 'after-init-hook 'global-company-mode)
-(setq company-idle-delay 0.3)
-(setq company-show-numbers t)
-(setq company-minimum-prefix-length 2)
-(setq company-tooltip-align-annotations t)
+    (with-eval-after-load 'company
+      (add-to-list 'company-backends 'hledger-company)
+      (add-to-list 'company-backends 'company-ebdb))
+    (add-hook 'after-init-hook 'global-company-mode)
+    (setq company-idle-delay 0.3)
+    (setq company-show-numbers t)
+    (setq company-minimum-prefix-length 2)
+    (setq company-tooltip-align-annotations t)
 #+end_src
 ** Ido
 Ahora mismo uso Helm, así que desactivo ido.
