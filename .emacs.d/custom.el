@@ -21,6 +21,7 @@
      ("https://planet.emacslife.com/atom.xml" Emacs)
      ("https://protesilaos.com/master.xml" Prot Blog)
      ("https://greenwald.substack.com/feed" Glenn Blog)
+     ("https://victorhckinthefreeworld.com/feed/" Victr Blog)
      ("https://edwardsnowden.substack.com/feed.xml" Snowden Blog)
      ("https://twobithistory.org/feed.xml" 2bit Blog)))
  '(eww-search-prefix "http://www.searx.be/?q=")
