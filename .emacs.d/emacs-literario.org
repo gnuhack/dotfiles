@@ -635,6 +635,9 @@ Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-k
   (global-set-key (kbd "s-p") 'previous-buffer)
   ;;(global-set-key (kbd "s-<backspace>") 'rat/killydelete)
   ;;(global-set-key (kbd "s-<return>") 'rat/terminal)
+  (define-key dired-mode-map (kbd "<tab>") #'dired-subtree-toggle)
+  (define-key dired-mode-map (kbd "<C-tab>") #'dired-subtree-cycle)
+  (define-key dired-mode-map (kbd "<S-iso-leftab>") #'dired-subtree-remove)
 #+END_SRC
 * Project
 Para gestionar proyectos uso project.el, integrado en Emacs. Así puedo cambiar entre archivos de un proyecto de forma fácil y cómoda. Un proyecto es toda carpeta que contenga archivos clave (como los repos de git).
