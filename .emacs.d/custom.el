@@ -7,7 +7,9 @@
  '(custom-safe-themes
    '("eb785a887e90c10848466a1f825fcb57f61672c0b70e2f0fd7c62610ad044277" "dad622637530638a2140b83812e159a06b4791eb2f67ffd4abb4ff671b062d0b" "7397cc72938446348521d8061d3f2e288165f65a2dbb6366bb666224de2629bb" "0568a5426239e65aab5e7c48fa1abde81130a87ddf7f942613bf5e13bf79686b" "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" default))
  '(elfeed-feeds
-   '("https://notxor.nueva-actitud.org/rss.xml" "http://unavidalibre.xyz/publish/blog/rss.xml"
+   '(("https://stallman.org/rss/rss.xml" RMS)
+     ("https://notxor.nueva-actitud.org/rss.xml" Noxtor Blog)
+     ("http://unavidalibre.xyz/publish/blog/rss.xml" CPR)
      ("https://taonaw.com/index.xml" Emacs TAONAW)
      ("http://feeds.feedburner.com/uGeekBlog" Emacs uGeek)
      ("https://daemons.it/posts/index.xml" Emacs daemon)
@@ -28,7 +30,7 @@
  '(org-agenda-files
    '("~/org/uni.org" "~/Nextcloud/Documents/horario.txt" "~/Nextcloud/Talk/orgt430/gtd.org"))
  '(package-selected-packages
-   '(dired-subtree hackernews dired-hacks-utils tmr poker minesweeper mines disk-usage company-ebdb rainbow-delimiters osm smart-mode-line popper org-books marginalia crossword gif-screencast org-tree-slide helm-notmuch org-roam-ui helm-org-rifle rainbow-mode decide engine-mode org-pomodoro telega modus-themes exec-path-from-shell org-static-blog dashboard org-roam zenburn-theme hledger-mode scratch sudoku notmuch ebdb dictionary emojify projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))
+   '(ytdious dired-subtree hackernews dired-hacks-utils tmr poker minesweeper mines disk-usage company-ebdb rainbow-delimiters osm smart-mode-line popper org-books marginalia crossword gif-screencast org-tree-slide helm-notmuch org-roam-ui helm-org-rifle rainbow-mode decide engine-mode org-pomodoro telega modus-themes exec-path-from-shell org-static-blog dashboard org-roam zenburn-theme hledger-mode scratch sudoku notmuch ebdb dictionary emojify projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))
  '(telega-mode-line-string-format
    '("   "
      (:eval
