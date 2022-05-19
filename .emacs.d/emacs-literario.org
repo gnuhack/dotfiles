@@ -835,4 +835,5 @@ Para poner un hook que encoja la ventana he hecho una solución provisional hast
   (setq auto-mode-alist
 	(cons '("\\.m$" . octave-mode) auto-mode-alist))
   (define-key global-map (kbd "C-c o") #'run-octave)
+  (define-key global-map (kbd "C-c O") #'helm-info-octave)
 #+end_src
