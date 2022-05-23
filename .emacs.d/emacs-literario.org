@@ -209,7 +209,8 @@ El navegador de archivos de emacs.
   (setq dired-listing-switches "-alh")
   (setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
   (setq dired-auto-revert-buffer #'dired-directory-changed-p) ; also see `dired-do-revert-buffer'
-  (add-hook 'dired-mode-hook 'hl-line-mode)
+  (add-hook 'dired-mode-hook #'hl-line-mode)
+  (add-hook 'dired-mode-hook #'dired-hide-details-mode)
 
 #+end_src
 * Puesta de sol
