@@ -613,8 +613,8 @@ También he descubierto cómo guardar y cargar playlist. Simplemente cuando teng
 Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-key-bindings-emacs
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "C-x w") 'elfeed)
-  (global-set-key (kbd "C-<tab>") 'next-buffer)
-  (global-set-key (kbd "C-<iso-lefttab>") 'previous-buffer)
+  (global-set-key (kbd "C-<tab>") 'hippie-expand)
+;;(global-set-key (kbd "C-<iso-lefttab>") 'previous-buffer)
   (global-set-key (kbd "C-x p") 'proced)
   (global-set-key (kbd "C-x e") 'eshell)
   (global-set-key (kbd "C-c y") 'clipboard-yank)
