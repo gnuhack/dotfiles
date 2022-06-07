@@ -443,6 +443,7 @@ Como mi archivo de libros he puesto el mismo que tengo en org-roam, porque creo 
 
 Para añadir un libro que me he leído solo tengo que usar =org-books-add-book= y poner el título y el heading en el que lo quiero meter.
 ** Org-timestamps
+Para que cuando se cierre un TODO se ponga automáticamente la fecha se pone la variable =org-log-done= a time
 #+begin_src emacs-lisp
   (setq org-log-done 'time)
 #+end_src 
