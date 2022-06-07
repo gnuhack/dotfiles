@@ -442,6 +442,10 @@ Para gestionar los libros que me he leído voy a probar a usar org-books.
 Como mi archivo de libros he puesto el mismo que tengo en org-roam, porque creo que se pueden complementar bien org-roam con org-books.
 
 Para añadir un libro que me he leído solo tengo que usar =org-books-add-book= y poner el título y el heading en el que lo quiero meter.
+** Org-timestamps
+#+begin_src emacs-lisp
+  (setq org-log-done 'time)
+#+end_src 
 * Recentf
   Con recentf-mode se puede acceder fácilmente a los ficheros usados más recientemente, y también a los [[*Entorno del editor][búferes]]
   #+begin_src emacs-lisp
