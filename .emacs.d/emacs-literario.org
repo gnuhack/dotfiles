@@ -307,14 +307,6 @@ Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-
 	      ("k" "Cita" entry
 	       (file+headline "~/org/uni.org" "Citas")
 	       "* %^t %?")
-	      ("L" "Libro" item (file+olp "~/org-roam/20210920115613-lista_de_libros.org" "Leídos" "Leídos en 2022")
-	   "- [X] %? \n :PROPERTIES: \n :autor:  %^{Autor} \n :END:")
-	      ("l" "Ledger" plain
-	       (file "~/Documentos/cuentas.dat")
-		     "%(org-read-date) %^{Concepto}
-      expenses:%^{Cuenta de gasto}  %^{Cantidad}
-      assets:%^{Método de pago}  %^{Cantidad}
-    ")		  
 	      ))))
       (setq org-agenda-span 'day)
 	;;calendario
