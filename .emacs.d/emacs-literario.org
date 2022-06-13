@@ -21,7 +21,8 @@ Para que la configuración se pueda crear correctamente hay que instalar una ser
 *** Notmuch
 Programa de indexado y búsqueda de correo.
 
-* Entorno del editor
+* Configuración básica
+Pequeños ajustes simples.
 ** Fuentes
 Aumento el tamaño de letra en el HP de Jorge para ver mejor, porque tiene mucha resolución.
 #+begin_src emacs-lisp
@@ -49,27 +50,6 @@ Para mejorar la pantalla de inicio, con dashboard se muestran archivos recientes
 El which-key te enseña las combinaciones de teclas posibles al pulsar alguna.
 #+begin_src emacs-lisp
 (which-key-mode)
-#+end_src
-** Company
-Con company se autocompletan palabras.
-  #+begin_src emacs-lisp
-    (with-eval-after-load 'company
-      (add-to-list 'company-backends 'hledger-company)
-      (add-to-list 'company-backends 'company-ebdb))
-    (add-hook 'after-init-hook 'global-company-mode)
-    (setq company-idle-delay 0.3)
-    (setq company-show-numbers t)
-    (setq company-minimum-prefix-length 2)
-    (setq company-tooltip-align-annotations t)
-#+end_src
-** Ido
-Ahora mismo uso Helm, así que desactivo ido.
-#+begin_src emacs-lisp
-  ;; https://www.masteringemacs.org/article/introduction-to-ido-mode
-;  (ido-mode)
-;;  (setq ido-everywhere t) ; De momento voy a probar Helm, que es incompatible con ésto.
-  (setq ido-enable-flex-matching t)
-  (setq ido-use-virtual-buffers t)
 #+end_src
 ** Winner-mode
 El winner-mode sirve para poder hacer y deshacer la configuración de ventanas.
@@ -155,6 +135,48 @@ Configuración de las cosas mostradas en la barra de Emacs.
 #+begin_src emacs-lisp
 (display-battery-mode 1)
 #+end_src
+** Recentf
+  Con recentf-mode se puede acceder fácilmente a los ficheros usados más recientemente, y también a los [[*Entorno del editor][búferes]]
+  #+begin_src emacs-lisp
+    (recentf-mode)
+  #+end_src
+** Guardado
+Guarda el estado de un búfer cuando se cierra éste o Emacs.
+#+BEGIN_SRC emacs-lisp
+(save-place-mode 1)
+#+END_SRC
+* Motores de completado
+Paquetes que forman la interfaz de búsqueda y completado. Con company se autocompletan palabras. Ido es una interfaz muy básica para completar búsquedas entre búferes o archivos y Helm es un framework de búsqueda.
+** Company
+Con company se autocompletan palabras.
+  #+begin_src emacs-lisp
+    (with-eval-after-load 'company
+      (add-to-list 'company-backends 'hledger-company)
+      (add-to-list 'company-backends 'company-ebdb))
+    (add-hook 'after-init-hook 'global-company-mode)
+    (setq company-idle-delay 0.3)
+    (setq company-show-numbers t)
+    (setq company-minimum-prefix-length 2)
+    (setq company-tooltip-align-annotations t)
+#+end_src
+** Ido
+Ahora mismo uso Helm, así que desactivo ido.
+#+begin_src emacs-lisp
+  ;; https://www.masteringemacs.org/article/introduction-to-ido-mode
+;  (ido-mode)
+;;  (setq ido-everywhere t) ; De momento voy a probar Helm, que es incompatible con ésto.
+  (setq ido-enable-flex-matching t)
+  (setq ido-use-virtual-buffers t)
+#+end_src
+
+** Helm
+  Dado que ido parece que no funciona en todas partes (por ejemplo al cambiar de nodo en org-roam), voy a probar con helm a ver cómo me va. Para empezar sólo voy a poner la configuración mínima, mi idea es coger el código de http://tuhdo.github.io/helm-intro.html ya que es la configuración que usaba cuando tenía Prelude instalado.
+  #+begin_src emacs-lisp
+    (require 'helm-config)
+    (helm-mode 1)
+    (global-set-key (kbd "M-x") 'helm-M-x)
+    (global-set-key (kbd "C-x C-f") 'helm-find-files)
+  #+end_src
 * Eshell
 La eshell es una shell escrita entera en lisp.
 #+begin_src emacs-lisp
@@ -319,13 +341,15 @@ Plantillas para introducir código con expansión de cosas como <el con TAB.
 (require 'org-tempo)
 (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
 #+end_src
-** Org-bullets
+** Módulos de Org
+En esta sección configuro pequeños "módulos" de Org.
+*** Org-bullets
 Sustitución de los asteriscos por marcas más visuales.
 #+begin_src emacs-lisp
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 #+end_src
-** Org-roam
+*** Org-roam
 Org-roam es una herramienta para crear un sistema de gestión personal basado en Zettelkasten. Trata de reproducir Roam Research’s, una web que sirve para implementar Zettelkasten.
    #+begin_src emacs-lisp
 		 (setq org-roam-v2-ack t)
@@ -343,7 +367,7 @@ Org-roam es una herramienta para crear un sistema de gestión personal basado en
 	      	    (org-roam-setup))
 
    #+end_src
-** Org-static-blog
+*** Org-static-blog
    Publicación de entradas en un blog
    #+begin_src emacs-lisp
 (setq org-static-blog-publish-title "Libre como en libertad")
@@ -387,7 +411,7 @@ Org-roam es una herramienta para crear un sistema de gestión personal basado en
 <center><a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/3.0/88x31.png\" /></a><br /><span xmlns:dct=\"https://purl.org/dc/terms/\" href=\"https://purl.org/dc/dcmitype/Text\" property=\"dct:title\" rel=\"dct:type\">www.unavidalibre.xyz</span> by <a xmlns:cc=\"https://creativecommons.org/ns#\" href=\"http://www.unavidalibre.xyz\" property=\"cc:attributionName\" rel=\"cc:attributionURL\">Carlos Pajuelo</a> is licensed under a <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</center>")
 
    #+end_src
-** Org-pomodoro
+*** Org-pomodoro
    Ténica de trabajo con descansos cortos. https://github.com/marcinkoziej/org-pomodoro
    #+begin_src emacs-lisp
      ;; Sonido de https://freesound.org/people/.Andre_Onate/sounds/484665/
@@ -395,7 +419,7 @@ Org-roam es una herramienta para crear un sistema de gestión personal basado en
      ;; Para iniciar el crono, pulsar C-c C-x ;
      (setq org-timer-default-timer "00:25:00")
    #+end_src
-** Org-agenda
+*** Org-agenda
    Vacaciones del curso 2021-2022
    #+begin_src emacs-lisp
 	  (setq holiday-other-holidays '((holiday-fixed 10 12 "Día de mi Españita")
@@ -419,12 +443,12 @@ Org-roam es una herramienta para crear un sistema de gestión personal basado en
      (setq holiday-islamic-holidays nil)
      (setq holiday-oriental-holidays nil)
    #+end_src
-** Org-habit
+*** Org-habit
    Para hábitos a los que les quiera hacer un seguimiento se puede usar [[info:org#Tracking your habits][org-habit]]
    #+begin_src emacs-lisp
 ;;   ﻿(require 'org-habit)
    #+end_src
-** Org-books
+*** Org-books
 Para gestionar los libros que me he leído voy a probar a usar org-books.
 #+begin_src emacs-lisp
   (setq org-books-file "~/org-roam/20210920115613-lista_de_libros.org")
@@ -434,16 +458,11 @@ Para gestionar los libros que me he leído voy a probar a usar org-books.
 Como mi archivo de libros he puesto el mismo que tengo en org-roam, porque creo que se pueden complementar bien org-roam con org-books.
 
 Para añadir un libro que me he leído solo tengo que usar =org-books-add-book= y poner el título y el heading en el que lo quiero meter.
-** Org-timestamps
+*** Org-timestamps
 Para que cuando se cierre un TODO se ponga automáticamente la fecha se pone la variable =org-log-done= a time
 #+begin_src emacs-lisp
   (setq org-log-done 'time)
 #+end_src 
-* Recentf
-  Con recentf-mode se puede acceder fácilmente a los ficheros usados más recientemente, y también a los [[*Entorno del editor][búferes]]
-  #+begin_src emacs-lisp
-    (recentf-mode)
-  #+end_src
 * Notificaciones
 Funciones para que las notificaciones de la agenda me lleguen al escritorio con espeak. Además del código de abajo hace falta meter en ~/bin un appt-notification con lo siguiente (además de instalar espeak):
 #+BEGIN_SRC 
@@ -528,7 +547,6 @@ Macro para poner el modo noche en los pdfs (modonoche) y funciones para consegui
 * Elfeed
 Con elfeed puedo tener mi propio feed personalizado. Sobre todo es útil para seguir blogs individuales que no tengan una alta frecuencia de posteo. También me sirve para "suscribirme" a canales de Youtube sin visitar la página, gracias as la función definida abajo. He quitado la parte de =emacs-lisp= al lado de #+BEGIN_SRC para que no se evalúe este código, ya que ahora se encarga de elfeed el fichero init.el.
 #+BEGIN_SRC emacs-lisp
-  (define-key elfeed-show-mode-map (kbd "C-<return>") #'browse-url-firefox)
   (define-key elfeed-search-mode-map (kbd "SPC") #'scroll-up-command)
   (define-key elfeed-search-mode-map (kbd "DEL") #'scroll-down-command)
 #+END_SRC
@@ -648,11 +666,6 @@ Cliente de Telegram para Emacs.
   (add-hook 'telega-chat-mode-hook 'company-mode) ;; No consigo desactivar company al entrar a chats por defecto
   (add-hook 'telega-chat-mode-hook 'abbrev-mode)
 #+END_SRC
-* Guardado
-Guarda el estado de un búfer cuando se cierra éste o Emacs.
-#+BEGIN_SRC emacs-lisp
-(save-place-mode 1)
-#+END_SRC
 * Correo
 Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. Para los contactos uso EBDB. (https://chrisdone.com/posts/emacs-mail/)
 #+begin_src emacs-lisp
@@ -756,17 +769,8 @@ Notificaciones para la modeline con notmuch. (https://www.reddit.com/r/emacs/com
     (add-hook 'hledger-jentry-hook 'hledger-time )
   #+end_src
 
-* Helm
-  Dado que ido parece que no funciona en todas partes (por ejemplo al cambiar de nodo en org-roam), voy a probar con helm a ver cómo me va. Para empezar sólo voy a poner la configuración mínima, mi idea es coger el código de http://tuhdo.github.io/helm-intro.html ya que es la configuración que usaba cuando tenía Prelude instalado.
-  #+begin_src emacs-lisp
-    (require 'helm-config)
-    (helm-mode 1)
-    (global-set-key (kbd "M-x") 'helm-M-x)
-    (global-set-key (kbd "C-x C-f") 'helm-find-files)
-  #+end_src
-
-* Engine mode
-  Con el engine-mode se puede usar Emacs como interfaz de motores de búsqueda.
+* Engine mode 
+  Con el engine-mode se puede usar Emacs como interfaz de motores de búsqueda en la web.
   #+begin_src emacs-lisp
 (engine-mode 1)
 (setq engine/browser-function 'eww-browse-url)
