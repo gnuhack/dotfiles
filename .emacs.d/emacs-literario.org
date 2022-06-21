@@ -318,10 +318,10 @@ Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-
     (setq org-capture-templates
 	    (quote
 	     (("c" "Nota" entry
-	       (file+datetree "/home/carlos/Nextcloud/notas.org")
+	       (file+datetree "~/Nextcloud/notas.org")
 	       "* %?" :empty-lines 1)
 	      ("t" "Todo" entry
-	       (file+headline "/home/carlos/org/gtd.org" "Tasks")
+	       (file+headline "~/org/gtd.org" "Tasks")
 	       "* TODO %?" :empty-lines 1)
 	      ("j" "Journal Entry" entry
 	       (file+datetree "~/Nextcloud/journal/journal.org")
@@ -630,12 +630,12 @@ Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-k
   (global-set-key (kbd "<f5>") 'modonoche)
   (add-to-list 'org-file-apps '("pdf" . "evince %s"))
   (global-set-key (kbd "<f6>") 'quick-calc)
-  (set-register ?E (cons 'file "/home/carlos/ETSI2022/"))
-  (set-register ?o (cons 'file "/home/carlos/Nextcloud/Documents/horario.txt"))
-  (set-register ?e (cons 'file "/home/carlos/git/dotfiles/.emacs.d/emacs-literario.org"))
-  (set-register ?t (cons 'file "/home/carlos/org/2021t/tiempo.org"))
-  (set-register ?c (cons 'file "/home/carlos/.config/i3/config"))
-  (set-register ?a (cons 'file "/home/carlos/Documentos/Aulaabierta"))
+  (set-register ?E (cons 'file "~/ETSI2022/"))
+  (set-register ?o (cons 'file "~/Nextcloud/Documents/horario.txt"))
+  (set-register ?e (cons 'file "~/git/dotfiles/.emacs.d/emacs-literario.org"))
+  (set-register ?t (cons 'file "~/org/2021t/tiempo.org"))
+  (set-register ?c (cons 'file "~/.config/i3/config"))
+  (set-register ?a (cons 'file "~/Documentos/Aulaabierta"))
   (global-set-key (kbd "s-n") 'next-buffer)
   (global-set-key (kbd "s-p") 'previous-buffer)
   ;;(global-set-key (kbd "s-<backspace>") 'rat/killydelete)
