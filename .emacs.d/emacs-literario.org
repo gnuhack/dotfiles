@@ -26,7 +26,7 @@ Pequeños ajustes simples.
 ** Fuentes
 Aumento el tamaño de letra en el HP de Jorge para ver mejor, porque tiene mucha resolución.
 #+begin_src emacs-lisp
-    (if (equal system-name "hpdejorge")
+    (if (equal system-name "hpdeluisito")
 	(set-face-attribute 'default nil :height 200))
 #+end_src
 ** Arreglos para mis funciones
@@ -205,7 +205,7 @@ La eshell es una shell escrita entera en lisp.
     (let ((hist (ring-elements eshell-history-ring)))
       (insert
        (completing-read "Input from history: " hist nil t))))
-  (if (equal system-name "hpdejorge")
+  (if (equal system-name "hpdeluisito")
       (message "No protcompletes")
     (define-key eshell-hist-mode-map (kbd "M-r") #'prot-eshell-complete-history)
     )
