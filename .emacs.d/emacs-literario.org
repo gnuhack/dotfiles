@@ -324,7 +324,7 @@ Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-
 	       (file+headline "~/org/gtd.org" "Tasks")
 	       "* TODO %?" :empty-lines 1)
 	      ("j" "Journal Entry" entry
-	       (file+datetree "~/Nextcloud/journal/journal.org")
+	       (file+datetree "~/Nextcloud/journal/journal.org.gpg")
 	       "* %<%H:%M> %?" :empty-lines 1 :time-prompt t)
 	      ("k" "Cita" entry
 	       (file+headline "~/org/uni.org" "Citas")
