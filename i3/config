@@ -59,7 +59,7 @@ exec synclient VertScrollDelta=-113 #Habilito el scroll natural
 exec xset b off #Quito el pitido de la terminal
 #exec volumeicon& #Inicio el icono del volumen y las teclas para controlarlo
 exec synclient TapButton2=3 #Pongo el doble toque del touchpad como botón secundario
-exec /usr/bin/setxkbmap -option "ctrl:swapcaps" #Cambio la tecla Bloq Mayús por CTRL 
+exec /usr/bin/setxkbmap -option "ctrl:nocaps" #Cambio la tecla Bloq Mayús por CTRL (para poner Bloq Mayús en vez de hacerlo desaparecer poner "ctrl:swapcaps")
 # El scratchpad es como un workspace pero que no es visible y solo se ven sus ventanas flotantes
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -67,7 +67,7 @@ bindsym $mod+Shift+plus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 bindsym $mod+plus scratchpad show
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
 #Iniciamos thunderbird en el workspace 1
 #exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/thunderbird'
 #assign [class="Thunderbird"]
