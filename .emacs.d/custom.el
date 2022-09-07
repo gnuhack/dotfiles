@@ -24,6 +24,7 @@
      ("https://protesilaos.com/master.xml" Prot Blog)
      ("https://greenwald.substack.com/feed" Glenn Blog)
      ("https://victorhckinthefreeworld.com/feed/" Victr Blog)
+     ("https://pkm.es/feed" PKM Blog)
      ("https://sachachua.com/blog/feed/" Sacha Blog)
      ("https://edwardsnowden.substack.com/feed.xml" Snowden Blog)
      ("https://twobithistory.org/feed.xml" 2bit Blog)))
