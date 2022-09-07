@@ -832,7 +832,7 @@ Para poner un hook que encoja la ventana he hecho una solución provisional hast
 * ERC
 Cliente para conectarse a IRC.
 #+begin_src emacs-lisp
-  (global-set-key "\C-cef" (lambda () (interactive)
+  (global-set-key "\C-cf" (lambda () (interactive)
 			     (erc :server "irc.libera.chat" :port "6667"
 				  :nick "gnuhack")))
   (setq erc-autojoin-channels-alist
