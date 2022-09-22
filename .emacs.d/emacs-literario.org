@@ -717,27 +717,9 @@ Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. P
 	  )
   (async-shell-command "offlineimap")
 #+end_src
-Notificaciones para la modeline con notmuch. (https://www.reddit.com/r/emacs/comments/esxjh5/my_notmuch_email_count_display_in_modeline/)
+Notificaciones para la modeline con notmuch-indicator
 #+begin_src emacs-lisp
-  ;;; notmuch notifications based from notmuch-unread-mode
-  (defvar notmuch-unread-mode-line-string "")
-  (defvar notmuch-unread-email-count nil)
-  (defconst my-mode-line-map (make-sparse-keymap))
-  (defun notmuch-unread-count ()
-    (setq notmuch-unread-email-count (string-to-number(replace-regexp-in-string "\n" "" (notmuch-command-to-string "count" "tag:unread"))))
-    (if (eq notmuch-unread-email-count 0) (setq notmuch-unread-mode-line-string (format " ❌ %d " (string-to-number(replace-regexp-in-string "\n" "" (notmuch-command-to-string "count"))))) (setq notmuch-unread-mode-line-string (format "  %d " notmuch-unread-email-count)))
-    (force-mode-line-update))
-  (run-at-time nil 10 'notmuch-unread-count)
-  (defun notmuch-open-emails ()
-    (interactive)
-    (if (eq notmuch-unread-email-count 0) (notmuch-search "*") (notmuch-search "tag:inbox")))
-  (setq global-mode-string 
-	(append global-mode-string (list '(:eval (propertize notmuch-unread-mode-line-string 'help-echo "notmuch emails" 'mouse-face 'mode-line-highlight 'local-map my-mode-line-map)))))
-   (define-key my-mode-line-map 
-     (vconcat [mode-line down-mouse-1])
-     (cons "hello" 'notmuch-open-emails))
-
-  (notmuch-open-emails)
+  (notmuch-indicator-mode)
 #+end_src
 * Diccionario
 #+BEGIN_SRC emacs-lisp
