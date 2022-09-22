@@ -719,6 +719,12 @@ Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. P
 #+end_src
 Notificaciones para la modeline con notmuch-indicator
 #+begin_src emacs-lisp
+  (defun notmuch-open-emails ()
+    "Abre la bandeja de entrada de notmuch directamente"
+    (interactive)
+    (notmuch-search "tag:inbox")
+    )
+
   (notmuch-indicator-mode)
 #+end_src
 * Diccionario
