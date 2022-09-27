@@ -29,6 +29,8 @@
      ("https://edwardsnowden.substack.com/feed.xml" Snowden Blog)
      ("https://twobithistory.org/feed.xml" 2bit Blog)))
  '(eww-search-prefix "http://www.searx.be/?q=")
+ '(hledger-ratios-essential-expense-accounts "expenses:casa expenses:comida expenses:mama")
+ '(hledger-ratios-liquid-asset-accounts "assets:cuenta assets:efectivo")
  '(org-agenda-files
    '("/home/carlos/org/uni.org" "/home/carlos/Nextcloud/Documents/horario.txt" "/home/carlos/Nextcloud/Talk/orgt430/gtd.org"))
  '(package-selected-packages
