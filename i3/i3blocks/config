@@ -47,15 +47,6 @@ command=df -h | awk '/sda1/ { print $1 ": " $4 }'
 interval=30
 color=#1fffaaa
 
-# Battery indicator
-#
-# The battery instance defaults to 0.
-[battery]
-label=BAT
-label=⚡
-interval=30
-command=~/.config/i3blocks/battery/battery
-
 [load_average]
 label=LOAD
 interval=10
@@ -73,16 +64,16 @@ command=ip addr | awk '/global/ {print $2}'
 interval=once
 color=#CCCCCCCCCC
 
-[weather]
-command=curl -Ss 'https://wttr.in/Aljarafe?0&T&Q?&lang=es' | cut -c 16- | head -2 | xargs echo
-interval=900
-color=#A4C2F4
+# [weather]
+# command=curl -Ss 'https://wttr.in/Aljarafe?0&T&Q?&lang=es' | cut -c 16- | head -2 | xargs echo
+# interval=900
+# color=#A4C2F4
 # Restart i3 on click
-[tiempo]
-command=~/bin/wtr.sh
-interval=900
+#[tiempo]
+#command=~/bin/wtr.sh
+#interval=900
 #command=i3-msg -q restart
-color=#A4C2F4
+#color=#A4C2F4
 #interval=0
 
 
@@ -150,6 +141,14 @@ interval=10
 [time]
 command=~/.config/i3blocks/calendar/calendar
 interval=5
+# Battery indicator
+#
+# The battery instance defaults to 0.
+[battery]
+label=BAT
+label=⚡
+interval=30
+command=~/.config/i3blocks/battery/battery
 
 # Volume indicator
 #
