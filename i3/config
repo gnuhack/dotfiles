@@ -48,7 +48,7 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 bindsym --release $mod+f exec ~/bin/waterfox #Windows+t inicia Firefox
 bindsym --release $mod+b exec ~/Descargas/blockkeeper-x86_64.AppImage
 #bindsym --release $mod+c exec /usr/bin/chromium
-bindsym --release $mod+g exec /usr/bin/google-chrome
+bindsym --release $mod+c exec /usr/bin/pavucontrol
 #bindsym --release $mod+f exec /home/carlos/Descargas/waterfox/waterfox #Windows+t inicia Firefox
 #bindsym --release $mod+n exec --no-startup-id /usr/bin/thunar #Windows+n inicia thunar
 #bindsym --release $mod+b exec --no-startup-id /home/carlos/Descargas/BK/BK/BK/BK #Windows+b inicia BlocKeeper
