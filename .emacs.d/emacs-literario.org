@@ -145,6 +145,33 @@ Guarda el estado de un búfer cuando se cierra éste o Emacs.
 #+BEGIN_SRC emacs-lisp
 (save-place-mode 1)
 #+END_SRC
+** LIN
+Paquete de Prot para darle énfasis al hl-line-mode.
+#+begin_src emacs-lisp
+(require 'lin)
+(setq lin-mode-hooks
+      '(bongo-mode-hook
+        dired-mode-hook
+        elfeed-search-mode-hook
+        git-rebase-mode-hook
+        grep-mode-hook
+        ibuffer-mode-hook
+        ilist-mode-hook
+        ledger-report-mode-hook
+        log-view-mode-hook
+        magit-log-mode-hook
+        mu4e-headers-mode
+        notmuch-search-mode-hook
+        notmuch-tree-mode-hook
+        occur-mode-hook
+        org-agenda-mode-hook
+        pdf-outline-buffer-mode-hook
+        proced-mode-hook
+        tabulated-list-mode-hook))
+
+(lin-global-mode 1)
+#+end_src
+
 * Motores de completado
 Paquetes que forman la interfaz de búsqueda y completado. Con company se autocompletan palabras. Ido es una interfaz muy básica para completar búsquedas entre búferes o archivos y Helm es un framework de búsqueda.
 ** Company
@@ -828,3 +855,4 @@ Cliente para conectarse a IRC.
 
 
 #+end_src
+
