@@ -74,7 +74,7 @@ bindsym $mod+plus scratchpad show
 #Iniciamos thunderbird en el workspace 1
 #exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/thunderbird'
 #assign [class="Thunderbird"]
-exec 	thunderbird
+exec 	birdtray
 #---------------FIN DE MIS CONFIGURACIONES------------
 
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
