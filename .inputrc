@@ -1,0 +1,12 @@
+# Info extraída de: http://www.masteringemacs.org/article/keyboard-shortcuts-every-command-line-hacker-should-know-about-gnu-readline?utm_source=newsletter&utm_medium=email&utm_campaign=rss
+# Correct - binds to C-x q
+"\C-xq": "Hello, World"
+# Correct - binds to C-M-p
+"\e\C-p": "Adios amigo!"
+
+#  C-x C-r  Reload .inputrc file(s)  
+set colored-stats on
+set colored-completion-prefix on
+
+"\C-xP": print-last-kbd-macro
+"\e\C-o": dabbrev-expand

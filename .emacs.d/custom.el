@@ -28,7 +28,7 @@
      ("https://edwardsnowden.substack.com/feed.xml" Snowden Blog)
      ("https://twobithistory.org/feed.xml" 2bit Blog)))
  '(eww-search-prefix "http://www.searx.be/?q=")
- '(org-agenda-files nil)
+ '(org-agenda-files '("~/org/uni.org"))
  '(package-selected-packages
    '(lin gnuplot gnuplot-mode multi-vterm vterm jabber ytdious dired-subtree hackernews dired-hacks-utils tmr poker minesweeper mines disk-usage company-ebdb rainbow-delimiters osm smart-mode-line popper org-books marginalia crossword gif-screencast org-tree-slide helm-notmuch org-roam-ui helm-org-rifle rainbow-mode decide engine-mode org-pomodoro telega modus-themes exec-path-from-shell org-static-blog dashboard org-roam zenburn-theme hledger-mode scratch sudoku notmuch ebdb dictionary emojify projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))
  '(telega-mode-line-string-format
