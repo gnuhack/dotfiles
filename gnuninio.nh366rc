@@ -7,9 +7,11 @@
 ## Also see https://nethackwiki.com/wiki/Options
 OPTIONS=number_pad:0
 OPTIONS=showexp,showscore,time,color
-OPTIONS=perm_invent,fruit:aguacate
+OPTIONS=perm_invent
+OPTIONS=fruit:aguacate
 OPTIONS=autopickup,pickup_types:$=/!?
 SYMBOLS=S_golem:7
+SYMBOLS=S_boulder:0
 #CHOOSE=char A, char B
 #[char A]
 #OPTIONS=gender:fem,name:Ana,fruit:chocolate
