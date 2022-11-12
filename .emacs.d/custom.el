@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(async-shell-command-buffer 'new-buffer)
  '(custom-safe-themes
-   '("183dfa34e360f5bc2ee4a6b3f4236e6664f4cfce40de1d43c984e0e8fc5b51ae" "1e8865a3e23ff9c3f4f651217a6f565cb1cc09575c1d7a68b25e24bd3495ff4c" "5a611788d47c1deec31494eb2bb864fde402b32b139fe461312589a9f28835db" "eb785a887e90c10848466a1f825fcb57f61672c0b70e2f0fd7c62610ad044277" "dad622637530638a2140b83812e159a06b4791eb2f67ffd4abb4ff671b062d0b" "7397cc72938446348521d8061d3f2e288165f65a2dbb6366bb666224de2629bb" "0568a5426239e65aab5e7c48fa1abde81130a87ddf7f942613bf5e13bf79686b" "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" default))
+   '("1e8865a3e23ff9c3f4f651217a6f565cb1cc09575c1d7a68b25e24bd3495ff4c" "183dfa34e360f5bc2ee4a6b3f4236e6664f4cfce40de1d43c984e0e8fc5b51ae" "e87f48ec4aebdca07bb865b90088eb28ae4b286ee8473aadb39213d361d0c45f" "eb785a887e90c10848466a1f825fcb57f61672c0b70e2f0fd7c62610ad044277" "dad622637530638a2140b83812e159a06b4791eb2f67ffd4abb4ff671b062d0b" "7397cc72938446348521d8061d3f2e288165f65a2dbb6366bb666224de2629bb" "0568a5426239e65aab5e7c48fa1abde81130a87ddf7f942613bf5e13bf79686b" "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" default))
  '(elfeed-feeds
    '(("https://stallman.org/rss/rss.xml" RMS)
      ("https://notxor.nueva-actitud.org/rss.xml" Noxtor Blog)
@@ -24,13 +24,16 @@
      ("https://protesilaos.com/master.xml" Prot Blog)
      ("https://greenwald.substack.com/feed" Glenn Blog)
      ("https://victorhckinthefreeworld.com/feed/" Victr Blog)
+     ("https://pkm.es/feed" PKM Blog)
      ("https://sachachua.com/blog/feed/" Sacha Blog)
      ("https://edwardsnowden.substack.com/feed.xml" Snowden Blog)
      ("https://twobithistory.org/feed.xml" 2bit Blog)))
  '(eww-search-prefix "http://www.searx.be/?q=")
- '(org-agenda-files '("~/org/uni.org"))
+ '(hledger-ratios-essential-expense-accounts "expenses:casa expenses:comida expenses:mama")
+ '(hledger-ratios-liquid-asset-accounts "assets:cuenta assets:efectivo")
+ '(org-agenda-files '("/home/carlos/org/uni.org"))
  '(package-selected-packages
-   '(arduino-mode lin gnuplot gnuplot-mode multi-vterm vterm jabber ytdious dired-subtree hackernews dired-hacks-utils tmr poker minesweeper mines disk-usage company-ebdb rainbow-delimiters osm smart-mode-line popper org-books marginalia crossword gif-screencast org-tree-slide helm-notmuch org-roam-ui helm-org-rifle rainbow-mode decide engine-mode org-pomodoro telega modus-themes exec-path-from-shell org-static-blog dashboard org-roam zenburn-theme hledger-mode scratch sudoku notmuch ebdb dictionary emojify projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))
+   '(org-alert tzc notmuch-indicator telega gnuplot gnuplot-mode multi-vterm vterm jabber ytdious dired-subtree hackernews dired-hacks-utils tmr poker minesweeper mines disk-usage company-ebdb rainbow-delimiters osm smart-mode-line popper org-books marginalia crossword gif-screencast org-tree-slide helm-notmuch org-roam-ui helm-org-rifle rainbow-mode decide engine-mode org-pomodoro modus-themes exec-path-from-shell org-static-blog dashboard org-roam zenburn-theme hledger-mode scratch sudoku notmuch ebdb dictionary emojify projectile org-bullets company which-key helm htmlize pdf-tools magit emms elfeed 2048-game))
  '(telega-mode-line-string-format
    '("   "
      (:eval
@@ -42,7 +45,6 @@
       (telega-mode-line-unread-unmuted))
      (:eval
       (telega-mode-line-mentions 'messages))))
- '(tetris-buffer-height 33)
  '(warning-suppress-log-types '((mail))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
