@@ -492,7 +492,7 @@ Para que cuando se cierre un TODO se ponga automáticamente la fecha se pone la 
 #+end_src 
 *** Org-alert
 Para avisar de las citas de la agenda
-#+begin_src emacs-lisp
+#+begin_src 
   (org-alert-enable)
 #+end_src
 * Notificaciones
