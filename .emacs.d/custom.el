@@ -7,7 +7,8 @@
  '(custom-safe-themes
    '("1e8865a3e23ff9c3f4f651217a6f565cb1cc09575c1d7a68b25e24bd3495ff4c" "183dfa34e360f5bc2ee4a6b3f4236e6664f4cfce40de1d43c984e0e8fc5b51ae" "e87f48ec4aebdca07bb865b90088eb28ae4b286ee8473aadb39213d361d0c45f" "eb785a887e90c10848466a1f825fcb57f61672c0b70e2f0fd7c62610ad044277" "dad622637530638a2140b83812e159a06b4791eb2f67ffd4abb4ff671b062d0b" "7397cc72938446348521d8061d3f2e288165f65a2dbb6366bb666224de2629bb" "0568a5426239e65aab5e7c48fa1abde81130a87ddf7f942613bf5e13bf79686b" "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" default))
  '(elfeed-feeds
-   '(("https://stallman.org/rss/rss.xml" RMS)
+   '(("http://antirez.com/rss" Antirez Blog)
+     ("https://stallman.org/rss/rss.xml" RMS)
      ("https://notxor.nueva-actitud.org/rss.xml" Noxtor Blog)
      ("http://unavidalibre.xyz/publish/blog/rss.xml" CPR)
      ("https://taonaw.com/index.xml" Emacs TAONAW)
