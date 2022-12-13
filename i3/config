@@ -44,7 +44,7 @@ bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -R
 bindsym Shift+XF86AudioRaiseVolume exec pactl -- set-sink-volume 0 +10% && pkill -RTMIN+10 i3blocks 
 bindsym Shift+XF86AudioLowerVolume exec pactl -- set-sink-volume 0 -10% && pkill -RTMIN+10 i3blocks 
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
-
+bindsym --release XF86MonBrightnessDown exec xset dpms force off
 bindsym --release $mod+f exec ~/bin/waterfox #Windows+t inicia Firefox
 bindsym --release $mod+b exec ~/Descargas/blockkeeper-x86_64.AppImage
 #bindsym --release $mod+c exec /usr/bin/chromium
