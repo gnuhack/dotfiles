@@ -873,4 +873,6 @@ Función para guardar archivos con sudo.
     (write-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
 #+end_src
+Método alternativo para editar archivos con sudo (fuente: https://chainsawriot.com/postmannheim/2022/12/11/aoe11.html).
 
+Gracias a Helm se pueden editar archivos con sudo directamente, no hay más que buscar un archivo con helm-find-file (C-x C-f) y luego cuando esté seleccionado el archivo a editar usar C-c r para ejecutar helm-ff-run-find-file-as-root.
