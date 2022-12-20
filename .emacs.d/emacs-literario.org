@@ -741,6 +741,7 @@ Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. P
 	    smtpmail-smtp-server "smtp.pajuelo.com"
 	    smtpmail-smtp-service 587
 	    smtpmail-smtp-user "carlos@pajuelo.com"
+	    smtpmail-servers-requiring-authorization "smtp.pajuelo.com"
 	    ;; account info
 	    user-mail-address "carlos@pajuelo.com"
 	    user-full-name  "Carlos")
