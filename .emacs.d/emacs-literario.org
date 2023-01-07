@@ -130,7 +130,7 @@ Con el prefijo C-u se puede elegir el modo del búfer en scratch.
 ** Smart mode line y mode line
 *** Smart mode line
 Con smart mode line se trunca la mode line de forma automática, lo que me permite tener una mode line mejor para cuando uso Telega en un frame de tamaño reducido.
-#+begin_src emacs-lisp
+#+begin_src
 (sml/setup)
 #+end_src
 *** Mode line
@@ -666,7 +666,7 @@ Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-k
   (global-set-key (kbd "<f5>") 'modonoche)
   (add-to-list 'org-file-apps '("pdf" . "evince %s"))
   (global-set-key (kbd "<f6>") 'quick-calc)
-  (set-register ?E (cons 'file "~/ETSI2022/"))
+  (set-register ?E (cons 'file "~/Documentos/ETSI/2023"))
   (set-register ?o (cons 'file "~/Nextcloud/Documents/horario.txt"))
   (set-register ?e (cons 'file "~/git/dotfiles/.emacs.d/emacs-literario.org"))
   (set-register ?t (cons 'file "~/org/2021t/tiempo.org"))
