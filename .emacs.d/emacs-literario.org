@@ -202,7 +202,7 @@ Ahora mismo uso Helm, así que desactivo ido.
 ** Helm
   Dado que ido parece que no funciona en todas partes (por ejemplo al cambiar de nodo en org-roam), voy a probar con helm a ver cómo me va. Para empezar sólo voy a poner la configuración mínima, mi idea es coger el código de http://tuhdo.github.io/helm-intro.html ya que es la configuración que usaba cuando tenía Prelude instalado.
   #+begin_src emacs-lisp
-    (require 'helm-config)
+    (require 'helm)
     (helm-mode 1)
     (global-set-key (kbd "M-x") 'helm-M-x)
     (global-set-key (kbd "C-x C-f") 'helm-find-files)
