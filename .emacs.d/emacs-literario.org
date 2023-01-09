@@ -241,6 +241,8 @@ La eshell es una shell escrita entera en lisp.
     )
   ;;Para no guardar cosas con espacio al principio en el historial
   (setq eshell-input-filter 'eshell-input-filter-initial-space)
+  ;;Autocompletado como en BASH
+  (define-key eshell-mode-map (kbd "<tab>") 'company-complete)
 #+end_src
 * Tramp
 Tramp sirve para acceder de forma remota a archivos a través de emacs con ssh, sftp, etc.
