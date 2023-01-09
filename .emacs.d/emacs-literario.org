@@ -20,6 +20,8 @@ Por tanto para replicar esta configuración se necesitan tener dos archivos (ini
 Para que la configuración se pueda crear correctamente hay que instalar una serie de paquetes aparte de Emacs:
 *** Notmuch
 Programa de indexado y búsqueda de correo.
+*** Offlineimap
+Sincronización del correo con un servidor.
 
 * Configuración básica
 Pequeños ajustes simples.
