@@ -23,6 +23,12 @@ Programa de indexado y búsqueda de correo.
 *** Offlineimap
 Sincronización del correo con un servidor.
 
+* Carga de programas externos
+Carga de código de programas definidos en otros ficheros
+#+begin_src emacs-lisp
+  (load-file "~/git/dotfiles/tetritecla.el")
+  (load-file "~/git/dotfiles/misfunciones.el")
+#+end_src
 * Configuración básica
 Pequeños ajustes simples.
 ** Fuentes
