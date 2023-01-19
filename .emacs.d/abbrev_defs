@@ -1,0 +1,14 @@
+;;-*-coding: utf-8;-*-
+(define-abbrev-table 'global-abbrev-table
+  '(
+    ("ñb" "😊" nil :count 98)
+    ("ñc" "💚" nil :count 102)
+    ("ñe" "😠" nil :count 9)
+    ("ñh" "😍" nil :count 67)
+    ("ñk" "😘" nil :count 85)
+    ("ñl" "😢" nil :count 1)
+    ("ñs" "😏" nil :count 28)
+    ("ñt" "🙁" nil :count 3)
+    ("ñy" "😋" nil :count 1)
+   ))
+
