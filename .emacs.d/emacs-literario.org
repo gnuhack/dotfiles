@@ -657,7 +657,7 @@ También he descubierto cómo guardar y cargar playlist. Simplemente cuando teng
   (global-set-key (kbd "s-m") 'notmuch-open-emails)
   (add-hook 'emms-mode-hook 'hl-line-mode)
   (add-hook 'emms-mode-hook 'visual-line-mode)
-
+  (global-set-key (kbd "s-i") 'emms)
 #+END_SRC
 * Keybindings
 Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-key-bindings-emacs
@@ -699,10 +699,9 @@ Para gestionar proyectos uso project.el, integrado en Emacs. Así puedo cambiar 
 #+END_SRC
 * Telega
 Cliente de Telegram para Emacs.
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC
   (setq emojify-emoji-styles '(unicode))
   (global-set-key (kbd "s-T") 'telega)
-  (global-set-key (kbd "s-i") 'emms)
   (define-key global-map (kbd "C-c t") telega-prefix-map)
   (add-hook 'telega-load-hook 'telega-notifications-mode)
   (setq telega-chat-fill-column 16)
