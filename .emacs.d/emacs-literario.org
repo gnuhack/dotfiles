@@ -6,6 +6,7 @@
 #+begin_src shell :tangle ~/bin/offlineimap-postsync
 notmuch new
 #+end_src
+** TODO Tangle condicional para generalizar mi config a otros ordenadores
 
 * Qué está pasando
 Mi configuración de Emacs está escrita con el estilo de programación literaria. De esta forma es mucho más fácil ir documentando el código a medida que se va escribiendo.
