@@ -764,7 +764,7 @@ Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. P
   (async-shell-command "offlineimap")
 #+end_src
 Notificaciones para la modeline con notmuch-indicator
-#+begin_src emacs-lisp
+#+begin_src
   (defun notmuch-open-emails ()
     "Abre la bandeja de entrada de notmuch directamente"
     (interactive)
@@ -887,3 +887,26 @@ Función para guardar archivos con sudo.
 Método alternativo para editar archivos con sudo (fuente: https://chainsawriot.com/postmannheim/2022/12/11/aoe11.html).
 
 Gracias a Helm se pueden editar archivos con sudo directamente, no hay más que buscar un archivo con helm-find-file (C-x C-f) y luego cuando esté seleccionado el archivo a editar usar C-c r para ejecutar helm-ff-run-find-file-as-root.
+* C++
+Configuración de Emacs como IDE de C++. Para usar las yasnippets pulsar =C-c & C-s=.
+Fuente: https://linuxhint.com/c_emacs_configuration/
+#+begin_src emacs-lisp
+  (require 'yasnippet)
+  (yas-global-mode 1)
+  (ac-config-default)
+  (global-auto-complete-mode t)
+  (global-flycheck-mode t)
+
+  (defun code-compile ()
+    (interactive)
+    (unless (file-exists-p "Makefile")
+      (set (make-local-variable 'compile-command)
+       (let ((file (file-name-nondirectory buffer-file-name)))
+	 (format "%s -o %s %s"
+	     (if  (equal (file-name-extension file) "cpp") "g++" "gcc" )
+	     (file-name-sans-extension file)
+	     file)))
+      (compile compile-command)))
+
+  (global-set-key [f9] 'code-compile)
+#+end_src
