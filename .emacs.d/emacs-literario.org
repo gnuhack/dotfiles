@@ -220,10 +220,14 @@ Ahora mismo voy a usar Vertico en vez de Helm, así que lo desactivo.
     (global-set-key (kbd "C-x b") 'helm-buffers-list)
   #+end_src
 
-** Vertico
-Parece que es lo más popular últimamente. Voy a probarlo ya que los modus-themes no funcionan con Helm.
+** Vertico, Orderless y Marginalia
+Parece que es lo más popular últimamente. Voy a probarlo ya que los modus-themes no funcionan con Helm. Orderless para filtrar las búsquedas suele ir siempre en combinación con Vertico. También se suele acompañar de Marginalia para descripciones.
 #+begin_src emacs-lisp
   (vertico-mode)
+  (require 'orderless)
+  (setq completion-styles '(orderless basic)
+	completion-category-overrides '((file (styles basic partial-completion))))
+  (marginalia-mode)
 #+end_src
 * Eshell
 La eshell es una shell escrita entera en lisp.
