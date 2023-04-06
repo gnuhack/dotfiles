@@ -210,13 +210,21 @@ Ahora mismo uso Helm, así que desactivo ido.
 
 ** Helm
   Dado que ido parece que no funciona en todas partes (por ejemplo al cambiar de nodo en org-roam), voy a probar con helm a ver cómo me va. Para empezar sólo voy a poner la configuración mínima, mi idea es coger el código de http://tuhdo.github.io/helm-intro.html ya que es la configuración que usaba cuando tenía Prelude instalado.
-  #+begin_src emacs-lisp
+
+Ahora mismo voy a usar Vertico en vez de Helm, así que lo desactivo.  
+  #+begin_src 
     (require 'helm)
     (helm-mode 1)
     (global-set-key (kbd "M-x") 'helm-M-x)
     (global-set-key (kbd "C-x C-f") 'helm-find-files)
     (global-set-key (kbd "C-x b") 'helm-buffers-list)
   #+end_src
+
+** Vertico
+Parece que es lo más popular últimamente. Voy a probarlo ya que los modus-themes no funcionan con Helm.
+#+begin_src emacs-lisp
+  (vertico-mode)
+#+end_src
 * Eshell
 La eshell es una shell escrita entera en lisp.
 #+begin_src emacs-lisp
@@ -655,7 +663,6 @@ También he descubierto cómo guardar y cargar playlist. Simplemente cuando teng
   (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
   (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
   (global-set-key (kbd "<XF86MonBrightnessUp>") 'emms-shuffle) 
-  (global-set-key (kbd "s-m") 'notmuch-open-emails)
   (add-hook 'emms-mode-hook 'hl-line-mode)
   (add-hook 'emms-mode-hook 'visual-line-mode)
   (global-set-key (kbd "s-i") 'emms)
@@ -694,10 +701,7 @@ Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-k
 #+END_SRC
 * Project
 Para gestionar proyectos uso project.el, integrado en Emacs. Así puedo cambiar entre archivos de un proyecto de forma fácil y cómoda. Un proyecto es toda carpeta que contenga archivos clave (como los repos de git).
-#+BEGIN_SRC emacs-lisp
-(projectile-mode +1)
-(define-key projectile-mode-map (kbd "C-c p") 'project-dired)
-#+END_SRC
+
 * Telega
 Cliente de Telegram para Emacs.
 #+BEGIN_SRC
@@ -715,8 +719,9 @@ Cliente de Telegram para Emacs.
 #+END_SRC
 * Correo
 Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. Para los contactos uso EBDB. (https://chrisdone.com/posts/emacs-mail/)
-#+begin_src emacs-lisp
+#+begin_src
 	(require 'ebdb-message) ;;Cargar la ebdb con los contactos
+        (global-set-key (kbd "s-m") 'notmuch-open-emails)
      ;;   (setq send-mail-function 'smtpmail-send-it)
      ;;   (setq smtpmail-smtp-user   "nkolita1")
      ;;   (setq smtpmail-smtp-server "smtp.gmail.com")
