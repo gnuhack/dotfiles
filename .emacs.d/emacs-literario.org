@@ -826,29 +826,32 @@ Notificaciones para la modeline con notmuch-indicator
 * Engine mode 
   Con el engine-mode se puede usar Emacs como interfaz de motores de búsqueda en la web.
   #+begin_src emacs-lisp
-(engine-mode 1)
-(setq engine/browser-function 'eww-browse-url)
-(engine/set-keymap-prefix (kbd "C-c w"))
+    (engine-mode 1)
+    (setq engine/browser-function 'eww-browse-url)
+    (engine/set-keymap-prefix (kbd "C-c w"))
 
-(defengine duckduckgo
-  "https://duckduckgo.com/?q=%s"
-  :keybinding "d")
-(defengine rae
-  "https://dle.rae.es/%s"
-  :keybinding "D")
-(defengine wikipedia-en
-  "http://www.wikipedia.org/search-redirect.php?language=en&go=Go&search=%s"
-  :keybinding "w"
-  :docstring "Searchin' the wikis.")
-(defengine wikipedia-es
-  "http://www.wikipedia.org/search-redirect.php?language=es&go=Go&search=%s"
-  :keybinding "W"
-  :docstring "Searchin' the wikis.")
-(defengine searx
-  "http://www.searx.be/?q=%s"
-  :keybinding "s"
-  :docstring "Searchin' the searx.")
-
+    (defengine duckduckgo
+      "https://duckduckgo.com/?q=%s"
+      :keybinding "d")
+    (defengine rae
+      "https://dle.rae.es/%s"
+      :keybinding "D")
+    (defengine wikipedia-en
+      "http://www.wikipedia.org/search-redirect.php?language=en&go=Go&search=%s"
+      :keybinding "w"
+      :docstring "Searchin' the wikis.")
+    (defengine wikipedia-es
+      "http://www.wikipedia.org/search-redirect.php?language=es&go=Go&search=%s"
+      :keybinding "W"
+      :docstring "Searchin' the wikis.")
+    (defengine searx
+      "http://www.searx.be/?q=%s"
+      :keybinding "s"
+      :docstring "Searchin' the searx.")
+    (defengine urbandictionary
+      "https://www.urbandictionary.com/define.php?term=%s"
+      :keybinding "u"
+      :docstring "Searchin' the urbs.")
   #+end_src
 
 * Eww
