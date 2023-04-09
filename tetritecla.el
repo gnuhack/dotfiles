@@ -30,6 +30,7 @@
 (add-to-list 'minor-mode-map-alist (cons 'tetritecla-basic-mode tetritecla-basic-mode-map))
 
 (defun tetritecla-basic-mode (&optional ARG)
+  "Modo para jugar al tetris con las teclas de Vim."
   (interactive (list 'toggle))
   (setq tetritecla-basic-mode
         (if (eq ARG 'toggle)
