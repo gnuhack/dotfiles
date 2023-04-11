@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(async-shell-command-buffer 'new-buffer)
  '(custom-safe-themes
-   '("1e8865a3e23ff9c3f4f651217a6f565cb1cc09575c1d7a68b25e24bd3495ff4c" "183dfa34e360f5bc2ee4a6b3f4236e6664f4cfce40de1d43c984e0e8fc5b51ae" "e87f48ec4aebdca07bb865b90088eb28ae4b286ee8473aadb39213d361d0c45f" "eb785a887e90c10848466a1f825fcb57f61672c0b70e2f0fd7c62610ad044277" "dad622637530638a2140b83812e159a06b4791eb2f67ffd4abb4ff671b062d0b" "7397cc72938446348521d8061d3f2e288165f65a2dbb6366bb666224de2629bb" "0568a5426239e65aab5e7c48fa1abde81130a87ddf7f942613bf5e13bf79686b" "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" default))
+   '("f74e8d46790f3e07fbb4a2c5dafe2ade0d8f5abc9c203cd1c29c7d5110a85230" "eb7cd622a0916358a6ef6305e661c6abfad4decb4a7c12e73d6df871b8a195f8" "1e8865a3e23ff9c3f4f651217a6f565cb1cc09575c1d7a68b25e24bd3495ff4c" "183dfa34e360f5bc2ee4a6b3f4236e6664f4cfce40de1d43c984e0e8fc5b51ae" "e87f48ec4aebdca07bb865b90088eb28ae4b286ee8473aadb39213d361d0c45f" "eb785a887e90c10848466a1f825fcb57f61672c0b70e2f0fd7c62610ad044277" "dad622637530638a2140b83812e159a06b4791eb2f67ffd4abb4ff671b062d0b" "7397cc72938446348521d8061d3f2e288165f65a2dbb6366bb666224de2629bb" "0568a5426239e65aab5e7c48fa1abde81130a87ddf7f942613bf5e13bf79686b" "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" default))
  '(elfeed-feeds
    '(("https://yewtu.be/feed/channel/UCDy1lHSVGBDL0d2_C5NZNJw" Themaoisha Video)
      ("http://antirez.com/rss" Antirez Blog)
@@ -31,11 +31,12 @@
      ("https://edwardsnowden.substack.com/feed.xml" Snowden Blog)
      ("https://twobithistory.org/feed.xml" 2bit Blog)))
  '(eww-search-prefix "http://www.searx.be/?q=")
+ '(frame-background-mode nil)
  '(hledger-ratios-essential-expense-accounts "expenses:casa expenses:comida expenses:mama")
  '(hledger-ratios-liquid-asset-accounts "assets:cuenta assets:efectivo")
  '(org-agenda-files '("/home/carlos/org/uni.org" "/home/carlos/org/gtd.org"))
  '(package-selected-packages
-   '(multiple-cursors helm-core magit-section visual-fill-column elfeed-tube-mpv elfeed-tube org-alert tzc notmuch-indicator gnuplot gnuplot-mode multi-vterm jabber ytdious dired-subtree hackernews dired-hacks-utils tmr poker minesweeper mines disk-usage company-ebdb rainbow-delimiters smart-mode-line popper org-books marginalia crossword gif-screencast helm-notmuch helm-org-rifle rainbow-mode decide engine-mode org-pomodoro modus-themes exec-path-from-shell dashboard org-roam zenburn-theme hledger-mode scratch sudoku notmuch ebdb dictionary emojify org-bullets company which-key helm htmlize magit emms elfeed 2048-game))
+   '(embark-consult embark consult orderless projectile pdf-tools lin vertico telega gptel nov multiple-cursors helm-core magit-section visual-fill-column elfeed-tube-mpv elfeed-tube org-alert tzc notmuch-indicator gnuplot gnuplot-mode multi-vterm jabber ytdious dired-subtree hackernews dired-hacks-utils tmr poker minesweeper mines disk-usage company-ebdb rainbow-delimiters smart-mode-line popper org-books marginalia crossword gif-screencast helm-notmuch helm-org-rifle rainbow-mode decide engine-mode org-pomodoro modus-themes exec-path-from-shell dashboard org-roam zenburn-theme hledger-mode scratch sudoku notmuch ebdb dictionary emojify org-bullets company which-key helm htmlize magit emms elfeed 2048-game))
  '(telega-mode-line-string-format
    '("   "
      (:eval

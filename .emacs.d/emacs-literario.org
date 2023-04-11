@@ -6,6 +6,7 @@
 #+begin_src shell :tangle ~/bin/offlineimap-postsync
 notmuch new
 #+end_src
+** TODO Tangle condicional para generalizar mi config a otros ordenadores
 
 * Qué está pasando
 Mi configuración de Emacs está escrita con el estilo de programación literaria. De esta forma es mucho más fácil ir documentando el código a medida que se va escribiendo.
@@ -209,13 +210,34 @@ Ahora mismo uso Helm, así que desactivo ido.
 
 ** Helm
   Dado que ido parece que no funciona en todas partes (por ejemplo al cambiar de nodo en org-roam), voy a probar con helm a ver cómo me va. Para empezar sólo voy a poner la configuración mínima, mi idea es coger el código de http://tuhdo.github.io/helm-intro.html ya que es la configuración que usaba cuando tenía Prelude instalado.
-  #+begin_src emacs-lisp
+
+Ahora mismo voy a usar Vertico en vez de Helm, así que lo desactivo.  
+  #+begin_src 
     (require 'helm)
     (helm-mode 1)
     (global-set-key (kbd "M-x") 'helm-M-x)
     (global-set-key (kbd "C-x C-f") 'helm-find-files)
     (global-set-key (kbd "C-x b") 'helm-buffers-list)
   #+end_src
+
+** Vertico, Orderless, Marginalia y Embark
+Parece que es lo más popular últimamente. Voy a probarlo ya que los modus-themes no funcionan con Helm. Orderless para filtrar las búsquedas suele ir siempre en combinación con Vertico. También se suele acompañar de Marginalia para descripciones. Con embark (y embark-consult) ya forman el wombo combo.
+#+begin_src emacs-lisp
+  (vertico-mode)
+  (require 'orderless)
+  (setq completion-styles '(orderless basic)
+	completion-category-overrides '((file (styles basic partial-completion))))
+  (marginalia-mode)
+  (define-key global-map (kbd "C-.") #'embark-act)
+  (define-key global-map (kbd "C-,") #'embark-dwim)
+  (define-key global-map (kbd "C-h B") #'embark-bindings)
+  (setq prefix-help-command #'embark-prefix-help-command)
+  (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target)
+  (add-to-list 'display-buffer-alist
+		 '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+		   nil
+		   (window-parameters (mode-line-format . none))))
+#+end_src
 * Eshell
 La eshell es una shell escrita entera en lisp.
 #+begin_src emacs-lisp
@@ -654,7 +676,6 @@ También he descubierto cómo guardar y cargar playlist. Simplemente cuando teng
   (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
   (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
   (global-set-key (kbd "<XF86MonBrightnessUp>") 'emms-shuffle) 
-  (global-set-key (kbd "s-m") 'notmuch-open-emails)
   (add-hook 'emms-mode-hook 'hl-line-mode)
   (add-hook 'emms-mode-hook 'visual-line-mode)
   (global-set-key (kbd "s-i") 'emms)
@@ -693,10 +714,7 @@ Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-k
 #+END_SRC
 * Project
 Para gestionar proyectos uso project.el, integrado en Emacs. Así puedo cambiar entre archivos de un proyecto de forma fácil y cómoda. Un proyecto es toda carpeta que contenga archivos clave (como los repos de git).
-#+BEGIN_SRC emacs-lisp
-(projectile-mode +1)
-(define-key projectile-mode-map (kbd "C-c p") 'project-dired)
-#+END_SRC
+
 * Telega
 Cliente de Telegram para Emacs.
 #+BEGIN_SRC
@@ -714,8 +732,9 @@ Cliente de Telegram para Emacs.
 #+END_SRC
 * Correo
 Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. Para los contactos uso EBDB. (https://chrisdone.com/posts/emacs-mail/)
-#+begin_src emacs-lisp
+#+begin_src
 	(require 'ebdb-message) ;;Cargar la ebdb con los contactos
+        (global-set-key (kbd "s-m") 'notmuch-open-emails)
      ;;   (setq send-mail-function 'smtpmail-send-it)
      ;;   (setq smtpmail-smtp-user   "nkolita1")
      ;;   (setq smtpmail-smtp-server "smtp.gmail.com")
@@ -807,29 +826,32 @@ Notificaciones para la modeline con notmuch-indicator
 * Engine mode 
   Con el engine-mode se puede usar Emacs como interfaz de motores de búsqueda en la web.
   #+begin_src emacs-lisp
-(engine-mode 1)
-(setq engine/browser-function 'eww-browse-url)
-(engine/set-keymap-prefix (kbd "C-c w"))
+    (engine-mode 1)
+    (setq engine/browser-function 'eww-browse-url)
+    (engine/set-keymap-prefix (kbd "C-c w"))
 
-(defengine duckduckgo
-  "https://duckduckgo.com/?q=%s"
-  :keybinding "d")
-(defengine rae
-  "https://dle.rae.es/%s"
-  :keybinding "D")
-(defengine wikipedia-en
-  "http://www.wikipedia.org/search-redirect.php?language=en&go=Go&search=%s"
-  :keybinding "w"
-  :docstring "Searchin' the wikis.")
-(defengine wikipedia-es
-  "http://www.wikipedia.org/search-redirect.php?language=es&go=Go&search=%s"
-  :keybinding "W"
-  :docstring "Searchin' the wikis.")
-(defengine searx
-  "http://www.searx.be/?q=%s"
-  :keybinding "s"
-  :docstring "Searchin' the searx.")
-
+    (defengine duckduckgo
+      "https://duckduckgo.com/?q=%s"
+      :keybinding "d")
+    (defengine rae
+      "https://dle.rae.es/%s"
+      :keybinding "D")
+    (defengine wikipedia-en
+      "http://www.wikipedia.org/search-redirect.php?language=en&go=Go&search=%s"
+      :keybinding "w"
+      :docstring "Searchin' the wikis.")
+    (defengine wikipedia-es
+      "http://www.wikipedia.org/search-redirect.php?language=es&go=Go&search=%s"
+      :keybinding "W"
+      :docstring "Searchin' the wikis.")
+    (defengine searx
+      "http://www.searx.be/?q=%s"
+      :keybinding "s"
+      :docstring "Searchin' the searx.")
+    (defengine urbandictionary
+      "https://www.urbandictionary.com/define.php?term=%s"
+      :keybinding "u"
+      :docstring "Searchin' the urbs.")
   #+end_src
 
 * Eww
