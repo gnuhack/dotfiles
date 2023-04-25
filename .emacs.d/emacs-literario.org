@@ -40,6 +40,9 @@ Aumento el tamaño de letra en el HP de Jorge para ver mejor, porque tiene mucha
 
   (if (equal system-name "cpr-GE75-Raider-8SE")
       (set-face-attribute 'default nil :height 150))
+  
+  (if (equal system-name "elsobremesas")
+      (set-face-attribute 'default nil :height 150))
 #+end_src
 ** Arreglos para mis funciones
   Para que funcione bien mi función rat/killydelete suprimo la confirmación al eliminar un búfer con un proceso.
