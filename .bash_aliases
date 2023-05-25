@@ -34,3 +34,4 @@ alias hablar='arecord -f cd -t raw | oggenc - -r | ssh mobian@192.168.1.202 mpla
 alias escuchar="ssh mobian@192.168.1.202 'arecord -f cd -t raw | oggenc - -r' | mplayer -"
 # Para hablar y escuchar, instalar abcde
 alias evince=zathura
+alias kf="killall firefox"
