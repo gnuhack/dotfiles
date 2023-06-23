@@ -920,7 +920,7 @@ Fuente: https://linuxhint.com/c_emacs_configuration/
   (yas-global-mode 1)
   (ac-config-default)
   (global-auto-complete-mode t)
-  (global-flycheck-mode t)
+  ;;(global-flycheck-mode t)
 
   (defun code-compile ()
     (interactive)
