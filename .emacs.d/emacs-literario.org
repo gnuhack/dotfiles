@@ -189,6 +189,7 @@ Paquetes que forman la interfaz de búsqueda y completado. Con company se autoco
 ** Company
 Con company se autocompletan palabras.
   #+begin_src emacs-lisp
+    (global-company-mode 1)
     (with-eval-after-load 'company
       (add-to-list 'company-backends 'hledger-company)
       (add-to-list 'company-backends 'company-ebdb))
