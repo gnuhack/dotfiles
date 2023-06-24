@@ -690,7 +690,7 @@ Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-k
   (global-set-key (kbd "C-x w") 'elfeed)
   (global-set-key (kbd "C-<tab>") 'hippie-expand)
 ;;(global-set-key (kbd "C-<iso-lefttab>") 'previous-buffer)
-  (global-set-key (kbd "C-x p") 'proced)
+;;(global-set-key (kbd "C-x p") 'proced)
   (global-set-key (kbd "C-x e") 'eshell)
   (global-set-key (kbd "C-c y") 'clipboard-yank)
   (global-set-key (kbd "C-x t") 'shell)
