@@ -138,8 +138,12 @@ Con el prefijo C-u se puede elegir el modo del búfer en scratch.
 #+end_src
 ** Smart mode line y mode line
 *** Smart mode line
-Con smart mode line se trunca la mode line de forma automática, lo que me permite tener una mode line mejor para cuando uso Telega en un frame de tamaño reducido.
-#+begin_src
+Con smart mode line se trunca la mode line de forma automática, lo que
+me permite tener una mode line mejor para cuando uso Telega en un
+frame de tamaño reducido. Ahora mismo lo tengo desactivado porque no
+he ocnseguido compilar TDlib con la versión correcta para que me
+funcione Telega.
+#+begin_src emacs-lisp :tangle no
 (sml/setup)
 #+end_src
 *** Mode line
@@ -160,28 +164,29 @@ Guarda el estado de un búfer cuando se cierra éste o Emacs.
 ** LIN
 Paquete de Prot para darle énfasis al hl-line-mode.
 #+begin_src emacs-lisp
-(require 'lin)
-(setq lin-mode-hooks
-      '(bongo-mode-hook
-        dired-mode-hook
-        elfeed-search-mode-hook
-        git-rebase-mode-hook
-        grep-mode-hook
-        ibuffer-mode-hook
-        ilist-mode-hook
-        ledger-report-mode-hook
-        log-view-mode-hook
-        magit-log-mode-hook
-        mu4e-headers-mode
-        notmuch-search-mode-hook
-        notmuch-tree-mode-hook
-        occur-mode-hook
-        org-agenda-mode-hook
-        pdf-outline-buffer-mode-hook
-        proced-mode-hook
-        tabulated-list-mode-hook))
+  (require 'lin)
+  (setq lin-mode-hooks
+	'(bongo-mode-hook
+	  dired-mode-hook
+	  elfeed-search-mode-hook
+	  git-rebase-mode-hook
+	  grep-mode-hook
+	  ibuffer-mode-hook
+	  ilist-mode-hook
+	  ledger-report-mode-hook
+	  log-view-mode-hook
+	  emms-mode-hook
+	  magit-log-mode-hook
+	  mu4e-headers-mode
+	  notmuch-search-mode-hook
+	  notmuch-tree-mode-hook
+	  occur-mode-hook
+	  org-agenda-mode-hook
+	  pdf-outline-buffer-mode-hook
+	  proced-mode-hook
+	  tabulated-list-mode-hook))
 
-(lin-global-mode 1)
+  (lin-global-mode 1)
 #+end_src
 
 * Motores de completado
@@ -201,19 +206,19 @@ Con company se autocompletan palabras.
 #+end_src
 ** Ido
 Sistema de autocompletado, ahora mismo uso otro distinto.
-#+begin_src
-  ;; https://www.masteringemacs.org/article/introduction-to-ido-mode
-;  (ido-mode)
-;;  (setq ido-everywhere t) ; De momento voy a probar Helm, que es incompatible con ésto.
-;;  (setq ido-enable-flex-matching t)
-;;  (setq ido-use-virtual-buffers t)
+#+begin_src emacs-lisp :tangle no
+    ;; https://www.masteringemacs.org/article/introduction-to-ido-mode
+   (ido-mode)
+   (setq ido-everywhere t)
+   (setq ido-enable-flex-matching t)
+   (setq ido-use-virtual-buffers t)
 #+end_src
 
 ** Helm
   Dado que ido parece que no funciona en todas partes (por ejemplo al cambiar de nodo en org-roam), voy a probar con helm a ver cómo me va. Para empezar sólo voy a poner la configuración mínima, mi idea es coger el código de http://tuhdo.github.io/helm-intro.html ya que es la configuración que usaba cuando tenía Prelude instalado.
 
 EDIT: Ahora mismo uso Vertico en vez de Helm, así que lo desactivo.  
-  #+begin_src 
+  #+begin_src emacs-lisp :tangle no
     (require 'helm)
     (helm-mode 1)
     (global-set-key (kbd "M-x") 'helm-M-x)
@@ -280,14 +285,14 @@ La eshell es una shell escrita entera en lisp.
 #+end_src
 * Tramp
 Tramp sirve para acceder de forma remota a archivos a través de emacs con ssh, sftp, etc.
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
   ;;ssh
   ;;Configuración por defecto para acceder a la raspi con "/-::"
   ;;a través de TRAMP
-  ;; (custom-set-variables
-  ;;            '(tramp-default-method "ssh")
-  ;;            '(tramp-default-user "pi")
-  ;;            '(tramp-default-host "192.168.1.125"))
+  (custom-set-variables
+	     '(tramp-default-method "ssh")
+	     '(tramp-default-user "pi")
+	     '(tramp-default-host "192.168.1.125"))
 
 #+end_src
 * Dired
@@ -304,7 +309,7 @@ El navegador de archivos de emacs.
 * Puesta de sol
 Pongo aquí una función que me permite leer las coordenadas en las que me encuentro para poder ver la puesta de sol con (sunrise-sunset).
 #+BEGIN_SRC emacs-lisp
-;;(global-linum-mode '0)
+
     ;;Puesta de sol
     (defun eval-file (file)
       "Execute FILE and return the result of the last expression."
@@ -511,8 +516,8 @@ Org-roam es una herramienta para crear un sistema de gestión personal basado en
    #+end_src
 *** Org-habit
    Para hábitos a los que les quiera hacer un seguimiento se puede usar [[info:org#Tracking your habits][org-habit]]
-   #+begin_src emacs-lisp
-;;   ﻿(require 'org-habit)
+   #+begin_src emacs-lisp :tangle no
+	﻿(require 'org-habit)
    #+end_src
 *** Org-books
 Para gestionar los libros que me he leído voy a probar a usar org-books.
@@ -531,7 +536,7 @@ Para que cuando se cierre un TODO se ponga automáticamente la fecha se pone la 
 #+end_src 
 *** Org-alert
 Para avisar de las citas de la agenda
-#+begin_src 
+#+begin_src emacs-lisp :tangle no
   (org-alert-enable)
 #+end_src
 * Notificaciones
@@ -617,7 +622,7 @@ Macro para poner el modo noche en los pdfs (modonoche) y funciones para consegui
 #+END_SRC
 * Elfeed
 Con elfeed puedo tener mi propio feed personalizado. Sobre todo es útil para seguir blogs individuales que no tengan una alta frecuencia de posteo. También me sirve para "suscribirme" a canales de Youtube sin visitar la página, gracias as la función definida abajo. He quitado la parte de =emacs-lisp= al lado de #+BEGIN_SRC para que no se evalúe este código, ya que ahora se encarga de elfeed el fichero init.el.
-#+BEGIN_SRC 
+#+BEGIN_SRC  emacs-lisp :tangle no
   (define-key elfeed-search-mode-map (kbd "SPC") #'scroll-up-command)
   (define-key elfeed-search-mode-map (kbd "DEL") #'scroll-down-command)
 #+END_SRC
@@ -719,8 +724,9 @@ Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-k
 Para gestionar proyectos uso project.el, integrado en Emacs. Así puedo cambiar entre archivos de un proyecto de forma fácil y cómoda. Un proyecto es toda carpeta que contenga archivos clave (como los repos de git).
 
 * Telega
-Cliente de Telegram para Emacs.
-#+BEGIN_SRC
+Cliente de Telegram para Emacs. Ahora mismo no me funciona porque no
+sé compilar TDlib.
+#+BEGIN_SRC emacs-lisp :tangle no
   (setq emojify-emoji-styles '(unicode))
   (global-set-key (kbd "s-T") 'telega)
   (define-key global-map (kbd "C-c t") telega-prefix-map)
@@ -734,8 +740,10 @@ Cliente de Telegram para Emacs.
   (add-hook 'telega-chat-mode-hook 'abbrev-mode)
 #+END_SRC
 * Correo
-Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. Para los contactos uso EBDB. (https://chrisdone.com/posts/emacs-mail/)
-#+begin_src
+Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude
+y GNUS. Para los contactos uso
+EBDB. (https://chrisdone.com/posts/emacs-mail/). Pendiente de configurar.
+#+begin_src emacs-lisp :tangle no
 	(require 'ebdb-message) ;;Cargar la ebdb con los contactos
         (global-set-key (kbd "s-m") 'notmuch-open-emails)
      ;;   (setq send-mail-function 'smtpmail-send-it)
@@ -786,7 +794,7 @@ Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude y GNUS. P
   (async-shell-command "offlineimap")
 #+end_src
 Notificaciones para la modeline con notmuch-indicator
-#+begin_src
+#+begin_src emacs-lisp :tangle no
   (defun notmuch-open-emails ()
     "Abre la bandeja de entrada de notmuch directamente"
     (interactive)
