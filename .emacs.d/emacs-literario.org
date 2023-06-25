@@ -29,6 +29,7 @@ Carga de código de programas definidos en otros ficheros
 #+begin_src emacs-lisp
   (load-file "~/git/dotfiles/tetritecla.el")
   (load-file "~/git/dotfiles/misfunciones.el")
+  (load-file "~/git/dotfiles/mismacros.el")
 #+end_src
 * Configuración básica
 Pequeños ajustes simples.
