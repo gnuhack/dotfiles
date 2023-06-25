@@ -76,7 +76,7 @@ Pequeños ajustes visuales, creación de carpeta backup para guardar los archivo
   (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
   (column-number-mode 1)
   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-  ;(global-visual-line-mode)
+  (global-visual-line-mode)
   (add-hook 'text-mode-hook #'turn-on-auto-fill)
   (menu-bar-mode -1)
   (tool-bar-mode -1)
