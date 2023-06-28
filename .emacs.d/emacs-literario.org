@@ -944,3 +944,15 @@ Fuente: https://linuxhint.com/c_emacs_configuration/
 
   (global-set-key [f9] 'code-compile)
 #+end_src
+
+* Reloj
+Reloj mundial
+
+#+begin_src emacs-lisp
+(setq display-time-world-list
+  '(("Etc/UTC" "UTC")
+    ("America/Los_Angeles" "Seattle")
+    ("America/New_York" "New York")
+    ("Europe/Athens" "Athens")
+    ("Europe/Madrid" "Madrid")))
+#+end_src
