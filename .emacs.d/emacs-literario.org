@@ -42,6 +42,11 @@ Aumento el tamaño de letra en el sobremesa y el MSI para ver mejor.
   (if (equal system-name "elsobremesas")
       (set-face-attribute 'default nil :height 150))
 #+end_src
+** Iconos
+Iconos para dired
+#+begin_src emacs-lisp
+(add-hook 'dired-mode-hook 'treemacs-icons-dired-mode)
+#+end_src
 ** Arreglos para mis funciones
   Para que funcione bien mi función rat/killydelete suprimo la confirmación al eliminar un búfer con un proceso.
 #+begin_src emacs-lisp
