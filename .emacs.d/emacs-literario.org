@@ -181,7 +181,7 @@ Paquete de Prot para darle énfasis al hl-line-mode.
 	  ilist-mode-hook
 	  ledger-report-mode-hook
 	  log-view-mode-hook
-	  emms-mode-hook
+	  emms-playlist-mode-hook
 	  magit-log-mode-hook
 	  mu4e-headers-mode
 	  notmuch-search-mode-hook
