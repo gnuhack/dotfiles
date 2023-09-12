@@ -712,7 +712,7 @@ Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-k
   (global-set-key (kbd "<f5>") 'modonoche)
   (add-to-list 'org-file-apps '("pdf" . "evince %s"))
   (global-set-key (kbd "<f6>") 'quick-calc)
-  (set-register ?E (cons 'file "~/Documentos/ETSI/2023"))
+  (set-register ?E (cons 'file "~/Documentos/ETSI/ETSI 2024"))
   (set-register ?o (cons 'file "~/Nextcloud/Documents/horario.txt"))
   (set-register ?e (cons 'file "~/git/dotfiles/.emacs.d/emacs-literario.org"))
   (set-register ?t (cons 'file "~/org/2021t/tiempo.org"))
