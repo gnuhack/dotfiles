@@ -11,7 +11,7 @@
      ("http://antirez.com/rss" Antirez Blog)
      ("https://stallman.org/rss/rss.xml" RMS)
      ("https://notxor.nueva-actitud.org/rss.xml" Noxtor Blog)
-     ("http://unavidalibre.xyz/publish/blog/rss.xml" CPR)
+     ("http://finaprosadigital.com/publish/blog/rss.xml" CPR)
      ("https://taonaw.com/index.xml" Emacs TAONAW)
      ("http://feeds.feedburner.com/uGeekBlog" Emacs uGeek)
      ("https://daemons.it/posts/index.xml" Emacs daemon)
