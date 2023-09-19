@@ -194,7 +194,23 @@ Paquete de Prot para darle énfasis al hl-line-mode.
 
   (lin-global-mode 1)
 #+end_src
+** Puesta de sol
+Pongo aquí una función que me permite leer las coordenadas en las que me encuentro para poder ver la puesta de sol con (sunrise-sunset).
+#+BEGIN_SRC emacs-lisp
 
+    ;;Puesta de sol
+    (defun eval-file (file)
+      "Execute FILE and return the result of the last expression."
+      (eval
+       (ignore-errors
+	 (read-from-whole-string
+	  (with-temp-buffer
+	    (insert-file-contents file)
+	    (buffer-string))))))
+
+    (setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
+    (setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
+#+END_SRC
 * Motores de completado
 Paquetes que forman la interfaz de búsqueda y completado. Con company se autocompletan palabras. Ido es una interfaz muy básica para completar búsquedas entre búferes o archivos y Helm es un framework de búsqueda.
 ** Company
@@ -312,23 +328,6 @@ El navegador de archivos de emacs.
   (add-hook 'dired-mode-hook #'dired-hide-details-mode)
   (define-key dired-mode-map (kbd "DEL") 'dired-up-directory)
 #+end_src
-* Puesta de sol
-Pongo aquí una función que me permite leer las coordenadas en las que me encuentro para poder ver la puesta de sol con (sunrise-sunset).
-#+BEGIN_SRC emacs-lisp
-
-    ;;Puesta de sol
-    (defun eval-file (file)
-      "Execute FILE and return the result of the last expression."
-      (eval
-       (ignore-errors
-	 (read-from-whole-string
-	  (with-temp-buffer
-	    (insert-file-contents file)
-	    (buffer-string))))))
-
-    (setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
-    (setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
-#+END_SRC
 * Org
 ** Introducción
 El modo org sirve para organizarte la vida. En principio sólo es un lenguaje de marcado tipo Markdown, usando asteriscos como niveles jerárquicos de organización para poder contraerlos y así tener los archivos ordenados.
