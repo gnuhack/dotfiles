@@ -326,7 +326,7 @@ El navegador de archivos de emacs.
   (setq dired-auto-revert-buffer #'dired-directory-changed-p) ; also see `dired-do-revert-buffer'
   (add-hook 'dired-mode-hook #'hl-line-mode)
   (add-hook 'dired-mode-hook #'dired-hide-details-mode)
-  (define-key dired-mode-map (kbd "DEL") 'dired-up-directory)
+;; no funciona y no sé por qué  (define-key dired-mode-map (kbd "DEL") 'dired-up-directory)
 #+end_src
 * Org
 ** Introducción
