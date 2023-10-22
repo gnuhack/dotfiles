@@ -732,7 +732,7 @@ Para gestionar proyectos uso project.el, integrado en Emacs. Así puedo cambiar 
 * Telega
 Cliente de Telegram para Emacs. Ahora mismo no me funciona porque no
 sé compilar TDlib.
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
   (setq emojify-emoji-styles '(unicode))
   (global-set-key (kbd "s-T") 'telega)
   (define-key global-map (kbd "C-c t") telega-prefix-map)
