@@ -326,7 +326,7 @@ El navegador de archivos de emacs.
   (setq dired-auto-revert-buffer #'dired-directory-changed-p) ; also see `dired-do-revert-buffer'
   (add-hook 'dired-mode-hook #'hl-line-mode)
   (add-hook 'dired-mode-hook #'dired-hide-details-mode)
-  (define-key dired-mode-map (kbd "DEL") 'dired-up-directory)
+;;  (define-key dired-mode-map (kbd "DEL") 'dired-up-directory)
   (setq dired-dwim-target t) ;; Para copiar archivos entre dos búferes de dired abiertos en la misma ventana
 #+end_src
 * Org
@@ -954,10 +954,13 @@ Fuente: https://linuxhint.com/c_emacs_configuration/
 Reloj mundial
 
 #+begin_src emacs-lisp
-(setq display-time-world-list
-  '(("Etc/UTC" "UTC")
-    ("America/Los_Angeles" "Seattle")
-    ("America/New_York" "New York")
-    ("Europe/Athens" "Athens")
-    ("Europe/Madrid" "Madrid")))
+  (setq display-time-world-list
+    '(("Etc/UTC" "UTC")
+      ("America/Los_Angeles" "Seattle")
+      ("America/New_York" "New York")
+      ("Europe/Athens" "Athens")
+      ("Europe/Madrid" "Madrid")))
+
+  ;; Prueba para ver si funciona
+  (define-key dired-mode-map (kbd "DEL") 'dired-up-directory)
 #+end_src
