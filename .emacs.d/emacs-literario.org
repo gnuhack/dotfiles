@@ -749,9 +749,9 @@ sé compilar TDlib.
 Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude
 y GNUS. Para los contactos uso
 EBDB. (https://chrisdone.com/posts/emacs-mail/). Pendiente de configurar.
-#+begin_src emacs-lisp :tangle no
+#+begin_src emacs-lisp
 	(require 'ebdb-message) ;;Cargar la ebdb con los contactos
-        (global-set-key (kbd "s-m") 'notmuch-open-emails)
+        (global-set-key (kbd "s-m") 'notmuch-hello)
      ;;   (setq send-mail-function 'smtpmail-send-it)
      ;;   (setq smtpmail-smtp-user   "nkolita1")
      ;;   (setq smtpmail-smtp-server "smtp.gmail.com")

@@ -49,6 +49,14 @@
  '(frame-background-mode nil)
  '(hledger-ratios-essential-expense-accounts "expenses:casa expenses:comida expenses:mama")
  '(hledger-ratios-liquid-asset-accounts "assets:cuenta assets:efectivo")
+ '(notmuch-saved-searches
+   '((:name "inbox" :query "tag:inbox" :key [105] :sort-order
+	    newest-first)
+     (:name "unread" :query "tag:unread" :key [117])
+     (:name "flagged" :query "tag:flagged" :key [102])
+     (:name "sent" :query "tag:sent" :key [116])
+     (:name "drafts" :query "tag:draft" :key [100])
+     (:name "all mail" :query "*" :key [97])))
  '(org-agenda-files '("/home/carlos/org/uni.org" "/home/carlos/org/gtd.org"))
  '(package-selected-packages
    '(treemacs-icons-dired spanish-holidays olivetti org-roam-ui flycheck
@@ -71,8 +79,8 @@
 			  notmuch ebdb dictionary emojify org-bullets
 			  company which-key helm htmlize magit emms
 			  elfeed 2048-game))
- '(smtpmail-smtp-server "smtp.pajuelo.com")
- '(smtpmail-smtp-service 25)
+ '(smtpmail-smtp-server "smtp.pajuelo.com" t)
+ '(smtpmail-smtp-service 25 t)
  '(telega-mode-line-string-format
    '("   " (:eval (telega-mode-line-online-status))
      (:eval (when telega-use-tracking-for (telega-mode-line-tracking)))
