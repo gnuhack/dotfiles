@@ -59,28 +59,25 @@
      (:name "all mail" :query "*" :key [97])))
  '(org-agenda-files '("/home/carlos/org/uni.org" "/home/carlos/org/gtd.org"))
  '(package-selected-packages
-   '(treemacs-icons-dired spanish-holidays olivetti org-roam-ui flycheck
-			  auto-complete yasnippet embark-consult
-			  embark consult orderless projectile
-			  pdf-tools lin vertico telega gptel nov
-			  multiple-cursors helm-core magit-section
-			  visual-fill-column elfeed-tube-mpv
-			  elfeed-tube org-alert tzc notmuch-indicator
-			  gnuplot gnuplot-mode multi-vterm ytdious
-			  dired-subtree hackernews dired-hacks-utils
-			  tmr poker minesweeper mines disk-usage
-			  company-ebdb rainbow-delimiters
-			  smart-mode-line popper org-books marginalia
-			  crossword gif-screencast helm-notmuch
-			  helm-org-rifle rainbow-mode decide
-			  engine-mode org-pomodoro modus-themes
-			  exec-path-from-shell dashboard org-roam
-			  zenburn-theme hledger-mode scratch sudoku
-			  notmuch ebdb dictionary emojify org-bullets
-			  company which-key helm htmlize magit emms
-			  elfeed 2048-game))
- '(smtpmail-smtp-server "smtp.pajuelo.com" t)
- '(smtpmail-smtp-service 25 t)
+   '(altcaps consult-notmuch consult-org-roam consult-projectile
+	     treemacs-icons-dired spanish-holidays olivetti
+	     org-roam-ui flycheck auto-complete yasnippet
+	     embark-consult embark consult orderless projectile
+	     pdf-tools lin vertico telega gptel nov multiple-cursors
+	     helm-core magit-section visual-fill-column
+	     elfeed-tube-mpv elfeed-tube org-alert tzc
+	     notmuch-indicator gnuplot gnuplot-mode multi-vterm
+	     ytdious dired-subtree hackernews dired-hacks-utils tmr
+	     poker minesweeper mines disk-usage company-ebdb
+	     rainbow-delimiters smart-mode-line popper org-books
+	     marginalia crossword gif-screencast helm-notmuch
+	     helm-org-rifle rainbow-mode decide engine-mode
+	     org-pomodoro modus-themes exec-path-from-shell dashboard
+	     org-roam zenburn-theme hledger-mode scratch sudoku
+	     notmuch ebdb dictionary emojify org-bullets company
+	     which-key helm htmlize magit emms elfeed 2048-game))
+ '(smtpmail-smtp-server "smtp.pajuelo.com")
+ '(smtpmail-smtp-service 25)
  '(telega-mode-line-string-format
    '("   " (:eval (telega-mode-line-online-status))
      (:eval (when telega-use-tracking-for (telega-mode-line-tracking)))
