@@ -91,8 +91,13 @@ Pequeños ajustes visuales, creación de carpeta backup para guardar los archivo
   (load-theme 'modus-vivendi t)
 
   (setq inhibit-splash-screen t)
-
   (server-start)
+  ;; (if 'server-running-p nil
+  ;;   (progn
+  ;;     (server-start)
+  ;;     (message "Servidor iniciado")
+  ;;     )
+  ;;   )
   (setq confirm-kill-emacs 'y-or-n-p)
 
 #+end_src
@@ -966,4 +971,5 @@ Reloj mundial
 
   ;; Prueba para ver si funciona
   (define-key dired-mode-map (kbd "DEL") 'dired-up-directory)
+
 #+end_src
