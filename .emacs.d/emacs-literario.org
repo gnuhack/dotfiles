@@ -978,5 +978,5 @@ Reloj mundial
 
 * Tetris
 #+begin_src lisp
-(define-key global-map (kbd "C-c S") #'scratch-buffer)
+(setq tetris-allow-repetitions nil)
 #+end_src
