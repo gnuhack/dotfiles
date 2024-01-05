@@ -121,25 +121,26 @@ La vi usarla en el vídeo del link, pero la saqué de su config de Emacs; [[file
 #+begin_src emacs-lisp
   (defun prot/scratch-buffer-setup ()
     "Add contents to `scratch' buffer and name it accordingly.
-If region is active, add its contents to the new buffer."
+  If region is active, add its contents to the new buffer."
     (let* ((mode major-mode)
-           (string (format "Scratch buffer for: %s\n\n" mode))
-           (region (with-current-buffer (current-buffer)
-                     (if (region-active-p)
-                         (buffer-substring-no-properties
-                          (region-beginning)
-                          (region-end)))
-                     ""))
-           (text (concat string region)))
+	   (string (format "Scratch buffer for: %s\n\n" mode))
+	   (region (with-current-buffer (current-buffer)
+		     (if (region-active-p)
+			 (buffer-substring-no-properties
+			  (region-beginning)
+			  (region-end)))
+		     ""))
+	   (text (concat string region)))
       (when scratch-buffer
-	    (save-excursion
-          (insert text)
-          (goto-char (point-min))
-          (comment-region (point-at-bol) (point-at-eol)))
-	    (forward-line 2))
+	(save-excursion
+	  (insert text)
+	  (goto-char (point-min))
+	  (comment-region (point-at-bol) (point-at-eol)))
+	(forward-line 2))
       (rename-buffer (format "*Scratch for %s*" mode) t)))
   (add-hook 'scratch-create-buffer-hook #'prot/scratch-buffer-setup)
   (define-key global-map (kbd "C-c s") #'scratch)
+  (define-key global-map (kbd "C-c S") #'scratch-buffer)
 #+end_src
 Con el prefijo C-u se puede elegir el modo del búfer en scratch.
 ** Hora
@@ -973,4 +974,9 @@ Reloj mundial
   ;; Prueba para ver si funciona
   (define-key dired-mode-map (kbd "DEL") 'dired-up-directory)
 
+#+end_src
+
+* Tetris
+#+begin_src lisp
+(define-key global-map (kbd "C-c S") #'scratch-buffer)
 #+end_src
