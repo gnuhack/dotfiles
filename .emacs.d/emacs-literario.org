@@ -925,6 +925,7 @@ Cliente para conectarse a IRC.
 	erc-hide-list '("JOIN" "NICK" "QUIT" "MODE" "AWAY")
 	erc-track-exclude-server-buffer t)
 
+  (global-set-key (kbd "C-c C-ñ") 'erc-track-switch-buffer)
 
 #+end_src
 * Sudo-save
