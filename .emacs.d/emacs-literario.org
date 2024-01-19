@@ -758,7 +758,7 @@ sé compilar TDlib.
 Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude
 y GNUS. Para los contactos uso
 EBDB. (https://chrisdone.com/posts/emacs-mail/). Pendiente de configurar.
-#+begin_src
+#+begin_src emacs-lisp
   (require 'ebdb-message) ;;Cargar la ebdb con los contactos
   (global-set-key (kbd "s-m") 'notmuch-hello)
   ;;   (setq send-mail-function 'smtpmail-send-it)
@@ -806,7 +806,7 @@ EBDB. (https://chrisdone.com/posts/emacs-mail/). Pendiente de configurar.
     (interactive)
     (shell-command "offlineimap&" "*offlineimap*" nil)
     )
-  ;;(async-shell-command "offlineimap")
+  (async-shell-command "offlineimap")
   (notmuch-indicator-mode)
 #+end_src
 Notificaciones para la modeline con notmuch-indicator
