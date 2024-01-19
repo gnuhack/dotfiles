@@ -982,6 +982,11 @@ Reloj mundial
 #+end_src
 
 * Tetris
+Dentro de Emacs se puede jugar al Tetris. Pero por defecto no se usa
+el método [[https://tetris.wiki/Tetris_Guideline][estándar]] para la generación aleatoria de piezas. Con esta
+opción se genera una bolsa de siete piezas de tetris distintas, y
+cuando se acaba la bolsa se vuelve a generar otra, para que no puedan
+tocar muchas piezas repetidas.
 #+begin_src lisp
 (setq tetris-allow-repetitions nil)
 #+end_src
