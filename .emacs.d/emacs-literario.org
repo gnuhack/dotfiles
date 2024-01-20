@@ -91,8 +91,13 @@ Pequeños ajustes visuales, creación de carpeta backup para guardar los archivo
   (load-theme 'modus-vivendi t)
 
   (setq inhibit-splash-screen t)
-
   (server-start)
+  ;; (if 'server-running-p nil
+  ;;   (progn
+  ;;     (server-start)
+  ;;     (message "Servidor iniciado")
+  ;;     )
+  ;;   )
   (setq confirm-kill-emacs 'y-or-n-p)
 
 #+end_src
@@ -114,25 +119,25 @@ Modo scratch para abrir búferes borradores en diferentes modos. Función mejora
 https://protesilaos.com/codelog/2021-07-24-emacs-misc-custom-commands/
 La vi usarla en el vídeo del link, pero la saqué de su config de Emacs; [[file:~/Documentos/Configs de emacs/prot-emacs.org::#h:2695bfa4-89b4-4d7f-aa6e-8ef42f9177aa][Scratch buffers per major-mode]]
 #+begin_src emacs-lisp
-    (defun prot/scratch-buffer-setup ()
-      "Add contents to `scratch' buffer and name it accordingly.
+  (defun prot/scratch-buffer-setup ()
+    "Add contents to `scratch' buffer and name it accordingly.
   If region is active, add its contents to the new buffer."
-      (let* ((mode major-mode)
-	     (string (format "Scratch buffer for: %s\n\n" mode))
-	     (region (with-current-buffer (current-buffer)
-		       (if (region-active-p)
-			   (buffer-substring-no-properties
-			    (region-beginning)
-			    (region-end)))
-		       ""))
-	     (text (concat string region)))
-	(when scratch-buffer
-	      (save-excursion
-	    (insert text)
-	    (goto-char (point-min))
-	    (comment-region (point-at-bol) (point-at-eol)))
-	      (forward-line 2))
-	(rename-buffer (format "*Scratch for %s*" mode) t)))
+    (let* ((mode major-mode)
+	   (string (format "Scratch buffer for: %s\n\n" mode))
+	   (region (with-current-buffer (current-buffer)
+		     (if (region-active-p)
+			 (buffer-substring-no-properties
+			  (region-beginning)
+			  (region-end)))
+		     ""))
+	   (text (concat string region)))
+      (when scratch-buffer
+	(save-excursion
+	  (insert text)
+	  (goto-char (point-min))
+	  (comment-region (point-at-bol) (point-at-eol)))
+	(forward-line 2))
+      (rename-buffer (format "*Scratch for %s*" mode) t)))
   (add-hook 'scratch-create-buffer-hook #'prot/scratch-buffer-setup)
   (define-key global-map (kbd "C-c s") #'scratch)
   (define-key global-map (kbd "C-c S") #'scratch-buffer)
@@ -182,7 +187,7 @@ Paquete de Prot para darle énfasis al hl-line-mode.
 	  ilist-mode-hook
 	  ledger-report-mode-hook
 	  log-view-mode-hook
-	  emms-mode-hook
+	  emms-playlist-mode-hook
 	  magit-log-mode-hook
 	  mu4e-headers-mode
 	  notmuch-search-mode-hook
@@ -195,7 +200,23 @@ Paquete de Prot para darle énfasis al hl-line-mode.
 
   (lin-global-mode 1)
 #+end_src
+** Puesta de sol
+Pongo aquí una función que me permite leer las coordenadas en las que me encuentro para poder ver la puesta de sol con (sunrise-sunset).
+#+BEGIN_SRC emacs-lisp
 
+    ;;Puesta de sol
+    (defun eval-file (file)
+      "Execute FILE and return the result of the last expression."
+      (eval
+       (ignore-errors
+	 (read-from-whole-string
+	  (with-temp-buffer
+	    (insert-file-contents file)
+	    (buffer-string))))))
+
+    (setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
+    (setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
+#+END_SRC
 * Motores de completado
 Paquetes que forman la interfaz de búsqueda y completado. Con company se autocompletan palabras. Ido es una interfaz muy básica para completar búsquedas entre búferes o archivos y Helm es un framework de búsqueda.
 ** Company
@@ -311,25 +332,9 @@ El navegador de archivos de emacs.
   (setq dired-auto-revert-buffer #'dired-directory-changed-p) ; also see `dired-do-revert-buffer'
   (add-hook 'dired-mode-hook #'hl-line-mode)
   (add-hook 'dired-mode-hook #'dired-hide-details-mode)
-  (define-key dired-mode-map (kbd "DEL") 'dired-up-directory)
+;;  (define-key dired-mode-map (kbd "DEL") 'dired-up-directory)
+  (setq dired-dwim-target t) ;; Para copiar archivos entre dos búferes de dired abiertos en la misma ventana
 #+end_src
-* Puesta de sol
-Pongo aquí una función que me permite leer las coordenadas en las que me encuentro para poder ver la puesta de sol con (sunrise-sunset).
-#+BEGIN_SRC emacs-lisp
-
-    ;;Puesta de sol
-    (defun eval-file (file)
-      "Execute FILE and return the result of the last expression."
-      (eval
-       (ignore-errors
-	 (read-from-whole-string
-	  (with-temp-buffer
-	    (insert-file-contents file)
-	    (buffer-string))))))
-
-    (setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
-    (setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
-#+END_SRC
 * Org
 ** Introducción
 El modo org sirve para organizarte la vida. En principio sólo es un lenguaje de marcado tipo Markdown, usando asteriscos como niveles jerárquicos de organización para poder contraerlos y así tener los archivos ordenados.
@@ -448,45 +453,45 @@ Org-roam es una herramienta para crear un sistema de gestión personal basado en
 *** Org-static-blog
    Publicación de entradas en un blog
    #+begin_src emacs-lisp
-(setq org-static-blog-publish-title "Libre como en libertad")
-(setq org-static-blog-publish-url "http://www.finaprosadigital.com/publish/blog")
-(setq org-static-blog-publish-directory "~/blog/")
-(setq org-static-blog-posts-directory "~/blog/posts")
-(setq org-static-blog-drafts-directory "~/blog/drafts")
-(setq org-static-blog-enable-tags t)
-(setq org-export-with-toc nil)
-(setq org-export-with-section-numbers nil)
+     (setq org-static-blog-publish-title "Libre como en libertad")
+     (setq org-static-blog-publish-url "http://www.finaprosadigital.com/publish/blog")
+     (setq org-static-blog-publish-directory "~/blog/")
+     (setq org-static-blog-posts-directory "~/blog/posts")
+     (setq org-static-blog-drafts-directory "~/blog/drafts")
+     (setq org-static-blog-enable-tags t)
+     (setq org-export-with-toc nil)
+     (setq org-export-with-section-numbers nil)
 
 
-(setq org-static-blog-page-header
-"<meta name=\"author\" content=\"Carlos Pajuelo\">
-<meta name=\"referrer\" content=\"no-referrer\">
-<link href= \"static/style.css\" rel=\"stylesheet\" type=\"text/css\" />
-<link rel=\"icon\" href=\"static/arroba.ico\">
-<link rel=\"apple-touch-icon-precomposed\" href=\"static/arroba.png\">
-<link rel=\"msapplication-TitleImage\" href=\"static/arroba.png\">
-<link rel=\"msapplication-TitleColor\" href=\"#0141ff\">
-<script src=\"static/katex.min.js\"></script>
-<script src=\"static/auto-render.min.js\"></script>
-<link rel=\"stylesheet\" href=\"static/katex.min.css\">
-<script>document.addEventListener(\"DOMContentLoaded\", function() { renderMathInElement(document.body); });</script>
-<meta http-equiv=\"content-type\" content=\"application/xhtml+xml; charset=UTF-8\">
-<meta name=\"viewport\" content=\"initial-scale=1,width=device-width,minimum-scale=1\">")
+     (setq org-static-blog-page-header
+     "<meta name=\"author\" content=\"Carlos Pajuelo\">
+     <meta name=\"referrer\" content=\"no-referrer\">
+     <link href= \"static/style.css\" rel=\"stylesheet\" type=\"text/css\" />
+     <link rel=\"icon\" href=\"static/arroba.ico\">
+     <link rel=\"apple-touch-icon-precomposed\" href=\"static/arroba.png\">
+     <link rel=\"msapplication-TitleImage\" href=\"static/arroba.png\">
+     <link rel=\"msapplication-TitleColor\" href=\"#0141ff\">
+     <script src=\"static/katex.min.js\"></script>
+     <script src=\"static/auto-render.min.js\"></script>
+     <link rel=\"stylesheet\" href=\"static/katex.min.css\">
+     <script>document.addEventListener(\"DOMContentLoaded\", function() { renderMathInElement(document.body); });</script>
+     <meta http-equiv=\"content-type\" content=\"application/xhtml+xml; charset=UTF-8\">
+     <meta name=\"viewport\" content=\"initial-scale=1,width=device-width,minimum-scale=1\">")
 
-(setq org-static-blog-page-preamble
-"<div class=\"header\">
-  <a href=\"http://www.finaprosadigital.com/publish/blog\">Blog sobre software libre</a>
-  <div class=\"sitelinks\">
-    <a href=\"https://gitlab.com/gnuhack\">Gitlab</a> | <a href=\"https://github.com/gnuhack\">Github</a> | <a href=\"http://finaprosadigital.com/publish/blog/rss.xml\">RSS</a>
-  </div>
-</div>")
+     (setq org-static-blog-page-preamble
+     "<div class=\"header\">
+       <a href=\"http://www.finaprosadigital.com/publish/blog\">Blog sobre software libre</a>
+       <div class=\"sitelinks\">
+	 <a href=\"https://gitlab.com/gnuhack\">Gitlab</a> | <a href=\"https://github.com/gnuhack\">Github</a> | <a href=\"http://finaprosadigital.com/publish/blog/rss.xml\">RSS</a>
+       </div>
+     </div>")
 
-(setq org-static-blog-page-postamble
-"<div id=\"archive\">
-  <a href=\"http://www.finaprosadigital.com/publish/blog/archive.html\">Other posts</a>
-</div>
+     (setq org-static-blog-page-postamble
+     "<div id=\"archive\">
+       <a href=\"http://www.finaprosadigital.com/publish/blog/archive.html\">Other posts</a>
+     </div>
 
-<center><a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/3.0/88x31.png\" /></a><br /><span xmlns:dct=\"https://purl.org/dc/terms/\" href=\"https://purl.org/dc/dcmitype/Text\" property=\"dct:title\" rel=\"dct:type\">www.finaprosadigital.com</span> by <a xmlns:cc=\"https://creativecommons.org/ns#\" href=\"http://www.finaprosadigital.com\" property=\"cc:attributionName\" rel=\"cc:attributionURL\">Carlos Pajuelo</a> is licensed under a <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</center>")
+     <center><a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/3.0/88x31.png\" /></a><br /><span xmlns:dct=\"https://purl.org/dc/terms/\" href=\"https://purl.org/dc/dcmitype/Text\" property=\"dct:title\" rel=\"dct:type\">www.finaprosadigital.com</span> by <a xmlns:cc=\"https://creativecommons.org/ns#\" href=\"http://www.finaprosadigital.com\" property=\"cc:attributionName\" rel=\"cc:attributionURL\">Carlos Pajuelo</a> is licensed under a <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</center>")
 
    #+end_src
 *** Org-pomodoro
@@ -614,10 +619,10 @@ Macro para poner el modo noche en los pdfs (modonoche) y funciones para consegui
     (lambda ()
       "Loads the position saved by <C-f1>."
       (interactive)
-      (pdf-view-bookmark-jump my-bookmark)
-      (message "Posición cargada")
+	(if (y-or-n-p "¿Seguro que quieres cargar la posición?")
+	    (pdf-view-bookmark-jump my-bookmark))
   ))
-  
+
   (define-key pdf-view-mode-map (kbd "<C-f1>")
     (lambda ()
       "Saves the current position on the pdf to jump to later with <C-f2>."
@@ -698,34 +703,34 @@ También he descubierto cómo guardar y cargar playlist. Simplemente cuando teng
 * Keybindings
 Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-key-bindings-emacs
 #+BEGIN_SRC emacs-lisp
-  (global-set-key (kbd "s-<return>") 'vterm)
-  (global-set-key (kbd "C-x w") 'elfeed)
-  (global-set-key (kbd "C-<tab>") 'hippie-expand)
-;;(global-set-key (kbd "C-<iso-lefttab>") 'previous-buffer)
-;;(global-set-key (kbd "C-x p") 'proced)
-  (global-set-key (kbd "C-x e") 'eshell)
-  (global-set-key (kbd "C-c y") 'clipboard-yank)
-  (global-set-key (kbd "C-x t") 'shell)
-  (global-set-key (kbd "C-c m") 'calendar)
-  (global-set-key (kbd "M-o") 'other-window)
-  (global-set-key (kbd "s-o") 'other-window)
-  (global-set-key (kbd "C-x k") 'kill-current-buffer)
-  (global-set-key (kbd "<f5>") 'modonoche)
-  (add-to-list 'org-file-apps '("pdf" . "evince %s"))
-  (global-set-key (kbd "<f6>") 'quick-calc)
-  (set-register ?E (cons 'file "~/Documentos/ETSI/2023"))
-  (set-register ?o (cons 'file "~/Nextcloud/Documents/horario.txt"))
-  (set-register ?e (cons 'file "~/git/dotfiles/.emacs.d/emacs-literario.org"))
-  (set-register ?t (cons 'file "~/org/2021t/tiempo.org"))
-  (set-register ?c (cons 'file "~/.config/i3/config"))
-  (set-register ?a (cons 'file "~/Documentos/Aulaabierta"))
-  (global-set-key (kbd "s-n") 'next-buffer)
-  (global-set-key (kbd "s-p") 'previous-buffer)
-  ;;(global-set-key (kbd "s-<backspace>") 'rat/killydelete)
-  ;;(global-set-key (kbd "s-<return>") 'rat/terminal)
-  (define-key dired-mode-map (kbd "<tab>") #'dired-subtree-toggle)
-  (define-key dired-mode-map (kbd "<C-tab>") #'dired-subtree-cycle)
-  (define-key dired-mode-map (kbd "<backtab>") #'dired-subtree-remove)
+    (global-set-key (kbd "s-<return>") 'vterm)
+    (global-set-key (kbd "C-x w") 'elfeed)
+    (global-set-key (kbd "C-<tab>") 'hippie-expand)
+  ;;(global-set-key (kbd "C-<iso-lefttab>") 'previous-buffer)
+  ;;(global-set-key (kbd "C-x p") 'proced)
+    (global-set-key (kbd "C-x e") 'eshell)
+    (global-set-key (kbd "C-c y") 'clipboard-yank)
+    (global-set-key (kbd "C-x t") 'shell)
+    (global-set-key (kbd "C-c m") 'calendar)
+    (global-set-key (kbd "M-o") 'other-window)
+    (global-set-key (kbd "s-o") 'other-window)
+    (global-set-key (kbd "C-x k") 'kill-current-buffer)
+    (global-set-key (kbd "<f5>") 'modonoche)
+    (add-to-list 'org-file-apps '("pdf" . "evince %s"))
+    (global-set-key (kbd "<f6>") 'quick-calc)
+    (set-register ?E (cons 'file "~/Documentos/ETSI/ETSI 2024"))
+    (set-register ?o (cons 'file "~/Nextcloud/Documents/horario.txt"))
+    (set-register ?e (cons 'file "~/git/dotfiles/.emacs.d/emacs-literario.org"))
+    (set-register ?t (cons 'file "~/org/2021t/tiempo.org"))
+    (set-register ?c (cons 'file "~/.config/i3/config"))
+    (set-register ?d (cons 'file "~/Descargas"))
+    (global-set-key (kbd "s-n") 'next-buffer)
+    (global-set-key (kbd "s-p") 'previous-buffer)
+    ;;(global-set-key (kbd "s-<backspace>") 'rat/killydelete)
+    ;;(global-set-key (kbd "s-<return>") 'rat/terminal)
+    (define-key dired-mode-map (kbd "<tab>") #'dired-subtree-toggle)
+    (define-key dired-mode-map (kbd "<C-tab>") #'dired-subtree-cycle)
+    (define-key dired-mode-map (kbd "<backtab>") #'dired-subtree-remove)
 #+END_SRC
 * Project
 Para gestionar proyectos uso project.el, integrado en Emacs. Así puedo cambiar entre archivos de un proyecto de forma fácil y cómoda. Un proyecto es toda carpeta que contenga archivos clave (como los repos de git).
@@ -733,72 +738,76 @@ Para gestionar proyectos uso project.el, integrado en Emacs. Así puedo cambiar 
 * Telega
 Cliente de Telegram para Emacs. Ahora mismo no me funciona porque no
 sé compilar TDlib.
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
   (setq emojify-emoji-styles '(unicode))
   (global-set-key (kbd "s-T") 'telega)
   (define-key global-map (kbd "C-c t") telega-prefix-map)
   (add-hook 'telega-load-hook 'telega-notifications-mode)
-  (setq telega-chat-fill-column 16)
+  (setq telega-chat-fill-column 70)
   ;;(add-hook 'telega-load-hook 'emoji-mode)
   (add-hook 'after-init-hook #'global-emojify-mode)
   (add-hook 'telega-chat-mode-hook 'variable-pitch-mode)
   (add-hook 'telega-root-mode-hook 'hl-line-mode)
   (add-hook 'telega-chat-mode-hook 'company-mode) ;; No consigo desactivar company al entrar a chats por defecto
   (add-hook 'telega-chat-mode-hook 'abbrev-mode)
+  ;; Notificaciones
+  (telega-appindicator-mode 1)
+  (telega-mode-line-mode 1)
 #+END_SRC
 * Correo
 Configuración copiada de mi antiguo .emacs.el de cuando usaba Prelude
 y GNUS. Para los contactos uso
 EBDB. (https://chrisdone.com/posts/emacs-mail/). Pendiente de configurar.
-#+begin_src emacs-lisp :tangle no
-	(require 'ebdb-message) ;;Cargar la ebdb con los contactos
-        (global-set-key (kbd "s-m") 'notmuch-open-emails)
-     ;;   (setq send-mail-function 'smtpmail-send-it)
-     ;;   (setq smtpmail-smtp-user   "nkolita1")
-     ;;   (setq smtpmail-smtp-server "smtp.gmail.com")
-     ;;   (setq smtpmail-smtp-service 587)
-	(setq gnus-select-method
-	      '(nnmaildir "GMail"
-			  (directory "~/Test")
-			  (directory-files nnheader-directory-files-safe)
-			  (get-new-mail nil)))
+#+begin_src emacs-lisp
+  (require 'ebdb-message) ;;Cargar la ebdb con los contactos
+  (global-set-key (kbd "s-m") 'notmuch-hello)
+  ;;   (setq send-mail-function 'smtpmail-send-it)
+  ;;   (setq smtpmail-smtp-user   "nkolita1")
+  ;;   (setq smtpmail-smtp-server "smtp.gmail.com")
+  ;;   (setq smtpmail-smtp-service 587)
+  (setq gnus-select-method
+	'(nnmaildir "GMail"
+		    (directory "~/Test")
+		    (directory-files nnheader-directory-files-safe)
+		    (get-new-mail nil)))
 
-     ;;   (setq message-send-mail-function   'smtpmail-send-it
-     ;;	 smtpmail-default-smtp-server "smtp.gmail.com"
-     ;;	 smtpmail-smtp-server         "smtp.gmail.com"
-     ;;	 smtpmail-local-domain        "mail.google.com")
+  ;;   (setq message-send-mail-function   'smtpmail-send-it
+  ;;	 smtpmail-default-smtp-server "smtp.gmail.com"
+  ;;	 smtpmail-smtp-server         "smtp.gmail.com"
+  ;;	 smtpmail-local-domain        "mail.google.com")
 
-	;; Por fin he conseguido enviar correos con hotmail
+  ;; Por fin he conseguido enviar correos con hotmail
 
-     ;; (setq message-send-mail-function 'smtpmail-send-it
-     ;; 	   smtpmail-stream-type 'starttls
-     ;; 	   smtpmail-default-smtp-server "smtp.office365.com"
-     ;; 	   smtpmail-smtp-server "smtp.office365.com"
-     ;; 	   smtpmail-smtp-service 587
-     ;; 	   smtpmail-smtp-user "carlospajuelo_@hotmail.com"
-     ;; 	   ;; account info
-     ;; 	   user-mail-address "carlospajuelo_@hotmail.com"
-     ;; 	   user-full-name  "Carlos Pajuelo")
+  ;; (setq message-send-mail-function 'smtpmail-send-it
+  ;; 	   smtpmail-stream-type 'starttls
+  ;; 	   smtpmail-default-smtp-server "smtp.office365.com"
+  ;; 	   smtpmail-smtp-server "smtp.office365.com"
+  ;; 	   smtpmail-smtp-service 587
+  ;; 	   smtpmail-smtp-user "carlospajuelo_@hotmail.com"
+  ;; 	   ;; account info
+  ;; 	   user-mail-address "carlospajuelo_@hotmail.com"
+  ;; 	   user-full-name  "Carlos Pajuelo")
 
   ;; Y con mi cuenta personal también!!
 
-    (setq message-send-mail-function 'smtpmail-send-it
-	    smtpmail-stream-type 'starttls
-	    smtpmail-default-smtp-server "smtp.pajuelo.com"
-	    smtpmail-smtp-server "smtp.pajuelo.com"
-	    smtpmail-smtp-service 587
-	    smtpmail-smtp-user "carlos@pajuelo.com"
-	    smtpmail-servers-requiring-authorization "smtp.pajuelo.com"
-	    ;; account info
-	    user-mail-address "carlos@pajuelo.com"
-	    user-full-name  "Carlos")
+  (setq message-send-mail-function 'smtpmail-send-it
+	smtpmail-stream-type 'starttls
+	smtpmail-default-smtp-server "smtp.pajuelo.com"
+	smtpmail-smtp-server "smtp.pajuelo.com"
+	smtpmail-smtp-service 587
+	smtpmail-smtp-user "carlos@pajuelo.com"
+	smtpmail-servers-requiring-authorization "smtp.pajuelo.com"
+	;; account info
+	user-mail-address "carlos@pajuelo.com"
+	user-full-name  "Carlos")
 
-	(defun offlineimap ()
-	  "Función para ejecutar offlineimap y descargar el correo en gnus."
-	  (interactive)
-	  (shell-command "offlineimap&" "*offlineimap*" nil)
-	  )
+  (defun offlineimap ()
+    "Función para ejecutar offlineimap y descargar el correo en gnus."
+    (interactive)
+    (shell-command "offlineimap&" "*offlineimap*" nil)
+    )
   (async-shell-command "offlineimap")
+  (notmuch-indicator-mode)
 #+end_src
 Notificaciones para la modeline con notmuch-indicator
 #+begin_src emacs-lisp :tangle no
@@ -912,6 +921,11 @@ Cliente para conectarse a IRC.
   (setq erc-autojoin-channels-alist
 	'(("Libera.Chat" "#emacs" "#nethack")))
 
+  (setq erc-track-exclude-types '("JOIN" "NICK" "QUIT" "MODE" "AWAY")
+	erc-hide-list '("JOIN" "NICK" "QUIT" "MODE" "AWAY")
+	erc-track-exclude-server-buffer t)
+
+  (global-set-key (kbd "C-c C-ñ") 'erc-track-switch-buffer)
 
 #+end_src
 * Sudo-save
@@ -948,17 +962,31 @@ Fuente: https://linuxhint.com/c_emacs_configuration/
 	     file)))
       (compile compile-command)))
 
-  (global-set-key [f9] 'code-compile)
+  (global-set-key [f8] 'code-compile)
 #+end_src
 
 * Reloj
 Reloj mundial
 
 #+begin_src emacs-lisp
-(setq display-time-world-list
-  '(("Etc/UTC" "UTC")
-    ("America/Los_Angeles" "Seattle")
-    ("America/New_York" "New York")
-    ("Europe/Athens" "Athens")
-    ("Europe/Madrid" "Madrid")))
+  (setq display-time-world-list
+    '(("Etc/UTC" "UTC")
+      ("America/Los_Angeles" "Seattle")
+      ("America/New_York" "New York")
+      ("Europe/Athens" "Athens")
+      ("Europe/Madrid" "Madrid")))
+
+  ;; Prueba para ver si funciona
+  (define-key dired-mode-map (kbd "DEL") 'dired-up-directory)
+
+#+end_src
+
+* Tetris
+Dentro de Emacs se puede jugar al Tetris. Pero por defecto no se usa
+el método [[https://tetris.wiki/Tetris_Guideline][estándar]] para la generación aleatoria de piezas. Con esta
+opción se genera una bolsa de siete piezas de tetris distintas, y
+cuando se acaba la bolsa se vuelve a generar otra, para que no puedan
+tocar muchas piezas repetidas.
+#+begin_src lisp
+(setq tetris-allow-repetitions nil)
 #+end_src
