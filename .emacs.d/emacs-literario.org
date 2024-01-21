@@ -992,20 +992,20 @@ tocar muchas piezas repetidas.
 #+end_src
 Los colores de las piezas también siguen un estándar.
 #+begin_src emacs-lisp
-  ;;Shape 1 (O)
-  ;;Shape 2 (L)
-  ;;Shape 3 (J)
-  ;;Shape 4 (S)
-  ;;Shape 5 (Z)             
-  ;;Shape 6 (T)
-  ;;Shape 7 (I)
+  ;;Shape 1 (O) Yellow
+  ;;Shape 2 (L) Orange
+  ;;Shape 3 (J) Dark blue
+  ;;Shape 4 (S) Green
+  ;;Shape 5 (Z) Red
+  ;;Shape 6 (T) Magenta
+  ;;Shape 7 (I) Light blue
 
-  (setq tetris-x-colors [[1 1 0]
-   [1 0.27 0]
-   [0 0 0.55]
-   [1 0 0]
-   [0 1 0]
-   [1 0 1]
-   [0 0.86 0.9]]
-  )
+    (setq tetris-x-colors [[1 1 0]
+     [1 0.27 0]
+     [0 0 0.55]
+     [1 0 0]
+     [0 1 0]
+     [1 0 1]
+     [0 0.86 0.9]]
+    )
 #+end_src
