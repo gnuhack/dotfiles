@@ -43,6 +43,7 @@
      ("https://victorhckinthefreeworld.com/feed/" Victr Blog)
      ("https://pkm.es/feed" PKM Blog)
      ("https://sachachua.com/blog/feed/" Sacha Blog)
+     ("https://www.danielclemente.com/cambios/cambios.xml")
      ("https://edwardsnowden.substack.com/feed.xml" Snowden Blog)
      ("https://twobithistory.org/feed.xml" 2bit Blog)))
  '(eww-search-prefix "http://www.searx.be/?q=")
