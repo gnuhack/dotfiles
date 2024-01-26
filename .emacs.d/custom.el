@@ -35,15 +35,14 @@
       Video)
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg"
       Video)
-     ("http://karl-voit.at/feeds/lazyblorg-all.atom_1.0.links-and-content.xml"
+     ("https://karl-voit.at/feeds/lazyblorg-all.atom_1.0.links-only.xml"
       Blog Voit)
      ("https://planet.emacslife.com/atom.xml" Emacs)
      ("https://protesilaos.com/master.xml" Prot Blog)
      ("https://greenwald.substack.com/feed" Glenn Blog)
      ("https://victorhckinthefreeworld.com/feed/" Victr Blog)
-     ("https://pkm.es/feed" PKM Blog)
      ("https://sachachua.com/blog/feed/" Sacha Blog)
-     ("https://www.danielclemente.com/cambios/cambios.xml")
+     ("https://www.danielclemente.com/cambios/cambios.xml" Blog)
      ("https://edwardsnowden.substack.com/feed.xml" Snowden Blog)
      ("https://twobithistory.org/feed.xml" 2bit Blog)))
  '(eww-search-prefix "http://www.searx.be/?q=")
