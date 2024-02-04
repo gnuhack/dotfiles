@@ -326,14 +326,14 @@ Tramp sirve para acceder de forma remota a archivos a través de emacs con ssh, 
 * Dired
 El navegador de archivos de emacs.
 #+begin_src emacs-lisp
-
   (setq dired-listing-switches "-alh")
   (setq dired-isearch-filenames t) ;;Buscar en dired solo en los nombres.
   (setq dired-auto-revert-buffer #'dired-directory-changed-p) ; also see `dired-do-revert-buffer'
   (add-hook 'dired-mode-hook #'hl-line-mode)
   (add-hook 'dired-mode-hook #'dired-hide-details-mode)
-;;  (define-key dired-mode-map (kbd "DEL") 'dired-up-directory)
+  ;;  (define-key dired-mode-map (kbd "DEL") 'dired-up-directory)
   (setq dired-dwim-target t) ;; Para copiar archivos entre dos búferes de dired abiertos en la misma ventana
+  (dired-async-mode 1) ;;Copia asíncrona de archivos, para que no se bloquee Emacs en copias grandes
 #+end_src
 * Org
 ** Introducción
