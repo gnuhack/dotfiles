@@ -112,3 +112,5 @@ if ! shopt -oq posix; then
 fi
 #Desactivar ^S
 stty -ixon
+#Licencia ISE y config ISE
+export XILINXD_LICENSE_FILE=2100@baldr.us.es

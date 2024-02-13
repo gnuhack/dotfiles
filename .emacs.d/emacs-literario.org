@@ -735,6 +735,15 @@ Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-k
 * Project
 Para gestionar proyectos uso project.el, integrado en Emacs. Así puedo cambiar entre archivos de un proyecto de forma fácil y cómoda. Un proyecto es toda carpeta que contenga archivos clave (como los repos de git).
 
+* Perspective
+Para poder trabajar en varios proyectos sin que se mezclen los
+distintos búferes de ellos, se puede usar perspective.
+#+begin_src emacs-lisp
+(require 'perspective)
+(global-set-key (kbd "C-x C-b") 'persp-list-buffers)
+(customize-set-variable 'persp-mode-prefix-key (kbd "C-c M-p"))
+(persp-mode)
+#+end_src
 * Telega
 Cliente de Telegram para Emacs. Ahora mismo no me funciona porque no
 sé compilar TDlib.
