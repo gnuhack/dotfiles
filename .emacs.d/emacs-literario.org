@@ -314,7 +314,7 @@ La eshell es una shell escrita entera en lisp.
   (defun eshell2fa ()
     (interactive)
     "Devuelve el id del 2FA en el portapapeles."
-    (unless (gnus-buffer-live-p "*ehsell*") (eshell))
+    (unless (gnus-buffer-live-p "*eshell*") (eshell))
     (with-current-buffer "*eshell*"
     (eshell-return-to-prompt)
     (insert "id > /dev/kill")
