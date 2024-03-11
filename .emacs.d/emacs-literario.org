@@ -312,14 +312,14 @@ La eshell es una shell escrita entera en lisp.
   (define-key eshell-mode-map (kbd "<tab>") 'company-complete)
   ;; 2FA para la EV
   (defun eshell2fa ()
-    (interactive)
-    "Devuelve el id del 2FA en el portapapeles."
-    (unless (gnus-buffer-live-p "*eshell*") (eshell))
-    (with-current-buffer "*eshell*"
-    (eshell-return-to-prompt)
-    (insert "id > /dev/kill")
-    (eshell-send-input))
-    )
+      (interactive)
+      "Devuelve el id del 2FA en el portapapeles."
+      (unless (gnus-buffer-live-p "*eshell*") (eshell) (switch-to-prev-buffer))
+      (with-current-buffer "*eshell*"
+      (eshell-return-to-prompt)
+      (insert "id > /dev/kill")
+      (eshell-send-input))
+      )
 #+end_src
 * Tramp
 Tramp sirve para acceder de forma remota a archivos a través de emacs con ssh, sftp, etc.
