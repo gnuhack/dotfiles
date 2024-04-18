@@ -55,3 +55,8 @@
     (interactive)
     (async-shell-command "scp -r ~/blog pi@192.168.1.125:/var/www/html/publish" "publicando")
     )
+(defun rat/sus ()
+  "Suspende el ordenador."
+  (interactive)
+  (async-shell-command "systemctl suspend"))
+
