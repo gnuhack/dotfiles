@@ -112,7 +112,4 @@ if ! shopt -oq posix; then
 fi
 #Desactivar ^S
 stty -ixon
-#Licencia ISE y config ISE
-export XILINXD_LICENSE_FILE=2100@baldr.us.es
-#Variables de entorno para el trabajo de VHDL
-source ~/trabajovhdl/env.rc 
+ 
