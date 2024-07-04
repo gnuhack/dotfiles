@@ -268,7 +268,7 @@ Edit: De momento me gusta la combinación, la voy a mantener por ahora.
   (define-key global-map (kbd "C-,") #'embark-dwim)
   (define-key global-map (kbd "C-h B") #'embark-bindings)
   (setq prefix-help-command #'embark-prefix-help-command)
-  (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target)
+;;  (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target)
   (add-to-list 'display-buffer-alist
 		 '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
 		   nil
