@@ -45,7 +45,6 @@
      ("https://www.danielclemente.com/cambios/cambios.xml" Blog)
      ("https://edwardsnowden.substack.com/feed.xml" Snowden Blog)
      ("https://twobithistory.org/feed.xml" 2bit Blog)))
- '(eww-search-prefix "http://www.searx.be/?q=")
  '(frame-background-mode nil)
  '(hledger-ratios-essential-expense-accounts "expenses:casa expenses:comida expenses:mama")
  '(hledger-ratios-liquid-asset-accounts "assets:cuenta assets:efectivo")
