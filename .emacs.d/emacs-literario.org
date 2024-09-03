@@ -144,7 +144,7 @@ La vi usarla en el vídeo del link, pero la saqué de su config de Emacs; [[file
 #+end_src
 Con el prefijo C-u se puede elegir el modo del búfer en scratch.
 ** Hora
-#+begin_src emacs-lisp
+#+begin_src
 (display-time-mode 1)
 (setq display-time-24hr-format t)
 #+end_src
@@ -160,7 +160,7 @@ funcione Telega.
 #+end_src
 *** Mode line
 Configuración de las cosas mostradas en la barra de Emacs.
-#+begin_src emacs-lisp
+#+begin_src
 (display-battery-mode 1)
 #+end_src
 ** Recentf
@@ -728,7 +728,7 @@ Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-k
     (global-set-key (kbd "<f5>") 'modonoche)
     (add-to-list 'org-file-apps '("pdf" . "evince %s"))
     (global-set-key (kbd "<f6>") 'quick-calc)
-    (set-register ?E (cons 'file "~/Documentos/ETSI/ETSI 2024"))
+    (set-register ?E (cons 'file "~/Documentos/ETSI/ETSI 2025"))
     (set-register ?o (cons 'file "~/Nextcloud/Documents/horario.txt"))
     (set-register ?e (cons 'file "~/git/dotfiles/.emacs.d/emacs-literario.org"))
     (set-register ?t (cons 'file "~/org/2021t/tiempo.org"))
