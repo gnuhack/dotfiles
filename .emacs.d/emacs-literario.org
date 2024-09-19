@@ -319,6 +319,7 @@ La eshell es una shell escrita entera en lisp.
       (eshell-return-to-prompt)
       (insert "id > /dev/kill")
       (eshell-send-input))
+      (message "2FA copiado al portapapeles")
       )
 #+end_src
 * Tramp
