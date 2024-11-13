@@ -15,13 +15,12 @@
 (load-theme 'modus-vivendi t)
 
 (setq inhibit-splash-screen t)
-(server-start)
-;; (if 'server-running-p nil
-;;   (progn
-;;     (server-start)
-;;     (message "Servidor iniciado")
-;;     )
-;;   )
+(if 'server-running-p nil
+  (progn
+    (server-start)
+    (message "Servidor iniciado")
+    )
+  )
 (setq confirm-kill-emacs 'y-or-n-p)
 
 ;; Salvación del portapapeles para poder usar M-y después de hacer un kill a algo en Emacs y poder recuperar el contenido
@@ -32,28 +31,11 @@
 (electric-pair-mode 1)
 (show-paren-mode 1)
 
-(defun prot/scratch-buffer-setup ()
-  "Add contents to `scratch' buffer and name it accordingly.
-If region is active, add its contents to the new buffer."
-  (let* ((mode major-mode)
-	 (string (format "Scratch buffer for: %s\n\n" mode))
-	 (region (with-current-buffer (current-buffer)
-		   (if (region-active-p)
-		       (buffer-substring-no-properties
-			(region-beginning)
-			(region-end)))
-		   ""))
-	 (text (concat string region)))
-    (when scratch-buffer
-      (save-excursion
-	(insert text)
-	(goto-char (point-min))
-	(comment-region (point-at-bol) (point-at-eol)))
-      (forward-line 2))
-    (rename-buffer (format "*Scratch for %s*" mode) t)))
-(add-hook 'scratch-create-buffer-hook #'prot/scratch-buffer-setup)
-(define-key global-map (kbd "C-c s") #'scratch)
-(define-key global-map (kbd "C-c S") #'scratch-buffer)
+(defun escrach ()
+  (interactive)
+  "Cambia al búfer de scratch."
+  (switch-to-buffer "*scratch*"))
+(define-key global-map (kbd "C-c s") #'escrach)
 
 (recentf-mode 1)
 
