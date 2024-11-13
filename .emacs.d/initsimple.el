@@ -1,20 +1,4 @@
-(load-file "~/git/dotfiles/tetritecla.el")
-(load-file "~/git/dotfiles/misfunciones.el")
-(load-file "~/git/dotfiles/mismacros.el")
-
-(if (equal system-name "cpr-GE75-Raider-8SE")
-    (set-face-attribute 'default nil :height 150))
-
-(if (equal system-name "elsobremesas")
-    (set-face-attribute 'default nil :height 150))
-
-(add-hook 'dired-mode-hook 'treemacs-icons-dired-mode)
-
 (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
-
-
-
-
 ;; Con C-c <flechas> se hace o deshace la config de ventanas
 (winner-mode 1)
 
@@ -88,20 +72,20 @@ If region is active, add its contents to the new buffer."
 (setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
 (setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
 
-(vertico-mode 1)
-  (require 'orderless)
-  (setq completion-styles '(orderless basic)
-	completion-category-overrides '((file (styles basic partial-completion))))
-  (marginalia-mode 1)
-  (define-key global-map (kbd "C-.") #'embark-act)
-  (define-key global-map (kbd "C-,") #'embark-dwim)
-  (define-key global-map (kbd "C-h B") #'embark-bindings)
-  (setq prefix-help-command #'embark-prefix-help-command)
-;;  (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target)
-  (add-to-list 'display-buffer-alist
-		 '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
-		   nil
-		   (window-parameters (mode-line-format . none))))
+;; (vertico-mode 1)
+;;   (require 'orderless)
+;;   (setq completion-styles '(orderless basic)
+;; 	completion-category-overrides '((file (styles basic partial-completion))))
+;;   (marginalia-mode 1)
+;;   (define-key global-map (kbd "C-.") #'embark-act)
+;;   (define-key global-map (kbd "C-,") #'embark-dwim)
+;;   (define-key global-map (kbd "C-h B") #'embark-bindings)
+;;   (setq prefix-help-command #'embark-prefix-help-command)
+;; ;;  (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target)
+;;   (add-to-list 'display-buffer-alist
+;; 		 '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+;; 		   nil
+;; 		   (window-parameters (mode-line-format . none))))
 
 ;; Para usar sudo bien en eshell (alias actualizar)
 (require 'em-tramp)
@@ -220,76 +204,6 @@ If region is active, add its contents to the new buffer."
 (when (file-exists-p "~/org-roam")
   (org-roam-db-autosync-mode)
 	(org-roam-setup))
-
-(setq org-static-blog-publish-title "Libre como en libertad")
-(setq org-static-blog-publish-url "http://www.finaprosadigital.com/publish/blog")
-(setq org-static-blog-publish-directory "~/blog/")
-(setq org-static-blog-posts-directory "~/blog/posts")
-(setq org-static-blog-drafts-directory "~/blog/drafts")
-(setq org-static-blog-enable-tags t)
-(setq org-export-with-toc nil)
-(setq org-export-with-section-numbers nil)
-
-
-(setq org-static-blog-page-header
-"<meta name=\"author\" content=\"Carlos Pajuelo\">
-<meta name=\"referrer\" content=\"no-referrer\">
-<link href= \"static/style.css\" rel=\"stylesheet\" type=\"text/css\" />
-<link rel=\"icon\" href=\"static/arroba.ico\">
-<link rel=\"apple-touch-icon-precomposed\" href=\"static/arroba.png\">
-<link rel=\"msapplication-TitleImage\" href=\"static/arroba.png\">
-<link rel=\"msapplication-TitleColor\" href=\"#0141ff\">
-<script src=\"static/katex.min.js\"></script>
-<script src=\"static/auto-render.min.js\"></script>
-<link rel=\"stylesheet\" href=\"static/katex.min.css\">
-<script>document.addEventListener(\"DOMContentLoaded\", function() { renderMathInElement(document.body); });</script>
-<meta http-equiv=\"content-type\" content=\"application/xhtml+xml; charset=UTF-8\">
-<meta name=\"viewport\" content=\"initial-scale=1,width=device-width,minimum-scale=1\">")
-
-(setq org-static-blog-page-preamble
-"<div class=\"header\">
-  <a href=\"http://www.finaprosadigital.com/publish/blog\">Blog sobre software libre</a>
-  <div class=\"sitelinks\">
-    <a href=\"https://gitlab.com/gnuhack\">Gitlab</a> | <a href=\"https://github.com/gnuhack\">Github</a> | <a href=\"http://finaprosadigital.com/publish/blog/rss.xml\">RSS</a>
-  </div>
-</div>")
-
-(setq org-static-blog-page-postamble
-"<div id=\"archive\">
-  <a href=\"http://www.finaprosadigital.com/publish/blog/archive.html\">Other posts</a>
-</div>
-
-<center><a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/3.0/88x31.png\" /></a><br /><span xmlns:dct=\"https://purl.org/dc/terms/\" href=\"https://purl.org/dc/dcmitype/Text\" property=\"dct:title\" rel=\"dct:type\">www.finaprosadigital.com</span> by <a xmlns:cc=\"https://creativecommons.org/ns#\" href=\"http://www.finaprosadigital.com\" property=\"cc:attributionName\" rel=\"cc:attributionURL\">Carlos Pajuelo</a> is licensed under a <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</center>")
-
-;; Sonido de https://freesound.org/people/.Andre_Onate/sounds/484665/
-(setq org-clock-sound "~/Descargas/ding.wav")
-;; Para iniciar el crono, pulsar C-c C-x ;
-(setq org-timer-default-timer "00:25:00")
-
-(setq holiday-other-holidays '((holiday-fixed 10 12 "Día de mi Españita")
-				    (holiday-fixed 12 23 "Navidad")
-				    (holiday-fixed 12 24 "Navidad")
-				    (holiday-fixed 11 01 "Día de todos los santos")
-				    (holiday-fixed 12 06 "Día de la Constitución")
-				    (holiday-fixed 12 08 "Festividad de la Imnaculada")
-				    (holiday-fixed 01 28 "Santo Tomás de Aquino (Aquí no, aquí no...)")
-				    (holiday-fixed 02 28 "Día del Glorious Anthem of Andalusia")
-				    (holiday-fixed 05 02 "Día del trabajo")
-				    (holiday-fixed 05 04 "Fiesta local")
-				    (holiday-fixed 06 16 "Corpus Christi")))
-
-(setq holiday-general-holidays nil)
-(setq holiday-local-holidays nil)
-(setq holiday-solar-holidays nil)
-(setq holiday-bahai-holidays nil)
-(setq holiday-christian-holidays nil)
-(setq holiday-hebrew-holidays nil)
-(setq holiday-islamic-holidays nil)
-(setq holiday-oriental-holidays nil)
-
-(setq org-books-file "~/org-roam/20210920115613-lista_de_libros.org")
-(setq org-books-add-to-top nil)
-(setq org-books-file-depth 3) ;; Reconocer los subheadings hasta de tercer nivel como categorías.
 
 (setq org-log-done 'time)
 
