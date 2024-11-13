@@ -41,18 +41,6 @@
 
 (save-place-mode 1)
 
-;;Puesta de sol
-(defun eval-file (file)
-  "Execute FILE and return the result of the last expression."
-  (eval
-   (ignore-errors
-     (read-from-whole-string
-      (with-temp-buffer
-	(insert-file-contents file)
-	(buffer-string))))))
-
-(setq calendar-latitude (eval-file "~/Plantillas/lat.el"))
-(setq calendar-longitude (eval-file "~/Plantillas/lon.el"))
 
 ;; (vertico-mode 1)
 ;;   (require 'orderless)
@@ -136,18 +124,7 @@
 (setq org-goto-interface 'outline-path-completion)
 (setq org-use-speed-commands t)
 
-(setq org-refile-targets  '((org-agenda-files :maxlevel . 6)
-			    ("~/org-roam/20210909170753-proyectos_futuros.org" :maxlevel . 6)
-			    ("~/org-roam/20210920115613-lista_de_libros.org" :maxlevel . 6)
-			    ("~/org-roam/20210920111342-lista_de_juegos.org" :maxlevel . 6)
-			    ("~/org-roam/20210920115726-lista_de_peliculas.org" :maxlevel . 6)
-			    ("~/org-roam/20210910223458-shell.org" :maxlevel . 6)
-			    ("~/org-roam/20210930132055-lista_de_series.org" :maxlevel . 6)
-			    ("~/org-roam/20210930211941-notas_generales.org" :maxlevel . 6)
-			    ("~/org-roam/20220210155738-metodos.org" :maxlevel . 6)
-			    ("~/org-roam/20210930135146-inbox.org" :maxlevel . 6)))
-
-    (global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cc" 'org-capture)
 (when (file-exists-p "~/org")
   (setq org-capture-templates
 	  (quote
@@ -189,46 +166,6 @@
 
 (setq org-log-done 'time)
 
-(require 'appt)
-(appt-activate t)
-
-(setq appt-message-warning-time 30) ; Show notification 30 minutes before event
-(setq appt-display-interval appt-message-warning-time) ; Disable multiple reminders
-(setq appt-display-mode-line nil)
-
-; Use appointment data from org-mode
-(defun my-org-agenda-to-appt ()
-  (interactive)
-  (setq appt-time-msg-list nil)
-  (org-agenda-to-appt))
-
-; Update alarms when...
-; (1) ... Starting Emacs
-(when (file-exists-p "~/org")
-  (my-org-agenda-to-appt))
-
-; (2) ... Everyday at 12:05am (useful in case you keep Emacs always on)
-(when (file-exists-p "~/org")
-  (run-at-time "12:05am" (* 24 3600) 'my-org-agenda-to-appt))
-
-; (3) ... When TODO.txt is saved
-(when (file-exists-p "~/org")
-  (add-hook 'after-save-hook
-	  '(lambda ()
-	     (if (string= (buffer-file-name) (concat (getenv "HOME") "/org/uni.org"))
-		 (my-org-agenda-to-appt)))))
-
-; Display appointments as a window manager notification
-(setq appt-disp-window-function 'my-appt-display)
-(setq appt-delete-window-function (lambda () t))
-
-(setq my-appt-notification-app (concat (getenv "HOME") "/bin/appt-notification"))
-
-(defun my-appt-display (min-to-app new-time msg)
-  (if (atom min-to-app)
-    (start-process "my-appt-notification-app" nil my-appt-notification-app min-to-app msg)
-  (dolist (i (number-sequence 0 (1- (length min-to-app))))
-    (start-process "my-appt-notification-app" nil my-appt-notification-app (nth i min-to-app) (nth i msg)))))
 
 (fset 'modonoche
       (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("m" 0 "%d")) arg)))
