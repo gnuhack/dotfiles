@@ -654,24 +654,31 @@ Con elfeed puedo tener mi propio feed personalizado. Sobre todo es útil para se
 Con la siguiente función puedo reproducir vídeos de Youtube en mpv descargándolos con youtube-dl. Solo hay que ponerse sobre el link de Youtube y hacer =M-x std::elfeed::visit-entry-dwim=
 #+BEGIN_SRC emacs-lisp
 
-(defun std::elfeed::visit-entry-dwim (&optional arg)
-  "Función para reproducir vídeos en elfeed de Youtube con mpv ARG."
-  (interactive "P")
-  (if arg
-      (elfeed-search-browse-url)
-    (-let [entry (if (eq major-mode 'elfeed-show-mode) elfeed-show-entry (elfeed-search-selected :single))]
-      (if (s-matches? (rx "https://www.youtube.com/watch" (1+ any))
-                      (elfeed-entry-link entry))
-          (let* ((quality (completing-read "Max height resolution (0 for unlimited): " '("0" "480" "720" "1080")))
-                 (format (if (= 0 (string-to-number quality)) "" (format "--ytdl-format=[height<=?%s]" quality))))
-            (message "Opening %s with height ≤ %s with mpv..."
-                     (elfeed-entry-link entry) quality)
-            (elfeed-untag entry 'unread)
-            (start-process "elfeed-mpv" nil "mpv" format (elfeed-entry-link entry))
-            (elfeed-search-update :force))
-        (if (eq major-mode 'elfeed-search-mode)
-            (elfeed-search-browse-url)
-          (elfeed-show-visit))))))
+  (defun std::elfeed::visit-entry-dwim (&optional arg)
+    "Función para reproducir vídeos en elfeed de Youtube con mpv ARG."
+    (interactive "P")
+    (if arg
+	(elfeed-search-browse-url)
+      (-let [entry (if (eq major-mode 'elfeed-show-mode) elfeed-show-entry (elfeed-search-selected :single))]
+	(if (s-matches? (rx "https://www.youtube.com/watch" (1+ any))
+			(elfeed-entry-link entry))
+	    (let* ((quality (completing-read "Max height resolution (0 for unlimited): " '("0" "480" "720" "1080")))
+		   (format (if (= 0 (string-to-number quality)) "" (format "--ytdl-format=[height<=?%s]" quality))))
+	      (message "Opening %s with height ≤ %s with mpv..."
+		       (elfeed-entry-link entry) quality)
+	      (elfeed-untag entry 'unread)
+	      (start-process "elfeed-mpv" nil "mpv" format (elfeed-entry-link entry))
+	      (elfeed-search-update :force))
+	  (if (eq major-mode 'elfeed-search-mode)
+	      (elfeed-search-browse-url)
+	    (elfeed-show-visit))))))
+
+  (defun elfid ()
+    "Función para recargar Elfeed."
+    (interactive)
+    (progn
+      (kill-buffer)
+      (elfeed)))
 #+END_SRC
 Para ver los enlaces de Elfeed con Firefox (por defecto los veo con eww):
 #+begin_src emacs-lisp
