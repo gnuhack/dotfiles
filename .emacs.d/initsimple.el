@@ -215,10 +215,6 @@
   (global-set-key (kbd "<f12>") 'eshell2fa)
   (global-set-key (kbd "C-<f12>") 'rat/sus)
 
-(require 'perspective)
-(global-set-key (kbd "C-x C-b") 'persp-list-buffers)
-(customize-set-variable 'persp-mode-prefix-key (kbd "C-c M-p"))
-(persp-mode)
 
 (setq emojify-emoji-styles '(unicode))
 
@@ -295,3 +291,79 @@
    [1 0 1]
    [0 0.86 0.9]]
   )
+
+;; EMACS SIMPLER
+;; Config básica
+;; (menu-bar-mode -1)
+;; (tool-bar-mode -1)
+;; (scroll-bar-mode -1)
+;; (load-theme 'modus-vivendi)
+
+;; ;; Asignaciones de teclas
+;; (global-set-key (kbd "C-x e") 'eshell)
+;; (global-set-key (kbd "M-<return>") 'ansi-term)
+;; (global-set-key (kbd "C-x t") 'shell)
+;; (global-set-key (kbd "<f12>") 'eshell2fa)
+;; (global-set-key (kbd "s-n") 'next-buffer)
+;; (global-set-key (kbd "s-p") 'previous-buffer)
+;; (global-set-key (kbd "M-o") 'other-window)
+;; (global-set-key (kbd "C-x k") 'kill-current-buffer)
+
+;; ;; Registros
+;; (set-register ?o (cons 'file "~/Nextcloud/Documents/horario.txt"))
+;; (set-register ?c (cons 'file "/mnt/c/Users/Juan/"))
+;; (set-register ?e (cons 'file "~/.emacs"))
+;; (set-register ?E (cons 'file "~/dotfiles/.emacs.d/emacs-literario.org"))
+;; ;; Funciones
+;; (defun eshell2fa ()
+;;       (interactive)
+;;       "Devuelve el id del 2FA en el portapapeles."
+;;       (unless (gnus-buffer-live-p "*eshell*") (eshell) (switch-to-prev-buffer))
+;;       (with-current-buffer "*eshell*"
+;;       (eshell-return-to-prompt)
+;;       (insert "id > /dev/kill")
+;;       (eshell-send-input))
+;;       )
+
+;; ;; Mode line
+;; (display-time-mode 1)
+;; (setq display-time-24hr-format t)
+;; (display-battery-mode 1)
+
+;; ;; Completación
+;; (vertico-mode 1)
+;;   (require 'orderless)
+;;   (setq completion-styles '(orderless basic)
+;; 	completion-category-overrides '((file (styles basic partial-completion))))
+;;   (marginalia-mode 1)
+;;   (define-key global-map (kbd "C-.") #'embark-act)
+;;   (define-key global-map (kbd "C-,") #'embark-dwim)
+;;   (define-key global-map (kbd "C-h B") #'embark-bindings)
+;;   (setq prefix-help-command #'embark-prefix-help-command)
+;; ;;  (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target)
+;;   (add-to-list 'display-buffer-alist
+;; 		 '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+;; 		   nil
+;; 		   (window-parameters (mode-line-format . none))))
+;; ;; Resto de la configuración
+;; (global-auto-revert-mode 1) ;; Para auto-actualizar los búferes de Nextcloud (y todos)
+;; (setq org-use-speed-commands t) ;;Navegación n,p con org-mode
+;;     (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions)) ;; Quitar confirmación matar búfer con proceso
+
+
+;; ;; Custom (No editar a mano)
+
+;; (custom-set-variables
+;;  ;; custom-set-variables was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(elfeed-feeds '("http://finaprosadigital.com/publish/blog/rss.xml"))
+;;  '(package-selected-packages
+;;    '(elfeed denote corfu magit consult embark embark-consult marginalia orderless vertico)))
+;; (custom-set-faces
+;;  ;; custom-set-faces was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  )
