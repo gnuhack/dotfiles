@@ -60,3 +60,6 @@
   (interactive)
   (async-shell-command "systemctl suspend"))
 
+(defun wca ()
+  "Abre Firefox."
+  (shell-command "firefox --private-window https://www.abc.es/deportes/futbol/liga-primera/clasificacion-resultados-sd.html"))
