@@ -91,12 +91,12 @@ Pequeños ajustes visuales, creación de carpeta backup para guardar los archivo
   (load-theme 'modus-vivendi t)
 
   (setq inhibit-splash-screen t)
-  (unless (server-running-p)
-    (progn
+  ;; (unless (server-running-p)
+  ;;   (progn
       (server-start)
-      (message "Servidor iniciado")
-      )
-    )
+    ;;   (message "Servidor iniciado")
+    ;;   )
+    ;; )
   (setq confirm-kill-emacs 'y-or-n-p)
 
   ;; Salvación del portapapeles para poder usar M-y después de hacer un kill a algo en Emacs y poder recuperar el contenido
