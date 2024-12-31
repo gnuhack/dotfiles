@@ -43,7 +43,7 @@ interval=30
 color=##2E2E8B8B5757
 
 [show-disk-space]
-command=df -h | awk '/sda1/ { print $1 ": " $4 }'
+command=df -h | awk ' FNR==4 { print $6 "dev/nvme0n1p1: " $4}'
 interval=30
 color=#1fffaaa
 
