@@ -39,7 +39,7 @@ Aumento el tamaño de letra en el sobremesa y el MSI para ver mejor.
   (if (equal system-name "cpr-GE75-Raider-8SE")
       (set-face-attribute 'default nil :height 150))
   
-  (if (equal system-name "elsobremesas")
+  (if (equal system-name "x270")
       (set-face-attribute 'default nil :height 150))
 #+end_src
 ** Iconos
@@ -698,7 +698,7 @@ Para ver los enlaces de Elfeed con Firefox (por defecto los veo con eww):
 Para reproducir música he elegido emms, que es bastante simple de configurar. Para que se carguen los datos en caché la primera vez que use emms hay que añadir a la lista de reproducción la carpeta de música que quiera reproducir (con add-directory-tree) y luego ya iniciarlo con emms-start.
 
 También he descubierto cómo guardar y cargar playlist. Simplemente cuando tengo una playlist (por ejemplo me puedo construir una desde cero gracias a =emms-smart-browse=) la puedo guardar con =C-x C-s= como si fuera un búfer normal, y luego si la quiero cargar (por ejemplo al abrir Emacs) puedo usar =emms-add-playlist=.
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC
   ;;emms
   (require 'emms-setup)
   (emms-all)
