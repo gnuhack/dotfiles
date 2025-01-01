@@ -144,12 +144,17 @@ interval=5
 # Battery indicator
 #
 # The battery instance defaults to 0.
+
 [battery]
 label=BAT
 label=⚡
 interval=30
 command=~/git/dotfiles/i3/i3blocks/bat.sh
 
+[click]
+full_text=Batería
+command=~/bin/bateriarestante
+color=#F794EE
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
