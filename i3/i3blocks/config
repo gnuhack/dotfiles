@@ -148,7 +148,7 @@ interval=5
 label=BAT
 label=⚡
 interval=30
-command=~/.config/i3blocks/battery/battery
+command=~/git/dotfiles/i3/i3blocks/bat.sh
 
 # Volume indicator
 #
