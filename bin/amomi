@@ -1,0 +1,5 @@
+
+mpv https://fast-channels.atresmedia.com/648ef3951756b0e425af83cc/648ef3951756b0e425af83cc.m3u8&
+
+echo "buenas noches"; sleep 2h; killall mpv; systemctl suspend
+

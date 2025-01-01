@@ -1,0 +1,4 @@
+#!/bin/bash
+
+aa=$(acpi)
+notify-send "$aa"
