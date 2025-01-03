@@ -8,3 +8,4 @@ alias ll ls -l $*
 alias sudo eshell/sudo $*
 alias ventilador lscpu | grep MHz; sensors $*
 alias youtubemp3 youtube-dl --extract-audio --audio-format mp3  $*
+alias id oathtool --counter=30 --totp=SHA1 -d 6 -b gnqtqmzxg4zdkm3dgyztanrvmu3wmnzvg5rgenbyheztgmrwgntdgyrwmqztoyjymi2gimbsmztdmodgmu3wkzjumm3dmzjsgm4dgnruge2giyrtmjrwkzjtgvstszlghazten3cgm3wezjqgm3tqmjzmftdmzdcgvswmy3cgbqtsn3emq3tsyjzmvrtkzddme2wcy3ggu3dm
