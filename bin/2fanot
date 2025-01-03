@@ -1,0 +1,3 @@
+#!/bin/bash
+
+notify-send "2FA copiado al portapapeles"
