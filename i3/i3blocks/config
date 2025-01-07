@@ -146,11 +146,6 @@ interval=5
 #
 # The battery instance defaults to 0.
 
-[click]
-full_text=Batería:
-command=~/bin/bateriarestante
-color=#F794EE
-
 [battery]
 label=BAT
 label=⚡

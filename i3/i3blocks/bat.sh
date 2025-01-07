@@ -1,5 +1,6 @@
 #!/bin/bash
 
+aa=$(acpi)
 output=""
 for i in 1 0
 do
@@ -15,3 +16,6 @@ do
 	fi
 done
 echo $output
+case $BLOCK_BUTTON in
+    1) notify-send "$aa"
+esac
