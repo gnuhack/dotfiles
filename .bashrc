@@ -112,4 +112,5 @@ if ! shopt -oq posix; then
 fi
 #Desactivar ^S
 stty -ixon
- 
+#Editor de texto por defecto
+export EDITOR='emacsclient -t'
