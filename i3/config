@@ -44,7 +44,8 @@ bindsym XF86Launch1 exec "xset dpms force off"
 #bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
 #bindsym --release $mod+z exec emacsclient --eval "(eshell2fa)"
 bindsym $mod+y exec emacsclient --eval "(emacs-everywhere)"
-bindsym $mod+z exec emacsclient -e '(prot-window-popup-org-capture)'
+bindsym $mod+z exec systemctl suspend 
+bindsym $mod+Z exec emacsclient -e '(prot-window-popup-org-capture)'
 bindsym $mod+XF86AudioMicMute exec emacsclient --eval "(wca)"
 bindsym XF86AudioMicMute exec emacsclient --eval "(eshell2fa)"
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
