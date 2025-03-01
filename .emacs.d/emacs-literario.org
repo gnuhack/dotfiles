@@ -976,6 +976,7 @@ Para poner un hook que encoja la ventana he hecho una solución provisional hast
 
 * Octave
 #+begin_src emacs-lisp
+  (require 'octave)
   (autoload 'octave-mode "octave-mod" nil t)
   (setq auto-mode-alist
 	(cons '("\\.m$" . octave-mode) auto-mode-alist))
