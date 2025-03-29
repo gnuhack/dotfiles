@@ -16,6 +16,11 @@
     (interactive)
     (tetris-rotate-prev)))     
 
+(define-key tetritecla-basic-mode-map (kbd "i")
+  (lambda ()
+    (interactive)
+    (tetris-rotate-next)))     
+
 (define-key tetritecla-basic-mode-map (kbd "h")
   (lambda ()
     (interactive)
