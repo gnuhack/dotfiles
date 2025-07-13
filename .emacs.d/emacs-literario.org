@@ -497,7 +497,7 @@ Org-roam es una herramienta para crear un sistema de gestión personal basado en
      "<div class=\"header\">
        <a href=\"https://www.finaprosadigital.com\">Blog sobre software libre</a>
        <div class=\"sitelinks\">
-	 <a href=\"https://gitlab.com/gnuhack\">Gitlab</a> | <a href=\"https://github.com/gnuhack\">Github</a> | <a href=\"http://finaprosadigital.com/publish/blog/rss.xml\">RSS</a> | <a href=\"http://finaprosadigital.com/publish/blog/posts/2025-06-25-acerca-de.html\">Acerca de</a>
+	 <a href=\"https://gitlab.com/gnuhack\">Gitlab</a> | <a href=\"https://github.com/gnuhack\">Github</a> | <a href=\"https://finaprosadigital.com/rss.xml\">RSS</a> | <a href=\"https://finaprosadigital.com/posts/2025-06-25-acerca-de.html\">Acerca de</a>
        </div>
      </div>")
 
