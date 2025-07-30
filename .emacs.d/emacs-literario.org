@@ -34,11 +34,9 @@ Carga de código de programas definidos en otros ficheros
 * Configuración básica
 Pequeños ajustes simples.
 ** Fuentes
-Aumento el tamaño de letra en el sobremesa y el MSI para ver mejor.
+Ajustes de tamaño de fuentes para ver las letras con tamaño decente
+desde distintos equipos.
 #+begin_src emacs-lisp
-  (if (equal system-name "cpr-GE75-Raider-8SE")
-      (set-face-attribute 'default nil :height 150))
-  
   (if (equal system-name "x270")
       (set-face-attribute 'default nil :height 120))
 #+end_src
@@ -54,7 +52,7 @@ Iconos para dired
 #+end_src
 ** Dashboard
 Para mejorar la pantalla de inicio, con dashboard se muestran archivos recientes y más cosas:
-#+begin_src emacs-lisp
+#+begin_src
 (dashboard-setup-startup-hook)
 (setq dashboard-center-content t)
 (setq dashboard-banner-logo-title "¡Bienvenido a GNU/Emacs!")
@@ -168,6 +166,7 @@ Configuración de las cosas mostradas en la barra de Emacs.
   Con recentf-mode se puede acceder fácilmente a los ficheros usados más recientemente, y también a los [[*Entorno del editor][búferes]]
   #+begin_src emacs-lisp
     (recentf-mode 1)
+    (define-key global-map (kbd "C-x C-r") #'recentf-open)
   #+end_src
 ** Guardado
 Guarda el estado de un búfer cuando se cierra éste o Emacs.
@@ -393,7 +392,7 @@ C : hace lo mismo que shifttab
 Para ver el resto de asignaciones de teclas, pulsar =C-h o org-speed-commands=
 #+begin_src emacs-lisp
   (setq org-goto-interface 'outline-path-completion)
-  (setq org-use-speed-commands t)
+  (setq org-use-speed-commands t)
 #+end_src
 ** Plantillas y refile
 Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-notes-efficiently-org-mode/. Aquí defino las plantillas para org. Si tomo una nota que no cuadra con ninguna categoría uso el template de "Nota" y luego hago el refill (C-w).
