@@ -20,6 +20,7 @@ font pango:monospace 11
 font pango:DejaVu Sans Mono 11
 
 #----------------MIS CONFIGURACIONES-------------------
+exec autorandr --change x270
 bindcode $mod+80 exec xdotool mousemove_relative -- 0 -15
 bindcode $mod+88 exec xdotool mousemove_relative -- 0 15
 bindcode $mod+83 exec xdotool mousemove_relative -- -15 0
