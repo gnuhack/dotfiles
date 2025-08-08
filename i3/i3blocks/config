@@ -139,13 +139,16 @@ interval=10
 color=#88AA77
 # Date Time
 #
+[time2]
+command=TZ='Asia/Tokyo' date
+interval=5
+
 [time]
 command=~/.config/i3blocks/calendar/calendar
 interval=5
 # Battery indicator
 #
 # The battery instance defaults to 0.
-
 [battery]
 label=BAT
 label=⚡
