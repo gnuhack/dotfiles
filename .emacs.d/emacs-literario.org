@@ -782,6 +782,7 @@ Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-k
     (global-set-key (kbd "<f6>") 'quick-calc)
     (set-register ?E (cons 'file "~/Documentos/ETSI/ETSI_2026"))
     (set-register ?o (cons 'file "~/Nextcloud/Documents/horario.txt"))
+    (set-register ?O (cons 'file "/home/carlos/Nextcloud2/ETSI_2026/horarios_4f_etsi_2526_GITI .pdf"))
     (set-register ?e (cons 'file "~/git/dotfiles/.emacs.d/emacs-literario.org"))
     (set-register ?t (cons 'file "~/org/2021t/tiempo.org"))
     (set-register ?c (cons 'file "~/.config/i3/config"))
