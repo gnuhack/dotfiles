@@ -114,3 +114,6 @@ fi
 stty -ixon
 #Editor de texto por defecto
 export EDITOR='emacsclient -t'
+
+# Created by `pipx` on 2025-08-10 15:43:58
+export PATH="$PATH:/home/carlos/.local/bin"
