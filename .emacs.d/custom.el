@@ -58,6 +58,8 @@
      (:name "drafts" :query "tag:draft" :key [100])
      (:name "all mail" :query "*" :key [97])))
  '(org-agenda-files '("/home/carlos/org/uni.org" "/home/carlos/org/gtd.org"))
+ '(org-safe-remote-resources
+   '("\\`https://fniessen\\.github\\.io/org-html-themes/org/theme-NAME\\.setup\\'"))
  '(package-selected-packages
    '(2048-game aggressive-indent altcaps auto-complete calfw calfw-org
 	       company company-ebdb consult consult-notmuch
