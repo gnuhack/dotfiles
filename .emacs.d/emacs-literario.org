@@ -1116,3 +1116,20 @@ Los colores de las piezas también siguen un estándar.
      [0 0.86 0.9]]
     )
 #+end_src
+* Proceed
+#+begin_src emacs-lisp
+(use-package proced
+  :ensure nil
+  :defer t
+  :custom
+  (proced-enable-color-flag t)
+  (proced-tree-flag t)
+  (proced-auto-update-flag 'visible)
+  (proced-auto-update-interval 1)
+  (proced-descent t)
+  (proced-filter 'user) ;; We can change interactively with `s'
+  :config
+  (add-hook 'proced-mode-hook
+            (lambda ()
+              (proced-toggle-auto-update 1))))
+#+end_src
