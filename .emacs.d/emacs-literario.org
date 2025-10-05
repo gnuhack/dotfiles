@@ -393,7 +393,7 @@ C : hace lo mismo que shifttab
 Para ver el resto de asignaciones de teclas, pulsar =C-h o org-speed-commands=
 #+begin_src emacs-lisp
   (setq org-goto-interface 'outline-path-completion)
-  (setq org-use-speed-commands t)
+  (setq org-use-speed-commands t)
 #+end_src
 ** Plantillas y refile
 Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-notes-efficiently-org-mode/. Aquí defino las plantillas para org. Si tomo una nota que no cuadra con ninguna categoría uso el template de "Nota" y luego hago el refill (C-w).
@@ -415,13 +415,13 @@ Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-
     (setq org-capture-templates
 	    (quote
 	     (("c" "Nota" entry
-	       (file+datetree "~/Nextcloud/notas.org")
+	       (file+datetree "~/Nextcloud2/notas.org")
 	       "* %?" :empty-lines 1)
 	      ("t" "Todo" entry
 	       (file+headline "~/org/gtd.org" "Tasks")
 	       "* TODO %?" :empty-lines 1)
 	      ("j" "Journal Entry" entry
-	       (file+datetree "~/Nextcloud/journal/journal.org.gpg")
+	       (file+datetree "~/Nextcloud2/journal/journal.org.gpg")
 	       "* %<%H:%M>\n %?" :empty-lines 1 :time-prompt t)
 	      ("k" "Cita" entry
 	       (file+headline "~/org/uni.org" "Citas")
@@ -621,7 +621,7 @@ Also see `prot-window-delete-popup-frame'." command)
      ("C-c n d" . denote-dired)
      ("C-c n g" . denote-grep))
     :config
-    (setq denote-directory (expand-file-name "~/Nextcloud/denote/"))
+    (setq denote-directory (expand-file-name "~/Nextcloud2/denote/"))
 
     ;; Automatically rename Denote buffers when opening them so that
     ;; instead of their long file name they have, for example, a literal
@@ -815,7 +815,7 @@ Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-k
     (add-to-list 'org-file-apps '("pdf" . "evince %s"))
     (global-set-key (kbd "<f6>") 'quick-calc)
     (set-register ?E (cons 'file "~/Documentos/ETSI/ETSI_2026"))
-    (set-register ?o (cons 'file "~/Nextcloud/Documents/horario.txt"))
+    (set-register ?o (cons 'file "~/Nextcloud2/Documents/horario.txt"))
     (set-register ?O (cons 'file "/home/carlos/Nextcloud2/ETSI_2026/horarios_4f_etsi_2526_GITI .pdf"))
     (set-register ?e (cons 'file "~/git/dotfiles/.emacs.d/emacs-literario.org"))
     (set-register ?t (cons 'file "~/org/2021t/tiempo.org"))
