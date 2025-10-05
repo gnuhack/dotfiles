@@ -62,8 +62,8 @@
  '(org-safe-remote-resources
    '("\\`https://fniessen\\.github\\.io/org-html-themes/org/theme-NAME\\.setup\\'"))
  '(package-selected-packages
-   '(2048-game aggressive-indent altcaps auto-complete calfw calfw-org
-	       company company-ebdb consult consult-denote
+   '(2048-game aggressive-indent altcaps auto-complete bank-buddy calfw
+	       calfw-org company company-ebdb consult consult-denote
 	       consult-notmuch consult-org-roam consult-projectile
 	       corfu crossword dashboard decide denote dictionary
 	       dired-hacks-utils dired-subtree disk-usage ebdb elfeed
@@ -73,15 +73,15 @@
 	       gnuplot-mode gptel hackernews helm helm-core
 	       helm-notmuch helm-org-rifle hledger-mode htmlize jabber
 	       lin magit magit-section marginalia mines minesweeper
-	       modus-themes multi-vterm multiple-cursors notmuch
-	       notmuch-indicator nov olivetti ollama-buddy orderless
-	       org-alert org-books org-bullets org-pomodoro org-roam
-	       org-roam-ui org-static-blog pdf-tools perspective poker
-	       popper projectile rainbow-delimiters rainbow-mode
-	       scratch smart-mode-line spanish-holidays sudoku telega
-	       tmr treemacs-icons-dired tzc vertico vhdl-ext
-	       visual-fill-column which-key yasnippet yeetube ytdious
-	       zenburn-theme))
+	       modus-themes multi-vterm multiple-cursors nethack
+	       notmuch notmuch-indicator nov olivetti ollama-buddy
+	       orderless org-alert org-books org-bullets org-pomodoro
+	       org-roam org-roam-ui org-static-blog pdf-tools
+	       perspective poker popper projectile rainbow-delimiters
+	       rainbow-mode scratch smart-mode-line spanish-holidays
+	       sudoku telega tmr treemacs-icons-dired tzc vertico
+	       vhdl-ext visual-fill-column which-key yasnippet yeetube
+	       ytdious zenburn-theme))
  '(send-mail-function 'mailclient-send-it)
  '(smtpmail-smtp-server "smtp.pajuelo.com" t)
  '(smtpmail-smtp-service 25 t)
