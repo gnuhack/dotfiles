@@ -5,7 +5,8 @@
  ;; If there is more than one, they won't work right.
  '(async-shell-command-buffer 'new-buffer)
  '(custom-safe-themes
-   '("91bcb494a6be6c94291ba5e5e62d4b2d36495c59a4c57f6e6f9d8bd532d5803c"
+   '("e36b78ef2b29a76c8487061af440de56e2b8481e6c9ef8cdc2a72cfd9d2475d2"
+     "91bcb494a6be6c94291ba5e5e62d4b2d36495c59a4c57f6e6f9d8bd532d5803c"
      "a75aff58f0d5bbf230e5d1a02169ac2fbf45c930f816f3a21563304d5140d245"
      "f74e8d46790f3e07fbb4a2c5dafe2ade0d8f5abc9c203cd1c29c7d5110a85230"
      "eb7cd622a0916358a6ef6305e661c6abfad4decb4a7c12e73d6df871b8a195f8"

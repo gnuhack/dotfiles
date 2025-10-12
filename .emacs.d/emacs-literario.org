@@ -399,17 +399,6 @@ Para ver el resto de asignaciones de teclas, pulsar =C-h o org-speed-commands=
 Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-notes-efficiently-org-mode/. Aquí defino las plantillas para org. Si tomo una nota que no cuadra con ninguna categoría uso el template de "Nota" y luego hago el refill (C-w).
 #+BEGIN_SRC  emacs-lisp
 
-  (setq org-refile-targets  '((org-agenda-files :maxlevel . 6)
-			      ("~/org-roam/20210909170753-proyectos_futuros.org" :maxlevel . 6)
-			      ("~/org-roam/20210920115613-lista_de_libros.org" :maxlevel . 6)
-			      ("~/org-roam/20210920111342-lista_de_juegos.org" :maxlevel . 6)
-			      ("~/org-roam/20210920115726-lista_de_peliculas.org" :maxlevel . 6)
-			      ("~/org-roam/20210910223458-shell.org" :maxlevel . 6)
-			      ("~/org-roam/20210930132055-lista_de_series.org" :maxlevel . 6)
-			      ("~/org-roam/20210930211941-notas_generales.org" :maxlevel . 6)
-			      ("~/org-roam/20220210155738-metodos.org" :maxlevel . 6)
-			      ("~/org-roam/20210930135146-inbox.org" :maxlevel . 6)))
-
       (global-set-key "\C-cc" 'org-capture)
   (when (file-exists-p "~/org")
     (setq org-capture-templates
@@ -448,7 +437,7 @@ Sustitución de los asteriscos por marcas más visuales.
 #+end_src
 *** Org-roam
 Org-roam es una herramienta para crear un sistema de gestión personal basado en Zettelkasten. Trata de reproducir Roam Research’s, una web que sirve para implementar Zettelkasten.
-   #+begin_src emacs-lisp
+   #+begin_src
 		 (setq org-roam-v2-ack t)
 	    (when (file-exists-p "~/org-roam")
 		 (setq org-roam-directory "~/org-roam"))
@@ -548,7 +537,7 @@ Org-roam es una herramienta para crear un sistema de gestión personal basado en
    #+end_src
 *** Org-books
 Para gestionar los libros que me he leído voy a probar a usar org-books.
-#+begin_src emacs-lisp
+#+begin_src 
   (setq org-books-file "~/org-roam/20210920115613-lista_de_libros.org")
   (setq org-books-add-to-top nil)
   (setq org-books-file-depth 3) ;; Reconocer los subheadings hasta de tercer nivel como categorías.
