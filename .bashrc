@@ -119,5 +119,5 @@ export EDITOR='emacsclient -t'
 export PATH="$PATH:/home/carlos/.local/bin"
 # Prompt para la shell de Emacs
 if [ -n "$INSIDE_EMACS" ]; then
-    PS1="> "
+    PS1="\W> "
 fi
