@@ -1,12 +1,12 @@
 * Por hacer:
 ** DONE Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática: Se hace con <s y luego TAB (En versiones recientes de Emacs es con C-c C-,)
 ** TODO Poner las funciones de elisp en un fichero aparte: [[*Scratch][Scratch]], [[*Eshell][Eshell]] (sudeame y la de prot), [[*Puesta de sol][Puesta de sol]], [[*Uso básico][esrinca]], [[*Correo][Correo]], y varias de [[*Elfeed][Elfeed]].
-** TODO Autoiniciar offlineimap y autoponer la contraseña
+** DONE Autoiniciar offlineimap y autoponer la contraseña
+CLOSED: [2025-11-01 sáb 14:33]
 ** TODO Poner como tangle las cosas de ~/bin, por ejemplo
 #+begin_src shell :tangle ~/bin/offlineimap-postsync
 notmuch new
 #+end_src
-** TODO Tangle condicional para generalizar mi config a otros ordenadores
 
 * Qué está pasando
 Mi configuración de Emacs está escrita con el estilo de programación literaria. De esta forma es mucho más fácil ir documentando el código a medida que se va escribiendo.
