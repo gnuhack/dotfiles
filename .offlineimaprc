@@ -19,7 +19,7 @@ localfolders = ~/Mail
 type = IMAP
 remotehost = mail.pajuelo.com
 remoteuser = carlos@pajuelo.com
-#remotepasseval = get_pass()
+remotepasseval = get_pass()
 ssl = no
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
