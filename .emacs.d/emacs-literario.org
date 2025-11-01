@@ -865,10 +865,10 @@ EBDB. (https://chrisdone.com/posts/emacs-mail/). Pendiente de configurar.
   ;;   (setq smtpmail-smtp-server "smtp.gmail.com")
   ;;   (setq smtpmail-smtp-service 587)
   (setq gnus-select-method
-	'(nnmaildir "GMail"
-		    (directory "~/Test")
-		    (directory-files nnheader-directory-files-safe)
-		    (get-new-mail nil)))
+  	'(nnmaildir "GMail"
+  		    (directory "~/Test")
+  		    (directory-files nnheader-directory-files-safe)
+  		    (get-new-mail nil)))
 
   ;;   (setq message-send-mail-function   'smtpmail-send-it
   ;;	 smtpmail-default-smtp-server "smtp.gmail.com"
@@ -890,22 +890,23 @@ EBDB. (https://chrisdone.com/posts/emacs-mail/). Pendiente de configurar.
   ;; Y con mi cuenta personal también!!
 
   (setq message-send-mail-function 'smtpmail-send-it
-	smtpmail-stream-type 'starttls
-	smtpmail-default-smtp-server "smtp.pajuelo.com"
-	smtpmail-smtp-server "smtp.pajuelo.com"
-	smtpmail-smtp-service 587
-	smtpmail-smtp-user "carlos@pajuelo.com"
-	smtpmail-servers-requiring-authorization "smtp.pajuelo.com"
-	;; account info
-	user-mail-address "carlos@pajuelo.com"
-	user-full-name  "Carlos")
+  	smtpmail-stream-type 'starttls
+  	smtpmail-default-smtp-server "smtp.pajuelo.com"
+  	smtpmail-smtp-server "smtp.pajuelo.com"
+  	smtpmail-smtp-service 587
+  	smtpmail-smtp-user "carlos@pajuelo.com"
+  	smtpmail-servers-requiring-authorization "smtp.pajuelo.com"
+  	;; account info
+  	user-mail-address "carlos@pajuelo.com"
+  	user-full-name  "Carlos")
 
   (defun offlineimap ()
     "Función para ejecutar offlineimap y descargar el correo en gnus."
     (interactive)
     (shell-command "offlineimap&" "*offlineimap*" nil)
     )
-  (async-shell-command "offlineimap")
+  (if (file-exists-p "~/.offlineimap.gpg")
+      (async-shell-command "offlineimap"))
   (notmuch-indicator-mode)
 #+end_src
 Notificaciones para la modeline con notmuch-indicator
@@ -1044,7 +1045,7 @@ Gracias a Helm se pueden editar archivos con sudo directamente, no hay más que 
 * C++
 Configuración de Emacs como IDE de C++. Para usar las yasnippets pulsar =C-c & C-s=.
 Fuente: https://linuxhint.com/c_emacs_configuration/
-#+begin_src emacs-lisp
+#+begin_src
   (require 'yasnippet)
   (yas-global-mode 1)
   (ac-config-default)
