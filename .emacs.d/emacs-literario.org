@@ -907,17 +907,19 @@ EBDB. (https://chrisdone.com/posts/emacs-mail/). Pendiente de configurar.
     )
   (if (file-exists-p "~/.offlineimap.gpg")
       (async-shell-command "offlineimap"))
-  (notmuch-indicator-mode)
+
 #+end_src
 Notificaciones para la modeline con notmuch-indicator
-#+begin_src emacs-lisp :tangle no
-  (defun notmuch-open-emails ()
-    "Abre la bandeja de entrada de notmuch directamente"
-    (interactive)
-    (notmuch-search "tag:inbox")
-    )
+#+begin_src emacs-lisp
+  (require 'notmuch-indicator)
+  (setq notmuch-indicator-args
+             '((:terms "tag:unread and tag:inbox" :label "U" :label-face success))
 
-  (notmuch-indicator-mode)
+             notmuch-indicator-refresh-count (* 60 3)
+             notmuch-indicator-hide-empty-counters t
+             notmuch-indicator-force-refresh-commands '(notmuch-refresh-this-buffer))
+
+  (notmuch-indicator-mode 1)
 #+end_src
 * Diccionario
 #+BEGIN_SRC emacs-lisp
