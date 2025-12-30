@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (defun milibro ()
     "Leer una página aleatoria del diario."
     (interactive)

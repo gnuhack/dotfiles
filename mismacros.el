@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (defmacro my-package-install (package &rest body)
   "Installs PACKAGE.
     If the PACKAGE cannot be installed, remind the user to add the package-archives. Then, the user can configure the
