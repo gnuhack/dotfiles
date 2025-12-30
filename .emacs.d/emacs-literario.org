@@ -1,3 +1,4 @@
+# -*- lexical-binding: t; -*-
 * Por hacer:
 ** DONE Encontrar una forma de poner los #+BEGIN_SRC emacs-lisp #+END_SRC de forma automática: Se hace con <s y luego TAB (En versiones recientes de Emacs es con C-c C-,)
 ** TODO Poner las funciones de elisp en un fichero aparte: [[*Scratch][Scratch]], [[*Eshell][Eshell]] (sudeame y la de prot), [[*Puesta de sol][Puesta de sol]], [[*Uso básico][esrinca]], [[*Correo][Correo]], y varias de [[*Elfeed][Elfeed]].

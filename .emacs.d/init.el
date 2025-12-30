@@ -1,3 +1,4 @@
+;;  -*- lexical-binding: t; -*-
 ;;Configuración mínima para debuggear: https://stackoverflow.com/questions/19336489/initializing-emacs-with-org-babel-debugger-entered-lisp-error-void-function
 
 ;; INICIALIZACIÓN DE PAQUETES Y TANGLE PARA ORG-MODE

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (make-variable-buffer-local
   (defvar tetritecla-basic-mode nil
     "Alterna tetritecla-basic-mode."))
