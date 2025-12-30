@@ -25,6 +25,7 @@
  '(elfeed-feeds
    '(("https://yewtu.be/feed/channel/UCDy1lHSVGBDL0d2_C5NZNJw" Themaoisha
       Video)
+     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCDy1lHSVGBDL0d2_C5NZNJw" Elmayoneso Video)
      ("http://antirez.com/rss" Antirez Blog)
      ("https://stallman.org/rss/rss.xml" RMS)
      ("https://notxor.nueva-actitud.org/rss.xml" Noxtor Blog)
