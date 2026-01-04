@@ -187,10 +187,11 @@ color=#20C5410302
 # Support multiple chips, though lm-sensors.
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
-#[temperature]
-#label=TEMP
-#interval=10
-
+[temperature]
+label=Temp
+command=sensors | awk '/^Package id 0:/ {print $4}'
+interval=10
+color=#DDDDDD
 # Key indicators
 #
 # Add the following bindings to i3 config file:
