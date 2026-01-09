@@ -408,13 +408,13 @@ Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-
 	       (file+datetree "~/Nextcloud2/notas.org")
 	       "* %?" :empty-lines 1)
 	      ("t" "Todo" entry
-	       (file+headline "~/org/gtd.org" "Tasks")
+	       (file+headline "~/Nextcloud2/Documents/gtd.org" "Tasks")
 	       "* TODO %?" :empty-lines 1)
 	      ("j" "Journal Entry" entry
 	       (file+datetree "~/Nextcloud2/journal/journal.org.gpg")
 	       "* %<%H:%M>\n %?" :empty-lines 1 :time-prompt t)
 	      ("k" "Cita" entry
-	       (file+headline "~/org/uni.org" "Citas")
+	       (file+headline "~/Nextcloud2/Documents/uni.org" "Citas")
 	       "* %^t %?")
 	      ))))
       (setq org-agenda-span 'day)

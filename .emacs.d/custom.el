@@ -25,7 +25,8 @@
  '(elfeed-feeds
    '(("https://yewtu.be/feed/channel/UCDy1lHSVGBDL0d2_C5NZNJw" Themaoisha
       Video)
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCDy1lHSVGBDL0d2_C5NZNJw" Elmayoneso Video)
+     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCDy1lHSVGBDL0d2_C5NZNJw"
+      Elmayoneso Video)
      ("http://antirez.com/rss" Antirez Blog)
      ("https://stallman.org/rss/rss.xml" RMS)
      ("https://notxor.nueva-actitud.org/rss.xml" Noxtor Blog)
@@ -63,7 +64,7 @@
      (:name "sent" :query "tag:sent" :key [116])
      (:name "drafts" :query "tag:draft" :key [100])
      (:name "all mail" :query "*" :key [97])))
- '(org-agenda-files '("/home/carlos/org/uni.org" "/home/carlos/org/gtd.org"))
+ '(org-agenda-files '("/home/carlos/org/gtd.org" "/home/carlos/org/uni.org"))
  '(org-safe-remote-resources
    '("\\`https://fniessen\\.github\\.io/org-html-themes/org/theme-NAME\\.setup\\'"))
  '(package-selected-packages
