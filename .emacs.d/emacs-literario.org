@@ -644,6 +644,7 @@ espeak "Appointment in $TIME minutes: $MSG"
 #+END_SRC
 Aquí están las funciones para la notificación.
 #+BEGIN_SRC emacs-lisp
+  (setq org-agenda-include-diary t) ; Para que las cosas de la agenda incluyan el diario
   (require 'appt)
   (appt-activate t)
 
@@ -669,9 +670,9 @@ Aquí están las funciones para la notificación.
   ; (3) ... When TODO.txt is saved
   (when (file-exists-p "~/org")
     (add-hook 'after-save-hook
-	    '(lambda ()
-	       (if (string= (buffer-file-name) (concat (getenv "HOME") "/org/uni.org"))
-		   (my-org-agenda-to-appt)))))
+  	    '(lambda ()
+  	       (if (string= (buffer-file-name) (concat (getenv "HOME") "/org/uni.org"))
+  		   (my-org-agenda-to-appt)))))
 
   ; Display appointments as a window manager notification
   (setq appt-disp-window-function 'my-appt-display)
