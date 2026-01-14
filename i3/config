@@ -55,7 +55,7 @@ bindsym $mod+y exec emacsclient --eval "(emacs-everywhere)"
 bindsym $mod+z exec systemctl suspend 
 bindsym $mod+q exec emacsclient -e '(prot-window-popup-org-capture)'
 bindsym $mod+XF86AudioMicMute exec emacsclient --eval "(wca)"
-bindsym XF86AudioMicMute exec emacsclient --eval "(eshell2fa)"
+bindsym XF86AudioMicMute exec /home/carlos/bin/2fanot
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym Shift+XF86AudioRaiseVolume exec pactl -- set-sink-volume 0 +10% && pkill -RTMIN+10 i3blocks 
