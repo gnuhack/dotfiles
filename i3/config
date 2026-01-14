@@ -50,7 +50,7 @@ bindsym XF86Launch1 exec "xset dpms force off"
 #bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
 #bindsym --release $mod+z exec emacsclient --eval "(eshell2fa)"
 bindsym $mod+BackSpace exec emacsclient --eval "(delete-frame)"
-bindsym $mod+Return exec emacsclient -c -a "" -e "(progn (vterm) (delete-other-windows))"
+bindsym $mod+Return exec emacsclient -c -e "(progn (vterm) (delete-other-windows))"
 bindsym $mod+y exec emacsclient --eval "(emacs-everywhere)"
 bindsym $mod+z exec systemctl suspend 
 bindsym $mod+q exec emacsclient -e '(prot-window-popup-org-capture)'
