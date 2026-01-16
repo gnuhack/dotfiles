@@ -14,6 +14,6 @@ emacs-literario.el
 
 # --- Otros ---
 .emacs.d/emms/
-
+.emacs.d/ehsell/history
 # --- Archivos temporales de edición (Lockfiles) ---
 .emacs.d/.#*
