@@ -1,1 +1,19 @@
 emacs-literario.el
+# --- Emacs Cache & Runtime ---
+.emacs.d/auto-save-list/
+.emacs.d/backup/
+.emacs.d/places
+.emacs.d/recentf
+.emacs.d/history
+.emacs.d/emojis/
+
+# --- Paquetes y Compilación ---
+.emacs.d/elpa/
+.emacs.d/eln-cache/
+.emacs.d/transient/
+
+# --- Otros ---
+.emacs.d/emms/
+
+# --- Archivos temporales de edición (Lockfiles) ---
+.emacs.d/.#*
