@@ -17,3 +17,6 @@ emacs-literario.el
 .emacs.d/eshell/history
 # --- Archivos temporales de edición (Lockfiles) ---
 .emacs.d/.#*
+.emacs.d/%backup%~
+.emacs.d/tramp
+.emacs.d/url/
