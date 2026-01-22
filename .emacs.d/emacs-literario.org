@@ -591,6 +591,19 @@ Also see `prot-window-delete-popup-frame'." command)
 
 (add-hook 'org-capture-after-finalize-hook #'prot-window-delete-popup-frame)
 #+end_src
+*** Org-gpg
+#+begin_src emacs-lisp
+  ;; Guardar los archivos cifrados con la contraseña de encriptación
+(setq epa-pinentry-mode 'loopback)
+(setq epa-file-cache-passphrase-for-symmetric-encryption t)
+(setq org-crypt-disable-auto-save nil)
+;; Activa copias de seguridad versionadas
+(setq version-control t)
+(setq kept-new-versions 10) ; Guarda las últimas 10 versiones
+(setq kept-old-versions 0)
+(setq delete-old-versions t)
+(setq backup-by-copying t)  ; Más seguro para enlaces simbólicos y permisos
+#+end_src
 ** Denote
 #+begin_src emacs-lisp
 
