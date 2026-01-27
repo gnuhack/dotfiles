@@ -962,6 +962,28 @@ Notificaciones para la modeline con notmuch-indicator
      ;; For company-mode users,
     ;;(add-to-list 'company-backends 'hledger-company)
     ;; Keybindings
+    (defun mi/hledger-balance-live ()
+      "Actualiza precios y LUEGO muestra el balance con valor de mercado."
+      (interactive)
+      ;; 1. Avisamos de que empieza la fiesta
+      (message "⏳ Conectando con los mercados (Yahoo/Caixabank)...")
+      
+      ;; 2. Ejecutamos tu script de forma SÍNCRONA (Emacs espera a que termine)
+      ;; IMPORTANTE: Cambia la ruta por la real de tu script actualizar_precios.sh
+        (let* ((comando "bash ~/Documentos/precios.sh > ~/Documentos/precios.hledger")
+             (resultado (call-process-shell-command comando)))
+        ;; 3. Si el script termina bien (devuelve 0), mostramos el reporte
+        (if (eq resultado 0)
+            (progn
+              (message "✅ Precios actualizados. Generando balance...")
+              ;; Llamamos al balance forzando el modo valor (-V)
+              (hledger-run-command "bs -V"))
+          
+          ;; Si falla el script, nos avisa
+          (message "❌ Error actualizando precios. Revisa tu conexión o el script."))))
+
+    ;; Asignamos una tecla maestra, por ejemplo: C-c V (V mayúscula)
+    (global-set-key (kbd "C-c V") 'mi/hledger-balance-live)
     (global-set-key (kbd "C-c e") 'hledger-jentry)
     (global-set-key (kbd "C-c j") 'hledger-run-command)
     (add-hook 'hledger-jentry-hook 'hledger-time )
