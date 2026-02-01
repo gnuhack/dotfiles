@@ -382,19 +382,23 @@ Asignaciones de teclas sugeridas por el manual de org de info.
      (global-set-key "\C-cc" 'org-capture)
      (global-set-key "\C-cb" 'org-switchb)
 #+END_SRC
-Con la siguiente asignación se crea un menú parecido a imenu al pulsar C-c C-j en un org búfer para moverse bien por él. También habilito org-speed-commands, una forma de moverse rápidamente por encabezados de org con las siguientes teclas (siempre que estemos en un encabezado (es decir, con el cursor situado en un asterisco)):
+Insertar un subheading con ctrl-alt-enter.
+#+BEGIN_SRC emacs-lisp
+  (define-key org-mode-map (kbd "C-M-<return>") #'org-insert-subheading)
+#+END_SRC
+  Con la siguiente asignación se crea un menú parecido a imenu al pulsar C-c C-j en un org búfer para moverse bien por él. También habilito org-speed-commands, una forma de moverse rápidamente por encabezados de org con las siguientes teclas (siempre que estemos en un encabezado (es decir, con el cursor situado en un asterisco)):
 
-n : moverse al siguiente encabezado visible
-p : moverse al anterior encabezado visible
-f : moverse al siguiente encabezado del mismo nivel
-p : moverse al anterior encabezado del mismo nivel
-c : ciclo de org
-C : hace lo mismo que shifttab
+  n : moverse al siguiente encabezado visible
+  p : moverse al anterior encabezado visible
+  f : moverse al siguiente encabezado del mismo nivel
+  p : moverse al anterior encabezado del mismo nivel
+  c : ciclo de org
+  C : hace lo mismo que shifttab
 
-Para ver el resto de asignaciones de teclas, pulsar =C-h o org-speed-commands=
-#+begin_src emacs-lisp
-  (setq org-goto-interface 'outline-path-completion)
-  (setq org-use-speed-commands t)
+  Para ver el resto de asignaciones de teclas, pulsar =C-h o org-speed-commands=
+  ,#+begin_src emacs-lisp
+    (setq org-goto-interface 'outline-path-completion)
+    (setq org-use-speed-commands t)
 #+end_src
 ** Plantillas y refile
 Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-notes-efficiently-org-mode/. Aquí defino las plantillas para org. Si tomo una nota que no cuadra con ninguna categoría uso el template de "Nota" y luego hago el refill (C-w).
