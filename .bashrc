@@ -137,3 +137,4 @@ vterm_printf() {
     fi
 }
 fi
+alias codesys='cd ~/.codesys23/drive_c/"Program Files"/"3S Software"/"CODESYS V2.3" && WINEPREFIX=~/.codesys23 wine Codesys.exe > /dev/null 2>&1 &'
