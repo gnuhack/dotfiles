@@ -1048,9 +1048,20 @@ Para poner un hook que encoja la ventana he hecho una solución provisional hast
   (require 'octave)
   (autoload 'octave-mode "octave-mod" nil t)
   (setq auto-mode-alist
-	(cons '("\\.m$" . octave-mode) auto-mode-alist))
+  	(cons '("\\.m$" . octave-mode) auto-mode-alist))
   (define-key global-map (kbd "C-c o") #'run-octave)
   (define-key global-map (kbd "C-c O") #'helm-info-octave)
+  ;; Para el editor de archivos .m
+  (add-hook 'octave-mode-hook
+            (lambda ()
+              (eldoc-mode -1)
+              (company-mode -1)))
+
+  ;; Para el buffer interactivo (el que abres con run-octave)
+  (add-hook 'inferior-octave-mode-hook
+            (lambda ()
+              (eldoc-mode -1)
+              (company-mode -1)))
 #+end_src
 * ERC
 Cliente para conectarse a IRC.
