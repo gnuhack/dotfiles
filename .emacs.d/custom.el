@@ -53,7 +53,6 @@
      ("https://www.danielclemente.com/cambios/cambios.xml" Blog)
      ("https://edwardsnowden.substack.com/feed.xml" Snowden Blog)
      ("https://twobithistory.org/feed.xml" 2bit Blog)))
- '(frame-background-mode nil)
  '(hledger-ratios-essential-expense-accounts "expenses:casa expenses:comida expenses:mama")
  '(hledger-ratios-liquid-asset-accounts "assets:cuenta assets:efectivo")
  '(notmuch-saved-searches
@@ -64,6 +63,7 @@
      (:name "sent" :query "tag:sent" :key [116])
      (:name "drafts" :query "tag:draft" :key [100])
      (:name "all mail" :query "*" :key [97])))
+ '(ollama-buddy-web-search-api-key "3b5910e4653146f4bb1c6e79715c2fb4.QJnq7o6GfC1FOuGWiWgg5YdJ")
  '(org-agenda-files '("/home/carlos/org/gtd.org" "/home/carlos/org/uni.org"))
  '(org-safe-remote-resources
    '("\\`https://fniessen\\.github\\.io/org-html-themes/org/theme-NAME\\.setup\\'"))
