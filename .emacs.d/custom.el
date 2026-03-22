@@ -86,8 +86,8 @@
 	       perspective poker popper projectile rainbow-delimiters
 	       rainbow-mode scratch smart-mode-line spanish-holidays
 	       sudoku telega tmr treemacs-icons-dired tzc vertico
-	       vhdl-ext visual-fill-column which-key yasnippet yeetube
-	       ytdious zenburn-theme))
+	       vhdl-ext visual-fill-column web-mode which-key
+	       yasnippet yeetube ytdious zenburn-theme))
  '(send-mail-function 'mailclient-send-it)
  '(smtpmail-smtp-server "smtp.pajuelo.com" t)
  '(smtpmail-smtp-service 25 t)
