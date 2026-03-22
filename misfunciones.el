@@ -1,4 +1,9 @@
 ;; -*- lexical-binding: t; -*-
+(defun cambia()
+  (interactive)
+  "Cambia al búfer anterior."
+  (switch-to-buffer (other-buffer (current-buffer) t)))
+
 (defun milibro ()
     "Leer una página aleatoria del diario."
     (interactive)
