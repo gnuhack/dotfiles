@@ -159,7 +159,8 @@ color=#FFDDAA
 # See the script for details.
 
 [volume]
-command=~/.config/i3blocks/volume/volume
+#command=~/.config/i3blocks/volume/volume
+command=if [ "$BLOCK_BUTTON" -eq 2 ]; then pavucontrol & fi; ~/.config/i3blocks/volume/volume
 label=♪
 #fulltext=vol
 label=VOL
