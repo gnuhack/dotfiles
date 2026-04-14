@@ -396,7 +396,7 @@ Insertar un subheading con ctrl-alt-enter.
   C : hace lo mismo que shifttab
 
   Para ver el resto de asignaciones de teclas, pulsar =C-h o org-speed-commands=
-  ,#+begin_src emacs-lisp
+#+begin_src emacs-lisp
     (setq org-goto-interface 'outline-path-completion)
     (setq org-use-speed-commands t)
 #+end_src
