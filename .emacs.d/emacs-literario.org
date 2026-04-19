@@ -275,6 +275,11 @@ Edit: De momento me gusta la combinación, la voy a mantener por ahora.
 		   nil
 		   (window-parameters (mode-line-format . none))))
 #+end_src
+** Ayuda
+Seleccionamos el búfer de ayuda por defecto cuando invocamos ayuda.
+#+begin_src emacs-lisp
+  (set 'help-window-select t)
+#+end_src
 * Eshell
 La eshell es una shell escrita entera en lisp.
 #+begin_src emacs-lisp
