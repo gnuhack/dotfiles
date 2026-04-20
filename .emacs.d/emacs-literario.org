@@ -784,6 +784,14 @@ Para ver los enlaces de Elfeed con Firefox (por defecto los veo con eww):
 
 ;;  (define-key elfeed-search-mode-map (kbd "f") 'elfeed-firefox-open)
 #+end_src
+Advice para ver las entradas de Elfeed con el formato de Olivetti
+#+begin_src emacs-lisp
+(defun my-olivetti-after-elfeed-show (&rest _)
+  (olivetti-mode)
+  (elfeed-show-refresh))
+
+(advice-add #'elfeed-show-entry :after #'my-olivetti-after-elfeed-show)
+#+end_src
 * EMMS
 Para reproducir música he elegido emms, que es bastante simple de configurar. Para que se carguen los datos en caché la primera vez que use emms hay que añadir a la lista de reproducción la carpeta de música que quiera reproducir (con add-directory-tree) y luego ya iniciarlo con emms-start.
 
