@@ -784,7 +784,8 @@ Para ver los enlaces de Elfeed con Firefox (por defecto los veo con eww):
 
 ;;  (define-key elfeed-search-mode-map (kbd "f") 'elfeed-firefox-open)
 #+end_src
-Advice para ver las entradas de Elfeed con el formato de Olivetti
+Advice para ver las entradas de Elfeed con el formato de
+Olivetti. Cortesía de Protesilaos.
 #+begin_src emacs-lisp
 (defun my-olivetti-after-elfeed-show (&rest _)
   (olivetti-mode)
