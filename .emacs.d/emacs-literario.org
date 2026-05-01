@@ -100,6 +100,9 @@ Pequeños ajustes visuales, creación de carpeta backup para guardar los archivo
 
   ;; Salvación del portapapeles para poder usar M-y después de hacer un kill a algo en Emacs y poder recuperar el contenido
   (setq save-interprogram-paste-before-kill t)
+
+  ;; Highlighting de funciones de Emacs Lisp
+    (setq elisp-fontify-semantically t)
 #+end_src
 ** Revert-mode
 Para poder sincronizar sin problema mis archivos con el cliente de Nextcloud que tengo, habilito el revert mode de forma automática para que se actualicen los búferes solos.
