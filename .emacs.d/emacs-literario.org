@@ -846,6 +846,7 @@ Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-k
     (set-register ?t (cons 'file "~/org/2021t/tiempo.org"))
     (set-register ?c (cons 'file "~/.config/i3/config"))
     (set-register ?d (cons 'file "~/Descargas"))
+    (set-register ?n (cons 'file "~/Nextcloud2/notas.org"))
     (global-set-key (kbd "s-n") 'next-buffer)
     (global-set-key (kbd "s-p") 'previous-buffer)
     ;;(global-set-key (kbd "s-<backspace>") 'rat/killydelete)
