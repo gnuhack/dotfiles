@@ -1201,25 +1201,32 @@ Los colores de las piezas también siguen un estándar.
               (proced-toggle-auto-update 1))))
 #+end_src
 * Vterm
+La idea es sustituir el uso de la terminal clásica con una terminal
+dentro de Emacs. Para ello usamos el paquete vterm que emula una
+terminal desde Emacs. Vterm se abre como un cliente cuyo servidor es
+Emacs a través de emasclient.
 #+begin_src emacs-lisp
-(defun my/vterm-new-instance ()
-  "Abre un nuevo frame con vterm y lo cierra automáticamente al salir."
-  (interactive)
-  (let ((dir default-directory))
-    (with-selected-frame (make-frame '((name . "vterm-frame")))
-      (let ((default-directory dir))
-        (vterm t)
-        (delete-other-windows)
-        ;; 1. Matar el buffer al terminar el proceso
-        (setq-local vterm-kill-buffer-on-exit t)
-        ;; 2. Añadir un hook local para cerrar el frame al matar el buffer
-        (add-hook 'kill-buffer-hook #'delete-frame nil t)))))
-(defun my/vterm-close-and-kill ()
-  "Cierra el frame actual y mata el buffer de vterm si existe."
-  (interactive)
-  (let ((buffer (current-buffer)))
-    (delete-frame)
-    (when (eq (buffer-local-value 'major-mode buffer) 'vterm-mode)
-      (kill-buffer buffer))))
+  (defun my/vterm-new-instance ()
+    "Abre un nuevo frame con vterm y lo cierra automáticamente al salir."
+    (interactive)
+    (let ((dir default-directory))
+      (with-selected-frame (make-frame '((name . "vterm-frame")))
+        (let ((default-directory dir))
+          (vterm t)
+          (delete-other-windows)
+          ;; 1. Matar el buffer al terminar el proceso
+          (setq-local vterm-kill-buffer-on-exit t)
+          ;; 2. Añadir un hook local para cerrar el frame al matar el buffer
+          (add-hook 'kill-buffer-hook #'delete-frame nil t)))))
+  (defun my/vterm-close-and-kill ()
+    "Cierra el frame actual y mata el buffer de vterm si existe."
+    (interactive)
+    (let ((buffer (current-buffer)))
+      (delete-frame)
+      (when (eq (buffer-local-value 'major-mode buffer) 'vterm-mode)
+        (kill-buffer buffer))))
+
+  ;; Hook para poder usar C-d para cerrar la vterm
+  (add-hook 'vterm-exit-functions (lambda (buf event) (delete-frame)))
 
 #+end_src
