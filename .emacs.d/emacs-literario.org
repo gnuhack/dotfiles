@@ -950,6 +950,8 @@ EBDB. (https://chrisdone.com/posts/emacs-mail/). Pendiente de configurar.
   (if (file-exists-p "~/.offlineimap.gpg")
       (async-shell-command "offlineimap"))
 
+  ;; Añadido servidor de noticias para GNUS
+  (add-to-list 'gnus-secondary-select-methods '(nntp "news.gmane.io"))
 #+end_src
 Notificaciones para la modeline con notmuch-indicator
 #+begin_src emacs-lisp
