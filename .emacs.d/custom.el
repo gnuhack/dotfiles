@@ -55,6 +55,8 @@
      ("https://twobithistory.org/feed.xml" 2bit Blog)))
  '(hledger-ratios-essential-expense-accounts "expenses:casa expenses:comida expenses:mama")
  '(hledger-ratios-liquid-asset-accounts "assets:cuenta assets:efectivo")
+ '(notmuch-indicator-hide-empty-counters t)
+ '(notmuch-indicator-mode t)
  '(notmuch-saved-searches
    '((:name "inbox" :query "tag:inbox" :key [105] :sort-order
 	    newest-first)
@@ -63,6 +65,7 @@
      (:name "sent" :query "tag:sent" :key [116])
      (:name "drafts" :query "tag:draft" :key [100])
      (:name "all mail" :query "*" :key [97])))
+ '(notmuch-search-oldest-first nil)
  '(ollama-buddy-web-search-api-key "3b5910e4653146f4bb1c6e79715c2fb4.QJnq7o6GfC1FOuGWiWgg5YdJ")
  '(org-agenda-files '("/home/carlos/org/gtd.org" "/home/carlos/org/uni.org"))
  '(org-safe-remote-resources
