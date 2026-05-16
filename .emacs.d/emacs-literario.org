@@ -862,6 +862,8 @@ Atajos de teclas y registros. https://www.masteringemacs.org/article/mastering-k
     (global-set-key (kbd "C-<f12>") 'rat/sus)
     (global-set-key (kbd "<f7>") 'elfid)
     (keymap-global-set "C-ñ" 'cambia)
+   (keymap-global-set "M-ñ" 'company-manual-begin)
+   (keymap-global-set "C-c M" 'calfw-org-open-calendar)
 #+END_SRC
 * Project
 Para gestionar proyectos uso project.el, integrado en Emacs. Así puedo cambiar entre archivos de un proyecto de forma fácil y cómoda. Un proyecto es toda carpeta que contenga archivos clave (como los repos de git).
