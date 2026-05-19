@@ -415,29 +415,29 @@ Insertar un subheading con ctrl-alt-enter.
 ** Plantillas y refile
 Setup del refile patrocinado por: https://sachachua.com/blog/2015/02/learn-take-notes-efficiently-org-mode/. Aquí defino las plantillas para org. Si tomo una nota que no cuadra con ninguna categoría uso el template de "Nota" y luego hago el refill (C-w).
 #+BEGIN_SRC  emacs-lisp
-
-      (global-set-key "\C-cc" 'org-capture)
+  (require 'calfw-org)
+  (global-set-key "\C-cc" 'org-capture)
   (when (file-exists-p "~/org")
     (setq org-capture-templates
-	    (quote
-	     (("c" "Nota" entry
-	       (file+datetree "~/Nextcloud2/notas.org")
-	       "* %?" :empty-lines 1)
-	      ("t" "Todo" entry
-	       (file+headline "~/Nextcloud2/Documents/gtd.org" "Tasks")
-	       "* TODO %?" :empty-lines 1)
-	      ("j" "Journal Entry" entry
-	       (file+datetree "~/Nextcloud2/journal/journal.org.gpg")
-	       "* %<%H:%M>\n %?" :empty-lines 1 :time-prompt t)
-	      ("k" "Cita" entry
-	       (file+headline "~/Nextcloud2/Documents/uni.org" "Citas")
-	       "* %^t %?")
-	      ))))
-      (setq org-agenda-span 'day)
-	;;calendario
+  	(quote
+  	 (("c" "Nota" entry
+  	   (file+datetree "~/Nextcloud2/notas.org")
+  	   "* %?" :empty-lines 1)
+  	  ("t" "Todo" entry
+  	   (file+headline "~/Nextcloud2/Documents/gtd.org" "Tasks")
+  	   "* TODO %?" :empty-lines 1)
+  	  ("j" "Journal Entry" entry
+  	   (file+datetree "~/Nextcloud2/journal/journal.org.gpg")
+  	   "* %<%H:%M>\n %?" :empty-lines 1 :time-prompt t)
+  	  ("k" "Cita" entry
+  	   (file+headline "~/Nextcloud2/Documents/uni.org" "Citas")
+  	   "* %^t %?")
+  	  ))))
+  (setq org-agenda-span 'day)
+  ;;calendario
 
-	(setq calendar-week-start-day 1)
-        (setq calendar-date-style 'european)
+  (setq calendar-week-start-day 1)
+  (setq calendar-date-style 'european)
 #+END_SRC
 Plantillas para introducir código con expansión de cosas como <el con TAB.
 #+begin_src emacs-lisp
