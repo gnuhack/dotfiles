@@ -23,8 +23,7 @@
      "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48"
      default))
  '(elfeed-feeds
-   '(("https://yewtu.be/feed/channel/UCDy1lHSVGBDL0d2_C5NZNJw" Themaoisha
-      Video)
+   '(
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UCDy1lHSVGBDL0d2_C5NZNJw"
       Elmayoneso Video)
      ("http://antirez.com/rss" Antirez Blog)
@@ -33,10 +32,7 @@
      ("https://finaprosadigital.com/rss.xml" CPR)
      ("https://taonaw.com/index.xml" Emacs TAONAW)
      ("http://feeds.feedburner.com/uGeekBlog" Emacs uGeek)
-     ("https://daemons.it/posts/index.xml" Emacs daemon)
      ("https://lukesmith.xyz/rss.xml" Luke)
-     ("https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&filter=local"
-      Video)
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UCaifrB5IrvGNPJmPeVOcqBA"
       Kruggsmash Video)
      ("https://www.bay12games.com/dwarves/dev_now.rss" Dwarf Fortress
