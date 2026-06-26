@@ -229,11 +229,6 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# Enable/disable caps mode
-mode "caps" {
-        bindsym Caps_Lock mode "default"
-}
-bindsym Caps_Lock mode "caps"
 #bindsym $mod+y exec "ledmic.sh"
 #bindsym --release Caps_Lock exec "ledmic.sh"
 bindsym $mod+r mode "resize"
