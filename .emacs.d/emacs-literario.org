@@ -1234,3 +1234,44 @@ Emacs a través de emasclient.
   (add-hook 'vterm-exit-functions (lambda (buf event) (delete-frame)))
 
 #+end_src
+* Emms
+Configuración para escuchar la radio por mpv
+#+begin_src emacs-lisp
+(require 'emms-setup)
+(emms-all)
+(setq emms-player-list '(emms-player-mpv))
+
+;; 1. Definimos la lista de emisoras (Nombre . URL del stream)
+
+(defvar mis-emisoras-radio
+  '(("Cadena 100"   . "https://cope.stream.flumotion.com/cope/cadena100-low.mp3")
+    ("Cadena Dial"  . "https://playerservices.streamtheworld.com/api/livestream-redirect/CADENADIAL.mp3")
+    ("Los 40"       . "https://playerservices.streamtheworld.com/api/livestream-redirect/LOS40.mp3")
+    ("Megastar FM"  . "https://cope.stream.flumotion.com/cope/megastar-low.mp3")
+    ("Hit FM"       . "https://hitfm.bcast.infomanager.es/hitfm-mp3")
+    ("Kiss FM"      . "https://kissfm.bcast.infomanager.es/kissfm-mp3"))
+  "Lista de reproducción de radios españolas oficiales y actualizadas.")
+
+;; 2. Variable para guardar en qué posición de la lista estamos
+(defvar mi-radio-indice-actual 0
+  "Índice de la emisora que está sonando actualmente.")
+
+;; 3. La función interactiva para saltar a la siguiente
+(defun mi-radio-siguiente ()
+  "Salta a la siguiente emisora de radio de la lista de forma cíclica."
+  (interactive)
+  ;; Avanzar el índice y resetear a 0 si llegamos al final de la lista
+  (setq mi-radio-indice-actual (% (1+ mi-radio-indice-actual) (length mis-emisoras-radio)))
+  
+  (let* ((emisora (nth mi-radio-indice-actual mis-emisoras-radio))
+         (nombre (car emisora))
+         (url (cdr emisora)))
+    ;; Parar lo que esté sonando, limpiar la playlist interna y reproducir la URL
+    (emms-stop)
+    (emms-play-url url)
+    ;; Mostrar un mensaje en el minibúfer de Emacs para saber qué suena
+    (message "📻 Sintonizando: %s" nombre)))
+
+;; (global-set-key (kbd "C-c r") 'mi-radio-siguiente)
+;;(global-set-key (kbd "C-c R") 'emms-stop)
+#+end_src
