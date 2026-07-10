@@ -61,6 +61,7 @@ bindsym $mod+z exec systemctl suspend
 bindsym $mod+q exec emacsclient -e '(prot-window-popup-org-capture)'
 bindsym $mod+XF86AudioMicMute exec emacsclient --eval "(wca)"
 bindsym XF86AudioMicMute exec /home/carlos/bin/2fanot
+bindsym $mod+Shift+z exec --no-startup-id emacsclient -e "(mi-radio-siguiente)"
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks
 bindsym Shift+XF86AudioRaiseVolume exec pactl -- set-sink-volume 0 +10% && pkill -RTMIN+10 i3blocks 
